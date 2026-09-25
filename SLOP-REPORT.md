@@ -3,7 +3,7 @@
 > Evaluated: 2026-09-25
 > Target: `/Users/azanabdullah/Desktop/pickle/` (code path: `index.html`, `style.css`, `script.js`)
 > Evidence channels: Code (HTML/CSS/JS) — unverifiable: rendered contrast, hover animations, mobile layout at true viewport
-> Brief provided: yes — 14-year-old freelance duo (Kaiser & Thanvi); currency is favors only (pizza, Steam, boba); gumdrop mascot; each section its own color vibe; no corporate feel; authentic teen builders
+> Brief provided: yes — 14-year-old freelance duo (Kaiser & Thanvi); currency is favors only (pizza, Steam, brownies); gumdrop mascot; each section its own color vibe; no corporate feel; authentic teen builders
 > Evaluator: slop-eval v1.1.0
 > Framework: [pols.dev anti-slop design law](https://pols.dev/slop.md)
 
@@ -117,7 +117,7 @@ Ordered critical → major → minor. Every row cites evidence; no tell appears 
 | S4 | Character display face | **100** | Cabinet Grotesk (Fontshare) — absent from Google shelf, has genuine geometric warmth, chosen deliberately for playful-professional balance. Set large as the identity carrier. |
 | S5 | Bespoke silhouette | **100** | Two bespoke structures: (1) Kinetic PICKLE letterforms — CSS grid of six unique letter-columns with hover color animations. (2) CSS-built dual-pan balance scale — custom fulcrum tower, tilting beam assembly, suspension chains, weighted pans. Neither exists in any component library. |
 | S6 | Treated nav | **50** | Nav has the brand gumdrop mark + "PICKLE CORP" logotype + live status pill. Distinctly theirs, but the layout (horizontal flex row with right CTA) is a conventional approach. |
-| S7 | Real specificity | **100** | Real names (Kaiser & Thanvi), real age (14), real email, real favor examples (pizza, Steam, boba tea). No fabricated metrics, no stock testimonials, no placeholder logos. Copy was specifically written for this product. |
+| S7 | Real specificity | **100** | Real names (Kaiser & Thanvi), real age (14), real email, real favor examples (pizza, Steam, brownies). No fabricated metrics, no stock testimonials, no placeholder logos. Copy was specifically written for this product. |
 
 **Axis 7 mean:** (100+50+50+100+100+50+100) / 7 = **78.6 → 79**
 
