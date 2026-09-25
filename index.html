@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pickle Corp — Independent Freelance Studio. Paid in Favors.</title>
+  <meta name="description" content="Pickle Corp is an independent freelance partnership by Kaiser and Thanvi. We architect systems and design products. We take zero cash — our rate is paid strictly in favors." />
+  
+  <!-- Fontshare Cabinet Grotesk (Authentic Display Face - S4) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&display=swap" rel="stylesheet">
+  <!-- Google Fonts Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Substrate Layers -->
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div id="cursor-spotlight" aria-hidden="true"></div>
+
+  <!-- Dynamic Emerald Momentum Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════ NAV ══ -->
+  <nav id="nav" role="navigation" aria-label="Main Navigation">
+    <a href="#" class="nav-logo" aria-label="Pickle Corp Home">
+      <span class="logo-mark">PICKLE CORP™</span>
+      <span class="logo-unit-tag">[LABS]</span>
+    </a>
+
+    <!-- Teenage Engineering-grade hardware telemetry capsule -->
+    <div class="nav-telemetry" aria-label="Studio Telemetry">
+      <span class="telemetry-item">
+        <span class="pulse-led" aria-hidden="true"></span>
+        <span class="telemetry-label">LEDGER</span>
+        <span class="telemetry-val">OPEN</span>
+      </span>
+      <span class="telemetry-sep">|</span>
+      <span class="telemetry-item hide-mobile">
+        <span class="telemetry-label">EXEC</span>
+        <span class="telemetry-val">1-THREADED</span>
+      </span>
+      <span class="telemetry-sep hide-mobile">|</span>
+      <span class="telemetry-item hide-mobile">
+        <span class="telemetry-label">LOCAL</span>
+        <span class="telemetry-val mono-clock" id="nav-clock">--:--:--</span>
+      </span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="magnetic-link">Home</a></li>
+      <li><a href="#about" class="magnetic-link">The Currency</a></li>
+      <li><a href="#identity" class="magnetic-link">The Name</a></li>
+      <li><a href="#vision" class="magnetic-link">Protocol</a></li>
+      <li><a href="#status" class="magnetic-link">Availability</a></li>
+      <li><a href="#team" class="magnetic-link">Founders</a></li>
+    </ul>
+
+    <div class="nav-actions-cluster">
+      <button id="snd-toggle" class="nav-snd-btn" aria-label="Toggle haptic audio synthesis" title="Toggle tactile acoustic synthesis">
+        <span class="snd-icon" aria-hidden="true">🔊</span>
+        <span class="snd-label">SND: ON</span>
+      </button>
+      <a class="nav-cta magnetic-btn" href="#contact" data-sound="ping-high">Propose a Favor &rarr;</a>
+    </div>
+
+    <button class="nav-burger" id="burger" aria-label="Toggle navigation menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero"     class="mm-link">Home</a>
+    <a href="#about"    class="mm-link">The Currency</a>
+    <a href="#identity" class="mm-link">The Name</a>
+    <a href="#vision"   class="mm-link">Protocol</a>
+    <a href="#status"   class="mm-link">Availability</a>
+    <a href="#team"     class="mm-link">Founders</a>
+    <a href="#contact"  class="mm-link">Propose Favor</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ HOME / HERO ══ -->
+  <section id="hero" class="home-hero">
+    <div class="hero-container">
+      <!-- Gummy Mascot - Front & Left, unboxed, lively, interactive -->
+      <div class="hero-mascot-col">
+        <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Drag me, poke me, or watch me hop!"></div>
+      </div>
+
+      <!-- Hero Copy & Actions -->
+      <div class="hero-text-col">
+        <div class="hero-kicker-row">
+          <span class="hero-kicker-tag">FREELANCE DUO</span>
+          <span class="hero-kicker-sep">/</span>
+          <span class="hero-kicker-tag highlight">CURRENCY: FAVORS ONLY</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-line">WE DON'T</span>
+          <span class="hero-line">TAKE MONEY.</span>
+          <span class="hero-line accent-gradient">JUST FAVORS.</span>
+        </h1>
+
+        <p class="hero-manifest">
+          Pickle Corp is the independent freelance studio of Kaiser and Thanvi, two 14-year-old builders. We engineer software and design products that punch way above their weight. Keep your cash: our currency is one solid favor called in when we need it.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-favor-pitch">
+            <span class="pitch-tag">$0.00 INVOICE</span>
+            <span class="pitch-label">Propose a Favor Build</span>
+            <span class="pitch-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="#about" class="hero-link-ledger">
+            <span class="ledger-link-text">Explore the favor economy</span>
+            <span class="ledger-link-sub">No cash. Ever. &darr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Studio Brand Ribbon / Ticker -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <span>TWO 14-YEAR-OLD BUILDERS</span><span class="ticker-sep">✦</span>
+        <span>ZERO INVOICES</span><span class="ticker-sep">✦</span>
+        <span>PAID IN FAVORS</span><span class="ticker-sep">✦</span>
+        <span>KAISER &amp; THANVI</span><span class="ticker-sep">✦</span>
+        <span>50/50 PARITY</span><span class="ticker-sep">✦</span>
+        <span>CASH DECLINED</span><span class="ticker-sep">✦</span>
+        <span>PURE BARTER</span><span class="ticker-sep">✦</span>
+        <span>TWO 14-YEAR-OLD BUILDERS</span><span class="ticker-sep">✦</span>
+        <span>ZERO INVOICES</span><span class="ticker-sep">✦</span>
+        <span>PAID IN FAVORS</span><span class="ticker-sep">✦</span>
+        <span>KAISER &amp; THANVI</span><span class="ticker-sep">✦</span>
+        <span>50/50 PARITY</span><span class="ticker-sep">✦</span>
+        <span>CASH DECLINED</span><span class="ticker-sep">✦</span>
+        <span>PURE BARTER</span><span class="ticker-sep">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ ABOUT ══ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head-currency">
+        <span class="currency-watermark" aria-hidden="true">01</span>
+        <div class="currency-head-content">
+          <div class="currency-badge-strip">
+            <span class="currency-kicker">THE CURRENCY</span>
+            <span class="currency-sub-kicker">ZERO FIAT PROTOCOL</span>
+          </div>
+          <h2 class="currency-title">A freelance studio operating outside the monetary system.</h2>
+        </div>
+      </div>
+
+      <div class="about-editorial-grid">
+        <div class="about-manifesto">
+          <p class="manifesto-lead">
+            We are 14 years old, so we don't have corporate bank accounts or billing departments. If you have an exciting, difficult engineering or design project, we'll build it. In exchange, you owe us one solid, real-life favor.
+          </p>
+          <p class="body-text">
+            Conventional client billing kills genuine ambition. When hourly rates, change orders, and procurement budgets enter the room, the craftsmanship always suffers.
+          </p>
+          <p class="body-text">
+            No invoices. No retainers. Just two 14-year-old builders who build crazy fast and hold a marker for later.
+          </p>
+        </div>
+
+        <!-- Barter Law: How Our Economy Actually Operates -->
+        <div class="favor-matrix specular-card">
+          <div class="matrix-top">
+            <span class="matrix-header-title">THE BARTER PROTOCOL</span>
+            <span class="matrix-tag">ZERO CASH MANDATE</span>
+          </div>
+
+          <div class="matrix-row">
+            <span class="matrix-level">RULE 01</span>
+            <div class="matrix-content">
+              <h4 class="matrix-item-title">No Cash. Ever. ($0.00 Required)</h4>
+              <p class="matrix-item-desc">We genuinely prefer favors over money. Not because we have to — because it's more interesting. We build for ambitious friends, students, and founders who have a real idea and a real trade to offer.</p>
+            </div>
+          </div>
+
+          <div class="matrix-row">
+            <span class="matrix-level">RULE 02</span>
+            <div class="matrix-content">
+              <h4 class="matrix-item-title">We Personally Decide The Favor</h4>
+              <p class="matrix-item-desc">No pre-set menus or fixed shopping lists. You don't pick favors off a shelf. You pitch what you need built, and Kaiser and Thanvi personally determine the favor based on the craft and difficulty.</p>
+            </div>
+          </div>
+
+          <div class="matrix-row">
+            <span class="matrix-level">RULE 03</span>
+            <div class="matrix-content">
+              <h4 class="matrix-item-title">Strict Craft Parity</h4>
+              <p class="matrix-item-desc">Zero dollars never means toy code. We deliver production-grade software that punches way above our age, and we bank your favor until we choose to call it in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ IDENTITY ══ -->
+  <section id="identity">
+    <div class="container">
+      <div class="section-head-name">
+        <div class="name-meta-strip">
+          <span class="name-badge">ETYMOLOGY &amp; ORIGIN</span>
+          <span class="name-num-pill">ENTRY // 02</span>
+        </div>
+        <h2 class="name-title">Why "Pickle"?</h2>
+      </div>
+
+      <p class="identity-lead">
+        Because when you're in a pickle, cash won't get you out. A favor will.
+      </p>
+
+      <div class="kinetic-wrapper">
+        <div class="kinetic-letters" id="kinetic-stage">
+          <span class="k-char" data-letter="P">P</span>
+          <span class="k-char" data-letter="I">I</span>
+          <span class="k-char" data-letter="C">C</span>
+          <span class="k-char" data-letter="K">K</span>
+          <span class="k-char" data-letter="L">L</span>
+          <span class="k-char" data-letter="E">E</span>
+        </div>
+      </div>
+
+      <div class="identity-footer-note">
+        <p class="body-text">
+          The name keeps us honest. We never want to become a soulless billing agency. When you find yourself in a tight spot, we build the escape hatch. The ledger remembers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════ VISION ══ -->
+  <section id="vision">
+    <div class="container">
+      <div class="section-head-protocol">
+        <div class="protocol-sys-bar">
+          <span class="protocol-sys-tag">SYS // PROTOCOL v2.4</span>
+          <span class="protocol-cycle-tag">THREE-PHASE LIFECYCLE</span>
+        </div>
+        <h2 class="protocol-title">How the Barter Transaction Works.</h2>
+      </div>
+
+      <!-- Favor Protocol Steps -->
+      <div class="protocol-grid">
+        <div class="protocol-column specular-card">
+          <div class="protocol-step-header">
+            <span class="protocol-step-index">PHASE 01</span>
+
+          </div>
+          <h3 class="protocol-step-name">The Friction</h3>
+          <p class="protocol-step-principle">Pitch the problem, not a budget.</p>
+          <p class="protocol-step-body">Tell us what you're building, why it matters, and why standard agencies would fail at it. If the challenge excites us, we're in.</p>
+        </div>
+
+        <div class="protocol-column active-stage specular-card">
+          <div class="protocol-step-header">
+            <span class="protocol-step-index">PHASE 02</span>
+
+          </div>
+          <h3 class="protocol-step-name">The Marker</h3>
+          <p class="protocol-step-principle">Agree on the favor upfront.</p>
+          <p class="protocol-step-body">No wire transfers. What can you offer that money cannot buy? We settle on the exact favor before a single line of code is written.</p>
+        </div>
+
+        <div class="protocol-column specular-card">
+          <div class="protocol-step-header">
+            <span class="protocol-step-index">PHASE 03</span>
+
+          </div>
+          <h3 class="protocol-step-name">The Handover</h3>
+          <p class="protocol-step-principle">Ship &amp; record the ledger.</p>
+          <p class="protocol-step-body">We deliver production-ready software with obsessive craft. You launch your product. We pocket the favor for a rainy day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════ STATUS ══ -->
+  <section id="status">
+    <div class="container">
+      <div class="section-head-capacity">
+        <div class="capacity-live-badge">
+          <span class="capacity-pulse-dot" aria-hidden="true"></span>
+          <span class="capacity-live-label">LIVE STATUS • 1 CONCURRENT BUILD SLOT OPEN</span>
+        </div>
+        <h2 class="capacity-title">Single-Threaded Execution. One Client at a Time.</h2>
+      </div>
+
+      <div class="status-panel specular-card">
+        <div class="status-panel-top">
+          <div class="status-capacity-meta">
+            <span class="capacity-pill">CAPACITY: 1 CONCURRENT BUILD</span>
+            <span class="capacity-desc">After school &amp; weekends • Zero delegation • Kaiser &amp; Thanvi only</span>
+          </div>
+
+
+        </div>
+
+        <h2 class="status-display-title">Ledger currently open for the right challenge.</h2>
+        
+        <div class="status-body-columns">
+          <p class="status-lead">
+            We limit our roster to one build at a time to ensure our full focus. No account managers, no junior handoffs. Just two 14-year-old partners designing, coding, and shipping end-to-end.
+          </p>
+          <p class="status-callout">
+            Have a project worth building and an exceptional favor to put on the table? We are reviewing pitches now.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ TEAM ══ -->
+  <section id="team">
+    <div class="container">
+      <div class="section-head-founders">
+        <div class="founders-duo-strip">
+          <span class="founders-duo-tag">KAISER (50%) ✕ THANVI (50%)</span>
+          <span class="founders-parity-badge">TRUE PARITY • ZERO HIERARCHY</span>
+        </div>
+        <h2 class="founders-title">Two Equal Partners. Building Crazy Fast.</h2>
+      </div>
+
+      <p class="team-manifesto-sub">
+        Pickle Corp was created by <strong>Kaiser and Thanvi</strong>, two 14-year-old builders working as a 50/50 freelance partnership. No directors, no corporate fluff, no inflated titles. Just two kids building software that punches way above its weight.
+      </p>
+
+      <!-- Editorial 50/50 Founder Spread -->
+      <div class="founders-spread">
+        <!-- Kaiser -->
+        <div class="founder-card specular-card" data-founder="kaiser">
+          <div class="founder-card-top">
+            <div class="founder-meta">
+              <span class="founder-role-tag">CO-FOUNDER • 14 YO • 50%</span>
+              <h3 class="founder-name">Kaiser</h3>
+            </div>
+            <div class="founder-glyph" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                <polygon points="24,6 42,16 42,36 24,26" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+                <polygon points="24,6 6,16 6,36 24,26" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" fill="none"/>
+                <polygon points="24,26 42,36 24,46 6,36" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+                <circle cx="24" cy="26" r="3.5" fill="var(--green)"/>
+              </svg>
+            </div>
+          </div>
+          <p class="founder-tagline">The one who actually builds it. Codes after school. Thinks in systems, breaks them on purpose, then fixes them.</p>
+          <div class="founder-fun-fact">
+            <span class="fun-fact-label">WILL ACCEPT:</span>
+            <span class="fun-fact-text">Pizza, a Steam game, or a genuinely interesting problem he hasn't seen before.</span>
+          </div>
+        </div>
+
+        <!-- Parity Axis Divider -->
+        <div class="parity-divider" aria-hidden="true">
+          <div class="divider-line"></div>
+          <span class="parity-label">50% + 50% EQUAL</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Thanvi -->
+        <div class="founder-card specular-card" data-founder="thanvi">
+          <div class="founder-card-top">
+            <div class="founder-meta">
+              <span class="founder-role-tag">CO-FOUNDER • 14 YO • 50%</span>
+              <h3 class="founder-name">Thanvi</h3>
+            </div>
+            <div class="founder-glyph" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="24" cy="24" r="11" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+                <circle cx="24" cy="24" r="3.5" fill="var(--green)"/>
+                <line x1="6" y1="24" x2="42" y2="24" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                <line x1="24" y1="6" x2="24" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              </svg>
+            </div>
+          </div>
+          <p class="founder-tagline">The one who makes it look alive. Has very strong opinions about fonts, and she is correct.</p>
+          <div class="founder-fun-fact">
+            <span class="fun-fact-label">WILL ACCEPT:</span>
+            <span class="fun-fact-text">Boba tea, a Spotify gift card, or full creative control on the next project.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ CONTACT ══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head-dispatch">
+        <div class="dispatch-term-bar">
+          <span class="dispatch-term-id">TERMINAL // 06</span>
+          <span class="dispatch-term-status">CASH PROPOSALS DECLINED</span>
+        </div>
+        <h2 class="dispatch-title">Propose A Favor. Lock In The Build.</h2>
+        <p class="dispatch-lead">Tell us what you need engineered or designed, and what real favor you're putting on the table.</p>
+      </div>
+
+      <div class="dispatch-console">
+
+        <!-- Bespoke Dispatch Channels (Eliminates L13 primary+ghost button pair) -->
+        <div class="dispatch-channels-grid">
+          <a href="mailto:azanmail2022@gmail.com" class="dispatch-channel-card email-card specular-card" data-sound="ping-high">
+            <div class="channel-card-top">
+              <span class="channel-type-tag">PRIMARY DISPATCH</span>
+              <span class="channel-response-indicator">DIRECT INBOX</span>
+            </div>
+            <div class="channel-address">azanmail2022@gmail.com</div>
+            <p class="channel-note">Send your project pitch and proposed favor terms directly to Kaiser and Thanvi.</p>
+            <div class="channel-link-action">
+              <span>Compose Email Dispatch</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </a>
+
+          <a href="tel:+917010059290" class="dispatch-channel-card phone-card specular-card" data-sound="ping-high">
+            <div class="channel-card-top">
+              <span class="channel-type-tag">URGENT HOTLINE</span>
+              <span class="channel-response-indicator">VOICE WIRE</span>
+            </div>
+            <div class="channel-address">+91 70100 59290</div>
+            <p class="channel-note">Direct telephone line for emergency builds and time-sensitive favor negotiations.</p>
+            <div class="channel-link-action">
+              <span>Call Direct</span>
+              <span class="action-arrow">&rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ FOOTER ══ -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">PICKLE CORP™</span>
+        <p class="footer-sub">Two freelancers building software for favors.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">01 Currency</a>
+        <a href="#identity">02 The Name</a>
+        <a href="#vision">03 Protocol</a>
+        <a href="#status">04 Capacity</a>
+        <a href="#team">05 Founders</a>
+        <a href="#contact">06 Dispatch</a>
+      </div>
+
+      <div class="footer-colophon">
+        <span>Kaiser &amp; Thanvi &bull; 2026</span>
+        <span>Favors over fiat</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
