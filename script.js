@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ns = 'http://www.w3.org/2000/svg';
 
     const svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('viewBox', '0 0 76 80');
+    svg.setAttribute('viewBox', '0 0 110 52');
     svg.setAttribute('width', '100%');
     svg.setAttribute('height', '100%');
     svg.setAttribute('aria-hidden', 'true');
@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <defs>
         <!-- Dark roast ground contact shadow matching border #593d3b -->
         <radialGradient id="${id}-sh" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#593d3b" stop-opacity="0.28" />
-          <stop offset="60%" stop-color="#593d3b" stop-opacity="0.08" />
+          <stop offset="0%" stop-color="#593d3b" stop-opacity="0.32" />
+          <stop offset="65%" stop-color="#593d3b" stop-opacity="0.09" />
           <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
         </radialGradient>
         <!-- Gumdrop body fill matching reference image (#ab947e) -->
@@ -205,19 +205,19 @@ document.addEventListener('DOMContentLoaded', () => {
       </defs>
 
       <!-- Soft ground contact shadow -->
-      <ellipse class="gummy-shadow" cx="38" cy="74" rx="30" ry="4.5" fill="url(#${id}-sh)" />
+      <ellipse class="gummy-shadow" cx="55" cy="44.5" rx="44" ry="3.8" fill="url(#${id}-sh)" />
 
       <!-- Body motion container -->
-      <g class="gummy-body-group" style="transform-origin: 38px 70px;">
-        <!-- Tall pebble dome gumdrop body matching reference image media_1791470392417.png -->
+      <g class="gummy-body-group" style="transform-origin: 55px 44px;">
+        <!-- Wide Low-Profile Mound Path exactly matching user sketch -->
         <path class="gummy-body-shape"
-              d="M 22,70
-                 C 32,71 44,71 54,70
-                 C 62,69.5 66,65 65.5,58
-                 C 64.5,44 60.5,28 49,15
-                 C 43.5,9 32.5,9 27,15
-                 C 15.5,28 11.5,44 10.5,58
-                 C 10,65 14,69.5 22,70 Z"
+              d="M 15,44
+                 C 9,44 6.5,39.5 9,34
+                 C 13.5,23.5 26,12 44,8.5
+                 C 50,7.2 60,7.2 66,8.5
+                 C 84,12 96.5,23.5 101,34
+                 C 103.5,39.5 101,44 95,44
+                 Z"
               fill="url(#${id}-body)"
               stroke="${theme.stroke}"
               stroke-width="3.4"
@@ -225,36 +225,36 @@ document.addEventListener('DOMContentLoaded', () => {
               stroke-linecap="round" />
 
         <!-- Cute horizontal oval blush cheeks -->
-        <ellipse cx="22" cy="49" rx="4.2" ry="2.2" fill="${theme.blush}" opacity="0.9" />
-        <ellipse cx="54" cy="49" rx="4.2" ry="2.2" fill="${theme.blush}" opacity="0.9" />
+        <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="${theme.blush}" opacity="0.9" />
+        <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="${theme.blush}" opacity="0.9" />
 
         <!-- Open Eyes Container (for cursor tracking) -->
         <g class="gummy-eyes-group">
           <!-- Left Eye: Cute bead with top-left sparkle -->
           <g class="gummy-eye-left">
-            <circle cx="30" cy="44" r="3.2" fill="${theme.eye}" />
-            <circle cx="29" cy="42.8" r="1.1" fill="#ffffff" />
+            <circle cx="46" cy="26" r="3.3" fill="${theme.eye}" />
+            <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
           </g>
 
           <!-- Right Eye: Cute bead with top-left sparkle -->
           <g class="gummy-eye-right">
-            <circle cx="46" cy="44" r="3.2" fill="${theme.eye}" />
-            <circle cx="45" cy="42.8" r="1.1" fill="#ffffff" />
+            <circle cx="64" cy="26" r="3.3" fill="${theme.eye}" />
+            <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
           </g>
         </g>
 
         <!-- Closed Eyes for Happy Blink: ⌒  ⌒ -->
         <g class="gummy-eyes-blink" style="opacity: 0; pointer-events: none;">
-          <path d="M 27,45 Q 30,42 33,45" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 43,45 Q 46,42 49,45" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 42.5,27 Q 46,24 49.5,27" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 60.5,27 Q 64,24 67.5,27" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
         </g>
 
         <!-- Sweet Smile -->
         <path class="gummy-mouth"
-              d="M 35.8,45.8 Q 38,48.2 40.2,45.8"
+              d="M 52.4,27.8 Q 55,30.2 57.6,27.8"
               fill="none"
               stroke="${theme.eye}"
-              stroke-width="1.8"
+              stroke-width="2"
               stroke-linecap="round" />
       </g>
     `;
@@ -502,10 +502,10 @@ document.addEventListener('DOMContentLoaded', () => {
           this.targetScaleX = 1 + ease * 0.40;
           this.targetScaleY = 1 - ease * 0.36;
           this.rotation = -ease * 7;
-          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '38px 70px';
+          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '55px 44px';
           if (this.shadow) {
             this.shadow.style.transform = `scale(${1 + ease * 0.25})`;
-            this.shadow.style.transformOrigin = '38px 74px';
+            this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = '0.36';
           }
           if (this.eyesGroup) this.eyesGroup.style.opacity = '0';
@@ -519,8 +519,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // Jump trajectory: -55px apex (stays 100% visible, perfectly safe from clipping)
           this.targetTranslateY = -arc * 55;
 
-          // Full, continuous 360° backward rotation around center of mass (38px 46px)
-          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '38px 46px';
+          // Full, continuous 360° backward rotation around center of mass (55px 26px)
+          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '55px 26px';
           this.rotation = -(fp * 360);
 
           // Dynamic physics squash & stretch during the flip
@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (this.shadow) {
             const sScale = Math.max(0.18, 1 - arc * 0.72);
             this.shadow.style.transform = `scale(${sScale})`;
-            this.shadow.style.transformOrigin = '38px 74px';
+            this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = `${Math.max(0.06, 1 - arc * 0.82)}`;
           }
 
@@ -549,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (progress < 0.90) {
           const p = (progress - 0.78) / (0.90 - 0.78);
           const impact = 1 - p;
-          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '38px 70px';
+          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '55px 44px';
           this.rotation = -360;
           this.targetTranslateY = impact * 8;
           this.targetScaleX = 1 + impact * 0.46;
@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (this.shadow) {
             this.shadow.style.transform = `scale(${1 + impact * 0.28})`;
-            this.shadow.style.transformOrigin = '38px 74px';
+            this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = '0.36';
           }
 
@@ -588,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
           this.targetScaleX = 1;
           this.targetScaleY = 1;
           this.targetTranslateY = 0;
-          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '38px 70px';
+          if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '55px 44px';
           if (this.eyesGroup) this.eyesGroup.style.opacity = '1';
           if (this.eyesBlink) this.eyesBlink.style.opacity = '0';
           if (this.backflipCallback) {
@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (this.shadow) {
             const shadowScale = Math.max(0.06, 1 - arc * 0.88);
             this.shadow.style.transform = `scale(${shadowScale})`;
-            this.shadow.style.transformOrigin = '38px 74px';
+            this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = `${Math.max(0.04, 1 - arc * 0.92)}`;
           }
 
@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (this.shadow) {
             const shadowScale = Math.max(0.18, 1 - arc * 0.65);
             this.shadow.style.transform = `scale(${shadowScale})`;
-            this.shadow.style.transformOrigin = '38px 74px';
+            this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = `${Math.max(0.08, 1 - arc * 0.75)}`;
           }
 

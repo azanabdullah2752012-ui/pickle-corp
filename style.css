@@ -624,9 +624,8 @@ img { display: block; max-width: 100%; }
 }
 
 .gummy-hero-mascot {
-  width: clamp(96px, 8.5vw, 118px);
-  height: clamp(101px, 9vw, 124px);
-  filter: drop-shadow(0 8px 20px rgba(89, 61, 59, 0.14));
+  width: clamp(136px, 12vw, 168px);
+  height: clamp(64px, 5.7vw, 80px);
   position: relative;
   overflow: visible;
 }
@@ -2995,8 +2994,8 @@ img { display: block; max-width: 100%; }
     order: -1;
   }
   .gummy-hero-mascot {
-    width: 72px;
-    height: 76px;
+    width: 96px;
+    height: 46px;
   }
   .about-editorial-grid {
     grid-template-columns: 1fr;
