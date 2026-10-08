@@ -16,7 +16,7 @@
   <!-- Matching Gumdrop Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 52'%3E%3Cpath d='M15,44 C9,44 6.5,39.5 9,34 C13.5,23.5 26,12 44,8.5 C50,7.2 60,7.2 66,8.5 C84,12 96.5,23.5 101,34 C103.5,39.5 101,44 95,44 Z' fill='%23ab947e' stroke='%23593d3b' stroke-width='4' stroke-linejoin='round'/%3E%3Cellipse cx='36' cy='30' rx='4.6' ry='2.3' fill='%23c0a692'/%3E%3Cellipse cx='74' cy='30' rx='4.6' ry='2.3' fill='%23c0a692'/%3E%3Ccircle cx='46' cy='26' r='3.3' fill='%23593d3b'/%3E%3Ccircle cx='44.8' cy='24.8' r='1.1' fill='%23ffffff'/%3E%3Ccircle cx='64' cy='26' r='3.3' fill='%23593d3b'/%3E%3Ccircle cx='62.8' cy='24.8' r='1.1' fill='%23ffffff'/%3E%3Cpath d='M52.4,27.8 Q55,30.2 57.6,27.8' fill='none' stroke='%23593d3b' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2.1.0" />
 </head>
 <body>
   <!-- Ambient Substrate Layers -->
@@ -83,7 +83,48 @@
     <div class="hero-container">
       <!-- Gummy Mascot - Front & Left, unboxed, lively, interactive (Clean, no spinning clutter) -->
       <div class="hero-mascot-col">
-        <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Drag me, poke me, or watch me hop!"></div>
+        <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Drag me, poke me, or watch me hop!">
+          <svg viewBox="0 0 110 52" width="100%" height="100%" aria-hidden="true" style="overflow: visible; display: block;">
+            <defs>
+              <radialGradient id="g-hero-sh" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#593d3b" stop-opacity="0.32" />
+                <stop offset="65%" stop-color="#593d3b" stop-opacity="0.09" />
+                <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="g-hero-body" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#b8a18c" />
+                <stop offset="100%" stop-color="#ab947e" />
+              </linearGradient>
+            </defs>
+            <ellipse class="gummy-shadow" cx="55" cy="44.5" rx="44" ry="3.8" fill="url(#g-hero-sh)" />
+            <g class="gummy-body-group" style="transform-origin: 55px 44px;">
+              <path class="gummy-body-shape"
+                    d="M 15,44 C 9,44 6.5,39.5 9,34 C 13.5,23.5 26,12 44,8.5 C 50,7.2 60,7.2 66,8.5 C 84,12 96.5,23.5 101,34 C 103.5,39.5 101,44 95,44 Z"
+                    fill="url(#g-hero-body)"
+                    stroke="#593d3b"
+                    stroke-width="3.4"
+                    stroke-linejoin="round"
+                    stroke-linecap="round" />
+              <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#c0a692" opacity="0.9" />
+              <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#c0a692" opacity="0.9" />
+              <g class="gummy-eyes-group">
+                <g class="gummy-eye-left">
+                  <circle cx="46" cy="26" r="3.3" fill="#593d3b" />
+                  <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
+                </g>
+                <g class="gummy-eye-right">
+                  <circle cx="64" cy="26" r="3.3" fill="#593d3b" />
+                  <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
+                </g>
+              </g>
+              <g class="gummy-eyes-blink" style="opacity: 0; pointer-events: none;">
+                <path d="M 42.5,27 Q 46,24 49.5,27" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
+                <path d="M 60.5,27 Q 64,24 67.5,27" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
+              </g>
+              <path class="gummy-mouth" d="M 52.4,27.8 Q 55,30.2 57.6,27.8" fill="none" stroke="#593d3b" stroke-width="2" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
       </div>
 
       <!-- Hero Copy & Actions -->
@@ -1266,7 +1307,7 @@
   </div>
 
   <script src="lenis.min.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=2.1.0"></script>
 </body>
 </html>
 
