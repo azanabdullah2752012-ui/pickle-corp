@@ -2,3 +2,4 @@
 audit_*.png
 test_*.png
 .DS_Store
+.vscode/

@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pickle Corp — Independent Freelance Studio. Paid in Favors.</title>
-  <meta name="description" content="Pickle Corp is an independent freelance partnership by Kaiser and Thanvi. We architect systems and design products. We take zero cash — our rate is paid strictly in favors." />
+  <title>Pickle Corp — Two teenage builders. Paid in favors.</title>
+  <meta name="description" content="Pickle Corp is an independent studio by Azan and Thanvi (14). We build serious software and design products. We take zero cash — our rate is strictly paid in favors." />
   
-  <!-- Fontshare Cabinet Grotesk (Authentic Display Face - S4) -->
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&display=swap" rel="stylesheet">
-  <!-- Google Fonts Inter & JetBrains Mono -->
+  <!-- Fontshare Cabinet Grotesk (Authentic Display Face) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800,900&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Instrument Serif (Editorial Luxury Italic) & Plus Jakarta Sans (Warm Humanist Body & UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Matching Gumdrop Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 80'%3E%3Cpath d='M22,70 C32,71 44,71 54,70 C62,69.5 66,65 65.5,58 C64.5,44 60.5,28 49,15 C43.5,9 32.5,9 27,15 C15.5,28 11.5,44 10.5,58 C10,65 14,69.5 22,70 Z' fill='%23ab947e' stroke='%23593d3b' stroke-width='4' stroke-linejoin='round'/%3E%3Cellipse cx='22' cy='49' rx='4.2' ry='2.2' fill='%23c0a692'/%3E%3Cellipse cx='54' cy='49' rx='4.2' ry='2.2' fill='%23c0a692'/%3E%3Ccircle cx='30' cy='44' r='3.2' fill='%23593d3b'/%3E%3Ccircle cx='29' cy='42.8' r='1.1' fill='%23ffffff'/%3E%3Ccircle cx='46' cy='44' r='3.2' fill='%23593d3b'/%3E%3Ccircle cx='45' cy='42.8' r='1.1' fill='%23ffffff'/%3E%3Cpath d='M35.8,45.8 Q38,48.2 40.2,45.8' fill='none' stroke='%23593d3b' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -21,72 +24,64 @@
   <div class="bg-noise" aria-hidden="true"></div>
   <div id="cursor-spotlight" aria-hidden="true"></div>
 
-  <!-- Dynamic Emerald Momentum Scroll Progress Indicator -->
+  <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════ NAV ══ -->
   <nav id="nav" role="navigation" aria-label="Main Navigation">
-    <a href="#" class="nav-logo" aria-label="Pickle Corp Home">
-      <span class="logo-mark">PICKLE CORP™</span>
-      <span class="logo-unit-tag">[LABS]</span>
-    </a>
-
-    <!-- Teenage Engineering-grade hardware telemetry capsule -->
-    <div class="nav-telemetry" aria-label="Studio Telemetry">
-      <span class="telemetry-item">
-        <span class="pulse-led" aria-hidden="true"></span>
-        <span class="telemetry-label">LEDGER</span>
-        <span class="telemetry-val">OPEN</span>
-      </span>
-      <span class="telemetry-sep">|</span>
-      <span class="telemetry-item hide-mobile">
-        <span class="telemetry-label">EXEC</span>
-        <span class="telemetry-val">1-THREADED</span>
-      </span>
-      <span class="telemetry-sep hide-mobile">|</span>
-      <span class="telemetry-item hide-mobile">
-        <span class="telemetry-label">LOCAL</span>
-        <span class="telemetry-val mono-clock" id="nav-clock">--:--:--</span>
-      </span>
+    <div class="nav-brand-group">
+      <a href="#" class="nav-logo" aria-label="Pickle Corp Home">
+        <span class="logo-mark">Pickle Corp</span>
+      </a>
+      <a href="#status" class="nav-status-badge" aria-label="Current studio availability: 1 build slot open" title="Studio Status: 1 build slot open (click to view)">
+        <span class="status-indicator-dot" aria-hidden="true"></span>
+        <span class="status-badge-text">1 slot open</span>
+      </a>
     </div>
 
     <ul class="nav-links">
-      <li><a href="#hero" class="magnetic-link">Home</a></li>
-      <li><a href="#about" class="magnetic-link">The Currency</a></li>
-      <li><a href="#identity" class="magnetic-link">The Name</a></li>
-      <li><a href="#vision" class="magnetic-link">Protocol</a></li>
-      <li><a href="#status" class="magnetic-link">Availability</a></li>
+      <li><a href="#about" class="magnetic-link">Why Favors</a></li>
+      <li><a href="#vision" class="magnetic-link">How It Works</a></li>
+      <li><a href="#work" class="magnetic-link">What We Build</a></li>
       <li><a href="#team" class="magnetic-link">Founders</a></li>
     </ul>
 
     <div class="nav-actions-cluster">
-      <button id="snd-toggle" class="nav-snd-btn" aria-label="Toggle haptic audio synthesis" title="Toggle tactile acoustic synthesis">
-        <span class="snd-icon" aria-hidden="true">🔊</span>
-        <span class="snd-label">SND: ON</span>
+      <button id="snd-toggle" class="nav-snd-btn active" aria-label="Toggle sound effects" title="Sound: On (Click to mute)">
+        <span class="snd-icon" aria-hidden="true">
+          <svg class="snd-svg snd-svg-on" viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+            <path d="M9 4.2L5.2 7.5H2v5h3.2L9 15.8V4.2z"/>
+            <path class="snd-wave-1" d="M12.5 7.2c.9.9.9 4.7 0 5.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path class="snd-wave-2" d="M15 4.8c2.2 2.2 2.2 8.2 0 10.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <svg class="snd-svg snd-svg-off" viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+            <path d="M9 4.2L5.2 7.5H2v5h3.2L9 15.8V4.2z"/>
+            <line x1="12.5" y1="7.5" x2="17.5" y2="12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="17.5" y1="7.5" x2="12.5" y2="12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
       </button>
-      <a class="nav-cta magnetic-btn" href="#contact" data-sound="ping-high">Propose a Favor &rarr;</a>
+      <a class="nav-cta magnetic-btn" href="#contact" data-sound="ping-high">Propose a trade &rarr;</a>
+      <button class="nav-burger" id="burger" aria-label="Toggle navigation menu">
+        <span></span><span></span>
+      </button>
     </div>
-
-    <button class="nav-burger" id="burger" aria-label="Toggle navigation menu">
-      <span></span><span></span>
-    </button>
   </nav>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#hero"     class="mm-link">Home</a>
-    <a href="#about"    class="mm-link">The Currency</a>
-    <a href="#identity" class="mm-link">The Name</a>
-    <a href="#vision"   class="mm-link">Protocol</a>
-    <a href="#status"   class="mm-link">Availability</a>
+    <a href="#about"    class="mm-link">Why Favors</a>
+    <a href="#vision"   class="mm-link">How It Works</a>
+    <a href="#work"     class="mm-link">What We Build</a>
+    <a href="#status"   class="mm-link">Studio Availability</a>
     <a href="#team"     class="mm-link">Founders</a>
-    <a href="#contact"  class="mm-link">Propose Favor</a>
+    <a href="#contact"  class="mm-link mm-cta">Propose a trade &rarr;</a>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════ HOME / HERO ══ -->
   <section id="hero" class="home-hero">
     <div class="hero-container">
-      <!-- Gummy Mascot - Front & Left, unboxed, lively, interactive -->
+      <!-- Gummy Mascot - Front & Left, unboxed, lively, interactive (Clean, no spinning clutter) -->
       <div class="hero-mascot-col">
         <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Drag me, poke me, or watch me hop!"></div>
       </div>
@@ -94,30 +89,30 @@
       <!-- Hero Copy & Actions -->
       <div class="hero-text-col">
         <div class="hero-kicker-row">
-          <span class="hero-kicker-tag">FREELANCE DUO</span>
+          <span class="hero-kicker-tag">Azan &amp; Thanvi</span>
           <span class="hero-kicker-sep">/</span>
-          <span class="hero-kicker-tag highlight">CURRENCY: FAVORS ONLY</span>
+          <span class="hero-kicker-tag highlight">Paid strictly in favors</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="hero-line">WE DON'T</span>
-          <span class="hero-line">TAKE MONEY.</span>
-          <span class="hero-line accent-gradient">JUST FAVORS.</span>
+          <span class="hero-line">We don't</span>
+          <span class="hero-line">take money.</span>
+          <span class="hero-line"><em class="fancy-serif hero-fancy-serif">Just favors.</em></span>
         </h1>
 
         <p class="hero-manifest">
-          Pickle Corp is the independent freelance studio of Kaiser and Thanvi, two 14-year-old builders. We engineer software and design products that punch way above their weight. Keep your cash: our currency is one solid favor called in when we need it.
+          Pickle Corp is the freelance studio of Azan and Thanvi, two 14-year-old builders. We design and build software with serious craft. Keep your cash: our rate is one honest favor called in whenever we need it.
         </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn-favor-pitch">
-            <span class="pitch-tag">$0.00 INVOICE</span>
-            <span class="pitch-label">Propose a Favor Build</span>
+            <span class="pitch-tag">$0 cash</span>
+            <span class="pitch-label">Propose a trade</span>
             <span class="pitch-arrow" aria-hidden="true">&rarr;</span>
           </a>
           <a href="#about" class="hero-link-ledger">
-            <span class="ledger-link-text">Explore the favor economy</span>
-            <span class="ledger-link-sub">No cash. Ever. &darr;</span>
+            <span class="ledger-link-text">How our trades work</span>
+            <span class="ledger-link-sub">No cash, no retainers &darr;</span>
           </a>
         </div>
       </div>
@@ -126,20 +121,18 @@
     <!-- Studio Brand Ribbon / Ticker -->
     <div class="ticker-wrap" aria-hidden="true">
       <div class="ticker-track">
-        <span>TWO 14-YEAR-OLD BUILDERS</span><span class="ticker-sep">✦</span>
-        <span>ZERO INVOICES</span><span class="ticker-sep">✦</span>
-        <span>PAID IN FAVORS</span><span class="ticker-sep">✦</span>
-        <span>KAISER &amp; THANVI</span><span class="ticker-sep">✦</span>
-        <span>50/50 PARITY</span><span class="ticker-sep">✦</span>
-        <span>CASH DECLINED</span><span class="ticker-sep">✦</span>
-        <span>PURE BARTER</span><span class="ticker-sep">✦</span>
-        <span>TWO 14-YEAR-OLD BUILDERS</span><span class="ticker-sep">✦</span>
-        <span>ZERO INVOICES</span><span class="ticker-sep">✦</span>
-        <span>PAID IN FAVORS</span><span class="ticker-sep">✦</span>
-        <span>KAISER &amp; THANVI</span><span class="ticker-sep">✦</span>
-        <span>50/50 PARITY</span><span class="ticker-sep">✦</span>
-        <span>CASH DECLINED</span><span class="ticker-sep">✦</span>
-        <span>PURE BARTER</span><span class="ticker-sep">✦</span>
+        <span>Azan &amp; Thanvi</span><span class="ticker-sep">✦</span>
+        <span>Two 14-year-old builders</span><span class="ticker-sep">✦</span>
+        <span><em class="fancy-serif">Paid in favors, never cash</em></span><span class="ticker-sep">✦</span>
+        <span>Zero invoices</span><span class="ticker-sep">✦</span>
+        <span>50/50 partnership</span><span class="ticker-sep">✦</span>
+        <span>After school &amp; weekends</span><span class="ticker-sep">✦</span>
+        <span>Azan &amp; Thanvi</span><span class="ticker-sep">✦</span>
+        <span>Two 14-year-old builders</span><span class="ticker-sep">✦</span>
+        <span><em class="fancy-serif">Paid in favors, never cash</em></span><span class="ticker-sep">✦</span>
+        <span>Zero invoices</span><span class="ticker-sep">✦</span>
+        <span>50/50 partnership</span><span class="ticker-sep">✦</span>
+        <span>After school &amp; weekends</span><span class="ticker-sep">✦</span>
       </div>
     </div>
   </section>
@@ -148,57 +141,162 @@
   <section id="about">
     <div class="container">
       <div class="section-head-currency">
-        <span class="currency-watermark" aria-hidden="true">01</span>
         <div class="currency-head-content">
           <div class="currency-badge-strip">
-            <span class="currency-kicker">THE CURRENCY</span>
-            <span class="currency-sub-kicker">ZERO FIAT PROTOCOL</span>
+            <span class="currency-kicker">The Anti-Cash Currency</span>
+            <span class="currency-sub-kicker">Strictly Favors &bull; Zero Invoices</span>
           </div>
-          <h2 class="currency-title">A freelance studio operating outside the monetary system.</h2>
+          <h2 class="currency-title">A freelance studio that doesn't take <em class="fancy-serif">normal money.</em></h2>
         </div>
       </div>
 
       <div class="about-editorial-grid">
         <div class="about-manifesto">
           <p class="manifesto-lead">
-            We are 14 years old, so we don't have corporate bank accounts or billing departments. If you have an exciting, difficult engineering or design project, we'll build it. In exchange, you owe us one solid, real-life favor.
+            We are 14 years old, so we don't have corporate bank accounts, accounting departments, or invoices. If you have an exciting project, we'll build it. In exchange, you owe us <em class="fancy-serif">one solid, real-world favor.</em>
           </p>
           <p class="body-text">
-            Conventional client billing kills genuine ambition. When hourly rates, change orders, and procurement budgets enter the room, the craftsmanship always suffers.
+            Hourly rates and budget meetings are boring. We just want to build great things with cool people.
           </p>
           <p class="body-text">
-            No invoices. No retainers. Just two 14-year-old builders who build crazy fast and hold a marker for later.
+            No invoices. No chasing payments. You get great software, and we bank a favor for later.
           </p>
+
+          <!-- The Barter Ledger Visual Plate (Zero Bureaucracy, Pure Craft) -->
+          <div class="barter-ledger-visual">
+            <div class="ledger-visual-top">
+              <div class="ledger-title-cluster">
+                <span class="ledger-pill-tag">The Barter Equation</span>
+                <span class="ledger-math-label">Direct Trade Parity</span>
+              </div>
+              <span class="ledger-zero-stamp">Strictly $0.00 Invoices</span>
+            </div>
+            
+            <div class="ledger-eq-flow">
+              <!-- Block 1: Corporate Cash (Struck Out) -->
+              <div class="eq-node eq-cash-out">
+                <div class="eq-icon-frame">
+                  <svg viewBox="0 0 44 44" width="40" height="40" class="eq-svg" aria-hidden="true">
+                    <rect x="6" y="11" width="32" height="22" rx="4" fill="#f4f2ec" stroke="#a68a64" stroke-width="1.4"/>
+                    <circle cx="22" cy="22" r="6" fill="none" stroke="#936639" stroke-width="1.2" stroke-dasharray="2 1.5"/>
+                    <text x="22" y="26" font-family="'Cabinet Grotesk', sans-serif" font-weight="900" font-size="12" fill="#7f4f24" text-anchor="middle">$</text>
+                    <line x1="5" y1="35" x2="39" y2="9" stroke="#7f4f24" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="eq-node-text">
+                  <span class="eq-node-title">Corporate Retainer</span>
+                  <span class="eq-node-strike">$10,000 / Invoices</span>
+                </div>
+              </div>
+
+              <!-- Unequal Divider -->
+              <div class="eq-divider" aria-hidden="true">
+                <span class="eq-arrow-glyph">&ne;</span>
+              </div>
+
+              <!-- Block 2: The 4 Honest Favors -->
+              <div class="eq-node eq-favors-vault">
+                <div class="eq-favors-icons">
+                  <span class="favor-mini-token" title="Fresh Hot Pizza / Food Trade">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2L2 20C7 22 17 22 22 20L12 2Z" fill="#be9368" stroke="#582f0e" stroke-width="1.4"/><circle cx="10" cy="14" r="1.5" fill="#582f0e"/><circle cx="14" cy="11" r="1.5" fill="#582f0e"/><circle cx="12" cy="18" r="1.3" fill="#582f0e"/></svg>
+                  </span>
+                  <span class="favor-mini-token" title="Rare Dev Hardware / Tools">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2.5" fill="#c2c5aa" stroke="#333d29" stroke-width="1.4"/><circle cx="9" cy="12" r="2" fill="#414833"/><rect x="14" y="9" width="3" height="6" rx="1" fill="#656d4a"/><line x1="8" y1="2" x2="8" y2="5" stroke="#333d29" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="5" stroke="#333d29" stroke-width="1.5"/></svg>
+                  </span>
+                  <span class="favor-mini-token" title="Steam / Arcade / Game Code">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4" fill="#a4ac86" stroke="#414833" stroke-width="1.4"/><line x1="8" y1="10" x2="8" y2="14" stroke="#333d29" stroke-width="1.6" stroke-linecap="round"/><line x1="6" y1="12" x2="10" y2="12" stroke="#333d29" stroke-width="1.6" stroke-linecap="round"/><circle cx="15.5" cy="11" r="1.3" fill="#333d29"/><circle cx="17.5" cy="13" r="1.3" fill="#333d29"/></svg>
+                  </span>
+                  <span class="favor-mini-token" title="Warm Cookie &amp; Mentorship Intro">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#dfbe99" stroke="#582f0e" stroke-width="1.4"/><circle cx="9" cy="9.5" r="1.5" fill="#582f0e"/><circle cx="15" cy="10" r="1.4" fill="#582f0e"/><circle cx="11.5" cy="15" r="1.6" fill="#582f0e"/><circle cx="15.5" cy="15.5" r="1.2" fill="#582f0e"/></svg>
+                  </span>
+                </div>
+                <div class="eq-node-text">
+                  <span class="eq-node-title">1 Real-World Favor</span>
+                  <span class="eq-node-sub">Agreed upfront together</span>
+                </div>
+              </div>
+
+              <!-- Equal Divider -->
+              <div class="eq-divider" aria-hidden="true">
+                <span class="eq-arrow-glyph">&equals;</span>
+              </div>
+
+              <!-- Block 3: Production Software Output -->
+              <div class="eq-node eq-software-ship">
+                <div class="eq-icon-frame craft-frame">
+                  <svg viewBox="0 0 44 44" width="40" height="40" class="eq-svg" aria-hidden="true">
+                    <rect x="5" y="8" width="34" height="28" rx="5" fill="#fcfbfa" stroke="#582f0e" stroke-width="1.5"/>
+                    <line x1="5" y1="16" x2="39" y2="16" stroke="#582f0e" stroke-width="1.2"/>
+                    <circle cx="10" cy="12" r="1.5" fill="#7f4f24"/>
+                    <circle cx="15" cy="12" r="1.5" fill="#a4ac86"/>
+                    <circle cx="20" cy="12" r="1.5" fill="#656d4a"/>
+                    <path d="M 14,24 L 18,27 L 14,30" fill="none" stroke="#582f0e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="21" y1="30" x2="27" y2="30" stroke="#7f4f24" stroke-width="1.8" stroke-linecap="round"/>
+                    <circle cx="32" cy="26" r="3" fill="#a4ac86"/>
+                    <path d="M 32,23 L 32.7,25 L 34.8,25.3 L 33.2,26.7 L 33.6,28.8 L 32,27.8 L 30.4,28.8 L 30.8,26.7 L 29.2,25.3 L 31.3,25 Z" fill="#333d29"/>
+                  </svg>
+                </div>
+                <div class="eq-node-text">
+                  <span class="eq-node-title">Clean Craft Code</span>
+                  <span class="eq-node-sub">Shipped to production</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Barter Law: How Our Economy Actually Operates -->
-        <div class="favor-matrix specular-card">
+        <!-- The Rules Card -->
+        <div class="favor-matrix">
           <div class="matrix-top">
-            <span class="matrix-header-title">THE BARTER PROTOCOL</span>
-            <span class="matrix-tag">ZERO CASH MANDATE</span>
+            <span class="matrix-header-title">The Rules</span>
+            <span class="matrix-tag">$0.00 cash</span>
           </div>
 
           <div class="matrix-row">
-            <span class="matrix-level">RULE 01</span>
+            <div class="matrix-level-col">
+              <span class="matrix-level">Rule 01</span>
+              <svg class="rule-seal-svg" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="16" fill="rgba(166, 138, 100, 0.12)" stroke="#a68a64" stroke-width="1.2"/>
+                <circle cx="18" cy="18" r="13" fill="none" stroke="#582f0e" stroke-dasharray="2 2" stroke-width="0.8"/>
+                <text x="18" y="21.5" font-family="'Cabinet Grotesk', sans-serif" font-weight="900" font-size="11" fill="#582f0e" text-anchor="middle">$0</text>
+                <line x1="10" y1="25" x2="26" y2="11" stroke="#7f4f24" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
             <div class="matrix-content">
-              <h4 class="matrix-item-title">No Cash. Ever. ($0.00 Required)</h4>
-              <p class="matrix-item-desc">We genuinely prefer favors over money. Not because we have to — because it's more interesting. We build for ambitious friends, students, and founders who have a real idea and a real trade to offer.</p>
+              <h4 class="matrix-item-title">No cash. Ever.</h4>
+              <p class="matrix-item-desc">We genuinely prefer favors over money. It's more fun, more memorable, and keeps us working with people who care about what they're making.</p>
             </div>
           </div>
 
           <div class="matrix-row">
-            <span class="matrix-level">RULE 02</span>
+            <div class="matrix-level-col">
+              <span class="matrix-level">Rule 02</span>
+              <svg class="rule-seal-svg" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="16" fill="rgba(164, 172, 134, 0.15)" stroke="#a4ac86" stroke-width="1.2"/>
+                <path d="M 10,19 Q 14,14 18,17 Q 22,20 26,16" stroke="#582f0e" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M 12,22 C 15,24 21,24 24,20" stroke="#7f4f24" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <circle cx="18" cy="17.5" r="2.2" fill="#656d4a"/>
+              </svg>
+            </div>
             <div class="matrix-content">
-              <h4 class="matrix-item-title">We Personally Decide The Favor</h4>
-              <p class="matrix-item-desc">No pre-set menus or fixed shopping lists. You don't pick favors off a shelf. You pitch what you need built, and Kaiser and Thanvi personally determine the favor based on the craft and difficulty.</p>
+              <h4 class="matrix-item-title">We choose the favor together</h4>
+              <p class="matrix-item-desc">You tell us what you need built, and together we agree on an honest trade — whether that's pizza, a Steam game, hardware, or an introduction.</p>
             </div>
           </div>
 
           <div class="matrix-row">
-            <span class="matrix-level">RULE 03</span>
+            <div class="matrix-level-col">
+              <span class="matrix-level">Rule 03</span>
+              <svg class="rule-seal-svg" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="16" fill="rgba(101, 109, 74, 0.14)" stroke="#656d4a" stroke-width="1.2"/>
+                <path d="M 18,9 L 12,27 M 18,9 L 24,27" stroke="#582f0e" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M 14,21 Q 18,19 22,21" stroke="#936639" stroke-width="1.4" fill="none"/>
+                <circle cx="18" cy="9" r="2" fill="#582f0e"/>
+              </svg>
+            </div>
             <div class="matrix-content">
-              <h4 class="matrix-item-title">Strict Craft Parity</h4>
-              <p class="matrix-item-desc">Zero dollars never means toy code. We deliver production-grade software that punches way above our age, and we bank your favor until we choose to call it in.</p>
+              <h4 class="matrix-item-title">Serious craft, no shortcuts</h4>
+              <p class="matrix-item-desc">Zero dollars never means amateur work. We build fast, clean, production-ready software, and keep your favor until we need it.</p>
             </div>
           </div>
         </div>
@@ -211,31 +309,227 @@
     <div class="container">
       <div class="section-head-name">
         <div class="name-meta-strip">
-          <span class="name-badge">ETYMOLOGY &amp; ORIGIN</span>
-          <span class="name-num-pill">ENTRY // 02</span>
+          <span class="name-badge">The Philosophy</span>
+          <span class="name-num-pill">Why We Chose &ldquo;Pickle&rdquo;</span>
         </div>
-        <h2 class="name-title">Why "Pickle"?</h2>
+        <h2 class="name-title">Why <em class="fancy-serif">"Pickle"?</em></h2>
       </div>
 
       <p class="identity-lead">
-        Because when you're in a pickle, cash won't get you out. A favor will.
+        Because when you're in a pickle, cash won't get you out. <em class="fancy-serif">A real favor will.</em>
       </p>
 
-      <div class="kinetic-wrapper">
-        <div class="kinetic-letters" id="kinetic-stage">
-          <span class="k-char" data-letter="P">P</span>
-          <span class="k-char" data-letter="I">I</span>
-          <span class="k-char" data-letter="C">C</span>
-          <span class="k-char" data-letter="K">K</span>
-          <span class="k-char" data-letter="L">L</span>
-          <span class="k-char" data-letter="E">E</span>
+      <!-- Origin Story Heraldic Heritage Band -->
+      <div class="origin-heraldic-plate">
+        <div class="heraldic-left">
+          <div class="heraldic-seal-crest">
+            <svg viewBox="0 0 54 54" width="48" height="48" aria-hidden="true">
+              <circle cx="27" cy="27" r="25" fill="#fcfbfa" stroke="#582f0e" stroke-width="1.8"/>
+              <circle cx="27" cy="27" r="21" fill="none" stroke="#a68a64" stroke-width="1" stroke-dasharray="3 2"/>
+              <path d="M 21,16 L 21,38 M 21,16 L 28,16 C 33,16 33,25 28,25 L 21,25" fill="none" stroke="#582f0e" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M 37,23 C 33,20 28,22 28,27 C 28,32 33,34 37,31" fill="none" stroke="#7f4f24" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="heraldic-titles">
+            <h3 class="heraldic-name">Pickle Corp &bull; The Anti-Agency Creed</h3>
+            <p class="heraldic-sub">Founded by Azan &amp; Thanvi &bull; Two 14-year-olds shipping after school &bull; Est. 2024</p>
+          </div>
+        </div>
+        <div class="heraldic-tags">
+          <span class="htag"><span class="htag-dot"></span> 100% Bespoke Code</span>
+          <span class="htag"><span class="htag-dot"></span> $0 Retainers</span>
+          <span class="htag"><span class="htag-dot"></span> 1 Equal Favor</span>
         </div>
       </div>
 
-      <div class="identity-footer-note">
-        <p class="body-text">
-          The name keeps us honest. We never want to become a soulless billing agency. When you find yourself in a tight spot, we build the escape hatch. The ledger remembers.
-        </p>
+      <!-- Interactive Kinetic Typography & Manifesto Console -->
+      <div class="kinetic-wrapper">
+        <div class="kinetic-letters" id="kinetic-stage" role="tablist" aria-label="PICKLE Manifesto Letters">
+          <button class="k-char active" data-letter="P" data-index="0" role="tab" aria-selected="true" aria-label="Letter P: Pragmatic Craft">P</button>
+          <button class="k-char" data-letter="I" data-index="1" role="tab" aria-selected="false" aria-label="Letter I: Independent Studio">I</button>
+          <button class="k-char" data-letter="C" data-index="2" role="tab" aria-selected="false" aria-label="Letter C: Custom Craft">C</button>
+          <button class="k-char" data-letter="K" data-index="3" role="tab" aria-selected="false" aria-label="Letter K: Kept Promises">K</button>
+          <button class="k-char" data-letter="L" data-index="4" role="tab" aria-selected="false" aria-label="Letter L: Lean Architecture">L</button>
+          <button class="k-char" data-letter="E" data-index="5" role="tab" aria-selected="false" aria-label="Letter E: Equal Barter">E</button>
+        </div>
+
+        <!-- Interactive Live Console Dock -->
+        <div class="pickle-dock" id="pickle-dock" aria-live="polite">
+          <div class="dock-top-row">
+            <span class="dock-step-badge" id="dock-badge">P &bull; 01 OF 06</span>
+            <span class="dock-subtext">Click or hover any letter &bull; Synced tone &amp; principle</span>
+          </div>
+          <div class="dock-content-row">
+            <h3 class="dock-title" id="dock-title">Pragmatic Craft</h3>
+            <p class="dock-desc" id="dock-desc">Zero corporate fluff or 40-page discovery decks. We write fast, resilient code that solves the actual problem right now.</p>
+          </div>
+          <div class="dock-nav-pills" id="dock-pills">
+            <button class="dock-pill active" data-index="0">P &bull; Pragmatic</button>
+            <button class="dock-pill" data-index="1">I &bull; Independent</button>
+            <button class="dock-pill" data-index="2">C &bull; Craft</button>
+            <button class="dock-pill" data-index="3">K &bull; Kept Word</button>
+            <button class="dock-pill" data-index="4">L &bull; Lean</button>
+            <button class="dock-pill" data-index="5">E &bull; Equal Barter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- The 3 Tenets of the Name -->
+      <div class="pickle-tenets-grid">
+        <div class="pickle-tenet-card">
+          <div class="tenet-illustration-frame">
+            <svg viewBox="0 0 280 120" width="100%" height="110" class="tenet-svg-art" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <line x1="20" y1="60" x2="260" y2="60" stroke="rgba(101, 109, 74, 0.12)" stroke-dasharray="3 3"/>
+              <!-- Tangled Corporate Red Tape Maze -->
+              <path d="M 30,75 Q 45,30 65,65 Q 85,100 105,45 Q 120,20 135,60" fill="none" stroke="#a68a64" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+              <path d="M 40,85 Q 70,80 85,45 Q 100,15 125,75" fill="none" stroke="#7f4f24" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+              <!-- Emergency Beacon cutting through the jam -->
+              <g transform="translate(145, 20)">
+                <polygon points="40,25 125,-10 125,75" fill="rgba(164, 172, 134, 0.22)"/>
+                <rect x="25" y="15" width="30" height="48" rx="6" fill="#fcfbfa" stroke="#582f0e" stroke-width="2"/>
+                <path d="M 28,15 Q 40,5 52,15" stroke="#582f0e" stroke-width="2" fill="none"/>
+                <rect x="30" y="22" width="20" height="34" rx="3" fill="#dfbe99" stroke="#936639" stroke-width="1"/>
+                <circle cx="40" cy="38" r="6" fill="#7f4f24"/>
+                <circle cx="40" cy="38" r="3" fill="#ffffff"/>
+                <line x1="62" y1="30" x2="80" y2="22" stroke="#582f0e" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="65" y1="38" x2="92" y2="38" stroke="#582f0e" stroke-width="2" stroke-linecap="round"/>
+                <line x1="62" y1="46" x2="82" y2="54" stroke="#582f0e" stroke-width="1.8" stroke-linecap="round"/>
+                <polygon points="98,28 101,34 107,35 102,39 104,45 98,42 92,45 94,39 89,35 95,34" fill="#a4ac86"/>
+              </g>
+            </svg>
+          </div>
+          <div class="tenet-top">
+            <span class="tenet-num">01</span>
+            <span class="tenet-tag">The Emergency</span>
+          </div>
+          <h3 class="tenet-title">When money can't fix your jam.</h3>
+          <p class="tenet-desc">Most studios want a 6-week discovery phase and a $10,000 retainer. When you're in an actual bind with a broken build or a hard deadline, you don't need meetings. You need someone hungry to build.</p>
+        </div>
+
+        <div class="pickle-tenet-card">
+          <div class="tenet-illustration-frame">
+            <svg viewBox="0 0 280 120" width="100%" height="110" class="tenet-svg-art" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- Preservation Mason Jar with preserved code -->
+              <g transform="translate(100, 10)">
+                <rect x="15" y="24" width="50" height="70" rx="14" fill="rgba(164, 172, 134, 0.22)"/>
+                <path d="M 22,22 L 58,22 C 68,22 72,28 72,38 L 72,82 C 72,94 64,98 52,98 L 28,98 C 16,98 8,94 8,82 L 8,38 C 8,28 12,22 22,22 Z"
+                      fill="rgba(252, 251, 250, 0.75)"
+                      stroke="#582f0e"
+                      stroke-width="2"
+                      stroke-linejoin="round"/>
+                <rect x="18" y="12" width="44" height="10" rx="3" fill="#a68a64" stroke="#582f0e" stroke-width="1.8"/>
+                <path d="M 12,18 Q 8,26 14,32 L 66,32 Q 72,26 68,18" fill="none" stroke="#7f4f24" stroke-width="1.5"/>
+                <line x1="40" y1="4" x2="40" y2="12" stroke="#582f0e" stroke-width="2"/>
+                
+                <text x="24" y="52" font-family="ui-monospace, monospace" font-weight="900" font-size="14" fill="#333d29">&lt;/&gt;</text>
+                <rect x="23" y="60" width="34" height="6" rx="2" fill="#656d4a" opacity="0.85"/>
+                <rect x="23" y="70" width="24" height="6" rx="2" fill="#a4ac86" opacity="0.85"/>
+                <circle cx="53" cy="73" r="3" fill="#582f0e"/>
+
+                <path d="M 60,86 Q 50,75 42,80 Q 48,90 60,86 Z" fill="#656d4a" opacity="0.9"/>
+                <path d="M 20,84 Q 28,74 34,80 Q 28,88 20,84 Z" fill="#a4ac86" opacity="0.9"/>
+              </g>
+              <g transform="translate(178, 50)">
+                <circle cx="16" cy="16" r="14" fill="#7f4f24" stroke="#582f0e" stroke-width="1.6"/>
+                <circle cx="16" cy="16" r="11" fill="none" stroke="#dfbe99" stroke-width="0.9" stroke-dasharray="2 1.5"/>
+                <text x="16" y="19" font-family="'Cabinet Grotesk', sans-serif" font-weight="900" font-size="8" fill="#ffffff" text-anchor="middle">PURE</text>
+              </g>
+            </svg>
+          </div>
+          <div class="tenet-top">
+            <span class="tenet-num">02</span>
+            <span class="tenet-tag">The Preservation</span>
+          </div>
+          <h3 class="tenet-title">Software preserved to never spoil.</h3>
+          <p class="tenet-desc">Just like pickling preserves things forever, software shouldn't rot in six months. We build clean, modular code with zero fragile dependency soup so your project stays fast and dependable.</p>
+        </div>
+
+        <div class="pickle-tenet-card">
+          <div class="tenet-illustration-frame">
+            <svg viewBox="0 0 280 120" width="100%" height="110" class="tenet-svg-art" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- Severed Tie on left -->
+              <g transform="translate(26, 18)">
+                <path d="M 20,10 L 35,28 L 50,10" fill="none" stroke="#7f4f24" stroke-width="1.8"/>
+                <polygon points="30,25 40,25 43,42 27,42" fill="#582f0e" stroke="#582f0e" stroke-width="1.2"/>
+                <line x1="18" y1="46" x2="52" y2="46" stroke="#936639" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <polygon points="28,52 42,52 45,78 35,88 25,78" fill="#7f4f24" opacity="0.6"/>
+                <circle cx="56" cy="46" r="4" fill="none" stroke="#582f0e" stroke-width="1.4"/>
+                <circle cx="56" cy="54" r="4" fill="none" stroke="#582f0e" stroke-width="1.4"/>
+                <line x1="53" y1="48" x2="38" y2="46" stroke="#582f0e" stroke-width="1.4"/>
+                <line x1="53" y1="52" x2="38" y2="46" stroke="#582f0e" stroke-width="1.4"/>
+              </g>
+
+              <!-- Center arrow -->
+              <path d="M 112,60 L 132,60 M 127,55 L 132,60 L 127,65" stroke="#a4ac86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Right side: Workstation with Mascot & Cookie -->
+              <g transform="translate(148, 14)">
+                <rect x="15" y="22" width="46" height="32" rx="4" fill="#fcfbfa" stroke="#582f0e" stroke-width="1.6"/>
+                <line x1="15" y1="46" x2="61" y2="46" stroke="#582f0e" stroke-width="1"/>
+                <rect x="33" y="54" width="10" height="12" fill="#a68a64"/>
+                <line x1="25" y1="66" x2="51" y2="66" stroke="#582f0e" stroke-width="2" stroke-linecap="round"/>
+                <line x1="22" y1="30" x2="42" y2="30" stroke="#656d4a" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="22" y1="36" x2="52" y2="36" stroke="#a4ac86" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="22" y1="41" x2="36" y2="41" stroke="#936639" stroke-width="1.5" stroke-linecap="round"/>
+
+                <!-- Mini Gumdrop Mascot perched on monitor (Exact user palette) -->
+                <g transform="translate(42, 6) scale(0.35)">
+                  <path d="M 18,52 C 32,52.6 68,52.6 82,52 C 88.5,51.5 91.5,46.5 90,41.5 C 87.5,30 72,16.5 50,16.5 C 28,16.5 12.5,30 10,41.5 C 8.5,46.5 11.5,51.5 18,52 Z" fill="#ab947e" stroke="#593d3b" stroke-width="4.5"/>
+                  <circle cx="40" cy="36.5" r="4.5" fill="#593d3b"/>
+                  <circle cx="38.5" cy="35" r="1.8" fill="#ffffff"/>
+                  <circle cx="60" cy="36.5" r="4.5" fill="#593d3b"/>
+                  <circle cx="58.5" cy="35" r="1.8" fill="#ffffff"/>
+                  <ellipse cx="31" cy="41" rx="5" ry="2.5" fill="#c0a692"/>
+                  <ellipse cx="69" cy="41" rx="5" ry="2.5" fill="#c0a692"/>
+                  <path d="M 47,38.5 Q 50,42 53,38.5" fill="none" stroke="#593d3b" stroke-width="2.5" stroke-linecap="round"/>
+                </g>
+
+                <!-- Fresh Chocolate Chip Cookie beside monitor -->
+                <g transform="translate(68, 48)">
+                  <circle cx="10" cy="10" r="9" fill="#dfbe99" stroke="#582f0e" stroke-width="1.4"/>
+                  <circle cx="7" cy="8" r="1.5" fill="#582f0e"/>
+                  <circle cx="13" cy="9" r="1.4" fill="#582f0e"/>
+                  <circle cx="10" cy="14" r="1.6" fill="#582f0e"/>
+                  <circle cx="14" cy="13.5" r="1.2" fill="#582f0e"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="tenet-top">
+            <span class="tenet-num">03</span>
+            <span class="tenet-tag">The Unpretentious Name</span>
+          </div>
+          <h3 class="tenet-title">Zero stiff corporate suits.</h3>
+          <p class="tenet-desc">Adult agencies call themselves "Apex Labs" or "Veloce Systems". We're two 14-year-olds shipping after school. "Pickle Corp" keeps us honest, humble, and focused strictly on the craft.</p>
+        </div>
+      </div>
+
+      <!-- The Pickle Contrast: Agency vs Pickle Corp -->
+      <div class="pickle-contrast-box">
+        <div class="contrast-head">
+          <span class="contrast-badge">The Reality Check</span>
+          <h3 class="contrast-title">Corporate Agency vs. <em class="fancy-serif">Pickle Corp</em></h3>
+        </div>
+        <div class="contrast-table-grid">
+          <div class="contrast-col agency-col">
+            <div class="contrast-col-title">Traditional Agency</div>
+            <ul class="contrast-points">
+              <li><span class="cross-mark">&times;</span> $150–$300/hr billing + surprise retainers</li>
+              <li><span class="cross-mark">&times;</span> 4 layers of account managers and zoom calls</li>
+              <li><span class="cross-mark">&times;</span> Cookie-cutter templates &amp; AI-generated slop</li>
+              <li><span class="cross-mark">&times;</span> Disappears as soon as the invoice clears</li>
+            </ul>
+          </div>
+          <div class="contrast-col pickle-col">
+            <div class="contrast-col-title highlight-title">Pickle Corp</div>
+            <ul class="contrast-points">
+              <li><span class="check-mark">&check;</span> Strictly $0 cash &bull; 1 honest real-world favor</li>
+              <li><span class="check-mark">&check;</span> Direct chat with Azan &amp; Thanvi</li>
+              <li><span class="check-mark">&check;</span> Bespoke code, custom feel &amp; genuine care</li>
+              <li><span class="check-mark">&check;</span> Banked favor &bull; lifelong mutual respect</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -245,42 +539,351 @@
     <div class="container">
       <div class="section-head-protocol">
         <div class="protocol-sys-bar">
-          <span class="protocol-sys-tag">SYS // PROTOCOL v2.4</span>
-          <span class="protocol-cycle-tag">THREE-PHASE LIFECYCLE</span>
+          <span class="protocol-sys-tag">Three-Step Exchange</span>
+          <span class="protocol-cycle-tag">Pitch &rarr; Trade &rarr; Ship</span>
         </div>
-        <h2 class="protocol-title">How the Barter Transaction Works.</h2>
+        <h2 class="protocol-title">How trading favors <em class="fancy-serif">actually works.</em></h2>
       </div>
 
-      <!-- Favor Protocol Steps -->
+      <!-- Favor Steps -->
       <div class="protocol-grid">
-        <div class="protocol-column specular-card">
+        <div class="protocol-column">
           <div class="protocol-step-header">
-            <span class="protocol-step-index">PHASE 01</span>
-
+            <span class="protocol-step-index">Step 01</span>
           </div>
-          <h3 class="protocol-step-name">The Friction</h3>
+          <h3 class="protocol-step-name">The pitch</h3>
           <p class="protocol-step-principle">Pitch the problem, not a budget.</p>
-          <p class="protocol-step-body">Tell us what you're building, why it matters, and why standard agencies would fail at it. If the challenge excites us, we're in.</p>
+          <p class="protocol-step-body">Tell us what you're making, why it matters, and where you're stuck. If the problem sounds fun and challenging, we're in.</p>
         </div>
 
-        <div class="protocol-column active-stage specular-card">
+        <div class="protocol-column active-stage">
           <div class="protocol-step-header">
-            <span class="protocol-step-index">PHASE 02</span>
-
+            <span class="protocol-step-index">Step 02</span>
           </div>
-          <h3 class="protocol-step-name">The Marker</h3>
+          <h3 class="protocol-step-name">The trade</h3>
           <p class="protocol-step-principle">Agree on the favor upfront.</p>
-          <p class="protocol-step-body">No wire transfers. What can you offer that money cannot buy? We settle on the exact favor before a single line of code is written.</p>
+          <p class="protocol-step-body">No hourly rates. What can you offer that money can't buy? We agree on the trade before writing a single line of code.</p>
         </div>
 
-        <div class="protocol-column specular-card">
+        <div class="protocol-column">
           <div class="protocol-step-header">
-            <span class="protocol-step-index">PHASE 03</span>
-
+            <span class="protocol-step-index">Step 03</span>
           </div>
-          <h3 class="protocol-step-name">The Handover</h3>
-          <p class="protocol-step-principle">Ship &amp; record the ledger.</p>
-          <p class="protocol-step-body">We deliver production-ready software with obsessive craft. You launch your product. We pocket the favor for a rainy day.</p>
+          <h3 class="protocol-step-name">The ship</h3>
+          <p class="protocol-step-principle">Ship fast &amp; bank the favor.</p>
+          <p class="protocol-step-body">We ship clean, tested code. You launch your project. We pocket the favor for a rainy day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════ WHAT WE BUILD ══ -->
+  <section id="work">
+    <div class="container">
+      <div class="section-head-work">
+        <div class="work-meta-strip">
+          <span class="work-badge">Production Index</span>
+          <span class="work-num-pill">Bespoke Software &bull; 8 Active Builds</span>
+        </div>
+        <h2 class="work-title">The kind of stuff <em class="fancy-serif">we actually ship.</em></h2>
+        <p class="work-lead">We don't do boilerplate templates. We build custom full-stack apps, responsive web products, and local systems after school.</p>
+      </div>
+
+      <div class="work-grid">
+        <!-- Card 01 -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <span class="work-card-tag">Full-Stack &bull; React &bull; Supabase</span>
+            <span class="work-card-num">01</span>
+          </div>
+          <h3 class="work-card-title">Web Apps &amp; Study Tools</h3>
+          <p class="work-card-desc">Interactive web applications with real-time state, user auth, and databases. Fast, reliable, and tailored to the exact problem.</p>
+          
+          <div class="work-card-projects">
+            <span class="projects-meta-tag">Shipped live apps:</span>
+            <div class="projects-links-col">
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">Pickle Studio</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Visual no-code web builder &amp; 1-click publisher</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="0" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io/builder/" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">JEE Mentor OS</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Study OS with Raycast &amp; Linear inspired UX</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="1" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io/jee-app-for-friends/" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">JEE Elevate Hub</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Lectures, authentic PYQs &amp; formula quizzing platform</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="2" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io/jee-elevate-hub/" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card-stack">
+            <span class="stack-pill">TypeScript</span>
+            <span class="stack-pill">React</span>
+            <span class="stack-pill">Vite</span>
+            <span class="stack-pill">Supabase</span>
+          </div>
+          <div class="work-card-trade">
+            <span class="trade-label">Typical favor:</span>
+            <span class="trade-val">A Steam game or mechanical keyboard parts</span>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <span class="work-card-tag">Web Design &bull; Motion &bull; Feel</span>
+            <span class="work-card-num">02</span>
+          </div>
+          <h3 class="work-card-title">Websites &amp; Landing Pages</h3>
+          <p class="work-card-desc">Clean, responsive web products crafted to look distinctive. Fluid animations, bespoke typography, and zero corporate template bloat.</p>
+          
+          <div class="work-card-projects">
+            <span class="projects-meta-tag">Shipped live apps:</span>
+            <div class="projects-links-col">
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">SafeSpace</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Confidential anti-bullying platform for schools</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="3" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io/anti-bullying/" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">Foundu</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Intuition-first math learning web platform</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="4" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io/FoundU/" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card-stack">
+            <span class="stack-pill">HTML5</span>
+            <span class="stack-pill">Vanilla CSS</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Lenis Motion</span>
+          </div>
+          <div class="work-card-trade">
+            <span class="trade-label">Typical favor:</span>
+            <span class="trade-val">Two hot pizzas or a good dinner</span>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <span class="work-card-tag">Systems &bull; Python &bull; APIs</span>
+            <span class="work-card-num">03</span>
+          </div>
+          <h3 class="work-card-title">Python Tools &amp; Local Automations</h3>
+          <p class="work-card-desc">Background scripts, system utilities, scrapers, and local daemons. Engineered for pure speed and utility without bloated dependencies.</p>
+          
+          <div class="work-card-projects">
+            <span class="projects-meta-tag">Shipped repo:</span>
+            <div class="projects-links-col">
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">J.A.R.V.I.S. (AZAN OS)</span>
+                    <span class="project-repo-badge">GitHub Repo</span>
+                  </div>
+                  <p class="project-showcase-desc">Autonomous macOS intelligence &amp; FastAPI daemon</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="5" title="View interactive architecture blueprint in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Blueprint</span>
+                  </button>
+                  <a href="https://github.com/azanabdullah2752012-ui/AZAN" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open repository in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">FastAPI</span>
+            <span class="stack-pill">Shell</span>
+            <span class="stack-pill">macOS Daemons</span>
+          </div>
+          <div class="work-card-trade">
+            <span class="trade-label">Typical favor:</span>
+            <span class="trade-val">Hardware gadgets, dev tools, or a tricky puzzle</span>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <span class="work-card-tag">UI Feel &bull; Interactive Art</span>
+            <span class="work-card-num">04</span>
+          </div>
+          <h3 class="work-card-title">Interactive Toys &amp; Visualizers</h3>
+          <p class="work-card-desc">Playful simulation sandboxes, concept visualizers, and expressive mascot companions like Gummy. Interfaces that feel tactile and fun to poke.</p>
+          
+          <div class="work-card-projects">
+            <span class="projects-meta-tag">Shipped apps &amp; live toys:</span>
+            <div class="projects-links-col">
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">CivilOS &amp; AmbientSpaces</span>
+                    <span class="project-repo-badge">GitHub Repo</span>
+                  </div>
+                  <p class="project-showcase-desc">Artificial persistent civilization sandbox world</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="6" title="View interactive architecture blueprint in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Blueprint</span>
+                  </button>
+                  <a href="https://github.com/azanabdullah2752012-ui/azanaiprojext" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open repository in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-showcase-item">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">Azan's Studio Hub</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>Live App</span>
+                  </div>
+                  <p class="project-showcase-desc">Personal builder site &amp; project portfolio</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <button type="button" class="btn-preview-launch" data-project-idx="7" title="Open interactive live preview in modal">
+                    <svg class="preview-eye-svg" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/>
+                      <circle cx="8" cy="8" r="2.2"/>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a href="https://azanabdullah2752012-ui.github.io" target="_blank" rel="noopener noreferrer" class="project-showcase-external" title="Open directly in new tab">
+                    <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-showcase-item project-showcase-gummy-row">
+                <div class="project-showcase-info">
+                  <div class="project-title-cluster">
+                    <span class="project-showcase-name">Gummy Mascot</span>
+                    <span class="project-live-badge"><span class="live-dot" aria-hidden="true"></span>On Page</span>
+                  </div>
+                  <p class="project-showcase-desc">Tactile squash-and-stretch mascot living on this site</p>
+                </div>
+                <div class="project-showcase-actions">
+                  <a href="#hero" class="btn-preview-launch btn-gummy-jump" id="card-gummy-trigger" title="Jump to Gummy and trigger backflip!">
+                    <span>Poke Gummy</span>
+                    <span aria-hidden="true">&uarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card-stack">
+            <span class="stack-pill">Canvas</span>
+            <span class="stack-pill">SVG Art</span>
+            <span class="stack-pill">Audio Synth</span>
+            <span class="stack-pill">UI Systems</span>
+          </div>
+          <div class="work-card-trade">
+            <span class="trade-label">Typical favor:</span>
+            <span class="trade-val">Fresh brownies, art supplies, or creative freedom</span>
+          </div>
         </div>
       </div>
     </div>
@@ -292,29 +895,27 @@
       <div class="section-head-capacity">
         <div class="capacity-live-badge">
           <span class="capacity-pulse-dot" aria-hidden="true"></span>
-          <span class="capacity-live-label">LIVE STATUS • 1 CONCURRENT BUILD SLOT OPEN</span>
+          <span class="capacity-live-label">Studio Availability &bull; 1 Active Build Slot</span>
         </div>
-        <h2 class="capacity-title">Single-Threaded Execution. One Client at a Time.</h2>
+        <h2 class="capacity-title">One project at a time. <em class="fancy-serif">Total focus.</em></h2>
       </div>
 
-      <div class="status-panel specular-card">
+      <div class="status-panel">
         <div class="status-panel-top">
           <div class="status-capacity-meta">
-            <span class="capacity-pill">CAPACITY: 1 CONCURRENT BUILD</span>
-            <span class="capacity-desc">After school &amp; weekends • Zero delegation • Kaiser &amp; Thanvi only</span>
+            <span class="capacity-pill">1 active slot</span>
+            <span class="capacity-desc">After school &amp; weekends &bull; Azan &amp; Thanvi only &bull; No middlemen</span>
           </div>
-
-
         </div>
 
-        <h2 class="status-display-title">Ledger currently open for the right challenge.</h2>
+        <h3 class="status-display-title">Taking on one ambitious project right now.</h3>
         
         <div class="status-body-columns">
           <p class="status-lead">
-            We limit our roster to one build at a time to ensure our full focus. No account managers, no junior handoffs. Just two 14-year-old partners designing, coding, and shipping end-to-end.
+            We only take on one project at a time. That means no handoffs, no split attention, and no middlemen. Just the two of us focusing entirely on your build after school until it's shipped.
           </p>
           <p class="status-callout">
-            Have a project worth building and an exceptional favor to put on the table? We are reviewing pitches now.
+            Got a project worth building and an interesting favor to put on the table? We're reading messages now.
           </p>
         </div>
       </div>
@@ -326,69 +927,69 @@
     <div class="container">
       <div class="section-head-founders">
         <div class="founders-duo-strip">
-          <span class="founders-duo-tag">KAISER (50%) ✕ THANVI (50%)</span>
-          <span class="founders-parity-badge">TRUE PARITY • ZERO HIERARCHY</span>
+          <span class="founders-duo-tag">Azan &amp; Thanvi</span>
+          <span class="founders-parity-badge">Equal 50/50 Co-Founders</span>
         </div>
-        <h2 class="founders-title">Two Equal Partners. Building Crazy Fast.</h2>
+        <h2 class="founders-title">Two equal partners. <em class="fancy-serif">Fast and focused.</em></h2>
       </div>
 
       <p class="team-manifesto-sub">
-        Pickle Corp was created by <strong>Kaiser and Thanvi</strong>, two 14-year-old builders working as a 50/50 freelance partnership. No directors, no corporate fluff, no inflated titles. Just two kids building software that punches way above its weight.
+        Pickle Corp is run by <strong>Azan and Thanvi</strong>, two 14-year-olds working as equal co-founders. No directors, no corporate hierarchy, no inflated titles. Just two partners making great work together.
       </p>
 
       <!-- Editorial 50/50 Founder Spread -->
       <div class="founders-spread">
-        <!-- Kaiser -->
-        <div class="founder-card specular-card" data-founder="kaiser">
+        <!-- Azan -->
+        <div class="founder-card" data-founder="azan">
           <div class="founder-card-top">
             <div class="founder-meta">
-              <span class="founder-role-tag">CO-FOUNDER • 14 YO • 50%</span>
-              <h3 class="founder-name">Kaiser</h3>
+              <span class="founder-role-tag">Code &amp; Systems &bull; 14</span>
+              <h3 class="founder-name">Azan</h3>
             </div>
             <div class="founder-glyph" aria-hidden="true">
               <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
-                <polygon points="24,6 42,16 42,36 24,26" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
-                <polygon points="24,6 6,16 6,36 24,26" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" fill="none"/>
-                <polygon points="24,26 42,36 24,46 6,36" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
-                <circle cx="24" cy="26" r="3.5" fill="var(--green)"/>
+                <polygon points="24,6 42,16 42,36 24,26" stroke="rgba(89,61,59,0.35)" stroke-width="1.5" fill="none"/>
+                <polygon points="24,6 6,16 6,36 24,26" stroke="rgba(89,61,59,0.7)" stroke-width="1.5" fill="none"/>
+                <polygon points="24,26 42,36 24,46 6,36" stroke="rgba(89,61,59,0.2)" stroke-width="1.5" fill="none"/>
+                <circle cx="24" cy="26" r="3.5" fill="var(--chocolate-plum)"/>
               </svg>
             </div>
           </div>
-          <p class="founder-tagline">The one who actually builds it. Codes after school. Thinks in systems, breaks them on purpose, then fixes them.</p>
+          <p class="founder-tagline">“Writes the code after school. Thinks in systems, breaks them on purpose, then rebuilds them better.”</p>
           <div class="founder-fun-fact">
-            <span class="fun-fact-label">WILL ACCEPT:</span>
-            <span class="fun-fact-text">Pizza, a Steam game, or a genuinely interesting problem he hasn't seen before.</span>
+            <span class="fun-fact-label">Will trade for:</span>
+            <span class="fun-fact-text">Pizza, a Steam game, or a weird technical challenge he hasn't solved yet.</span>
           </div>
         </div>
 
         <!-- Parity Axis Divider -->
         <div class="parity-divider" aria-hidden="true">
           <div class="divider-line"></div>
-          <span class="parity-label">50% + 50% EQUAL</span>
+          <span class="parity-label">50 / 50 partners</span>
           <div class="divider-line"></div>
         </div>
 
         <!-- Thanvi -->
-        <div class="founder-card specular-card" data-founder="thanvi">
+        <div class="founder-card" data-founder="thanvi">
           <div class="founder-card-top">
             <div class="founder-meta">
-              <span class="founder-role-tag">CO-FOUNDER • 14 YO • 50%</span>
+              <span class="founder-role-tag">Design &amp; Feel &bull; 14</span>
               <h3 class="founder-name">Thanvi</h3>
             </div>
             <div class="founder-glyph" aria-hidden="true">
               <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="18" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 3"/>
-                <circle cx="24" cy="24" r="11" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
-                <circle cx="24" cy="24" r="3.5" fill="var(--green)"/>
-                <line x1="6" y1="24" x2="42" y2="24" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                <line x1="24" y1="6" x2="24" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                <circle cx="24" cy="24" r="18" stroke="rgba(89,61,59,0.25)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="24" cy="24" r="11" stroke="rgba(89,61,59,0.7)" stroke-width="1.5"/>
+                <circle cx="24" cy="24" r="3.5" fill="var(--chocolate-plum)"/>
+                <line x1="6" y1="24" x2="42" y2="24" stroke="rgba(89,61,59,0.2)" stroke-width="1"/>
+                <line x1="24" y1="6" x2="24" y2="42" stroke="rgba(89,61,59,0.2)" stroke-width="1"/>
               </svg>
             </div>
           </div>
-          <p class="founder-tagline">The one who makes it look alive. Has very strong opinions in general, and she is correct.</p>
+          <p class="founder-tagline">“Makes everything feel alive. Not only design — she has very strong opinions on everything, and she is always right.”</p>
           <div class="founder-fun-fact">
-            <span class="fun-fact-label">WILL ACCEPT:</span>
-            <span class="fun-fact-text">Brownies, any gift card, or full creative control on the next project.</span>
+            <span class="fun-fact-label">Will trade for:</span>
+            <span class="fun-fact-text">Brownies, art supplies, or full creative freedom on the project.</span>
           </div>
         </div>
       </div>
@@ -400,39 +1001,37 @@
     <div class="container">
       <div class="section-head-dispatch">
         <div class="dispatch-term-bar">
-          <span class="dispatch-term-id">TERMINAL // 06</span>
-          <span class="dispatch-term-status">CASH PROPOSALS DECLINED</span>
+          <span class="dispatch-term-id">07 &bull; Get in touch</span>
+          <span class="dispatch-term-status">Favors only &bull; No cash</span>
         </div>
-        <h2 class="dispatch-title">Propose A Favor. Lock In The Build.</h2>
-        <p class="dispatch-lead">Tell us what you need engineered or designed, and what real favor you're putting on the table.</p>
+        <h2 class="dispatch-title">Propose a favor. Let's make something cool.</h2>
+        <p class="dispatch-lead">Tell us what you're making, what you need built, and what favor you'd like to put on the table.</p>
       </div>
 
       <div class="dispatch-console">
-
-        <!-- Bespoke Dispatch Channels (Eliminates L13 primary+ghost button pair) -->
         <div class="dispatch-channels-grid">
-          <a href="mailto:azanmail2022@gmail.com" class="dispatch-channel-card email-card specular-card" data-sound="ping-high">
+          <a href="mailto:azanmail2022@gmail.com" class="dispatch-channel-card email-card" data-sound="ping-high">
             <div class="channel-card-top">
-              <span class="channel-type-tag">PRIMARY DISPATCH</span>
-              <span class="channel-response-indicator">DIRECT INBOX</span>
+              <span class="channel-type-tag">Email Azan &amp; Thanvi</span>
+              <span class="channel-response-indicator">Direct inbox</span>
             </div>
             <div class="channel-address">azanmail2022@gmail.com</div>
-            <p class="channel-note">Send your project pitch and proposed favor terms directly to Kaiser and Thanvi.</p>
+            <p class="channel-note">Send your pitch and what favor you want to trade directly to both of us.</p>
             <div class="channel-link-action">
-              <span>Compose Email Dispatch</span>
+              <span>Send an email</span>
               <span class="action-arrow">&rarr;</span>
             </div>
           </a>
 
-          <a href="tel:+917010059290" class="dispatch-channel-card phone-card specular-card" data-sound="ping-high">
+          <a href="tel:+917010059290" class="dispatch-channel-card phone-card" data-sound="ping-high">
             <div class="channel-card-top">
-              <span class="channel-type-tag">URGENT HOTLINE</span>
-              <span class="channel-response-indicator">VOICE WIRE</span>
+              <span class="channel-type-tag">Quick call</span>
+              <span class="channel-response-indicator">Direct line</span>
             </div>
             <div class="channel-address">+91 70100 59290</div>
-            <p class="channel-note">Direct telephone line for emergency builds and time-sensitive favor negotiations.</p>
+            <p class="channel-note">Call directly for time-sensitive projects or to talk through a trade idea.</p>
             <div class="channel-link-action">
-              <span>Call Direct</span>
+              <span>Call directly</span>
               <span class="action-arrow">&rarr;</span>
             </div>
           </a>
@@ -445,27 +1044,229 @@
   <footer id="footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <span class="footer-logo">PICKLE CORP™</span>
-        <p class="footer-sub">Two freelancers building software for favors.</p>
+        <span class="footer-logo">Pickle Corp</span>
+        <p class="footer-sub">Two 14-year-olds building software for favors.</p>
       </div>
 
       <div class="footer-links">
-        <a href="#about">01 Currency</a>
-        <a href="#identity">02 The Name</a>
-        <a href="#vision">03 Protocol</a>
-        <a href="#status">04 Capacity</a>
-        <a href="#team">05 Founders</a>
-        <a href="#contact">06 Dispatch</a>
+        <a href="#about">Why Favors</a>
+        <a href="#identity">Why Pickle?</a>
+        <a href="#vision">How It Works</a>
+        <a href="#work">What We Build</a>
+        <a href="#status">Availability</a>
+        <a href="#team">Founders</a>
+        <a href="#contact">Get in touch</a>
       </div>
 
       <div class="footer-colophon">
-        <span>Kaiser &amp; Thanvi &bull; 2026</span>
-        <span>Favors over fiat</span>
+        <span>Azan &amp; Thanvi &bull; 2026</span>
+        <span>Favors over cash</span>
       </div>
     </div>
   </footer>
+
+  <!-- ══════════════════════════════ PROJECT LIVE PREVIEW MODAL ══════════ -->
+  <div id="project-preview-modal" class="project-modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="project-modal-backdrop" id="modal-backdrop"></div>
+    <div class="project-modal-chassis">
+      
+      <!-- Top Hardware Telemetry Bar -->
+      <header class="modal-hardware-bar">
+        <div class="modal-bar-left">
+          <div class="modal-traffic-lights" aria-hidden="true">
+            <span class="t-dot t-dot-close" id="modal-close-dot" title="Close Preview"></span>
+            <span class="t-dot t-dot-min"></span>
+            <span class="t-dot t-dot-max"></span>
+          </div>
+          <div class="modal-project-meta">
+            <div class="modal-title-row">
+              <span class="modal-live-indicator" id="modal-live-status">
+                <span class="live-pulse-dot" aria-hidden="true"></span>
+                <span class="modal-status-text" id="modal-status-text">Live Deployed</span>
+              </span>
+              <h2 class="modal-project-title" id="modal-title">Pickle Studio</h2>
+            </div>
+            <span class="modal-url-pill" id="modal-url-slug">builder.p-corp.live</span>
+          </div>
+        </div>
+
+        <!-- Center Responsive Mode & Device Switcher -->
+        <div class="modal-center-controls">
+          <div class="modal-mode-switcher" role="tablist" aria-label="Modal View Mode Switcher">
+            <button type="button" class="mode-tab active" id="modal-tab-live" data-mode="live" role="tab" aria-selected="true" title="Interactive Live Application Preview">
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M8.5 1.5L2.5 9h5l-1 5.5L13.5 7h-5l1-5.5z"/>
+              </svg>
+              <span>Live App</span>
+            </button>
+            <button type="button" class="mode-tab" id="modal-tab-blueprint" data-mode="blueprint" role="tab" aria-selected="false" title="Architecture & Engineering Blueprint Specs">
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="12" height="12" rx="2"/>
+                <path d="M2 6h12M6 2v12"/>
+              </svg>
+              <span>Blueprint</span>
+            </button>
+          </div>
+
+          <div class="modal-device-switcher" id="modal-device-switcher" role="tablist" aria-label="Device Viewport Switcher">
+            <button type="button" class="device-tab active" data-device="desktop" title="Desktop View (100% full width)" role="tab" aria-selected="true">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="2" y="3" width="16" height="11" rx="2"/>
+                <path d="M7 17h6M10 14v3"/>
+              </svg>
+              <span>Desktop</span>
+            </button>
+            <button type="button" class="device-tab" data-device="tablet" title="Tablet View (768px frame)" role="tab" aria-selected="false">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="4" y="2" width="12" height="16" rx="2"/>
+                <circle cx="10" cy="15.5" r="0.8" fill="currentColor"/>
+              </svg>
+              <span>Tablet</span>
+            </button>
+            <button type="button" class="device-tab" data-device="mobile" title="Mobile View (390px iPhone frame)" role="tab" aria-selected="false">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="5.5" y="2" width="9" height="16" rx="2"/>
+                <circle cx="10" cy="15.5" r="0.8" fill="currentColor"/>
+              </svg>
+              <span>Mobile</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Quick Controls -->
+        <div class="modal-bar-right">
+          <button type="button" class="modal-action-btn" id="modal-reload-btn" title="Reload live preview frame">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M13.5 8A5.5 5.5 0 1 1 12 4.1L13.5 5.5"/>
+              <path d="M13.5 2v3.5H10"/>
+            </svg>
+            <span>Reload</span>
+          </button>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="modal-action-btn modal-external-btn" id="modal-external-link" title="Open live app in a new tab">
+            <span>Open Tab</span>
+            <svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2.5 11.5L11.5 2.5M4 2.5h7.5V10"/>
+            </svg>
+          </a>
+          <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close preview modal">
+            <span class="close-x">&times;</span>
+            <kbd class="kbd-shortcut">ESC</kbd>
+          </button>
+        </div>
+      </header>
+
+      <!-- Viewport Stage -->
+      <main class="modal-viewport-stage" id="modal-viewport-stage">
+        
+        <!-- Animated Handcrafted Mini-Pickle Loader -->
+        <div class="modal-loader" id="modal-loader">
+          <div class="handcrafted-pickle-loader">
+            <svg viewBox="0 0 36 48" width="36" height="48" class="loader-pickle-svg">
+              <defs>
+                <linearGradient id="ldrPickleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#67b34d"/>
+                  <stop offset="50%" stop-color="#417830"/>
+                  <stop offset="100%" stop-color="#244b1c"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 4 C27 4, 33 12, 31 24 C29 36, 24 44, 15 44 C8 44, 3 37, 5 25 C7 14, 10 4, 18 4 Z" fill="url(#ldrPickleGrad)" stroke="#1a3814" stroke-width="1.8"/>
+              <path d="M12 9 C9 15, 8 27, 11 36" stroke="rgba(255,255,255,0.45)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <circle cx="21" cy="14" r="1.5" fill="#1b3914" opacity="0.7"/>
+              <circle cx="24" cy="27" r="1.7" fill="#1b3914" opacity="0.7"/>
+              <circle cx="14" cy="22" r="1.4" fill="#1b3914" opacity="0.7"/>
+            </svg>
+            <div class="loader-ripple"></div>
+          </div>
+          <span class="modal-loader-text">Preserving connection to live build...</span>
+          <span class="modal-loader-sub" id="modal-loader-sub">Booting sandbox preview frame</span>
+        </div>
+
+        <!-- Frame Viewport Window -->
+        <div class="modal-device-frame frame-desktop" id="modal-device-frame">
+          <div class="device-notch" aria-hidden="true"></div>
+          <iframe id="modal-iframe" class="modal-iframe" title="Interactive Project Preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+          
+          <!-- Repository Spec Blueprint Fallback (for GitHub Repos) -->
+          <div class="modal-repo-blueprint" id="modal-repo-blueprint" style="display: none;">
+            <div class="blueprint-card">
+              <div class="blueprint-header-cluster">
+                <div class="blueprint-badge">
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <span>Autonomous Architecture</span>
+                </div>
+                <span class="blueprint-type-pill" id="blueprint-type-pill">Python &bull; FastAPI Daemon</span>
+              </div>
+
+              <h3 class="blueprint-title" id="blueprint-title">J.A.R.V.I.S. (AZAN OS)</h3>
+              <p class="blueprint-desc" id="blueprint-desc">Autonomous macOS intelligence and FastAPI daemon designed for high-throughput background automation.</p>
+              
+              <div class="blueprint-terminal">
+                <div class="terminal-bar">
+                  <div class="terminal-dots">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                  </div>
+                  <span class="term-title">terminal &mdash; zsh &mdash; 80x24</span>
+                </div>
+                <pre class="terminal-code"><code id="blueprint-terminal-code">$ azan-os status
+[DAEMON] Active on PID 4209 &bull; macOS Sonoma 14.6
+[FASTAPI] Uvicorn listening on http://127.0.0.1:8000
+[MEMORY] 18.4 MB resident &bull; Zero background CPU bleed
+[INTELLIGENCE] Ready for command dispatch.</code></pre>
+              </div>
+
+              <div class="blueprint-specs-grid" id="blueprint-specs-grid">
+                <!-- dynamic spec items -->
+              </div>
+
+              <div class="blueprint-actions">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="blueprint-cta-btn" id="blueprint-cta">
+                  <span>Explore Repository on GitHub</span>
+                  <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Bottom Hardware Ledger Bar -->
+      <footer class="modal-footer-bar">
+        <div class="modal-footer-left">
+          <span class="modal-nav-counter" id="modal-counter">01 / 08</span>
+          <p class="modal-desc" id="modal-desc">Visual no-code web builder &amp; 1-click publisher.</p>
+        </div>
+
+        <div class="modal-footer-center">
+          <div class="modal-tech-pills" id="modal-tech-pills">
+            <span class="m-pill">TypeScript</span>
+            <span class="m-pill">React</span>
+          </div>
+        </div>
+
+        <div class="modal-footer-right">
+          <button type="button" class="modal-cycle-btn" id="modal-prev-btn" title="Previous project (Left Arrow)">
+            <svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11L5 7l4-4"/>
+            </svg>
+            <span>Prev</span>
+          </button>
+          <button type="button" class="modal-cycle-btn" id="modal-next-btn" title="Next project (Right Arrow)">
+            <span>Next</span>
+            <svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </button>
+        </div>
+      </footer>
+
+    </div>
+  </div>
 
   <script src="lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
