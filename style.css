@@ -354,16 +354,29 @@ img { display: block; max-width: 100%; }
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.015em;
   color: var(--text-primary);
   transition: opacity 0.2s;
+  text-decoration: none;
+}
+.nav-logo-torch {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 8px rgba(22, 121, 250, 0.32));
+  transition: transform 0.25s var(--ease), filter 0.25s var(--ease);
 }
 .nav-logo:hover {
-  opacity: 0.85;
+  opacity: 0.95;
+}
+.nav-logo:hover .nav-logo-torch {
+  transform: translateY(-1.5px) scale(1.08);
+  filter: drop-shadow(0 4px 14px rgba(22, 121, 250, 0.6));
 }
 
 .nav-status-badge {
@@ -2922,8 +2935,15 @@ img { display: block; max-width: 100%; }
 }
 .footer-brand-lockup {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo-torch {
+  height: 26px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 6px rgba(22, 121, 250, 0.28));
 }
 .footer-logo {
   font-family: var(--font-display);
