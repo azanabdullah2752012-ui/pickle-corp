@@ -1148,9 +1148,40 @@
           <p class="doc-lead">Copy this brief and send directly to your local print shop or upload to VistaPrint / Moo.</p>
         </div>
 
-        <button id="btnCopySpecText" class="btn-copy-doc" title="Copy full formatted brief to clipboard">
-          <span>📋</span> Copy Print Shop Brief
-        </button>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <a href="Pickle-Corp-Business-Card-Print-Order.docx" download class="btn-copy-doc" style="background: linear-gradient(135deg, #1f4e79 0%, #112d4e 100%); text-decoration: none;" title="Download Word .docx production brief with embedded images">
+            <span>📄</span> Download Word Doc (.docx)
+          </a>
+          <button id="btnCopySpecText" class="btn-copy-doc" title="Copy full formatted brief to clipboard">
+            <span>📋</span> Copy Print Shop Brief
+          </button>
+        </div>
+      </div>
+
+      <!-- High-Resolution Card Images Gallery -->
+      <div style="margin-bottom: 28px; border: 1px solid var(--border-subtle); border-radius: 14px; padding: 20px; background: var(--bg-subtle);">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--c1-espresso); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <span>High-Resolution Production Images (300 DPI)</span>
+          <div style="display: flex; gap: 10px;">
+            <a href="business-card-front.png" download="Pickle-Corp-Card-Front.png" style="color: var(--c1-espresso); text-decoration: underline; font-weight: 700; font-size: 0.78rem;">Download Front PNG</a>
+            <span style="opacity: 0.4;">•</span>
+            <a href="business-card-back.png" download="Pickle-Corp-Card-Back.png" style="color: var(--c1-espresso); text-decoration: underline; font-weight: 700; font-size: 0.78rem;">Download Back PNG</a>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+          <div>
+            <a href="business-card-front.png" target="_blank" title="View Full Resolution Front Image">
+              <img src="business-card-front.png" alt="Pickle Corp Business Card Front" style="width: 100%; border-radius: 10px; border: 1.5px solid rgba(88,47,14,0.18); box-shadow: 0 4px 16px rgba(51,61,41,0.08);" />
+            </a>
+            <p style="font-size: 0.75rem; color: var(--c8-olive); font-family: var(--font-mono); margin-top: 6px; text-align: center;">Side A (Front Face) — 1050 × 600 px @ 300 DPI</p>
+          </div>
+          <div>
+            <a href="business-card-back.png" target="_blank" title="View Full Resolution Back Image">
+              <img src="business-card-back.png" alt="Pickle Corp Business Card Back" style="width: 100%; border-radius: 10px; border: 1.5px solid rgba(88,47,14,0.18); box-shadow: 0 4px 16px rgba(51,61,41,0.08);" />
+            </a>
+            <p style="font-size: 0.75rem; color: var(--c8-olive); font-family: var(--font-mono); margin-top: 6px; text-align: center;">Side B (Back Face) — 1050 × 600 px @ 300 DPI</p>
+          </div>
+        </div>
       </div>
 
       <!-- Visual Specs Cards -->

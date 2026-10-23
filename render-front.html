@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pickle Corp Business Card - Front</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1050px;
+      height: 600px;
+      overflow: hidden;
+      background: transparent;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      width: 1050px;
+      height: 600px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      background: 
+        radial-gradient(circle at 12% 18%, rgba(195, 169, 149, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 88% 82%, rgba(164, 172, 134, 0.18) 0%, transparent 50%),
+        linear-gradient(145deg, #fdfbf7 0%, #f4eee3 100%);
+      border: 2px solid rgba(88, 47, 14, 0.2);
+      box-shadow: 0 10px 30px rgba(51, 61, 41, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 50px;
+      color: #333d29;
+    }
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .telemetry {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #656d4a;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(88, 47, 14, 0.06);
+      border: 1px solid rgba(88, 47, 14, 0.22);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: #582f0e;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #2e7d32;
+      border-radius: 50%;
+    }
+    .center-stage {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: auto 0;
+      position: relative;
+      z-index: 2;
+    }
+    .torch-img {
+      height: 125px;
+      width: auto;
+      filter: drop-shadow(0 4px 14px rgba(22, 121, 250, 0.38));
+    }
+    .brand-title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 58px;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: #582f0e;
+      line-height: 1.05;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    .brand-motto {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 28px;
+      color: #7f4f24;
+      margin-top: 4px;
+    }
+    .bottom-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-top: 1px solid rgba(88, 47, 14, 0.16);
+      padding-top: 18px;
+      position: relative;
+      z-index: 2;
+    }
+    .founder-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #656d4a;
+    }
+    .founder-name {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #333d29;
+      line-height: 1.15;
+      margin-top: 2px;
+    }
+    .founder-sub {
+      font-size: 15px;
+      color: #656d4a;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .cash-stamp {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .cash-val {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #582f0e;
+    }
+    .cash-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #656d4a;
+    }
+    .gummy-watermark {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 170px;
+      height: auto;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-row">
+      <span class="telemetry">PC-MARKER // № 0026</span>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>1 BUILD SLOT OPEN</span>
+      </div>
+    </div>
+
+    <div class="center-stage">
+      <img src="logo-torch.png" class="torch-img" alt="Pickle Corp Torch" />
+      <div>
+        <h1 class="brand-title">Pickle Corp™</h1>
+        <p class="brand-motto">Paid Strictly in Favors. Zero Fiat.</p>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div>
+        <div class="founder-tag">Founding Partners • Age 14</div>
+        <div class="founder-name">Azan &amp; Thanvi</div>
+        <div class="founder-sub">Systems Architecture • Product Aesthetics</div>
+      </div>
+      <div class="cash-stamp">
+        <span class="cash-val">$0.00</span>
+        <span class="cash-label">No Cash Ever</span>
+      </div>
+    </div>
+
+    <svg class="gummy-watermark" viewBox="0 0 110 52">
+      <path d="M15,44 C9,44 6.5,39.5 9,34 C13.5,23.5 26,12 44,8.5 C50,7.2 60,7.2 66,8.5 C84,12 96.5,23.5 101,34 C103.5,39.5 101,44 95,44 Z" fill="#a68a64" stroke="#582f0e" stroke-width="2" />
+      <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#b6ad90" />
+      <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#b6ad90" />
+      <circle cx="46" cy="26" r="3.3" fill="#582f0e" />
+      <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
+      <circle cx="64" cy="26" r="3.3" fill="#582f0e" />
+      <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
+      <path d="M52.4,27.8 Q55,30.2 57.6,27.8" fill="none" stroke="#582f0e" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </div>
+</body>
+</html>

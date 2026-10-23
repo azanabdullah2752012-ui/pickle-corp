@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pickle Corp Business Card - Back</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1050px;
+      height: 600px;
+      overflow: hidden;
+      background: transparent;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      width: 1050px;
+      height: 600px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      background: 
+        radial-gradient(circle at 12% 18%, rgba(195, 169, 149, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 88% 82%, rgba(164, 172, 134, 0.18) 0%, transparent 50%),
+        linear-gradient(145deg, #fdfbf7 0%, #f4eee3 100%);
+      border: 2px solid rgba(88, 47, 14, 0.2);
+      box-shadow: 0 10px 30px rgba(51, 61, 41, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 50px;
+      color: #333d29;
+    }
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(88, 47, 14, 0.16);
+      padding-bottom: 12px;
+    }
+    .ledger-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #656d4a;
+    }
+    .lien-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(88, 47, 14, 0.07);
+      border: 1px solid rgba(88, 47, 14, 0.2);
+      color: #582f0e;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .covenant-box {
+      margin: 14px 0;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 500;
+      color: #333d29;
+    }
+    .covenant-box strong {
+      color: #582f0e;
+      font-weight: 700;
+    }
+    .body-split {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: auto;
+      margin-bottom: 8px;
+    }
+    .qr-box {
+      width: 140px;
+      height: 140px;
+      background: #ffffff;
+      border: 1.5px solid rgba(88, 47, 14, 0.2);
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(51, 61, 41, 0.06);
+      flex-shrink: 0;
+    }
+    .qr-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .contacts-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-lbl {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #656d4a;
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .contact-val {
+      font-weight: 600;
+      color: #582f0e;
+    }
+    .contact-trades {
+      font-size: 13px;
+      color: #656d4a;
+    }
+    .bottom-sigs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(88, 47, 14, 0.16);
+      padding-top: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #656d4a;
+    }
+    .sig-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #582f0e;
+      margin-left: 4px;
+    }
+    .status-stamp {
+      font-weight: 700;
+      color: #582f0e;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-row">
+      <span class="ledger-title">BARTER COVENANT • THE OFFICIAL LEDGER RECORD</span>
+      <span class="lien-badge">PROMISSORY FAVOR LIEN</span>
+    </div>
+
+    <p class="covenant-box">
+      “The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets.”
+    </p>
+
+    <div class="body-split">
+      <div class="qr-box">
+        <img src="qr-code.svg" class="qr-img" alt="Pickle Corp QR Code" />
+      </div>
+
+      <div class="contacts-col">
+        <div class="contact-item">
+          <span class="contact-lbl">Email</span>
+          <span class="contact-val">azanmail2022@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-lbl">Phone</span>
+          <span class="contact-val">+91 70100 59290</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-lbl">Web</span>
+          <span class="contact-val" style="color: #656d4a;">azanabdullah2752012-ui.github.io/pickle-corp</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-lbl">Trades</span>
+          <span class="contact-trades">Pizza, Steam games, brownies, hard problems</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-sigs">
+      <div>Systems: <span class="sig-name">Azan Abdullah</span></div>
+      <div>Aesthetics: <span class="sig-name">Thanvi</span></div>
+      <div>Status: <span class="status-stamp">Banked ✦</span></div>
+    </div>
+  </div>
+</body>
+</html>
