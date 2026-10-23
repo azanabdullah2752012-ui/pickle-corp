@@ -3997,3 +3997,416 @@ body.modal-open {
     border-width: 0;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   07 • THE PHYSICAL BARTER MARKER (3D Business Card Section)
+   ═══════════════════════════════════════════════════════════════════════════ */
+#card {
+  padding: var(--sp) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.card-showcase-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-card-scene {
+  position: relative;
+  width: min(580px, 92vw);
+  height: calc(min(580px, 92vw) / 1.75);
+  perspective: 1400px;
+  cursor: grab;
+  user-select: none;
+}
+.site-card-scene:active {
+  cursor: grabbing;
+}
+
+.site-card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s var(--ease);
+  will-change: transform;
+}
+.site-card-3d.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.site-card-shadow {
+  position: absolute;
+  top: 104%;
+  left: 6%;
+  width: 88%;
+  height: 24px;
+  background: radial-gradient(ellipse at center, rgba(51, 61, 41, 0.28) 0%, rgba(51, 61, 41, 0.06) 50%, transparent 80%);
+  filter: blur(12px);
+  transform: rotateX(80deg);
+  pointer-events: none;
+}
+
+.site-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(18px, 4vw, 28px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(195, 169, 149, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 88% 82%, rgba(164, 172, 134, 0.18) 0%, transparent 50%),
+    linear-gradient(145deg, #fdfbf7 0%, #f4eee3 100%);
+  color: var(--c10-ink);
+  border: 1.5px solid rgba(88, 47, 14, 0.18);
+  box-shadow:
+    0 20px 44px -8px rgba(51, 61, 41, 0.14),
+    0 4px 12px rgba(88, 47, 14, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 10px rgba(147, 102, 57, 0.04);
+}
+
+.site-card-back {
+  transform: rotateY(180deg);
+}
+
+.site-card-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 16px;
+  background: radial-gradient(
+    circle 340px at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+  z-index: 15;
+  opacity: 0.8;
+}
+
+/* Card Front Elements */
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-telemetry-mono {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c8-olive);
+}
+.card-slot-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(88, 47, 14, 0.06);
+  border: 1px solid rgba(88, 47, 14, 0.22);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--c1-espresso);
+}
+.card-slot-dot {
+  width: 6px;
+  height: 6px;
+  background: #2e7d32;
+  border-radius: 50%;
+}
+
+.card-center-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: auto 0;
+}
+.card-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 20px);
+}
+.card-torch-mark {
+  height: clamp(54px, 10vw, 72px);
+  width: auto;
+  filter: drop-shadow(0 3px 10px rgba(22, 121, 250, 0.38));
+}
+.card-title-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.8vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--c1-espresso);
+  line-height: 1.05;
+}
+.card-motto-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  color: var(--c2-caramel);
+  margin-top: 2px;
+}
+
+/* Gummy in the open space on Front */
+.card-gummy-spot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid rgba(88, 47, 14, 0.16);
+  border-radius: 14px;
+  padding: 6px 12px 5px;
+  box-shadow: 0 4px 14px rgba(51, 61, 41, 0.05);
+  flex-shrink: 0;
+}
+.card-gummy-tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c8-olive);
+}
+
+.card-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid rgba(88, 47, 14, 0.14);
+  padding-top: 8px;
+}
+.card-founder-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  font-weight: 800;
+  color: var(--c10-ink);
+  line-height: 1.15;
+}
+.card-founder-sub {
+  font-size: 0.72rem;
+  color: var(--c8-olive);
+  font-weight: 500;
+}
+.card-fiat-zero {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-weight: 900;
+  color: var(--c1-espresso);
+  text-align: right;
+}
+.card-fiat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c8-olive);
+  text-align: right;
+}
+
+/* Card Back Elements */
+.card-covenant-quote {
+  font-size: clamp(0.68rem, 1.45vw, 0.77rem);
+  line-height: 1.35;
+  font-weight: 500;
+  margin: 6px 0;
+}
+.card-covenant-quote strong {
+  color: var(--c1-espresso);
+  font-weight: 700;
+}
+
+.card-back-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+  margin-bottom: 2px;
+}
+.card-qr-box {
+  width: clamp(62px, 12vw, 78px);
+  height: clamp(62px, 12vw, 78px);
+  background: #ffffff;
+  border: 1.5px solid rgba(88, 47, 14, 0.2);
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(51, 61, 41, 0.06);
+  flex-shrink: 0;
+}
+.card-qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.66rem, 1.45vw, 0.74rem);
+}
+.card-contact-val {
+  font-weight: 600;
+  color: var(--c1-espresso);
+  text-decoration: none;
+}
+
+.card-gummy-speech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(88, 47, 14, 0.16);
+  border-radius: 12px;
+  padding: 5px 10px;
+  flex-shrink: 0;
+}
+.card-speech-bubble {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--c2-caramel);
+}
+
+.card-sigs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(88, 47, 14, 0.14);
+  padding-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--c8-olive);
+}
+.card-sig-ital {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--c1-espresso);
+  margin-left: 2px;
+}
+
+/* Card Controls Deck on Main Page */
+.site-card-deck {
+  width: min(580px, 92vw);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card-deck-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card-deck-seg {
+  display: inline-flex;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+.card-seg-btn {
+  background: transparent;
+  border: none;
+  color: var(--c8-olive);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.card-seg-btn:hover {
+  color: var(--c10-ink);
+}
+.card-seg-btn.active {
+  background: #ffffff;
+  color: var(--c1-espresso);
+  box-shadow: 0 2px 8px rgba(51, 61, 41, 0.08);
+  font-weight: 700;
+}
+
+.card-deck-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+  flex-wrap: wrap;
+}
+.btn-deck-flip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--c1-espresso);
+  color: #ffffff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  box-shadow: 0 3px 12px rgba(88, 47, 14, 0.22);
+}
+.btn-deck-flip:hover {
+  background: var(--c2-caramel);
+  transform: translateY(-1px);
+}
+.btn-deck-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-subtle);
+  color: var(--c10-ink);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-deck-tool:hover {
+  background: #ffffff;
+  border-color: var(--c3-biscuit);
+  color: var(--c1-espresso);
+}
+

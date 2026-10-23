@@ -1696,6 +1696,135 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 07: 3D INTERACTIVE BUSINESS CARD & BARTER MARKER CONTROLLER
+  // ═══════════════════════════════════════════════════════════════════════════
+  const cardScene = document.getElementById('siteCardScene');
+  const card3D = document.getElementById('siteCard3D');
+  const btnFlip = document.getElementById('btnMainFlip');
+
+  if (cardScene && card3D) {
+    let isFlipped = false;
+    let cardTiltX = 0, cardTiltY = 0, targetTiltX = 0, targetTiltY = 0;
+
+    const flipCard = () => {
+      isFlipped = !isFlipped;
+      card3D.classList.toggle('is-flipped', isFlipped);
+      if (window.acoustic) window.acoustic.play('lock');
+    };
+
+    if (btnFlip) btnFlip.addEventListener('click', flipCard);
+
+    // Spacebar to flip when viewing card section
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        const rect = cardScene.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          e.preventDefault();
+          flipCard();
+        }
+      }
+    });
+
+    // Click on card to flip
+    let startX = 0, startY = 0;
+    cardScene.addEventListener('mousedown', (e) => {
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+    cardScene.addEventListener('mouseup', (e) => {
+      if (Math.abs(e.clientX - startX) < 6 && Math.abs(e.clientY - startY) < 6) {
+        flipCard();
+      }
+    });
+
+    // 3D Mouse Tilt & Specular Light
+    cardScene.addEventListener('mousemove', (e) => {
+      const rect = cardScene.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      targetTiltY = ((x - cx) / cx) * 12;
+      targetTiltX = -((y - cy) / cy) * 12;
+
+      const px = ((x / rect.width) * 100).toFixed(1) + '%';
+      const py = ((y / rect.height) * 100).toFixed(1) + '%';
+      card3D.style.setProperty('--card-mouse-x', px);
+      card3D.style.setProperty('--card-mouse-y', py);
+    });
+
+    cardScene.addEventListener('mouseleave', () => {
+      targetTiltX = 0;
+      targetTiltY = 0;
+    });
+
+    const loopCardPhysics = () => {
+      cardTiltX += (targetTiltX - cardTiltX) * 0.12;
+      cardTiltY += (targetTiltY - cardTiltY) * 0.12;
+      const baseRotY = isFlipped ? 180 : 0;
+      card3D.style.transform = `rotateX(${cardTiltX.toFixed(2)}deg) rotateY(${(baseRotY + cardTiltY).toFixed(2)}deg)`;
+      requestAnimationFrame(loopCardPhysics);
+    };
+    loopCardPhysics();
+
+    // Founder Toggle
+    const mainProfiles = {
+      studio: {
+        reg: 'PC-MARKER // № 0026',
+        tag: 'Founding Partners • Age 14',
+        name: 'Azan & Thanvi',
+        focus: 'Systems Architecture • Product Aesthetics',
+        trades: 'Pizza, Steam games, brownies, hard problems',
+        quote: '“The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
+      },
+      azan: {
+        reg: 'PC-SYS // AZAN-01',
+        tag: 'Code & Systems • Age 14',
+        name: 'Azan Abdullah',
+        focus: 'Backend • Distributed Systems • Architecture',
+        trades: 'Wood-fired Pizza, Steam games, unsolvable bugs',
+        quote: '“Writes the code after school. Thinks in systems, breaks them on purpose, then rebuilds them better. You owe Azan one solid favor called in when needed.”'
+      },
+      thanvi: {
+        reg: 'PC-DSGN // THANVI-02',
+        tag: 'Design & Feel • Age 14',
+        name: 'Thanvi',
+        focus: 'Product Aesthetics • Interaction Feel • Creative Direction',
+        trades: 'Fresh brownies, gift cards, full creative control',
+        quote: '“Makes everything feel alive. Not only design — she has strong opinions on everything, and she is always right. You owe Thanvi one solid favor.”'
+      }
+    };
+
+    const dispReg = document.getElementById('main-reg-id');
+    const dispTag = document.getElementById('main-founder-tag');
+    const dispName = document.getElementById('main-founder-name');
+    const dispFocus = document.getElementById('main-founder-focus');
+    const dispCovenant = document.getElementById('main-covenant-text');
+    const dispTrades = document.getElementById('main-trades-list');
+
+    document.querySelectorAll('[data-main-founder]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-main-founder');
+        if (!mainProfiles[key]) return;
+
+        document.querySelectorAll('[data-main-founder]').forEach(b => b.classList.toggle('active', b === btn));
+        card3D.setAttribute('data-founder', key);
+
+        const p = mainProfiles[key];
+        if (dispReg) dispReg.textContent = p.reg;
+        if (dispTag) dispTag.textContent = p.tag;
+        if (dispName) dispName.textContent = p.name;
+        if (dispFocus) dispFocus.textContent = p.focus;
+        if (dispTrades) dispTrades.textContent = p.trades;
+        if (dispCovenant) dispCovenant.innerHTML = p.quote;
+
+        if (window.acoustic) window.acoustic.play('switch');
+      });
+    });
+  }
+
   // Expose modal API to window
   window.openProjectPreview = openProjectPreview;
   window.setModalMode = setModalMode;

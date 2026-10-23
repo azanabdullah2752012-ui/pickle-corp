@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=2.2.0" />
+  <link rel="stylesheet" href="style.css?v=2.3.0" />
 </head>
 <body>
   <!-- Ambient Substrate Layers -->
@@ -46,7 +46,7 @@
       <li><a href="#vision" class="magnetic-link">How It Works</a></li>
       <li><a href="#work" class="magnetic-link">What We Build</a></li>
       <li><a href="#team" class="magnetic-link">Founders</a></li>
-      <li><a href="card.html" class="magnetic-link" style="color: var(--c1-espresso); font-weight: 700;" title="Official Studio Business Card & Barter Marker">Card ✦</a></li>
+      <li><a href="#card" class="magnetic-link" style="color: var(--c1-espresso); font-weight: 700;" title="Official Studio Business Card & Barter Marker">Card ✦</a></li>
     </ul>
 
     <div class="nav-actions-cluster">
@@ -78,7 +78,7 @@
     <a href="#work"     class="mm-link">What We Build</a>
     <a href="#status"   class="mm-link">Studio Availability</a>
     <a href="#team"     class="mm-link">Founders</a>
-    <a href="card.html" class="mm-link" style="color: var(--c1-espresso); font-weight: 700;">Business Card ✦</a>
+    <a href="#card"     class="mm-link" style="color: var(--c1-espresso); font-weight: 700;">Business Card ✦</a>
     <a href="#contact"  class="mm-link mm-cta">Propose a trade &rarr;</a>
   </div>
 
@@ -1038,13 +1038,192 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Physical Business Card Callout -->
-      <div class="founder-card-cta" style="margin-top: 36px; text-align: center;">
-        <a href="card.html" class="btn-card-preview" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(89, 61, 59, 0.08); border: 1.5px solid rgba(89, 61, 59, 0.25); border-radius: 999px; color: var(--c1-espresso); text-decoration: none; font-weight: 800; font-size: 0.95rem; font-family: var(--font-display); box-shadow: 0 4px 16px rgba(51, 61, 41, 0.06); transition: all 0.25s var(--ease);">
-          <img src="logo-torch.png" alt="Torch Mark" style="height: 20px; width: auto; filter: drop-shadow(0 2px 6px rgba(22, 121, 250, 0.35));" />
-          <span>Inspect Studio Physical Business Card &amp; Barter Marker &rarr;</span>
-        </a>
+  <!-- ═════════════════════════════════════════════════════ CARD / ARTIFACT ══ -->
+  <section id="card">
+    <div class="container">
+      <div class="editorial-section-head">
+        <span class="section-order">07</span>
+        <div class="section-heading-wrap">
+          <span class="section-category">Physical Studio Artifact &bull; Barter Marker</span>
+          <h2 class="section-title">The Physical <em>Business Card</em></h2>
+          <p class="section-subtitle">
+            Hold the marker. Flip it in 3D, inspect Azan &amp; Thanvi's credentials, and meet Gummy.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-showcase-wrap">
+
+        <!-- 3D Card Scene -->
+        <div class="site-card-scene" id="siteCardScene" aria-label="Interactive 3D Business Card">
+          <div class="site-card-3d" id="siteCard3D" data-founder="studio">
+            <div class="site-card-sheen" aria-hidden="true"></div>
+
+            <!-- FRONT -->
+            <div class="site-card-face site-card-front" aria-label="Card Front">
+              <div class="card-top-bar">
+                <span class="card-telemetry-mono" id="main-reg-id">PC-MARKER // № 0026</span>
+                <span class="card-slot-pill">
+                  <span class="card-slot-dot" aria-hidden="true"></span>
+                  <span>1 BUILD SLOT OPEN</span>
+                </span>
+              </div>
+
+              <div class="card-center-row">
+                <div class="card-brand-lockup">
+                  <img src="logo-torch.png" alt="Pickle Corp Torch" class="card-torch-mark" />
+                  <div>
+                    <h3 class="card-title-text">Pickle Corp™</h3>
+                    <p class="card-motto-text">Paid Strictly in Favors. Zero Fiat.</p>
+                  </div>
+                </div>
+
+                <!-- Gummy Mascot on Front -->
+                <div class="card-gummy-spot">
+                  <svg viewBox="0 0 110 52" width="112" height="52" style="overflow: visible;">
+                    <defs>
+                      <radialGradient id="mcg-sh" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#593d3b" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
+                      </radialGradient>
+                      <linearGradient id="mcg-body" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#bda793" />
+                        <stop offset="100%" stop-color="#ab947e" />
+                      </linearGradient>
+                    </defs>
+                    <ellipse cx="55" cy="45" rx="42" ry="4" fill="url(#mcg-sh)" />
+                    <path d="M 15,44 C 9,44 6.5,39.5 9,34 C 13.5,23.5 26,12 44,8.5 C 50,7.2 60,7.2 66,8.5 C 84,12 96.5,23.5 101,34 C 103.5,39.5 101,44 95,44 Z"
+                          fill="url(#mcg-body)"
+                          stroke="#593d3b"
+                          stroke-width="3"
+                          stroke-linejoin="round"
+                          stroke-linecap="round" />
+                    <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
+                    <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
+                    <circle cx="46" cy="26" r="3.3" fill="#593d3b" />
+                    <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
+                    <circle cx="64" cy="26" r="3.3" fill="#593d3b" />
+                    <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
+                    <path d="M 52.4,27.8 Q 55,30.2 57.6,27.8" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
+                  </svg>
+                  <span class="card-gummy-tag">Gummy • Mascot</span>
+                </div>
+              </div>
+
+              <div class="card-bottom-row">
+                <div>
+                  <div class="card-telemetry-mono" id="main-founder-tag">Founding Partners &bull; Age 14</div>
+                  <div class="card-founder-name" id="main-founder-name">Azan &amp; Thanvi</div>
+                  <div class="card-founder-sub" id="main-founder-focus">Systems Architecture &bull; Product Aesthetics</div>
+                </div>
+                <div>
+                  <div class="card-fiat-zero">$0.00</div>
+                  <div class="card-fiat-lbl">No Cash Ever</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="site-card-face site-card-back" aria-label="Card Back">
+              <div class="card-top-bar" style="border-bottom: 1px solid rgba(88, 47, 14, 0.14); padding-bottom: 6px;">
+                <span class="card-telemetry-mono">BARTER COVENANT &bull; LEDGER RECORD</span>
+                <span class="card-slot-pill" style="font-size: 0.58rem; padding: 2px 7px;">PROMISSORY FAVOR LIEN</span>
+              </div>
+
+              <p class="card-covenant-quote" id="main-covenant-text">
+                “The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”
+              </p>
+
+              <div class="card-back-split">
+                <div class="card-qr-box" title="Scan to visit Pickle Corp">
+                  <img src="qr-code.svg" alt="Pickle Corp QR Code" class="card-qr-img" />
+                </div>
+
+                <div class="card-contacts-list">
+                  <div><span style="opacity: 0.6; font-size: 0.6rem; text-transform: uppercase;">Email:</span> <a href="mailto:azanmail2022@gmail.com" class="card-contact-val">azanmail2022@gmail.com</a></div>
+                  <div><span style="opacity: 0.6; font-size: 0.6rem; text-transform: uppercase;">Phone:</span> <a href="tel:+917010059290" class="card-contact-val">+91 70100 59290</a></div>
+                  <div><span style="opacity: 0.6; font-size: 0.6rem; text-transform: uppercase;">Web:</span> <span style="color: var(--c8-olive);">azanabdullah2752012-ui.github.io/pickle-corp</span></div>
+                  <div><span style="opacity: 0.6; font-size: 0.6rem; text-transform: uppercase;">Trades:</span> <span style="color: var(--c8-olive);" id="main-trades-list">Pizza, Steam games, brownies, hard problems</span></div>
+                </div>
+
+                <!-- Gummy on Back -->
+                <div class="card-gummy-speech">
+                  <svg viewBox="0 0 110 52" width="76" height="36" style="overflow: visible;">
+                    <defs>
+                      <radialGradient id="mcgb-sh" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#593d3b" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
+                      </radialGradient>
+                      <linearGradient id="mcgb-body" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#bda793" />
+                        <stop offset="100%" stop-color="#ab947e" />
+                      </linearGradient>
+                    </defs>
+                    <ellipse cx="55" cy="45" rx="42" ry="4" fill="url(#mcgb-sh)" />
+                    <path d="M 15,44 C 9,44 6.5,39.5 9,34 C 13.5,23.5 26,12 44,8.5 C 50,7.2 60,7.2 66,8.5 C 84,12 96.5,23.5 101,34 C 103.5,39.5 101,44 95,44 Z"
+                          fill="url(#mcgb-body)"
+                          stroke="#593d3b"
+                          stroke-width="3"
+                          stroke-linejoin="round"
+                          stroke-linecap="round" />
+                    <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
+                    <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
+                    <circle cx="46" cy="26" r="3.3" fill="#593d3b" />
+                    <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
+                    <circle cx="64" cy="26" r="3.3" fill="#593d3b" />
+                    <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
+                    <path d="M 52.4,27.8 Q 55,30.2 57.6,27.8" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
+                  </svg>
+                  <span class="card-speech-bubble">“No cash ever!”</span>
+                </div>
+              </div>
+
+              <div class="card-sigs-bar">
+                <div>Systems: <span class="card-sig-ital">Azan Abdullah</span></div>
+                <div>Aesthetics: <span class="card-sig-ital">Thanvi</span></div>
+                <div>Status: <span style="font-weight: 700; color: var(--c1-espresso);">Banked ✦</span></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="site-card-shadow" aria-hidden="true"></div>
+        </div>
+
+        <!-- Card Interaction Toolbar -->
+        <div class="site-card-deck">
+          <div class="card-deck-row">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="card-telemetry-mono" style="font-size: 0.65rem;">Cardholder:</span>
+              <div class="card-deck-seg" role="tablist">
+                <button class="card-seg-btn active" data-main-founder="studio">Studio (Both)</button>
+                <button class="card-seg-btn" data-main-founder="azan">Azan (Code)</button>
+                <button class="card-seg-btn" data-main-founder="thanvi">Thanvi (Design)</button>
+              </div>
+            </div>
+
+            <button id="btnMainFlip" class="btn-deck-flip" title="Flip card over (or press Space)">
+              <span>↻</span> Flip Card
+            </button>
+          </div>
+
+          <div class="card-deck-actions">
+            <a href="Pickle-Corp-Business-Card-Print-Order.docx" download class="btn-deck-tool" title="Download official commercial Word DOCX print order">
+              <span>📄</span> Download Print Order (.docx)
+            </a>
+            <div style="display: flex; gap: 8px;">
+              <a href="business-card-front.png" download="Pickle-Corp-Card-Front.png" class="btn-deck-tool" title="Download Front PNG (300 DPI)">
+                <span>🖼️</span> Front PNG
+              </a>
+              <a href="business-card-back.png" download="Pickle-Corp-Card-Back.png" class="btn-deck-tool" title="Download Back PNG (300 DPI)">
+                <span>🖼️</span> Back PNG
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1054,7 +1233,7 @@
     <div class="container">
       <div class="section-head-dispatch">
         <div class="dispatch-term-bar">
-          <span class="dispatch-term-id">07 &bull; Get in touch</span>
+          <span class="dispatch-term-id">08 &bull; Get in touch</span>
           <span class="dispatch-term-status">Favors only &bull; No cash</span>
         </div>
         <h2 class="dispatch-title">Propose a favor. Let's make something cool.</h2>
@@ -1111,7 +1290,7 @@
         <a href="#work">What We Build</a>
         <a href="#status">Availability</a>
         <a href="#team">Founders</a>
-        <a href="card.html" style="color: var(--c1-espresso); font-weight: 700;">Business Card ✦</a>
+        <a href="#card" style="color: var(--c1-espresso); font-weight: 700;">Business Card ✦</a>
         <a href="#contact">Get in touch</a>
       </div>
 
@@ -1323,7 +1502,7 @@
   </div>
 
   <script src="lenis.min.js"></script>
-  <script src="script.js?v=2.2.0"></script>
+  <script src="script.js?v=2.3.0"></script>
 </body>
 </html>
 
