@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pickle Corp™ — Official Business Card & Barter Marker</title>
+  <meta name="description" content="Official physical business card and barter marker for Pickle Corp. Two 14-year-old builders paid strictly in favors. Cash declined." />
+
+  <!-- Fonts: Cabinet Grotesk, Instrument Serif, Plus Jakarta Sans, JetBrains Mono -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo-torch.png" />
+  <link rel="apple-touch-icon" href="logo-torch.png" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PICKLE CORP™ BUSINESS CARD & PROMISSORY MARKER STUDIO
+       Ultra-tactile 3D physical card simulator with multi-stock finishes & print
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Brand Palette */
+      --c1-espresso:     #582f0e;
+      --c2-caramel:      #7f4f24;
+      --c3-biscuit:      #936639;
+      --c4-dough:        #a68a64;
+      --c5-oatmeal:      #b6ad90;
+      --c6-sage-cream:   #c2c5aa;
+      --c7-celadon:      #a4ac86;
+      --c8-olive:        #656d4a;
+      --c9-forest:       #414833;
+      --c10-ink:         #333d29;
+
+      --font-display:    'Cabinet Grotesk', -apple-system, sans-serif;
+      --font-body:       'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-serif:      'Instrument Serif', Georgia, serif;
+      --font-mono:       'JetBrains Mono', ui-monospace, monospace;
+
+      --ease:            cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-elastic:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      /* Card Dimensions: 3.5in x 2.0in (Aspect Ratio 1.75 : 1) */
+      --card-w: min(560px, 92vw);
+      --card-h: calc(var(--card-w) / 1.75);
+      --card-radius: 16px;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      background: #0d0f0c;
+      color: #e4e2dd;
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Stage Atmosphere */
+    .stage-canvas {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 20px 40px;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 40%, rgba(101, 109, 74, 0.18) 0%, transparent 70%),
+        radial-gradient(circle at 15% 20%, rgba(127, 79, 36, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(22, 121, 250, 0.08) 0%, transparent 50%),
+        #0b0d0a;
+    }
+
+    /* Subtle Technical Grid Lines */
+    .stage-canvas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(194, 197, 170, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(194, 197, 170, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── Top Header Navigation ────────────────────────────────────────────────── */
+    .stage-nav {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0 20px;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #b6ad90;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      transition: all 0.2s var(--ease);
+    }
+    .nav-back-link:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateX(-2px);
+    }
+    .nav-back-arrow {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .nav-title-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-torch-icon {
+      height: 24px;
+      width: auto;
+      filter: drop-shadow(0 2px 6px rgba(22, 121, 250, 0.4));
+    }
+    .nav-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #f7f6f2;
+    }
+    .nav-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      background: rgba(164, 172, 134, 0.15);
+      border: 1px solid rgba(164, 172, 134, 0.3);
+      color: #c2c5aa;
+      border-radius: 4px;
+    }
+
+    .nav-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-icon-nav {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c2c5aa;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-icon-nav:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    /* ── Main 3D Card Scene ──────────────────────────────────────────────────── */
+    .card-scene {
+      position: relative;
+      z-index: 5;
+      width: var(--card-w);
+      height: var(--card-h);
+      perspective: 1400px;
+      margin: 20px auto 30px;
+      cursor: grab;
+      user-select: none;
+    }
+    .card-scene:active {
+      cursor: grabbing;
+    }
+
+    /* 3D Physical Card Body */
+    .card-object {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--card-radius);
+      transform-style: preserve-3d;
+      transition: transform 0.65s var(--ease);
+      will-change: transform;
+    }
+    .card-object.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    /* Shadow Ground Plane beneath Card */
+    .card-shadow-plane {
+      position: absolute;
+      top: 105%;
+      left: 6%;
+      width: 88%;
+      height: 24px;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 80%);
+      filter: blur(14px);
+      transform: rotateX(80deg);
+      pointer-events: none;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* Shared Card Face Styling */
+    .card-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--card-radius);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(20px, 4.2vw, 28px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 20px 48px -12px rgba(0, 0, 0, 0.7),
+        0 4px 14px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .card-face-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Specular Foil Glare Overlay */
+    .card-specular-sheen {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: var(--card-radius);
+      background: radial-gradient(
+        circle 320px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.04) 40%,
+        transparent 75%
+      );
+      mix-blend-mode: overlay;
+      z-index: 20;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       MATERIAL FINISHES: OBSIDIAN, BISCUIT LETTERPRESS, GHOST CELADON
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    /* 1. OBSIDIAN FOIL (Default - Midnight Carbon & Gold Foil) */
+    .card-object[data-finish="obsidian"] .card-face {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(22, 121, 250, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 15% 90%, rgba(147, 102, 57, 0.14) 0%, transparent 60%),
+        linear-gradient(135deg, #151814 0%, #0d0f0c 100%);
+      color: #e4e2dc;
+      border-color: rgba(226, 198, 151, 0.24);
+    }
+    .card-object[data-finish="obsidian"] .foil-text {
+      background: linear-gradient(135deg, #f8e5c4 0%, #d4af72 50%, #f9edd4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 1px rgba(212, 175, 114, 0.2);
+    }
+    .card-object[data-finish="obsidian"] .card-subtle-text {
+      color: #8c9082;
+    }
+    .card-object[data-finish="obsidian"] .card-divider-line {
+      background: rgba(226, 198, 151, 0.18);
+    }
+    .card-object[data-finish="obsidian"] .card-seal-chip {
+      background: rgba(226, 198, 151, 0.08);
+      border: 1px solid rgba(226, 198, 151, 0.3);
+      color: #e2c697;
+    }
+
+    /* 2. BISCUIT LETTERPRESS (600gsm Heavy Warm Cotton Cardstock) */
+    .card-object[data-finish="biscuit"] .card-face {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(166, 138, 100, 0.1) 0%, transparent 50%),
+        linear-gradient(145deg, #fdfbf7 0%, #f3eee3 100%);
+      color: #333d29;
+      border-color: rgba(88, 47, 14, 0.2);
+      box-shadow:
+        0 22px 50px -10px rgba(51, 61, 41, 0.28),
+        0 4px 12px rgba(88, 47, 14, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 0 8px rgba(147, 102, 57, 0.08);
+    }
+    .card-object[data-finish="biscuit"] .foil-text {
+      color: #582f0e;
+      background: none;
+      -webkit-text-fill-color: initial;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+    .card-object[data-finish="biscuit"] .card-subtle-text {
+      color: #656d4a;
+    }
+    .card-object[data-finish="biscuit"] .card-divider-line {
+      background: rgba(88, 47, 14, 0.14);
+    }
+    .card-object[data-finish="biscuit"] .card-seal-chip {
+      background: rgba(147, 102, 57, 0.08);
+      border: 1px solid rgba(147, 102, 57, 0.35);
+      color: #7f4f24;
+    }
+    .card-object[data-finish="biscuit"] .card-qr-box {
+      background: #ffffff !important;
+      border: 1px solid rgba(88, 47, 14, 0.15) !important;
+    }
+
+    /* 3. GHOST CELADON (Technical Prototype Sage Slate) */
+    .card-object[data-finish="celadon"] .card-face {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(194, 197, 170, 0.15) 0%, transparent 60%),
+        linear-gradient(140deg, #22291e 0%, #171d15 100%);
+      color: #e3e7db;
+      border-color: rgba(194, 197, 170, 0.3);
+    }
+    .card-object[data-finish="celadon"] .foil-text {
+      background: linear-gradient(135deg, #ffffff 0%, #c2c5aa 60%, #a4ac86 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-object[data-finish="celadon"] .card-subtle-text {
+      color: #9aa282;
+    }
+    .card-object[data-finish="celadon"] .card-divider-line {
+      background: rgba(194, 197, 170, 0.15);
+    }
+    .card-object[data-finish="celadon"] .card-seal-chip {
+      background: rgba(164, 172, 134, 0.12);
+      border: 1px solid rgba(164, 172, 134, 0.32);
+      color: #c2c5aa;
+    }
+
+    /* ── CARD FRONT ARCHITECTURE ─────────────────────────────────────────────── */
+    .front-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .front-reg-marker {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .reg-id {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      opacity: 0.9;
+    }
+    .reg-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .front-status-seal {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .status-pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4ade80;
+    }
+
+    /* Front Middle / Main Focal Mark */
+    .front-center-stage {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 3.2vw, 24px);
+      margin: auto 0;
+    }
+    .front-torch-wrap {
+      flex-shrink: 0;
+      width: clamp(38px, 8vw, 52px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .front-torch-img {
+      width: 100%;
+      height: auto;
+      max-height: clamp(65px, 12vw, 92px);
+      filter: drop-shadow(0 3px 12px rgba(22, 121, 250, 0.45));
+    }
+
+    .front-typography {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .front-brand-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4.4vw, 2.3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+    .front-brand-motto {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+      letter-spacing: 0.01em;
+      margin-top: 2px;
+    }
+
+    /* Front Founder Identification Block */
+    .front-founder-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+    }
+    .founder-profile {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .founder-role-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .founder-name-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .founder-specialty {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 1px;
+    }
+
+    .front-zero-cash-lockup {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .cash-tag {
+      font-family: var(--font-display);
+      font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .cash-sub {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CARD BACK ARCHITECTURE ──────────────────────────────────────────────── */
+    .back-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 8px;
+    }
+    .back-ledger-head {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .back-marker-badge {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* Back Covenant Clause */
+    .back-covenant-box {
+      margin: 6px 0;
+      line-height: 1.35;
+    }
+    .covenant-quote {
+      font-family: var(--font-body);
+      font-size: clamp(0.68rem, 1.55vw, 0.78rem);
+      font-weight: 500;
+      opacity: 0.92;
+    }
+    .covenant-quote strong {
+      font-weight: 700;
+      color: inherit;
+    }
+
+    /* Back Split Grid: QR Code + Dispatch Hotline */
+    .back-details-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: clamp(12px, 2.5vw, 20px);
+      margin-top: auto;
+    }
+
+    .card-qr-box {
+      width: clamp(66px, 13vw, 84px);
+      height: clamp(66px, 13vw, 84px);
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
+    }
+    .card-qr-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .back-contacts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(0.68rem, 1.6vw, 0.8rem);
+      font-family: var(--font-mono);
+    }
+    .contact-lbl {
+      opacity: 0.5;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 48px;
+      flex-shrink: 0;
+    }
+    .contact-val {
+      font-weight: 600;
+      color: inherit;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    /* Back Footer Signatures */
+    .back-signatures-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 6px;
+      margin-top: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+    }
+    .sig-block {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sig-name {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── STUDIO INTERACTIVE CONTROL PANEL ────────────────────────────────────── */
+    .control-deck {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 840px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: rgba(18, 22, 16, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 18px 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .control-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .control-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9aa282;
+      margin-right: 4px;
+    }
+
+    /* Segmented Tab Buttons */
+    .segmented-control {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .seg-btn {
+      background: transparent;
+      border: none;
+      color: #a4ac86;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .seg-btn:hover {
+      color: #fff;
+    }
+    .seg-btn.active {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Main Action Buttons */
+    .deck-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+      justify-content: space-between;
+    }
+
+    .btn-action-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #7f4f24 0%, #582f0e 100%);
+      color: #f7f6f2;
+      border: 1px solid rgba(226, 198, 151, 0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      box-shadow: 0 4px 14px rgba(88, 47, 14, 0.35);
+    }
+    .btn-action-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(88, 47, 14, 0.5);
+      border-color: rgba(226, 198, 151, 0.7);
+    }
+
+    .btn-action-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #e4e2dd;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+    }
+    .btn-action-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .keyboard-hint {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #7b836b;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    kbd {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.65rem;
+      color: #c2c5aa;
+    }
+
+    /* Toast Notification */
+    .card-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: rgba(20, 24, 18, 0.95);
+      border: 1px solid rgba(164, 172, 134, 0.4);
+      color: #f4f2ec;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s var(--ease);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PRINT SPECIFICATION (Standard 3.5in x 2.0in with Bleed & Crop Marks)
+       ═══════════════════════════════════════════════════════════════════════════ */
+    @media print {
+      body, html {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .stage-nav, .control-deck, .card-shadow-plane, .stage-canvas::before, .card-toast {
+        display: none !important;
+      }
+      .stage-canvas {
+        background: none !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        display: block !important;
+      }
+      .card-scene {
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        perspective: none !important;
+        display: block !important;
+      }
+      .card-object {
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20mm !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .card-face {
+        position: relative !important;
+        width: 3.5in !important;
+        height: 2.0in !important;
+        margin: 10mm auto !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+        border: 1px solid #d0d0d0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .card-face-back {
+        transform: none !important;
+      }
+      .card-specular-sheen {
+        display: none !important;
+      }
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 640px) {
+      .control-deck {
+        padding: 14px 16px;
+      }
+      .control-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-action-primary, .btn-action-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="stage-canvas">
+
+    <!-- Top Navigation Header -->
+    <header class="stage-nav">
+      <a href="index.html" class="nav-back-link" title="Return to Pickle Corp Website">
+        <span class="nav-back-arrow">←</span>
+        <span>Studio Home</span>
+      </a>
+
+      <div class="nav-title-lockup">
+        <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="nav-torch-icon" />
+        <span class="nav-title">Pickle Corp™</span>
+        <span class="nav-badge">Physical Card № 0026</span>
+      </div>
+
+      <div class="nav-quick-actions">
+        <button id="btn-toggle-sound" class="btn-icon-nav" title="Toggle tactile mechanical sounds">
+          <span>🔊</span> <span id="sound-label">Audio On</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 3D Physical Card Simulation Scene -->
+    <section class="card-scene" id="cardScene" aria-label="Interactive 3D Business Card (Front and Back)">
+      <div class="card-object" id="cardObject" data-founder="studio" data-finish="obsidian">
+
+        <!-- Specular Glare Layer -->
+        <div class="card-specular-sheen" aria-hidden="true"></div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             CARD FRONT — THE OFFICIAL STUDIO CREDENTIAL
+             ═══════════════════════════════════════════════════════════════════ -->
+        <article class="card-face card-face-front" aria-label="Business Card Front">
+          
+          <!-- Top Telemetry Row -->
+          <div class="front-top-row">
+            <div class="front-reg-marker">
+              <span class="reg-id foil-text" id="disp-reg-id">PC-MARKER // № 0026</span>
+              <span class="reg-sub card-subtle-text">1 CONCURRENT BUILD SLOT ONLY</span>
+            </div>
+            <div class="front-status-seal card-seal-chip">
+              <span class="status-pulse-dot" aria-hidden="true"></span>
+              <span>SLOT OPEN</span>
+            </div>
+          </div>
+
+          <!-- Centerpiece Brand Lockup -->
+          <div class="front-center-stage">
+            <div class="front-torch-wrap">
+              <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="front-torch-img" />
+            </div>
+            <div class="front-typography">
+              <h1 class="front-brand-title foil-text">Pickle Corp™</h1>
+              <p class="front-brand-motto card-subtle-text">Paid Strictly in Favors. Zero Fiat.</p>
+            </div>
+          </div>
+
+          <!-- Bottom Founder & Zero Cash Row -->
+          <div class="front-founder-row">
+            <div class="founder-profile">
+              <span class="founder-role-label card-subtle-text" id="disp-founder-role">Founding Partners &bull; Age 14</span>
+              <h2 class="founder-name-heading foil-text" id="disp-founder-name">Azan &amp; Thanvi</h2>
+              <p class="founder-specialty card-subtle-text" id="disp-founder-specialty">Systems Architecture &bull; Product Aesthetics</p>
+            </div>
+            <div class="front-zero-cash-lockup">
+              <span class="cash-tag foil-text">$0.00</span>
+              <span class="cash-sub card-subtle-text">No Cash Ever</span>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             CARD BACK — THE BARTER COVENANT & DISPATCH
+             ═══════════════════════════════════════════════════════════════════ -->
+        <article class="card-face card-face-back" aria-label="Business Card Back">
+
+          <!-- Top Back Row -->
+          <div class="back-top-row">
+            <span class="back-ledger-head foil-text">BARTER COVENANT &bull; LEDGER RECORD</span>
+            <span class="back-marker-badge card-seal-chip">LEGAL FAVOR LIEN</span>
+          </div>
+
+          <!-- Contract Clause -->
+          <div class="back-covenant-box">
+            <p class="covenant-quote card-subtle-text" id="disp-covenant-quote">
+              “The bearer holds a direct lien on software systems &amp; product design by <strong>Azan &amp; Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”
+            </p>
+          </div>
+
+          <!-- Middle Details: Scannable Vector QR Code + Direct Contacts -->
+          <div class="back-details-grid">
+            <div class="card-qr-box" title="Scan to visit https://azanabdullah2752012-ui.github.io/pickle-corp/">
+              <img src="qr-code.svg" alt="Pickle Corp QR Code" class="card-qr-img" />
+            </div>
+
+            <div class="back-contacts-list">
+              <div class="contact-item">
+                <span class="contact-lbl">Email</span>
+                <a href="mailto:azanmail2022@gmail.com" class="contact-val foil-text">azanmail2022@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-lbl">Hotline</span>
+                <a href="tel:+917010059290" class="contact-val foil-text">+91 70100 59290</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-lbl">Web</span>
+                <span class="contact-val card-subtle-text">azanabdullah2752012-ui.github.io/pickle-corp</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-lbl">Trades</span>
+                <span class="contact-val card-subtle-text" id="disp-accepted-trades">Pizza, Steam games, brownies, hard problems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Signature / Stamp Row -->
+          <div class="back-signatures-row card-subtle-text">
+            <div class="sig-block">
+              <span>Systems:</span>
+              <span class="sig-name foil-text">Azan Abdullah</span>
+            </div>
+            <div class="sig-block">
+              <span>Aesthetics:</span>
+              <span class="sig-name foil-text">Thanvi</span>
+            </div>
+            <div class="sig-block">
+              <span>Status:</span>
+              <span class="foil-text">Banked ✦</span>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- Realistic Soft Drop Ground Shadow -->
+      <div class="card-shadow-plane" aria-hidden="true"></div>
+    </section>
+
+    <!-- Interactive Studio Deck Controls -->
+    <nav class="control-deck" aria-label="Card Customization and Export Options">
+
+      <!-- Row 1: Founder and Material Stock Selection -->
+      <div class="control-row">
+        <!-- Founder Switcher -->
+        <div class="control-group">
+          <span class="control-label">Identity:</span>
+          <div class="segmented-control" role="tablist" aria-label="Select Founder Identity">
+            <button class="seg-btn active" data-founder-btn="studio" role="tab" aria-selected="true">
+              <span>✦</span> Studio (Both)
+            </button>
+            <button class="seg-btn" data-founder-btn="azan" role="tab" aria-selected="false">
+              Azan (Code)
+            </button>
+            <button class="seg-btn" data-founder-btn="thanvi" role="tab" aria-selected="false">
+              Thanvi (Design)
+            </button>
+          </div>
+        </div>
+
+        <!-- Material Stock Switcher -->
+        <div class="control-group">
+          <span class="control-label">Stock:</span>
+          <div class="segmented-control" role="tablist" aria-label="Select Card Finish Stock">
+            <button class="seg-btn active" data-finish-btn="obsidian" role="tab" aria-selected="true">
+              Obsidian Foil
+            </button>
+            <button class="seg-btn" data-finish-btn="biscuit" role="tab" aria-selected="false">
+              Biscuit Cotton
+            </button>
+            <button class="seg-btn" data-finish-btn="celadon" role="tab" aria-selected="false">
+              Ghost Celadon
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Action Buttons (Flip, Print PDF, Copy VCard) -->
+      <div class="deck-actions">
+        <div class="control-group">
+          <button id="btn-flip" class="btn-action-primary" title="Flip card over (or press Space)">
+            <span>↻</span> Flip Card
+          </button>
+          <span class="keyboard-hint"><kbd>Space</kbd> or Drag to flip</span>
+        </div>
+
+        <div class="control-group">
+          <button id="btn-copy-card" class="btn-action-secondary" title="Copy dispatch email and hotline to clipboard">
+            <span>📋</span> Copy Contact Info
+          </button>
+          <button id="btn-print" class="btn-action-secondary" title="Print 3.5in x 2.0in physical cards to PDF or printer">
+            <span>🖨️</span> Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Feedback Toast -->
+    <div id="cardToast" class="card-toast" role="status" aria-live="polite">
+      <span>✦</span>
+      <span id="toastMsg">Action completed</span>
+    </div>
+
+  </main>
+
+  <script>
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PICKLE CORP™ CARD ENGINE — 3D TILT, SOUND SYNTHESIS & PRINT CONTROLLER
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    (function() {
+      'use strict';
+
+      // Elements
+      const cardScene = document.getElementById('cardScene');
+      const cardObject = document.getElementById('cardObject');
+      const btnFlip = document.getElementById('btn-flip');
+      const btnPrint = document.getElementById('btn-print');
+      const btnCopy = document.getElementById('btn-copy-card');
+      const btnToggleSound = document.getElementById('btn-toggle-sound');
+      const soundLabel = document.getElementById('sound-label');
+      const toast = document.getElementById('cardToast');
+      const toastMsg = document.getElementById('toastMsg');
+
+      // Display fields
+      const dispRegId = document.getElementById('disp-reg-id');
+      const dispFounderRole = document.getElementById('disp-founder-role');
+      const dispFounderName = document.getElementById('disp-founder-name');
+      const dispFounderSpecialty = document.getElementById('disp-founder-specialty');
+      const dispCovenantQuote = document.getElementById('disp-covenant-quote');
+      const dispAcceptedTrades = document.getElementById('disp-accepted-trades');
+
+      // State
+      let isFlipped = false;
+      let soundEnabled = true;
+      let currentFounder = 'studio';
+      let currentFinish = 'obsidian';
+
+      // ── Native Web Audio Synthesizer (Mechanical Clicks & Air Swishes) ──────
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      let audioCtx = null;
+
+      function playSound(type) {
+        if (!soundEnabled) return;
+        try {
+          if (!audioCtx) audioCtx = new AudioCtx();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          const t = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          if (type === 'flip') {
+            // Card swoosh / paper snap
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(320, t);
+            osc.frequency.exponentialRampToValueAtTime(140, t + 0.12);
+            gain.gain.setValueAtTime(0.08, t);
+            gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.14);
+            osc.start(t);
+            osc.stop(t + 0.14);
+          } else if (type === 'click') {
+            // Tactile switch tick
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(840, t);
+            osc.frequency.exponentialRampToValueAtTime(420, t + 0.04);
+            gain.gain.setValueAtTime(0.05, t);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+            osc.start(t);
+            osc.stop(t + 0.05);
+          } else if (type === 'ping') {
+            // High resonance brass chime
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(1180, t);
+            gain.gain.setValueAtTime(0.04, t);
+            gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.2);
+            osc.start(t);
+            osc.stop(t + 0.2);
+          }
+        } catch (e) {
+          // Silent fallback if audio context blocked
+        }
+      }
+
+      // ── Sound Toggle ────────────────────────────────────────────────────────
+      btnToggleSound.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        soundLabel.textContent = soundEnabled ? 'Audio On' : 'Muted';
+        btnToggleSound.style.opacity = soundEnabled ? '1' : '0.6';
+        if (soundEnabled) playSound('click');
+        showToast(soundEnabled ? 'Tactile Audio Enabled' : 'Audio Muted');
+      });
+
+      // ── Flip Card Functionality ─────────────────────────────────────────────
+      function flipCard() {
+        isFlipped = !isFlipped;
+        cardObject.classList.toggle('is-flipped', isFlipped);
+        playSound('flip');
+      }
+
+      btnFlip.addEventListener('click', flipCard);
+
+      // Keyboard Shortcut (Spacebar to Flip)
+      window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+          e.preventDefault();
+          flipCard();
+        }
+      });
+
+      // Click on Card Scene to Flip (unless dragging)
+      let dragStartX = 0;
+      let dragStartY = 0;
+      cardScene.addEventListener('mousedown', (e) => {
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+      });
+      cardScene.addEventListener('mouseup', (e) => {
+        const deltaX = Math.abs(e.clientX - dragStartX);
+        const deltaY = Math.abs(e.clientY - dragStartY);
+        if (deltaX < 6 && deltaY < 6) {
+          flipCard();
+        }
+      });
+
+      // ── Mouse Dynamic 3D Tilt & Specular Sheen ──────────────────────────────
+      let tiltX = 0;
+      let tiltY = 0;
+      let targetTiltX = 0;
+      let targetTiltY = 0;
+
+      cardScene.addEventListener('mousemove', (e) => {
+        const rect = cardScene.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        targetTiltY = ((x - centerX) / centerX) * 14;
+        targetTiltX = -((y - centerY) / centerY) * 14;
+
+        // Update Specular Sheen percentage
+        const pctX = ((x / rect.width) * 100).toFixed(1) + '%';
+        const pctY = ((y / rect.height) * 100).toFixed(1) + '%';
+        cardObject.style.setProperty('--mouse-x', pctX);
+        cardObject.style.setProperty('--mouse-y', pctY);
+      });
+
+      cardScene.addEventListener('mouseleave', () => {
+        targetTiltX = 0;
+        targetTiltY = 0;
+      });
+
+      // Smooth Animation Frame Loop for 3D physics
+      function renderLoop() {
+        tiltX += (targetTiltX - tiltX) * 0.12;
+        tiltY += (targetTiltY - tiltY) * 0.12;
+
+        const baseRotateY = isFlipped ? 180 : 0;
+        cardObject.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${(baseRotateY + tiltY).toFixed(2)}deg)`;
+
+        requestAnimationFrame(renderLoop);
+      }
+      renderLoop();
+
+      // ── Founder Data & Content Switcher ─────────────────────────────────────
+      const founderProfiles = {
+        studio: {
+          regId: 'PC-MARKER // № 0026',
+          role: 'Founding Partners • Age 14',
+          name: 'Azan & Thanvi',
+          specialty: 'Systems Architecture • Product Aesthetics',
+          trades: 'Pizza, Steam games, brownies, impossible bugs',
+          quote: '“The bearer holds a direct lien on software systems & product design by <strong>Azan & Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
+        },
+        azan: {
+          regId: 'PC-SYS // AZAN-01',
+          role: 'Code & Systems • Age 14',
+          name: 'Azan Abdullah',
+          specialty: 'Backend • Distributed Systems • Low-Level Architecture',
+          trades: 'Wood-fired Pizza, Steam games, weird unsolvable problems',
+          quote: '“Writes the code after school. Thinks in systems, breaks them on purpose, then rebuilds them better. You owe Azan one favor to be redeemed whenever needed.”'
+        },
+        thanvi: {
+          regId: 'PC-DSGN // THANVI-02',
+          role: 'Design & Feel • Age 14',
+          name: 'Thanvi',
+          specialty: 'Product Aesthetics • Interaction Feel • Creative Direction',
+          trades: 'Fresh brownies, gift cards, full creative control',
+          quote: '“Makes everything feel alive. Not only design — she has strong opinions on everything, and she is always right. You owe Thanvi one solid favor.”'
+        }
+      };
+
+      document.querySelectorAll('[data-founder-btn]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-founder-btn');
+          if (key === currentFounder) return;
+
+          currentFounder = key;
+          playSound('click');
+
+          // Update active button state
+          document.querySelectorAll('[data-founder-btn]').forEach(b => {
+            b.classList.toggle('active', b === btn);
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+
+          cardObject.setAttribute('data-founder', key);
+
+          // Update Content smoothly
+          const p = founderProfiles[key];
+          dispRegId.textContent = p.regId;
+          dispFounderRole.textContent = p.role;
+          dispFounderName.textContent = p.name;
+          dispFounderSpecialty.textContent = p.specialty;
+          dispAcceptedTrades.textContent = p.trades;
+          dispCovenantQuote.innerHTML = p.quote;
+
+          showToast(`Switched to ${p.name}`);
+        });
+      });
+
+      // ── Finish Stock Switcher ───────────────────────────────────────────────
+      document.querySelectorAll('[data-finish-btn]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const finish = btn.getAttribute('data-finish-btn');
+          if (finish === currentFinish) return;
+
+          currentFinish = finish;
+          playSound('click');
+
+          document.querySelectorAll('[data-finish-btn]').forEach(b => {
+            b.classList.toggle('active', b === btn);
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+
+          cardObject.setAttribute('data-finish', finish);
+          showToast(`Material finish: ${btn.textContent.trim()}`);
+        });
+      });
+
+      // ── Copy VCard / Contact Info ───────────────────────────────────────────
+      btnCopy.addEventListener('click', () => {
+        const text = `Pickle Corp™ — Azan & Thanvi\nIndependent Studio. Paid Strictly in Favors.\nEmail: azanmail2022@gmail.com\nHotline: +91 70100 59290\nWeb: https://azanabdullah2752012-ui.github.io/pickle-corp/`;
+        navigator.clipboard.writeText(text).then(() => {
+          playSound('ping');
+          showToast('Copied Pickle Corp Contact to Clipboard!');
+        }).catch(() => {
+          showToast('Contact: azanmail2022@gmail.com');
+        });
+      });
+
+      // ── Print Physical Cards to PDF ─────────────────────────────────────────
+      btnPrint.addEventListener('click', () => {
+        playSound('click');
+        showToast('Opening Print Dialogue (3.5" x 2.0" Business Card Sheet)...');
+        setTimeout(() => {
+          window.print();
+        }, 300);
+      });
+
+      // ── Toast Helper ────────────────────────────────────────────────────────
+      let toastTimer = null;
+      function showToast(msg) {
+        toastMsg.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2500);
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
