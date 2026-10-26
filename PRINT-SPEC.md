@@ -60,8 +60,8 @@
   - Motto: *Paid Strictly in Favors. Zero Fiat.* (Font: *Instrument Serif Italic*)
 - **Bottom Left Identity**:  
   - Tag: `FOUNDERS • AGE 14`
-  - Name: **Azan & Thanvi** (or individual card: **Azan Abdullah** / **Thanvi** / **Viren**)
-  - Focus: `Systems & Aesthetics • Marketing: Viren`
+  - Name: **Azan, Thanvi & Viren** (or individual card: **Azan Abdullah** / **Thanvi** / **Viren**)
+  - Focus: `Systems • Aesthetics • Marketing`
 - **Bottom Right Stamp**:  
   `$0.00 CASH INVOICES`  
   `NO CASH EVER • FAVORS ONLY`

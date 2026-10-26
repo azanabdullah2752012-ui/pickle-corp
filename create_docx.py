@@ -63,7 +63,7 @@ def create_document():
     r_sub.font.name = "Arial"
     r_sub.font.size = Pt(11)
     r_sub.font.color.rgb = COLOR_INK
-    r_sub2 = p_sub.add_run("Founders: Azan Abdullah & Thanvi (Age 14)  •  Marketing: Viren  •  Studio: Pickle Corp™  •  Favors over Fiat ($0.00)")
+    r_sub2 = p_sub.add_run("Founders: Azan Abdullah, Thanvi & Viren (Age 14)  •  Studio: Pickle Corp™  •  Favors over Fiat ($0.00)")
     r_sub2.font.name = "Arial"
     r_sub2.font.size = Pt(9.5)
     r_sub2.font.italic = True
@@ -205,8 +205,8 @@ def create_document():
     p_a.add_run("• Main Title: Pickle Corp™ (Cabinet Grotesk 900)\n")
     p_a.add_run("• Sub-Motto: Paid Strictly in Favors. Zero Fiat. (Instrument Serif Italic)\n")
     p_a.add_run("• Identity Tag: Founders • Age 14\n")
-    p_a.add_run("• Founder Names: Azan & Thanvi\n")
-    p_a.add_run("• Focus: Systems & Aesthetics • Marketing: Viren\n")
+    p_a.add_run("• Founder Names: Azan, Thanvi & Viren\n")
+    p_a.add_run("• Focus: Systems • Aesthetics • Marketing\n")
     p_a.add_run("• Bottom Right: $0.00 / No Cash Ever\n")
     for r in p_a.runs:
         r.font.name = "Arial"

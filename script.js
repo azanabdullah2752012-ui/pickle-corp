@@ -1774,8 +1774,8 @@ document.addEventListener('DOMContentLoaded', () => {
       studio: {
         reg: 'PC-MARKER // № 0026',
         tag: 'Founders • Age 14',
-        name: 'Azan & Thanvi',
-        focus: 'Systems & Aesthetics • Marketing: Viren',
+        name: 'Azan, Thanvi & Viren',
+        focus: 'Systems • Aesthetics • Marketing',
         trades: 'Pizza, Steam games, brownies, burgers, viral launches',
         quote: '“The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>, with marketing launch by <strong>Viren</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
       },
