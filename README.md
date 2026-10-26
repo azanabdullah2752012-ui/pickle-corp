@@ -1,7 +1,7 @@
 # Pickle Corp™
 
 > **Independent Freelance Studio. Paid Strictly in Favors.**  
-> Founded by Azan & Thanvi — Two 14-year-old builders engineering systems and designing products that punch way above their weight. Cash declined. Zero fiat. $0.00 invoices.
+> Founded by Azan, Thanvi & Viren — Three 14-year-old builders engineering systems, designing products, and launching movements that punch way above their weight. Cash declined. Zero fiat. $0.00 invoices.
 
 ---
 
@@ -11,9 +11,9 @@ We are 14 years old. We don’t have corporate bank accounts, accounts receivabl
 
 Conventional client billing kills genuine ambition. When hourly rates, change orders, and procurement budgets enter the room, the craftsmanship always suffers. 
 
-If you have an exciting, difficult engineering or design project, we'll build it. In exchange, you owe us one solid, real-life favor banked on our ledger until we choose to call it in.
+If you have an exciting, difficult engineering, design, or launch project, we'll build it. In exchange, you owe us one solid, real-life favor banked on our ledger until we choose to call it in.
 
-No invoices. No retainers. No corporate fluff. Just two partners who build crazy fast and hold a marker for later.
+No invoices. No retainers. No corporate fluff. Just three partners who build and launch crazy fast and hold a marker for later.
 
 ---
 
@@ -60,7 +60,7 @@ We deliver production-ready software with obsessive craft. You launch your produ
 1. **No Cash. Ever. ($0.00 Required)**  
    We genuinely prefer favors over money. Not because we have to — because it's more interesting. We build for ambitious friends, students, and founders who have a real idea and a real trade to offer.
 2. **We Personally Decide The Favor**  
-   No pre-set menus or fixed shopping lists. You don't pick favors off a shelf. You pitch what you need built, and Azan and Thanvi personally determine the favor based on the craft and difficulty.
+   No pre-set menus or fixed shopping lists. You don't pick favors off a shelf. You pitch what you need built, and Azan, Thanvi, and Viren personally determine the favor based on the craft and difficulty.
 3. **Strict Craft Parity**  
    Zero dollars never means toy work. We deliver work that punches way above our age, and we bank your favor until we choose to call it in.
 
@@ -72,30 +72,35 @@ Pickle Corp operates on a strict **single concurrent build slot**:
 
 - **Capacity**: 1 client build at a time.
 - **Cadence**: After school and weekends.
-- **Zero Delegation**: Azan & Thanvi only. No account managers, no subcontractors, no junior handoffs.
+- **Zero Delegation**: Azan, Thanvi & Viren only. No account managers, no subcontractors, no junior handoffs.
 - **Full Focus**: When your build is in flight, it has our undivided attention until shipped.
 
 ---
 
 ## The Founders
 
-Pickle Corp is an equal **50/50 freelance partnership** with zero corporate hierarchy.
+Pickle Corp is an equal **33.3% freelance trio** with zero corporate hierarchy.
 
 ### Azan
-- **Role**: Co-Founder (50%)
+- **Role**: Co-Founder (33.3%) • Code & Systems
 - **Focus**: The one who builds the systems. Codes after school. Thinks in architecture, breaks systems on purpose, then fixes them.
 - **Will Accept**: Pizza, a Steam game, or a genuinely difficult problem he hasn't seen before.
 
 ### Thanvi
-- **Role**: Co-Founder (50%)
+- **Role**: Co-Founder (33.3%) • Design & Feel
 - **Focus**: The one who makes it look alive. Directs product aesthetics and user feel. Not only design — she has strong opinions on everything, and she is always right.
 - **Will Accept**: Brownies, any gift card, or full creative control on the next project.
+
+### Viren
+- **Role**: Co-Founder (33.3%) • Head of Marketing
+- **Focus**: The one who gets the build into everyone's hands. Crafts launch storytelling, distribution strategy, and makes sure people actually care.
+- **Will Accept**: Burgers, energy drinks, or a genuinely crazy viral launch challenge.
 
 ---
 
 ## Gummy — The Studio Mascot
 
-Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop with a sweet smile and expressive eyes, Gummy represents the playful, unpretentious spirit of two teenage builders who take their craft seriously without taking corporate culture seriously.
+Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop with a sweet smile and expressive eyes, Gummy represents the playful, unpretentious spirit of three teenage builders who take their craft seriously without taking corporate culture seriously.
 
 ---
 
@@ -104,11 +109,11 @@ Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop
 Have an exceptional problem worth building and a real favor to put on the table? The ledger is open for the right challenge.
 
 - **Primary Dispatch (Email)**: [azanmail2022@gmail.com](mailto:azanmail2022@gmail.com)  
-  *Send your project pitch and proposed favor terms directly to Azan and Thanvi.*
+  *Send your project pitch and proposed favor terms directly to Azan, Thanvi, and Viren.*
 
 - **Direct Hotline (Phone)**: `+91 70100 59290`  
   *Voice wire for time-sensitive favor negotiations.*
 
 ---
 
-*© 2026 Pickle Corp. Azan & Thanvi. Favors over fiat.*
+*© 2026 Pickle Corp. Azan, Thanvi & Viren. Favors over fiat.*

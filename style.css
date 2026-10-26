@@ -2482,7 +2482,7 @@ img { display: block; max-width: 100%; }
 
 .founders-spread {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: stretch;
   background: #ffffff;
   border: 1px solid var(--border);
@@ -2491,19 +2491,23 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--card-shadow);
 }
 
-/* Azan Card */
-.founder-card:first-child {
-  padding: clamp(36px, 5vw, 60px);
+.founder-card {
+  padding: clamp(28px, 3.8vw, 48px);
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border-right: 1px solid var(--border-subtle);
   transition: all 0.25s;
 }
-.founder-card:first-child:hover {
+.founder-card:hover {
   background: var(--bg-subtle);
 }
-.founder-card:first-child .founder-role-tag {
+
+/* Azan Card */
+.founder-card:first-child,
+.founder-card[data-founder="azan"] {
+  border-right: none;
+}
+.founder-card[data-founder="azan"] .founder-role-tag {
   color: var(--chocolate-plum);
   background: var(--khaki-beige);
   padding: 4px 10px;
@@ -2514,29 +2518,18 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0;
   text-transform: none;
 }
-.founder-card:first-child .founder-glyph {
+.founder-card[data-founder="azan"] .founder-glyph {
   border-color: rgba(89, 61, 59, 0.25);
   background: rgba(89, 61, 59, 0.06);
 }
-.founder-card:first-child:hover .founder-glyph {
+.founder-card[data-founder="azan"]:hover .founder-glyph {
   transform: rotate(6deg) scale(1.06);
   border-color: var(--chocolate-plum);
   box-shadow: 0 0 12px rgba(89, 61, 59, 0.2);
 }
 
 /* Thanvi Card */
-.founder-card:last-child {
-  padding: clamp(36px, 5vw, 60px);
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border-left: 1px solid var(--border-subtle);
-  transition: all 0.25s;
-}
-.founder-card:last-child:hover {
-  background: var(--bg-subtle);
-}
-.founder-card:last-child .founder-role-tag {
+.founder-card[data-founder="thanvi"] .founder-role-tag {
   color: #ffffff;
   background: var(--dusty-taupe-2);
   padding: 4px 10px;
@@ -2547,14 +2540,36 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0;
   text-transform: none;
 }
-.founder-card:last-child .founder-glyph {
+.founder-card[data-founder="thanvi"] .founder-glyph {
   border-color: rgba(171, 148, 126, 0.35);
   background: rgba(195, 169, 149, 0.15);
 }
-.founder-card:last-child:hover .founder-glyph {
+.founder-card[data-founder="thanvi"]:hover .founder-glyph {
   transform: rotate(-6deg) scale(1.06);
   border-color: var(--ash-brown);
   box-shadow: 0 0 12px rgba(171, 148, 126, 0.25);
+}
+
+/* Viren Card */
+.founder-card[data-founder="viren"] .founder-role-tag {
+  color: #ffffff;
+  background: var(--c2-caramel);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.founder-card[data-founder="viren"] .founder-glyph {
+  border-color: rgba(127, 79, 36, 0.35);
+  background: rgba(147, 102, 57, 0.12);
+}
+.founder-card[data-founder="viren"]:hover .founder-glyph {
+  transform: rotate(6deg) scale(1.06);
+  border-color: var(--c1-espresso);
+  box-shadow: 0 0 12px rgba(127, 79, 36, 0.25);
 }
 
 .founder-card-top {

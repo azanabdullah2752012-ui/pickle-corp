@@ -1774,10 +1774,10 @@ document.addEventListener('DOMContentLoaded', () => {
       studio: {
         reg: 'PC-MARKER // № 0026',
         tag: 'Founding Partners • Age 14',
-        name: 'Azan & Thanvi',
-        focus: 'Systems Architecture • Product Aesthetics',
-        trades: 'Pizza, Steam games, brownies, hard problems',
-        quote: '“The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
+        name: 'Azan, Thanvi & Viren',
+        focus: 'Systems • Aesthetics • Marketing',
+        trades: 'Pizza, Steam games, brownies, burgers, viral launches',
+        quote: '“The bearer holds a direct promissory marker for production software engineering, design execution, or marketing launch by <strong>Azan, Thanvi &amp; Viren</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
       },
       azan: {
         reg: 'PC-SYS // AZAN-01',
@@ -1794,6 +1794,14 @@ document.addEventListener('DOMContentLoaded', () => {
         focus: 'Product Aesthetics • Interaction Feel • Creative Direction',
         trades: 'Fresh brownies, gift cards, full creative control',
         quote: '“Makes everything feel alive. Not only design — she has strong opinions on everything, and she is always right. You owe Thanvi one solid favor.”'
+      },
+      viren: {
+        reg: 'PC-MKTG // VIREN-03',
+        tag: 'Head of Marketing • Age 14',
+        name: 'Viren',
+        focus: 'Growth Strategy • Launch Storytelling • Distribution',
+        trades: 'Burgers, energy drinks, viral launch challenges',
+        quote: '“Gets the build into everyone\'s hands. Crafts the launch narrative, hypes the product, and makes sure people actually care. You owe Viren one solid favor.”'
       }
     };
 

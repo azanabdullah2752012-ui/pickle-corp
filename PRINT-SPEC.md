@@ -8,7 +8,7 @@
 
 ### 1. General Job Overview
 
-- **Client / Studio**: Pickle Corp™ (Azan & Thanvi)
+- **Client / Studio**: Pickle Corp™ (Azan, Thanvi & Viren)
 - **Product**: 2-Sided Premium Business Card / Promissory Barter Marker
 - **Dimensions (Finished Trim Size)**: `3.5 in × 2.0 in` (`88.9 mm × 50.8 mm`) — Standard US / International Business Card
 - **Full Bleed Size**: `3.75 in × 2.25 in` (`95.25 mm × 57.15 mm`) — Includes `0.125 in` (`3.175 mm`) bleed margin on all 4 edges
@@ -60,8 +60,8 @@
   - Motto: *Paid Strictly in Favors. Zero Fiat.* (Font: *Instrument Serif Italic*)
 - **Bottom Left Identity**:  
   - Tag: `FOUNDING PARTNERS • AGE 14`
-  - Name: **Azan & Thanvi** (or individual card: **Azan Abdullah** / **Thanvi**)
-  - Focus: `Systems Architecture • Product Aesthetics`
+  - Name: **Azan, Thanvi & Viren** (or individual card: **Azan Abdullah** / **Thanvi** / **Viren**)
+  - Focus: `Systems • Aesthetics • Marketing`
 - **Bottom Right Stamp**:  
   `$0.00 CASH INVOICES`  
   `NO CASH EVER • FAVORS ONLY`
@@ -73,10 +73,10 @@
   `BARTER COVENANT • THE OFFICIAL LEDGER RECORD`  
   `CERTIFICATE OF PROMISSORY FAVOR`
 - **Contract Covenant Text**:  
-  > *"The bearer holds a direct promissory marker for production software engineering or design execution by Azan & Thanvi. In accordance with the Pickle Corp Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets."*
+  > *"The bearer holds a direct promissory marker for production software engineering, design execution, or marketing launch by Azan, Thanvi & Viren. In accordance with the Pickle Corp Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets."*
 - **Checklist of Acceptable Trades**:  
-  - [x] Wood-fired Pizza or Fresh Baked Brownies  
-  - [x] Steam Gift or Difficult Technical Challenge  
+  - [x] Wood-fired Pizza, Fresh Brownies, or Burgers  
+  - [x] Steam Gift, Energy Drinks, or Viral Launch Challenge  
   - [x] Full Creative Freedom on Next Build  
   - [x] Real-Life Favor Banked on Ledger  
 - **Direct Dispatch & Contact Information**:  
@@ -87,8 +87,9 @@
   - High-precision 100% vector QR Code (`qr-code.svg`) pointing to `https://azanabdullah2752012-ui.github.io/pickle-corp/`.
   - Must remain at least `0.7 in × 0.7 in` (`18 mm × 18 mm`) with high-contrast black/espresso ink for reliable camera scanning.
 - **Signatures**:  
-  - Systems Architecture: *Azan Abdullah*  
-  - Product Aesthetics: *Thanvi*  
+  - Systems: *Azan Abdullah*  
+  - Aesthetics: *Thanvi*  
+  - Marketing: *Viren*  
   - Ledger Marker Status: `BANKED ✦`
 
 ---
