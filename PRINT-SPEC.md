@@ -8,7 +8,7 @@
 
 ### 1. General Job Overview
 
-- **Client / Studio**: Pickle Corp™ (Azan, Thanvi & Viren)
+- **Client / Studio**: Pickle Corp™ (Azan & Thanvi • Marketing: Viren)
 - **Product**: 2-Sided Premium Business Card / Promissory Barter Marker
 - **Dimensions (Finished Trim Size)**: `3.5 in × 2.0 in` (`88.9 mm × 50.8 mm`) — Standard US / International Business Card
 - **Full Bleed Size**: `3.75 in × 2.25 in` (`95.25 mm × 57.15 mm`) — Includes `0.125 in` (`3.175 mm`) bleed margin on all 4 edges
@@ -59,9 +59,9 @@
   - Title: **Pickle Corp™** (Font: *Cabinet Grotesk 900*)
   - Motto: *Paid Strictly in Favors. Zero Fiat.* (Font: *Instrument Serif Italic*)
 - **Bottom Left Identity**:  
-  - Tag: `FOUNDING PARTNERS • AGE 14`
-  - Name: **Azan, Thanvi & Viren** (or individual card: **Azan Abdullah** / **Thanvi** / **Viren**)
-  - Focus: `Systems • Aesthetics • Marketing`
+  - Tag: `FOUNDERS • AGE 14`
+  - Name: **Azan & Thanvi** (or individual card: **Azan Abdullah** / **Thanvi** / **Viren**)
+  - Focus: `Systems & Aesthetics • Marketing: Viren`
 - **Bottom Right Stamp**:  
   `$0.00 CASH INVOICES`  
   `NO CASH EVER • FAVORS ONLY`
@@ -73,7 +73,7 @@
   `BARTER COVENANT • THE OFFICIAL LEDGER RECORD`  
   `CERTIFICATE OF PROMISSORY FAVOR`
 - **Contract Covenant Text**:  
-  > *"The bearer holds a direct promissory marker for production software engineering, design execution, or marketing launch by Azan, Thanvi & Viren. In accordance with the Pickle Corp Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets."*
+  > *"The bearer holds a direct promissory marker for production software engineering or design execution by Azan & Thanvi, with marketing launch by Viren. In accordance with the Pickle Corp Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets."*
 - **Checklist of Acceptable Trades**:  
   - [x] Wood-fired Pizza, Fresh Brownies, or Burgers  
   - [x] Steam Gift, Energy Drinks, or Viral Launch Challenge  

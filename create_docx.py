@@ -63,7 +63,7 @@ def create_document():
     r_sub.font.name = "Arial"
     r_sub.font.size = Pt(11)
     r_sub.font.color.rgb = COLOR_INK
-    r_sub2 = p_sub.add_run("Founders: Azan Abdullah, Thanvi & Viren (Age 14)  •  Studio: Pickle Corp™  •  Favors over Fiat ($0.00)")
+    r_sub2 = p_sub.add_run("Founders: Azan Abdullah & Thanvi (Age 14)  •  Marketing: Viren  •  Studio: Pickle Corp™  •  Favors over Fiat ($0.00)")
     r_sub2.font.name = "Arial"
     r_sub2.font.size = Pt(9.5)
     r_sub2.font.italic = True
@@ -204,9 +204,9 @@ def create_document():
     p_a.add_run("• Central Graphic: Pickle Corp Torch Logo (logo-torch.png)\n")
     p_a.add_run("• Main Title: Pickle Corp™ (Cabinet Grotesk 900)\n")
     p_a.add_run("• Sub-Motto: Paid Strictly in Favors. Zero Fiat. (Instrument Serif Italic)\n")
-    p_a.add_run("• Identity Tag: Founding Partners • Age 14\n")
-    p_a.add_run("• Founder Names: Azan, Thanvi & Viren\n")
-    p_a.add_run("• Focus: Systems • Aesthetics • Marketing\n")
+    p_a.add_run("• Identity Tag: Founders • Age 14\n")
+    p_a.add_run("• Founder Names: Azan & Thanvi\n")
+    p_a.add_run("• Focus: Systems & Aesthetics • Marketing: Viren\n")
     p_a.add_run("• Bottom Right: $0.00 / No Cash Ever\n")
     for r in p_a.runs:
         r.font.name = "Arial"
@@ -219,7 +219,7 @@ def create_document():
     r_bhdr.font.bold = True
     r_bhdr.font.color.rgb = COLOR_CARAMEL
     p_b.add_run("• Header: BARTER COVENANT • THE OFFICIAL LEDGER RECORD (PROMISSORY FAVOR LIEN)\n")
-    p_b.add_run("• Covenant Text: “The bearer holds a direct promissory marker for production software engineering, design execution, or marketing launch by Azan, Thanvi & Viren. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets.”\n")
+    p_b.add_run("• Covenant Text: “The bearer holds a direct promissory marker for production software engineering or design execution by Azan & Thanvi, with marketing launch by Viren. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle. The ledger never forgets.”\n")
     p_b.add_run("• Graphic: Scannable Vector QR Code pointing to https://azanabdullah2752012-ui.github.io/pickle-corp/\n")
     p_b.add_run("• Direct Email: azanmail2022@gmail.com\n")
     p_b.add_run("• Direct Phone / Hotline: +91 70100 59290\n")
@@ -287,7 +287,7 @@ def create_document():
 
     p_ct = doc.add_paragraph()
     p_ct.add_run("Please submit digital prepress PDF proofs prior to plating/printing to:\n")
-    p_ct.add_run("• Primary Contact: Azan Abdullah, Thanvi & Viren (Pickle Corp™)\n")
+    p_ct.add_run("• Primary Contact: Azan Abdullah & Thanvi (Founders) • Viren (Marketing)\n")
     p_ct.add_run("• Email: azanmail2022@gmail.com\n")
     p_ct.add_run("• Phone / WhatsApp: +91 70100 59290\n")
     p_ct.add_run("• Live Web Proof: https://azanabdullah2752012-ui.github.io/pickle-corp/#card\n")

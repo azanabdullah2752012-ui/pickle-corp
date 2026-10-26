@@ -1432,7 +1432,7 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'Personal builder site and experimental portfolio showcasing software shipping after school.',
       tech: ['HTML5', 'CSS Design System', 'Dynamic JavaScript', 'Lenis Scroll'],
       status: 'Live Deployed',
-      terminal: `$ azan-hub status\n[PORTFOLIO] After-school freelance projects indexed\n[LENIS] Inertia scroll physics locked at 120hz\n[DESIGN] Curated warm editorial color system\n[AUTHOR] Azan Abdullah (14) • Equal Co-Founder.`,
+      terminal: `$ azan-hub status\n[PORTFOLIO] After-school freelance projects indexed\n[LENIS] Inertia scroll physics locked at 120hz\n[DESIGN] Curated warm editorial color system\n[AUTHOR] Azan Abdullah (14) • Co-Founder.`,
       specs: [
         { label: 'Type', val: 'Personal Engineering Studio' },
         { label: 'Motion', val: 'Lenis Inertial Smooth Scrolling' },
@@ -1773,11 +1773,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainProfiles = {
       studio: {
         reg: 'PC-MARKER // № 0026',
-        tag: 'Founding Partners • Age 14',
-        name: 'Azan, Thanvi & Viren',
-        focus: 'Systems • Aesthetics • Marketing',
+        tag: 'Founders • Age 14',
+        name: 'Azan & Thanvi',
+        focus: 'Systems & Aesthetics • Marketing: Viren',
         trades: 'Pizza, Steam games, brownies, burgers, viral launches',
-        quote: '“The bearer holds a direct promissory marker for production software engineering, design execution, or marketing launch by <strong>Azan, Thanvi &amp; Viren</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
+        quote: '“The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>, with marketing launch by <strong>Viren</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
       },
       azan: {
         reg: 'PC-SYS // AZAN-01',

@@ -1,7 +1,7 @@
 # Pickle Corp™
 
 > **Independent Freelance Studio. Paid Strictly in Favors.**  
-> Founded by Azan, Thanvi & Viren — Three 14-year-old builders engineering systems, designing products, and launching movements that punch way above their weight. Cash declined. Zero fiat. $0.00 invoices.
+> Founded by Azan & Thanvi, with Viren heading marketing — 14-year-olds engineering software systems and digital products that punch way above their weight. Cash declined. Zero fiat. $0.00 invoices.
 
 ---
 
@@ -13,7 +13,7 @@ Conventional client billing kills genuine ambition. When hourly rates, change or
 
 If you have an exciting, difficult engineering, design, or launch project, we'll build it. In exchange, you owe us one solid, real-life favor banked on our ledger until we choose to call it in.
 
-No invoices. No retainers. No corporate fluff. Just three partners who build and launch crazy fast and hold a marker for later.
+No invoices. No retainers. No corporate fluff. Just builders shipping after school and holding a marker for later.
 
 ---
 
@@ -72,27 +72,27 @@ Pickle Corp operates on a strict **single concurrent build slot**:
 
 - **Capacity**: 1 client build at a time.
 - **Cadence**: After school and weekends.
-- **Zero Delegation**: Azan, Thanvi & Viren only. No account managers, no subcontractors, no junior handoffs.
+- **Zero Delegation**: Direct team only. No account managers, no subcontractors, no junior handoffs.
 - **Full Focus**: When your build is in flight, it has our undivided attention until shipped.
 
 ---
 
-## The Founders
+## The Team
 
-Pickle Corp is an equal **33.3% freelance trio** with zero corporate hierarchy.
+Pickle Corp is founded by **Azan and Thanvi**, with **Viren** heading marketing.
 
 ### Azan
-- **Role**: Co-Founder (33.3%) • Code & Systems
+- **Role**: Co-Founder • Code & Systems
 - **Focus**: The one who builds the systems. Codes after school. Thinks in architecture, breaks systems on purpose, then fixes them.
 - **Will Accept**: Pizza, a Steam game, or a genuinely difficult problem he hasn't seen before.
 
 ### Thanvi
-- **Role**: Co-Founder (33.3%) • Design & Feel
+- **Role**: Co-Founder • Design & Feel
 - **Focus**: The one who makes it look alive. Directs product aesthetics and user feel. Not only design — she has strong opinions on everything, and she is always right.
 - **Will Accept**: Brownies, any gift card, or full creative control on the next project.
 
 ### Viren
-- **Role**: Co-Founder (33.3%) • Head of Marketing
+- **Role**: Head of Marketing
 - **Focus**: The one who gets the build into everyone's hands. Crafts launch storytelling, distribution strategy, and makes sure people actually care.
 - **Will Accept**: Burgers, energy drinks, or a genuinely crazy viral launch challenge.
 
@@ -100,7 +100,7 @@ Pickle Corp is an equal **33.3% freelance trio** with zero corporate hierarchy.
 
 ## Gummy — The Studio Mascot
 
-Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop with a sweet smile and expressive eyes, Gummy represents the playful, unpretentious spirit of three teenage builders who take their craft seriously without taking corporate culture seriously.
+Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop with a sweet smile and expressive eyes, Gummy represents the playful, unpretentious spirit of 14-year-old builders who take their craft seriously without taking corporate culture seriously.
 
 ---
 
@@ -109,11 +109,11 @@ Gummy is Pickle Corp's official mascot and studio companion. A flat mint gumdrop
 Have an exceptional problem worth building and a real favor to put on the table? The ledger is open for the right challenge.
 
 - **Primary Dispatch (Email)**: [azanmail2022@gmail.com](mailto:azanmail2022@gmail.com)  
-  *Send your project pitch and proposed favor terms directly to Azan, Thanvi, and Viren.*
+  *Send your project pitch and proposed favor terms directly to our team.*
 
 - **Direct Hotline (Phone)**: `+91 70100 59290`  
   *Voice wire for time-sensitive favor negotiations.*
 
 ---
 
-*© 2026 Pickle Corp. Azan, Thanvi & Viren. Favors over fiat.*
+*© 2026 Pickle Corp. Azan & Thanvi • Marketing: Viren. Favors over fiat.*
