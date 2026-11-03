@@ -8924,3 +8924,573 @@ html, body {
     display: none;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   STUDIO CRAFT & EDITORIAL DESIGN UPGRADES
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* --- 1. Architectural Drafting Dimension Bar --- */
+.drafting-dimension-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px auto 36px;
+  max-width: 780px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--c4-caramel, #7f4f24);
+  opacity: 0.85;
+  user-select: none;
+}
+
+.dim-tick {
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.dim-line {
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.dim-label {
+  text-transform: uppercase;
+}
+
+/* --- 2. Editorial Drop Cap --- */
+.editorial-drop-cap {
+  float: left;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 3.2rem;
+  line-height: 0.85;
+  font-weight: 900;
+  color: var(--c1-espresso, #582f0e);
+  margin-right: 14px;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border: 1px solid rgba(88, 47, 14, 0.2);
+  background: rgba(244, 235, 217, 0.55);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(88, 47, 14, 0.1);
+}
+
+/* --- 3. Archival Docket Bars & Tags on Project Cards --- */
+.pcard-docket-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.18);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c4-caramel, #7f4f24);
+}
+
+.pcard-docket-id {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pcard-docket-stamp {
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  border: 1px solid rgba(217, 78, 52, 0.35);
+  color: #b91c1c;
+  background: rgba(217, 78, 52, 0.06);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.pcard-barcode-glyph {
+  opacity: 0.45;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* --- 4. Studio Project Archives / Exhibition Index Table --- */
+.studio-archives-container {
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: #fdfbf7;
+  border: 1.5px solid rgba(88, 47, 14, 0.18);
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 4px rgba(88, 47, 14, 0.03),
+    4px 4px 0 rgba(88, 47, 14, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.studio-archives-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--c1-espresso, #582f0e);
+}
+
+.archives-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c1-espresso, #582f0e);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.archives-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--c4-caramel, #7f4f24);
+}
+
+.archives-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.archives-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'General Sans', sans-serif;
+  font-size: 0.88rem;
+  min-width: 580px;
+}
+
+.archives-table th {
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c4-caramel, #7f4f24);
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(88, 47, 14, 0.14);
+  text-transform: uppercase;
+}
+
+.archives-table td {
+  padding: 12px;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.1);
+  color: #2b2b2b;
+  vertical-align: middle;
+}
+
+.archives-table tr:hover td {
+  background-color: rgba(244, 235, 217, 0.45);
+}
+
+.archives-table .arch-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--c1-espresso, #582f0e);
+  font-size: 0.78rem;
+}
+
+.archives-table .arch-name {
+  font-weight: 600;
+  color: var(--c1-espresso, #582f0e);
+}
+
+.archives-table .arch-tech {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #656d4a;
+}
+
+.archives-table .arch-status-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(101, 109, 74, 0.12);
+  color: #414833;
+}
+
+.archives-table .arch-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--c1-espresso, #582f0e);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.archives-table .arch-link:hover {
+  color: #d94e34;
+  transform: translateX(2px);
+}
+
+/* --- 5. Studio Barter Bill of Exchange (Section 03) --- */
+.barter-ledger-card {
+  margin-top: 40px;
+  background: #fffefb;
+  border: 1.5px solid rgba(88, 47, 14, 0.2);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 
+    0 2px 6px rgba(88, 47, 14, 0.04),
+    5px 5px 0 rgba(88, 47, 14, 0.035);
+  position: relative;
+  overflow: hidden;
+}
+
+.barter-ledger-perforation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: radial-gradient(circle at 10px 0, transparent 6px, #fffefb 7px);
+  background-size: 20px 8px;
+  background-repeat: repeat-x;
+  border-top: 1px dashed rgba(88, 47, 14, 0.3);
+}
+
+.barter-ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(88, 47, 14, 0.16);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.barter-ledger-title-group h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--c1-espresso, #582f0e);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.barter-ledger-title-group p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--c4-caramel, #7f4f24);
+  margin: 0;
+}
+
+.barter-stamp-circle {
+  width: 72px;
+  height: 72px;
+  border: 1.8px dashed #b45309;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  background: rgba(245, 158, 11, 0.06);
+  color: #b45309;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.barter-ledger-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 680px) {
+  .barter-ledger-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.barter-col {
+  padding: 18px 20px;
+  background: rgba(244, 235, 217, 0.28);
+  border: 1px solid rgba(88, 47, 14, 0.12);
+  border-radius: 6px;
+}
+
+.barter-col-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c1-espresso, #582f0e);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(88, 47, 14, 0.12);
+}
+
+.barter-col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'General Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #38342e;
+}
+
+.barter-col-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.barter-col-list li::before {
+  content: '✦';
+  color: #d94e34;
+  font-size: 0.65rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* --- 6. Team Atelier Lookbook & Founder Dossiers (Section 04) --- */
+.founder-dossier-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c4-caramel, #7f4f24);
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.15);
+}
+
+.founder-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 16px;
+}
+
+.founder-tool-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(101, 109, 74, 0.08);
+  border: 1px solid rgba(101, 109, 74, 0.22);
+  color: #414833;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.founder-quote-note {
+  padding: 10px 14px;
+  background: #fefce8;
+  border: 1px solid #fde047;
+  border-radius: 4px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #713f12;
+  line-height: 1.4;
+  margin-top: 14px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.founder-quote-note::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 18px;
+  width: 24px;
+  height: 8px;
+  background: rgba(217, 119, 87, 0.4);
+  transform: rotate(-3deg);
+}
+
+.photo-corner-mount {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #582f0e;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.photo-mount-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.photo-mount-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.photo-mount-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.photo-mount-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+/* --- 7. Airmail Postal Details on Contact Card (Section 06) --- */
+.contact-airmail-ribbon {
+  height: 8px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  background: repeating-linear-gradient(
+    135deg,
+    #d94e34 0,
+    #d94e34 12px,
+    transparent 12px,
+    transparent 18px,
+    #1d4ed8 18px,
+    #1d4ed8 30px,
+    transparent 30px,
+    transparent 36px
+  );
+  opacity: 0.85;
+}
+
+.contact-postage-stamp {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 58px;
+  height: 68px;
+  background: #fffefb;
+  border: 2px dashed #bda793;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.06);
+  pointer-events: none;
+  transform: rotate(2deg);
+}
+
+@media (max-width: 600px) {
+  .contact-postage-stamp {
+    display: none;
+  }
+}
+
+.postage-torch-img {
+  width: 14px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.postage-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #582f0e;
+  margin-top: 2px;
+}
+
+.postage-postmark {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 54px;
+  height: 54px;
+  border: 1.5px solid rgba(88, 47, 14, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: rotate(-15deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postmark-wavy-lines {
+  width: 32px;
+  height: 12px;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(88, 47, 14, 0.4) 0,
+    rgba(88, 47, 14, 0.4) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* --- 8. Architectural Colophon & Studio Specs in Footer --- */
+.colophon-spec-matrix {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1.5px solid rgba(88, 47, 14, 0.16);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--c4-caramel, #7f4f24);
+}
+
+.colophon-block h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c1-espresso, #582f0e);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.colophon-type-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.type-sample-display {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--c1-espresso, #582f0e);
+}
+
+.type-sample-serif {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #582f0e;
+}
+
+.type-sample-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #656d4a;
+}
+
+.colophon-palette-swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.palette-swatch-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid rgba(88, 47, 14, 0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
