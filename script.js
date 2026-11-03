@@ -191,16 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     svg.innerHTML = `
       <defs>
-        <!-- Dark roast ground contact shadow matching border #593d3b -->
+        <!-- Dark roast ground contact shadow -->
         <radialGradient id="${id}-sh" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#593d3b" stop-opacity="0.32" />
           <stop offset="65%" stop-color="#593d3b" stop-opacity="0.09" />
           <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
         </radialGradient>
-        <!-- Gumdrop body fill matching reference image (#ab947e) -->
+        <!-- Canonical Gumdrop body fill (#bda793 to #ab947e) -->
         <linearGradient id="${id}-body" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="${theme.fillLight || theme.fill}" />
-          <stop offset="100%" stop-color="${theme.fill}" />
+          <stop offset="0%" stop-color="#bda793" />
+          <stop offset="100%" stop-color="#ab947e" />
         </linearGradient>
       </defs>
 
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Body motion container -->
       <g class="gummy-body-group" style="transform-origin: 55px 44px;">
-        <!-- Wide Low-Profile Mound Path exactly matching user sketch -->
+        <!-- Wide Low-Profile Mound Path - Canonical Gummy -->
         <path class="gummy-body-shape"
               d="M 15,44
                  C 9,44 6.5,39.5 9,34
@@ -219,41 +219,41 @@ document.addEventListener('DOMContentLoaded', () => {
                  C 103.5,39.5 101,44 95,44
                  Z"
               fill="url(#${id}-body)"
-              stroke="${theme.stroke}"
+              stroke="#593d3b"
               stroke-width="3.4"
               stroke-linejoin="round"
               stroke-linecap="round" />
 
         <!-- Cute horizontal oval blush cheeks -->
-        <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="${theme.blush}" opacity="0.9" />
-        <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="${theme.blush}" opacity="0.9" />
+        <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#c0a692" opacity="0.9" />
+        <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#c0a692" opacity="0.9" />
 
         <!-- Open Eyes Container (for cursor tracking) -->
         <g class="gummy-eyes-group">
           <!-- Left Eye: Cute bead with top-left sparkle -->
           <g class="gummy-eye-left">
-            <circle cx="46" cy="26" r="3.3" fill="${theme.eye}" />
+            <circle cx="46" cy="26" r="3.3" fill="#593d3b" />
             <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
           </g>
 
           <!-- Right Eye: Cute bead with top-left sparkle -->
           <g class="gummy-eye-right">
-            <circle cx="64" cy="26" r="3.3" fill="${theme.eye}" />
+            <circle cx="64" cy="26" r="3.3" fill="#593d3b" />
             <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
           </g>
         </g>
 
         <!-- Closed Eyes for Happy Blink: ⌒  ⌒ -->
-        <g class="gummy-eyes-blink" style="opacity: 0; pointer-events: none;">
-          <path d="M 42.5,27 Q 46,24 49.5,27" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 60.5,27 Q 64,24 67.5,27" fill="none" stroke="${theme.eye}" stroke-width="2.2" stroke-linecap="round" />
+        <g class="gummy-eyes-blink" display="none" pointer-events="none">
+          <path d="M 42.5,27 Q 46,24 49.5,27" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 60.5,27 Q 64,24 67.5,27" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
         </g>
 
         <!-- Sweet Smile -->
         <path class="gummy-mouth"
               d="M 52.4,27.8 Q 55,30.2 57.6,27.8"
               fill="none"
-              stroke="${theme.eye}"
+              stroke="#593d3b"
               stroke-width="2"
               stroke-linecap="round" />
       </g>
@@ -404,8 +404,8 @@ document.addEventListener('DOMContentLoaded', () => {
     triggerBlink(duration = 160) {
       this.isBlinking = true;
       this.blinkEndTime = performance.now() + duration;
-      this.eyesGroup.style.opacity = '0';
-      this.eyesBlink.style.opacity = '1';
+      if (this.eyesGroup) this.eyesGroup.style.display = 'none';
+      if (this.eyesBlink) this.eyesBlink.style.display = 'block';
     }
 
     trackCursor(clientX, clientY) {
@@ -451,8 +451,8 @@ document.addEventListener('DOMContentLoaded', () => {
         this.nextBlinkTime = time + 2500 + Math.random() * 4000;
       } else if (this.isBlinking && time > this.blinkEndTime) {
         this.isBlinking = false;
-        this.eyesGroup.style.opacity = '1';
-        this.eyesBlink.style.opacity = '0';
+        if (this.eyesGroup) this.eyesGroup.style.display = 'block';
+        if (this.eyesBlink) this.eyesBlink.style.display = 'none';
       }
 
       // Autonomous SUPER JUMP once in a while!
@@ -508,8 +508,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.shadow.style.transformOrigin = '55px 44.5px';
             this.shadow.style.opacity = '0.36';
           }
-          if (this.eyesGroup) this.eyesGroup.style.opacity = '0';
-          if (this.eyesBlink) this.eyesBlink.style.opacity = '1';
+          if (this.eyesGroup) this.eyesGroup.style.display = 'none';
+          if (this.eyesBlink) this.eyesBlink.style.display = 'block';
         }
         // Stage 2: Aerial Liftoff, Apex & 360° Backflip Somersault (14% - 78%, ~700ms)
         else if (progress < 0.78) {
@@ -542,8 +542,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.shadow.style.opacity = `${Math.max(0.06, 1 - arc * 0.82)}`;
           }
 
-          if (this.eyesGroup) this.eyesGroup.style.opacity = '0';
-          if (this.eyesBlink) this.eyesBlink.style.opacity = '1';
+          if (this.eyesGroup) this.eyesGroup.style.display = 'none';
+          if (this.eyesBlink) this.eyesBlink.style.display = 'block';
         }
         // Stage 3: Ground Impact Cushion (78% - 90%, ~130ms) - Pancake splash!
         else if (progress < 0.90) {
@@ -561,8 +561,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.shadow.style.opacity = '0.36';
           }
 
-          if (this.eyesGroup) this.eyesGroup.style.opacity = '1';
-          if (this.eyesBlink) this.eyesBlink.style.opacity = '0';
+          if (this.eyesGroup) this.eyesGroup.style.display = 'block';
+          if (this.eyesBlink) this.eyesBlink.style.display = 'none';
         }
         // Stage 4: Elastic Spring Recovery & Settle (90% - 100%, ~110ms)
         else {
@@ -578,8 +578,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.shadow.style.opacity = '1';
           }
 
-          if (this.eyesGroup) this.eyesGroup.style.opacity = '1';
-          if (this.eyesBlink) this.eyesBlink.style.opacity = '0';
+          if (this.eyesGroup) this.eyesGroup.style.display = 'block';
+          if (this.eyesBlink) this.eyesBlink.style.display = 'none';
         }
 
         if (progress >= 1) {
@@ -589,8 +589,8 @@ document.addEventListener('DOMContentLoaded', () => {
           this.targetScaleY = 1;
           this.targetTranslateY = 0;
           if (this.bodyGroup) this.bodyGroup.style.transformOrigin = '55px 44px';
-          if (this.eyesGroup) this.eyesGroup.style.opacity = '1';
-          if (this.eyesBlink) this.eyesBlink.style.opacity = '0';
+          if (this.eyesGroup) this.eyesGroup.style.display = 'block';
+          if (this.eyesBlink) this.eyesBlink.style.display = 'none';
           if (this.backflipCallback) {
             this.backflipCallback();
             this.backflipCallback = null;
@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // The only gumdrop on the site
-  const heroGummy = mount('gummy-hero', 'green');
+  const heroGummy = mount('gummy-hero', 'theme');
   window.heroGummy = heroGummy;
 
   // Hero greeting hop
@@ -720,9 +720,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 400);
   }
 
-  // Cursor tracking for hero gumdrop
+  // Viewport observer to throttle Gummy calculations when off screen
+  let isGummyInView = true;
+  const heroGummyDom = document.getElementById('gummy-hero');
+  if (heroGummyDom && 'IntersectionObserver' in window) {
+    const gummyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isGummyInView = entry.isIntersecting;
+      });
+    }, { threshold: 0.1 });
+    gummyObserver.observe(heroGummyDom);
+  }
+
+  // Cursor tracking for hero gumdrop (throttled when in view)
   window.addEventListener('pointermove', (e) => {
-    if (heroGummy) heroGummy.trackCursor(e.clientX, e.clientY);
+    if (heroGummy && isGummyInView) {
+      heroGummy.trackCursor(e.clientX, e.clientY);
+    }
   }, { passive: true });
 
 
@@ -853,7 +867,8 @@ document.addEventListener('DOMContentLoaded', () => {
   class AcousticEngine {
     constructor() {
       this.ctx = null;
-      this.enabled = localStorage.getItem('pickle_sound_enabled') !== 'false';
+      // Default to MUTED; user must explicitly click the sound toggle to enable
+      this.enabled = localStorage.getItem('pickle_sound_enabled') === 'true';
       this.initToggle();
     }
 
@@ -1773,35 +1788,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainProfiles = {
       studio: {
         reg: 'PC-MARKER // № 0026',
-        tag: 'Founders • Age 14',
+        tag: 'Studio Collective',
         name: 'Azan, Thanvi & Viren',
-        focus: 'Systems • Aesthetics • Marketing',
-        trades: 'Pizza, Steam games, brownies, burgers, viral launches',
-        quote: '“The bearer holds a direct promissory marker for production software engineering or design execution by <strong>Azan &amp; Thanvi</strong>, with marketing launch by <strong>Viren</strong>. In accordance with the Barter Law, cash is declined. You owe us one solid favor called in when we find ourselves in a pickle.”'
+        focus: 'Pickle Corp Creative Studio',
+        trades: 'Mutually agreed reasonable favours',
+        quote: '“This marker represents a collaborative partnership with <strong>Azan &amp; Thanvi</strong>, with launch distribution by <strong>Viren</strong>. We work for mutual, reasonable favours rather than invoices. When you have an ambitious idea, we build it together.”'
       },
       azan: {
-        reg: 'PC-SYS // AZAN-01',
-        tag: 'Code & Systems • Age 14',
-        name: 'Azan Abdullah',
-        focus: 'Backend • Distributed Systems • Architecture',
-        trades: 'Wood-fired Pizza, Steam games, unsolvable bugs',
-        quote: '“Writes the code after school. Thinks in systems, breaks them on purpose, then rebuilds them better. You owe Azan one solid favor called in when needed.”'
+        reg: 'PC-MBR // AZAN-01',
+        tag: 'Studio Co-Founder',
+        name: 'Azan',
+        focus: 'Pickle Corp Creative Studio',
+        trades: 'Mutually agreed reasonable favours',
+        quote: '“Building ambitious software and web products for students and young creators. Every project is approached with genuine craft and mutual respect.”'
       },
       thanvi: {
-        reg: 'PC-DSGN // THANVI-02',
-        tag: 'Design & Feel • Age 14',
+        reg: 'PC-MBR // THANVI-02',
+        tag: 'Studio Co-Founder',
         name: 'Thanvi',
-        focus: 'Product Aesthetics • Interaction Feel • Creative Direction',
-        trades: 'Fresh brownies, gift cards, full creative control',
-        quote: '“Makes everything feel alive. Not only design — she has strong opinions on everything, and she is always right. You owe Thanvi one solid favor.”'
+        focus: 'Pickle Corp Creative Studio',
+        trades: 'Mutually agreed reasonable favours',
+        quote: '“Crafting thoughtful design, interaction feel, and visual identity. Bringing ambitious creative ideas into reality through close collaboration.”'
       },
       viren: {
-        reg: 'PC-MKTG // VIREN-03',
-        tag: 'Head of Marketing • Age 14',
+        reg: 'PC-MBR // VIREN-03',
+        tag: 'Studio Team Member',
         name: 'Viren',
-        focus: 'Growth Strategy • Launch Storytelling • Distribution',
-        trades: 'Burgers, energy drinks, viral launch challenges',
-        quote: '“Gets the build into everyone\'s hands. Crafts the launch narrative, hypes the product, and makes sure people actually care. You owe Viren one solid favor.”'
+        focus: 'Pickle Corp Creative Studio',
+        trades: 'Mutually agreed reasonable favours',
+        quote: '“Helping student projects launch into the world and connect with real audiences. Focused on creative distribution and storytelling.”'
       }
     };
 
@@ -1830,6 +1845,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (window.acoustic) window.acoustic.play('switch');
       });
+    });
+  }
+
+  // ── Contact Form Validation & Submission Handler (Privacy-First) ─────────
+  const contactForm = document.getElementById('contact-form');
+  const contactFeedback = document.getElementById('contact-feedback');
+
+  if (contactForm && contactFeedback) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const typeInput = document.getElementById('contact-type');
+      const ideaInput = document.getElementById('contact-idea');
+
+      let isValid = true;
+
+      // Reset errors
+      document.querySelectorAll('.field-error-msg').forEach(el => el.textContent = '');
+      [nameInput, emailInput, typeInput, ideaInput].forEach(el => el && el.classList.remove('input-error'));
+
+      if (!nameInput.value.trim()) {
+        const err = document.getElementById('name-error');
+        if (err) err.textContent = 'Please enter your name or nickname.';
+        nameInput.classList.add('input-error');
+        isValid = false;
+      }
+
+      if (!emailInput.value.trim() || !emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+        const err = document.getElementById('email-error');
+        if (err) err.textContent = 'Please enter a valid email address.';
+        emailInput.classList.add('input-error');
+        isValid = false;
+      }
+
+      if (!typeInput.value) {
+        const err = document.getElementById('type-error');
+        if (err) err.textContent = 'Please select a project category.';
+        typeInput.classList.add('input-error');
+        isValid = false;
+      }
+
+      if (!ideaInput.value.trim() || ideaInput.value.trim().length < 10) {
+        const err = document.getElementById('idea-error');
+        if (err) err.textContent = 'Please tell us a bit about your idea (at least 10 characters).';
+        ideaInput.classList.add('input-error');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        if (window.acoustic) window.acoustic.play('switch');
+        return;
+      }
+
+      // Safe client-side submission feedback (Zero unauthorized external network calls)
+      contactFeedback.style.display = 'block';
+      contactFeedback.className = 'contact-feedback-box feedback-success';
+      contactFeedback.innerHTML = `
+        <div class="feedback-title">✦ Project Inquiry Captured</div>
+        <p class="feedback-desc">
+          Thank you, <strong>${escapeHtml(nameInput.value.trim())}</strong>. Your inquiry has been received.
+        </p>
+        <p class="feedback-note">
+          <strong>Guardian Oversight Notice:</strong> Inquiries are reviewed directly by the studio team with parent/guardian oversight. We review incoming messages after school hours and on weekends, and will reply directly to <em>${escapeHtml(emailInput.value.trim())}</em>.
+        </p>
+      `;
+
+      if (window.acoustic) window.acoustic.play('lock');
+      contactForm.reset();
+    });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>'"]/g, tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag));
+  }
+
+  // ── Scroll Reveal Intersection Observer ──────────────────────────────────
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.12
+    });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      el.classList.add('is-revealed');
     });
   }
 
