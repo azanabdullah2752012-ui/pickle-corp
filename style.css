@@ -1022,232 +1022,144 @@ img { display: block; max-width: 100%; }
   align-items: stretch;
 }
 
-@media (max-width: 880px) {
-  .hero-cards-shelf {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-.hcard-box,
-.hcard-pill {
-  background: #ffffff;
-  border: 1.5px solid rgba(166, 138, 100, 0.32);
-  border-radius: 16px;
-  padding: clamp(28px, 3.2vw, 38px);
-  box-shadow: 0 4px 24px rgba(88, 47, 14, 0.05);
+/* ═══════════════════════════════════════════════════════════════════════════
+   01 / PHILOSOPHY: OPERATING PRINCIPLES & CRAFT MANIFESTO
+   ═══════════════════════════════════════════════════════════════════════════ */
+.section-philosophy {
+  padding: var(--sp) 0;
   position: relative;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.hcard-box:hover,
-.hcard-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(88, 47, 14, 0.09);
+  z-index: 1;
 }
 
-.hcard-top-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-.hcard-star-icon {
-  flex-shrink: 0;
-}
-.hcard-code-mark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--c1-espresso);
-  letter-spacing: -0.02em;
-}
-.hcard-title {
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--c1-espresso);
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-/* Card 1: Philosophy triad */
-.philosophy-triad {
+.philosophy-pillars-grid {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(32px, 4.5vw, 48px);
+  align-items: stretch;
 }
-.triad-col {
+
+.philosophy-pillar-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(88, 47, 14, 0.14);
+  border-radius: 16px;
+  padding: clamp(24px, 2.5vw, 32px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
+  box-shadow: 0 4px 20px rgba(88, 47, 14, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+  position: relative;
 }
-.triad-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #f7f3eb;
-  color: var(--c1-espresso);
+
+.philosophy-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(88, 47, 14, 0.28);
+  box-shadow: 0 12px 32px rgba(88, 47, 14, 0.08);
+}
+
+.pillar-top-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(166, 138, 100, 0.25);
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.14);
 }
-.triad-name {
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--c1-espresso);
+}
+
+.pillar-telemetry {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--c8-olive);
+  letter-spacing: 0.06em;
+}
+
+.pillar-icon-plate {
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--c1-espresso);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.pillar-body {
   font-family: var(--font-body);
   font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--c1-espresso);
-  margin: 0;
-}
-.triad-divider {
-  width: 1px;
-  height: 48px;
-  background: rgba(166, 138, 100, 0.22);
+  line-height: 1.6;
+  color: var(--c9-forest);
+  margin: 0 0 20px;
+  flex-grow: 1;
 }
 
-.philosophy-quote-box {
-  background: #faf7f2;
-  border-radius: 14px;
-  padding: 14px 18px;
-  border-left: 3px solid var(--c4-biscuit);
-}
-.philosophy-quote-text {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #5c4538;
-  margin: 0;
-}
-.scribble-wrap {
-  position: relative;
-  display: inline-block;
-  font-weight: 700;
-  color: var(--c1-espresso);
-}
-.scribble-svg {
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  pointer-events: none;
-}
-
-/* Card 2: Services & Pinned Sticky Note */
-.pinned-sticky-note {
-  position: absolute;
-  top: -16px;
-  right: 28px;
-  width: 92px;
-  padding: 12px 10px 14px;
-  background: #fbf1d1;
-  border: 1px solid #eedda2;
-  border-radius: 4px;
-  box-shadow: 2px 6px 18px rgba(88, 47, 14, 0.14);
-  transform: rotate(5deg);
+.pillar-footer-spec {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  z-index: 10;
-  transition: transform 0.2s ease;
-}
-.pinned-sticky-note:hover {
-  transform: rotate(2deg) scale(1.04);
-}
-.sticky-pin {
-  width: 7px;
-  height: 7px;
-  background: #a63a24;
-  border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  margin-top: -4px;
-  margin-bottom: 2px;
-}
-.sticky-torch-img {
-  filter: drop-shadow(0 1px 2px rgba(88, 47, 14, 0.25));
-}
-.sticky-text {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--c1-espresso);
-  letter-spacing: -0.01em;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #7a6355;
+  border-top: 1px dashed rgba(88, 47, 14, 0.12);
+  padding-top: 14px;
 }
 
-.services-list-container {
+.pillar-footer-spec .spec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c8-olive);
+  flex-shrink: 0;
+}
+
+.philosophy-annotation-strip {
+  margin-top: 36px;
+  padding: 16px 24px;
+  background: rgba(244, 235, 217, 0.45);
+  border: 1px solid rgba(88, 47, 14, 0.14);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-}
-@media (max-width: 540px) {
-  .services-list-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.services-chunky-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
   gap: 16px;
-  flex: 1;
+  flex-wrap: wrap;
 }
-.service-chunky-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.service-icon-circle {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--c1-espresso);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(88, 47, 14, 0.2);
-}
-.service-name-text {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
+
+.annotation-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--c1-espresso);
 }
 
-.handdrawn-note-cluster {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex-shrink: 0;
-  padding-top: 10px;
-}
-.handdrawn-label {
-  font-family: 'Caveat', cursive;
-  font-size: 1.55rem;
+.annotation-author {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 700;
-  line-height: 1.05;
-  color: var(--c1-espresso);
-  transform: rotate(-4deg);
+  color: var(--c8-olive);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.handdrawn-curly-arrow {
-  margin-top: -2px;
-  filter: drop-shadow(0 1px 2px rgba(88, 47, 14, 0.15));
+
+@media (max-width: 900px) {
+  .philosophy-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -8106,6 +8018,21 @@ html, body {
   }
 
   /* Grids: prevent intrinsic content sizing blowouts with minmax(0, 1fr) */
+  .philosophy-pillars-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .philosophy-pillar-card {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 16px !important;
+  }
+
   .tactile-projects-grid {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 16px !important;
