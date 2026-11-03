@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=5.8.0" />
+  <link rel="stylesheet" href="style.css?v=5.9.0" />
 </head>
 <body>
   <!-- Ambient Substrate Layers -->
@@ -148,11 +148,25 @@
 
           <!-- Ambient Workspace Plate -->
           <div class="desk-elements-cluster">
-            <!-- Laptop Open on Desk with Official Torch Logo -->
+            <!-- Laptop Open on Desk with Official Torch Logo & Live Code Console -->
             <div class="desk-laptop-wrap">
-              <div class="laptop-screen-chassis">
-                <div class="laptop-torch-badge">
-                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="15" height="32" class="laptop-torch-img" />
+              <div class="laptop-screen-chassis" id="hero-laptop" role="button" tabindex="0" aria-label="Interactive studio code terminal (Click to run deploy trace)" title="Interactive Studio Terminal • Click to run next deploy trace!">
+                <div class="laptop-terminal-header">
+                  <div class="laptop-term-dots" aria-hidden="true">
+                    <span class="l-dot l-red"></span>
+                    <span class="l-dot l-yellow"></span>
+                    <span class="l-dot l-green"></span>
+                  </div>
+                  <span class="laptop-term-file">deploy.ts</span>
+                  <span class="laptop-term-fps" id="laptop-fps-pill">60fps</span>
+                </div>
+                <div class="laptop-terminal-body">
+                  <div class="terminal-line term-prompt"><span class="term-usr">~/pickle</span> <span class="term-cmd">$ run build</span></div>
+                  <div class="terminal-line term-log" id="laptop-log-line">[ok] 60fps canvas ready</div>
+                  <div class="terminal-line term-status"><span class="term-bullet">&bull;</span> <span id="laptop-sub-status">studio online</span><span class="term-cursor">_</span></div>
+                </div>
+                <div class="laptop-torch-badge-corner" title="Official Studio Torch">
+                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="10" height="21" class="laptop-torch-img" />
                 </div>
               </div>
               <div class="laptop-keyboard-chassis"></div>
@@ -224,18 +238,20 @@
             </div>
 
             <!-- Desk Accessories: Steaming Mug, Books & Ceramic Pencil Cup -->
-            <div class="desk-props-wrap" aria-hidden="true">
+            <div class="desk-props-wrap">
               <!-- Steaming Chai / Coffee Mug -->
-              <div class="desk-mug-wrap" title="Fresh chai on desk">
+              <div class="desk-mug-wrap" id="hero-chai-mug" role="button" tabindex="0" data-sound="tea" data-prop="tea" aria-label="Fresh steaming chai mug (Click to clink & steam)" title="Fresh chai • Click to clink!">
                 <svg viewBox="0 0 44 48" width="34" height="38" fill="none">
                   <path class="mug-steam steam-1" d="M16 12 C14 8, 18 6, 16 2" stroke="#ab947e" stroke-width="1.6" stroke-linecap="round" fill="none"/>
                   <path class="mug-steam steam-2" d="M22 14 C20 9, 24 7, 22 1" stroke="#ab947e" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+                  <path class="mug-steam steam-3" d="M19 10 C17 6, 21 4, 19 0" stroke="#ab947e" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0"/>
                   <rect x="8" y="16" width="22" height="24" rx="4" fill="#fffefb" stroke="#582f0e" stroke-width="2"/>
                   <ellipse cx="19" cy="16" rx="11" ry="3.5" fill="#e9d8a6" stroke="#582f0e" stroke-width="1.8"/>
                   <ellipse cx="19" cy="16" rx="9" ry="2.2" fill="#582f0e"/>
                   <path d="M30 20 C36 20, 36 32, 30 32" stroke="#582f0e" stroke-width="2.4" stroke-linecap="round" fill="none"/>
                   <rect x="12" y="24" width="14" height="8" rx="2" fill="#bda793" opacity="0.4"/>
                 </svg>
+                <span class="mug-steam-toast" id="mug-toast" aria-live="polite">☕ Fresh chai!</span>
               </div>
 
               <div class="desk-books-stack">
@@ -375,7 +391,7 @@
         <div class="vignette-props-stage">
 
           <!-- Left: Architectural Blueprint & Brass Drafting Caliper (Tactile Maker Gear) -->
-          <div class="vignette-prop vignette-blueprint-caliper" title="Architectural Blueprint & Drafting Caliper">
+          <div class="vignette-prop vignette-blueprint-caliper" id="prop-caliper" role="button" tabindex="0" data-sound="caliper" data-prop="caliper" aria-label="Brass Drafting Caliper (Click to ratchet dial)" title="Drafting Caliper • Click to ratchet!">
             <svg viewBox="0 0 85 105" width="76" height="94" fill="none">
               <!-- Rolled Blueprint Scroll (angled cylinder) -->
               <g transform="translate(6, 6) rotate(-10, 25, 50)">
@@ -448,7 +464,7 @@
           </div>
 
           <!-- Right: Pantone Color Swatch Fan Deck & Precision Scalpel (Tactile Art Tool) -->
-          <div class="vignette-prop vignette-pantone-deck" title="Pantone Color Swatch Deck & Precision Knife">
+          <div class="vignette-prop vignette-pantone-deck" id="prop-pantone" role="button" tabindex="0" data-sound="switch" data-prop="pantone" aria-label="Pantone Color Swatch Deck (Click to fan swatches)" title="Pantone Deck • Click to fan colors!">
             <svg viewBox="0 0 95 95" width="80" height="80" fill="none">
               <!-- Swatch fan pivot at bottom -->
               <g transform="translate(28, 12)">
@@ -513,11 +529,11 @@
             </h3>
 
             <!-- Visual Preview Plate: Live Vector Canvas Studio -->
-            <div class="pcard-visual-plate visual-studio" aria-hidden="true">
+            <div class="pcard-visual-plate visual-studio">
               <div class="studio-mock-canvas">
                 <!-- Mac Browser Topbar -->
                 <div class="studio-browser-bar">
-                  <div class="browser-dots">
+                  <div class="browser-dots" aria-hidden="true">
                     <span class="b-dot dot-red"></span>
                     <span class="b-dot dot-yellow"></span>
                     <span class="b-dot dot-green"></span>
@@ -526,24 +542,24 @@
                     <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#7f4f24" stroke-width="1.4"><rect x="2" y="5" width="8" height="6" rx="1.5"/><path d="M4 5V3.5a2 2 0 114 0V5"/></svg>
                     <span>picklestudio.app/canvas</span>
                   </div>
-                  <span class="canvas-fps-badge">60 FPS</span>
+                  <span class="canvas-fps-badge" id="studio-active-tool-pill">Select Tool</span>
                 </div>
                 <!-- Interactive Canvas Workspace with Elements -->
                 <div class="studio-workspace">
                   <!-- Left Tool Strip -->
-                  <div class="studio-tool-strip">
-                    <span class="tool-icon tool-active" title="Select Pointer">
+                  <div class="studio-tool-strip" role="toolbar" aria-label="Canvas drafting tools">
+                    <button type="button" class="tool-icon tool-active" id="tool-select" data-tool="Select" data-sound="switch" aria-label="Select Pointer Tool" title="Select Pointer">
                       <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M2 2l4.5 11 2-4.5 4.5-2z"/></svg>
-                    </span>
-                    <span class="tool-icon" title="Shape Tool">
+                    </button>
+                    <button type="button" class="tool-icon" id="tool-shape" data-tool="Rectangle" data-sound="switch" aria-label="Rectangle Shape Tool" title="Shape Tool">
                       <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="12" height="12" rx="2"/></svg>
-                    </span>
-                    <span class="tool-icon" title="Pen Tool">
+                    </button>
+                    <button type="button" class="tool-icon" id="tool-pen" data-tool="Pen" data-sound="switch" aria-label="Pen Vector Tool" title="Pen Tool">
                       <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2 2-8 8-3 1 1-3z"/></svg>
-                    </span>
+                    </button>
                   </div>
                   <!-- Main Drawing Artboard -->
-                  <div class="studio-artboard-frame">
+                  <div class="studio-artboard-frame" id="studio-artboard">
                     <div class="artboard-nav-wire">
                       <span class="wire-logo"></span>
                       <div class="wire-links"><span class="wl"></span><span class="wl"></span><span class="wl"></span></div>
@@ -554,8 +570,8 @@
                         <span class="wt-line wt-sub"></span>
                       </div>
                       <!-- Selected UI Element with Bounding Box & Handles -->
-                      <div class="wire-selected-card">
-                        <span class="wire-img-ph">
+                      <div class="wire-selected-card" id="studio-preview-card">
+                        <span class="wire-img-ph" id="studio-preview-glyph">
                           <svg viewBox="0 0 20 14" width="16" height="11" fill="none" stroke="#7f4f24" stroke-width="1.2">
                             <rect x="1" y="1" width="18" height="12" rx="2"/>
                             <circle cx="6" cy="5" r="1.5"/>
@@ -569,17 +585,17 @@
                       </div>
                     </div>
                     <!-- Collaborator Cursor -->
-                    <div class="studio-cursor-badge">
+                    <div class="studio-cursor-badge" id="studio-cursor-badge">
                       <svg viewBox="0 0 16 16" width="11" height="11" fill="#7f4f24"><path d="M1 1l4.5 11 2-4.5 4.5-2z"/></svg>
-                      <span class="cursor-tag">Azan</span>
+                      <span class="cursor-tag" id="studio-cursor-tag">Azan</span>
                     </div>
                   </div>
                   <!-- Right Color Swatches -->
-                  <div class="studio-swatch-strip">
-                    <span class="swatch-dot dot-caramel" title="#bda793"></span>
-                    <span class="swatch-dot dot-olive" title="#656d4a"></span>
-                    <span class="swatch-dot dot-espresso" title="#582f0e"></span>
-                    <span class="swatch-dot dot-sage" title="#a4ac86"></span>
+                  <div class="studio-swatch-strip" role="group" aria-label="Color swatches">
+                    <button type="button" class="swatch-dot dot-caramel is-active-swatch" data-color="#bda793" data-name="Caramel" data-sound="ping-high" aria-label="Caramel swatch" title="Select Caramel"></button>
+                    <button type="button" class="swatch-dot dot-olive" data-color="#656d4a" data-name="Olive" data-sound="ping-high" aria-label="Olive swatch" title="Select Olive"></button>
+                    <button type="button" class="swatch-dot dot-espresso" data-color="#582f0e" data-name="Espresso" data-sound="ping-high" aria-label="Espresso swatch" title="Select Espresso"></button>
+                    <button type="button" class="swatch-dot dot-sage" data-color="#a4ac86" data-name="Sage" data-sound="ping-high" aria-label="Sage swatch" title="Select Sage"></button>
                   </div>
                 </div>
               </div>
@@ -643,7 +659,15 @@
                         AES-GCM 256-bit
                       </span>
                       <span class="crypto-status-pill">✓ No IP Retained</span>
-                      <span class="crypto-status-pill">✦ Verified Channel</span>
+                      <button type="button" class="btn-cipher-test" id="btn-test-cipher" data-sound="lock" aria-label="Run sample zero-knowledge encryption proof">
+                        <span class="cipher-btn-icon" aria-hidden="true">⚡</span>
+                        <span>Test AES Cipher</span>
+                      </button>
+                    </div>
+                    <!-- Live Dynamic Hash Telemetry Output -->
+                    <div class="safespace-live-cipher-bar" id="safespace-cipher-output" aria-live="polite">
+                      <span class="cipher-hash-tag">E2E HASH:</span>
+                      <span class="cipher-hash-hex" id="safespace-hash-hex">0x7f4b82d90a1e3f88c52b</span>
                     </div>
                   </div>
                 </div>
@@ -688,7 +712,7 @@
                     <span class="nuvio-dot"></span>
                     <span>NUVIO // DAILY_TRACKER</span>
                   </div>
-                  <span class="nuvio-streak-pill">🔥 24 Day Streak</span>
+                  <span class="nuvio-streak-pill" id="nuvio-streak-pill">🔥 24 Day Streak</span>
                 </div>
 
                 <!-- GitHub-style Habit Heatmap & Task Row -->
@@ -700,17 +724,17 @@
                     <span class="h-cell lvl-2"></span><span class="h-cell lvl-1"></span><span class="h-cell lvl-3"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-3"></span><span class="h-cell lvl-4"></span>
                     <span class="h-cell lvl-4"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-3"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-4"></span><span class="h-cell lvl-active"></span>
                   </div>
-                  <div class="nuvio-habits-col">
-                    <div class="nuvio-task-item">
-                      <span class="task-check">✓</span>
+                  <div class="nuvio-habits-col" role="group" aria-label="Interactive habit checklist">
+                    <button type="button" class="nuvio-task-item is-checked" id="nuvio-task-1" role="checkbox" aria-checked="true" data-sound="pencil" aria-label="Toggle Deep Craft Sprint habit">
+                      <span class="task-check" aria-hidden="true">✓</span>
                       <span class="task-name">Deep Craft Sprint</span>
                       <span class="task-time">45m</span>
-                    </div>
-                    <div class="nuvio-task-item">
-                      <span class="task-check">✓</span>
+                    </button>
+                    <button type="button" class="nuvio-task-item is-checked" id="nuvio-task-2" role="checkbox" aria-checked="true" data-sound="pencil" aria-label="Toggle Daily Reflection habit">
+                      <span class="task-check" aria-hidden="true">✓</span>
                       <span class="task-name">Daily Reflection</span>
                       <span class="task-time">07:30</span>
-                    </div>
+                    </button>
                   </div>
                 </div>
 
@@ -789,21 +813,21 @@
                   <path d="M 30,88 C 60,88 80,72 120,56 C 160,40 200,28 280,18" stroke="#7f4f24" stroke-width="2.6" stroke-linecap="round"/>
 
                   <!-- Tangent Line at P(170, 34) -->
-                  <line x1="110" y1="58" x2="230" y2="10" stroke="#656d4a" stroke-width="1.6" stroke-dasharray="4 3"/>
-                  <circle cx="170" cy="34" r="4" fill="#656d4a" stroke="#fffefb" stroke-width="1.8"/>
+                  <line id="foundu-tangent-line" x1="110" y1="58" x2="230" y2="10" stroke="#656d4a" stroke-width="1.6" stroke-dasharray="4 3"/>
+                  <circle id="foundu-tangent-point" cx="170" cy="34" r="4" fill="#656d4a" stroke="#fffefb" stroke-width="1.8"/>
                   
                   <!-- Coordinate Callout -->
-                  <rect x="180" y="24" width="70" height="16" rx="3" fill="#333d29"/>
-                  <text x="186" y="35" fill="#fffefb" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">P(1.8, 2.4)</text>
+                  <rect id="foundu-coord-box" x="180" y="24" width="70" height="16" rx="3" fill="#333d29"/>
+                  <text id="foundu-coord-text" x="186" y="35" fill="#fffefb" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">P(1.8, 2.4)</text>
                 </svg>
 
                 <div class="foundu-slider-row">
                   <span class="slider-label">Scrub Tangent</span>
-                  <div class="mock-slider-track">
-                    <div class="mock-slider-fill" style="width: 58%;"></div>
-                    <div class="mock-slider-thumb" style="left: 58%;"></div>
+                  <div class="mock-slider-track" id="foundu-slider-track" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58" aria-label="Scrub tangent position across curve">
+                    <div class="mock-slider-fill" id="foundu-slider-fill" style="width: 58%;"></div>
+                    <div class="mock-slider-thumb" id="foundu-slider-thumb" style="left: 58%;"></div>
                   </div>
-                  <span class="slider-val">slope m = 1.35</span>
+                  <span class="slider-val" id="foundu-slider-val">slope m = +1.35</span>
                 </div>
               </div>
             </div>
@@ -844,7 +868,7 @@
         <div class="vignette-props-stage">
 
           <!-- Left: Vintage Walkman Cassette Player & Retro Foam Headphones (Tactile Gear) -->
-          <div class="vignette-prop vignette-walkman-set" title="Vintage Walkman & Retro Foam Headphones">
+          <div class="vignette-prop vignette-walkman-set" id="prop-walkman" role="button" tabindex="0" data-sound="tape" data-prop="walkman" aria-label="Vintage Walkman (Click to spin tape)" title="Vintage Walkman • Click to spin tape!">
             <svg viewBox="0 0 95 95" width="82" height="82" fill="none">
               <!-- Walkman Main Body -->
               <rect x="12" y="32" width="44" height="58" rx="4" fill="#334155" stroke="#1e293b" stroke-width="1.8"/>
@@ -901,7 +925,7 @@
           </div>
 
           <!-- Right: The Authentic Artisanal Pickle Corp Mason Jar (Hand-Packed Reserve) -->
-          <div class="vignette-prop vignette-pickle-jar" title="Pickle Corp Hand-Packed Pickles">
+          <div class="vignette-prop vignette-pickle-jar" id="prop-pickle-jar" role="button" tabindex="0" data-sound="clink" data-prop="pickle-jar" aria-label="Pickle Corp Artisan Jar (Click to tap glass)" title="Pickle Jar • Click to tap glass!">
             <svg viewBox="0 0 85 105" width="74" height="92" fill="none">
               <!-- Jar shadow -->
               <ellipse cx="42" cy="98" rx="28" ry="4" fill="rgba(88, 47, 14, 0.18)"/>
@@ -985,6 +1009,9 @@
           <h4 class="favor-title">Teach us a skill</h4>
           <p class="favor-text">Teach us 3D GLSL shaders, game mechanics, or your favorite craft.</p>
           <div class="favor-trade-foot">You share craft &bull; We build your web app</div>
+          <button type="button" class="btn-favor-propose" data-favor="Teach us a skill" data-sound="switch" aria-label="Propose trade: Teach us a skill">
+            <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
+          </button>
         </div>
 
         <div class="sticky-favor favor-city">
@@ -1009,6 +1036,9 @@
           <h4 class="favor-title">Show us your city</h4>
           <p class="favor-text">Send local stickers, maps, or show us underground spots in your hometown.</p>
           <div class="favor-trade-foot">Global cultural swap &bull; $0 cash trade</div>
+          <button type="button" class="btn-favor-propose" data-favor="Show us your city" data-sound="switch" aria-label="Propose trade: Show us your city">
+            <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
+          </button>
         </div>
 
         <div class="sticky-favor favor-gear">
@@ -1035,6 +1065,9 @@
           <h4 class="favor-title">Trade cool gear</h4>
           <p class="favor-text">Vintage tech, mechanical switches, retro consoles, or maker components.</p>
           <div class="favor-trade-foot">Hardware for software &bull; Shipped after school</div>
+          <button type="button" class="btn-favor-propose" data-favor="Trade cool gear" data-sound="switch" aria-label="Propose trade: Trade cool gear">
+            <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
+          </button>
         </div>
 
         <div class="sticky-favor favor-treats">
@@ -1061,6 +1094,10 @@
           <h4 class="favor-title">The Student Special</h4>
           <p class="favor-text">Share killer study notes, pizza/snacks, or collaborate on a wild idea.</p>
           <div class="favor-trade-foot">Pure student mutual aid &bull; We celebrate</div>
+          <button type="button" class="btn-favor-propose" data-favor="The Student Special" data-sound="switch" aria-label="Propose trade: The Student Special">
+            <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
         </div>
 
       </div>
@@ -1180,7 +1217,8 @@
         <div class="vignette-props-stage">
 
           <!-- Left: Vintage Instant Polaroid Camera & Ejected Photo -->
-          <div class="vignette-prop vignette-polaroid-camera" title="Vintage Instant Camera & Studio Photo">
+          <div class="vignette-prop vignette-polaroid-camera" id="prop-polaroid" role="button" tabindex="0" data-sound="shutter" data-prop="polaroid" aria-label="Vintage Polaroid Camera (Click to snap photo)" title="Polaroid Camera • Click to snap photo!">
+            <div class="polaroid-flash-glow" id="polaroid-flash" aria-hidden="true"></div>
             <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
               <!-- Camera Main Cream Body -->
               <rect x="10" y="38" width="52" height="42" rx="5" fill="#f8fafc" stroke="#582f0e" stroke-width="1.8"/>
@@ -1216,7 +1254,7 @@
           </div>
 
           <!-- Center: Anglepoise Architect Drafting Desk Lamp -->
-          <div class="vignette-prop vignette-drafting-lamp" title="Articulated Drafting Lamp">
+          <div class="vignette-prop vignette-drafting-lamp" id="prop-lamp" role="button" tabindex="0" data-sound="switch" data-prop="lamp" aria-label="Studio Drafting Lamp (Click to toggle beam)" title="Drafting Lamp • Click to toggle light beam!">
             <svg viewBox="0 0 95 105" width="82" height="92" fill="none">
               <!-- Lamp Weighted Base Plinth on shelf -->
               <ellipse cx="62" cy="88" rx="16" ry="5" fill="#333d29" stroke="#582f0e" stroke-width="1.5"/>
@@ -1245,7 +1283,7 @@
           </div>
 
           <!-- Right: Retro Mechanical Flip Clock (15:42) -->
-          <div class="vignette-prop vignette-flip-clock" title="Retro Mechanical Flip Clock (15:42 After-School Studio Time)">
+          <div class="vignette-prop vignette-flip-clock" id="prop-clock" role="button" tabindex="0" data-sound="switch" data-prop="clock" aria-label="Retro Flip Clock (Click to flip time)" title="Flip Clock • Click to flip minute!">
             <svg viewBox="0 0 90 90" width="76" height="76" fill="none">
               <!-- Wooden Housing -->
               <rect x="8" y="32" width="68" height="46" rx="6" fill="#7f4f24" stroke="#582f0e" stroke-width="1.8"/>
@@ -1468,9 +1506,6 @@
       </div>
     </div>
   </section>
-      </div>
-    </div>
-  </section>
 
   <!-- ═════════════════════════════════════════════════════ CARD / ARTIFACT ══ -->
   <section id="card" class="section-card">
@@ -1648,11 +1683,21 @@
           <div class="site-card-shadow" aria-hidden="true"></div>
         </div>
 
-        <!-- Card Flip Interactive Hint -->
+        <!-- Card Flip Interactive Hint & Live Precision HUD -->
         <div class="card-interaction-hint" aria-hidden="true">
           <span class="hint-key">✦ Click card to flip</span>
           <span class="hint-sep">&bull;</span>
           <span class="hint-key">Drag cursor to tilt 3D</span>
+        </div>
+
+        <div class="card-telemetry-hud" id="card-telemetry-hud" aria-live="polite">
+          <span class="hud-item">TILT X: <strong id="hud-tilt-x">0.0°</strong></span>
+          <span class="hud-sep">&bull;</span>
+          <span class="hud-item">TILT Y: <strong id="hud-tilt-y">0.0°</strong></span>
+          <span class="hud-sep">&bull;</span>
+          <span class="hud-item">SURFACE: <strong id="hud-surface">BRUSHED GOLD FOIL</strong></span>
+          <span class="hud-sep">&bull;</span>
+          <span class="hud-badge">60 FPS MATRIX</span>
         </div>
 
       </div>
@@ -1677,7 +1722,7 @@
         <div class="vignette-props-stage">
 
           <!-- Left: Vintage Solid Brass Service Desk Bell (Ring for Inquiry!) -->
-          <div class="vignette-prop vignette-desk-bell" title="Solid Brass Service Desk Bell (Ding for Inquiry!)">
+          <div class="vignette-prop vignette-desk-bell" id="prop-bell" role="button" tabindex="0" data-sound="bell" data-prop="bell" aria-label="Solid Brass Service Desk Bell (Ring for inquiry!)" title="Solid Brass Bell • Click to ring chime!">
             <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
               <!-- Wooden circular base plinth -->
               <ellipse cx="42" cy="82" rx="30" ry="6" fill="#582f0e" stroke="#331800" stroke-width="1.5"/>
@@ -1707,7 +1752,7 @@
           </div>
 
           <!-- Center: Faceted Amber Glass Inkwell & Dipped Calligraphy Pen -->
-          <div class="vignette-prop vignette-inkwell-pen" title="Amber Glass Inkwell & Brass Calligraphy Pen">
+          <div class="vignette-prop vignette-inkwell-pen" id="prop-inkwell" role="button" tabindex="0" data-sound="pencil" data-prop="inkwell" aria-label="Amber Glass Inkwell & Brass Pen (Click to dip pen)" title="Amber Inkwell • Click to dip pen!">
             <svg viewBox="0 0 75 90" width="62" height="74" fill="none">
               <!-- Glass Ink Bottle Base -->
               <path d="M20 54 L20 80 C20 83 23 85 27 85 L47 85 C51 85 54 83 54 80 L54 54 L48 46 L26 46 Z"
@@ -1732,7 +1777,7 @@
           </div>
 
           <!-- Right: Hand-Carved Wooden Rubber Stamp & Brass Ink Box -->
-          <div class="vignette-prop vignette-rubber-stamp" title="Hand-Carved Rubber Stamp & Brass Ink Box">
+          <div class="vignette-prop vignette-rubber-stamp" id="prop-stamp" role="button" tabindex="0" data-sound="switch" data-prop="stamp" aria-label="Hand-Carved Rubber Stamp (Click to stamp dispatch)" title="Rubber Stamp • Click to stamp dispatch!">
             <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
               <!-- Brass Ink Pad Box -->
               <rect x="12" y="68" width="38" height="16" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
@@ -1847,6 +1892,6 @@
   </footer>
 
   <script src="lenis.min.js"></script>
-  <script src="script.js?v=3.0.0"></script>
+  <script src="script.js?v=4.0.0"></script>
 </body>
 </html>

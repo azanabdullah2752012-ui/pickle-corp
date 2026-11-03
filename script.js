@@ -964,6 +964,90 @@ document.addEventListener('DOMContentLoaded', () => {
         gain.gain.exponentialRampToValueAtTime(0.001, t + 0.1);
         osc.start(t);
         osc.stop(t + 0.1);
+      } else if (type === 'bell') {
+        // Solid brass service desk bell with resonant harmonic decay
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1760, t);
+        gain.gain.setValueAtTime(0.08, t);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.55);
+        osc.start(t);
+        osc.stop(t + 0.55);
+
+        const osc2 = this.ctx.createOscillator();
+        const gain2 = this.ctx.createGain();
+        osc2.type = 'triangle';
+        osc2.frequency.setValueAtTime(3520, t);
+        gain2.gain.setValueAtTime(0.04, t);
+        gain2.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+        osc2.connect(gain2);
+        gain2.connect(this.ctx.destination);
+        osc2.start(t);
+        osc2.stop(t + 0.28);
+      } else if (type === 'shutter') {
+        // Polaroid instant camera mechanical shutter click (double transient)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, t);
+        osc.frequency.exponentialRampToValueAtTime(240, t + 0.03);
+        gain.gain.setValueAtTime(0.07, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.035);
+        osc.start(t);
+        osc.stop(t + 0.035);
+
+        const osc2 = this.ctx.createOscillator();
+        const gain2 = this.ctx.createGain();
+        osc2.type = 'triangle';
+        osc2.frequency.setValueAtTime(950, t + 0.05);
+        osc2.frequency.exponentialRampToValueAtTime(320, t + 0.09);
+        gain2.gain.setValueAtTime(0.06, t + 0.05);
+        gain2.gain.exponentialRampToValueAtTime(0.001, t + 0.1);
+        osc2.connect(gain2);
+        gain2.connect(this.ctx.destination);
+        osc2.start(t + 0.05);
+        osc2.stop(t + 0.1);
+      } else if (type === 'tape') {
+        // Cassette tape mechanism latch
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(340, t);
+        osc.frequency.exponentialRampToValueAtTime(180, t + 0.04);
+        gain.gain.setValueAtTime(0.08, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+        osc.start(t);
+        osc.stop(t + 0.05);
+      } else if (type === 'tea' || type === 'clink') {
+        // Ceramic chai cup clink
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(2400, t);
+        gain.gain.setValueAtTime(0.05, t);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
+        osc.start(t);
+        osc.stop(t + 0.18);
+      } else if (type === 'pencil') {
+        // Tactile graphite checkbox tick
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(1400, t);
+        osc.frequency.exponentialRampToValueAtTime(700, t + 0.03);
+        gain.gain.setValueAtTime(0.04, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+        osc.start(t);
+        osc.stop(t + 0.04);
+      } else if (type === 'keystroke') {
+        // Mechanical keyboard switch click
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(1100, t);
+        osc.frequency.exponentialRampToValueAtTime(450, t + 0.03);
+        gain.gain.setValueAtTime(0.05, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.035);
+        osc.start(t);
+        osc.stop(t + 0.035);
+      } else if (type === 'caliper') {
+        // Precision brass gear ratchet
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1500, t);
+        osc.frequency.exponentialRampToValueAtTime(2100, t + 0.02);
+        gain.gain.setValueAtTime(0.05, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.025);
+        osc.start(t);
+        osc.stop(t + 0.025);
       }
     }
 
@@ -1950,6 +2034,318 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add('is-revealed');
     });
   }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // TACTILE MAKER ATELIER: INTERACTIVE SANDBOXES, PROPS & HUD TELEMETRY
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // 1. Hero Laptop Live Terminal Simulation
+  (function initHeroLaptop() {
+    const laptop = document.getElementById('hero-laptop');
+    if (!laptop) return;
+
+    const logLine = document.getElementById('laptop-log-line');
+    const subStatus = document.getElementById('laptop-sub-status');
+
+    const traces = [
+      { log: '[ok] 60fps canvas engine ready', status: 'studio online' },
+      { log: '[ok] 4 bespoke apps (0kb bloat)', status: '100% vanilla TS' },
+      { log: '[ok] pure craft • barter mode on', status: 'favors over cash' },
+      { log: '[ok] Gummy physics: calibrated', status: 'after-school sprint' },
+      { log: '[ok] all systems green • released', status: 'ready to trade' }
+    ];
+
+    let traceIdx = 0;
+
+    function advanceTrace() {
+      traceIdx = (traceIdx + 1) % traces.length;
+      if (logLine) logLine.textContent = traces[traceIdx].log;
+      if (subStatus) subStatus.textContent = traces[traceIdx].status;
+      laptop.classList.add('terminal-flash');
+      setTimeout(() => laptop.classList.remove('terminal-flash'), 350);
+    }
+
+    laptop.addEventListener('click', () => {
+      advanceTrace();
+      if (window.acoustic) window.acoustic.play('keystroke');
+    });
+
+    laptop.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        advanceTrace();
+        if (window.acoustic) window.acoustic.play('keystroke');
+      }
+    });
+
+    // Gentle auto-tick every 4.8 seconds
+    setInterval(advanceTrace, 4800);
+  })();
+
+  // 2. Interactive Chai Mug Clink & Steam
+  (function initChaiMug() {
+    const mug = document.getElementById('hero-chai-mug');
+    if (!mug) return;
+
+    let clinkTimeout = null;
+    mug.addEventListener('click', () => {
+      if (window.acoustic) window.acoustic.play('tea');
+      mug.classList.add('mug-clinked');
+      clearTimeout(clinkTimeout);
+      clinkTimeout = setTimeout(() => mug.classList.remove('mug-clinked'), 1800);
+    });
+
+    mug.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        mug.click();
+      }
+    });
+  })();
+
+  // 3. Interactive Vignette Props across all shelves
+  (function initVignetteProps() {
+    const props = document.querySelectorAll('.vignette-prop[data-prop]');
+    props.forEach(prop => {
+      const type = prop.getAttribute('data-prop');
+      const soundType = prop.getAttribute('data-sound') || 'switch';
+
+      prop.addEventListener('click', () => {
+        if (window.acoustic) window.acoustic.play(soundType);
+
+        if (type === 'bell') {
+          prop.classList.remove('bell-ringing');
+          void prop.offsetWidth; // reflow
+          prop.classList.add('bell-ringing');
+        } else if (type === 'polaroid') {
+          const flash = document.getElementById('polaroid-flash');
+          if (flash) {
+            flash.classList.remove('active');
+            void flash.offsetWidth;
+            flash.classList.add('active');
+          }
+        } else if (type === 'walkman') {
+          prop.style.transition = 'transform 0.4s ease';
+          prop.style.transform = 'translateY(-4px) rotate(4deg)';
+          setTimeout(() => prop.style.transform = '', 400);
+        } else if (type === 'caliper') {
+          prop.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          prop.style.transform = 'scale(1.08) rotate(-6deg)';
+          setTimeout(() => prop.style.transform = '', 350);
+        } else if (type === 'pickle-jar') {
+          prop.style.transition = 'transform 0.25s ease';
+          prop.style.transform = 'scale(1.05)';
+          setTimeout(() => prop.style.transform = '', 250);
+        }
+      });
+
+      prop.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          prop.click();
+        }
+      });
+    });
+  })();
+
+  // 4. Project Card 01: Pickle Studio Interactive Sandbox
+  (function initPickleStudioSandbox() {
+    const toolBtns = document.querySelectorAll('.studio-tool-strip .tool-icon');
+    const toolPill = document.getElementById('studio-active-tool-pill');
+    const previewShape = document.getElementById('studio-preview-card');
+    const swatchBtns = document.querySelectorAll('.studio-swatch-strip .swatch-dot');
+
+    toolBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toolBtns.forEach(b => b.classList.remove('tool-active'));
+        btn.classList.add('tool-active');
+        const toolName = btn.getAttribute('data-tool') || 'Tool';
+        if (toolPill) toolPill.textContent = `${toolName} Tool`;
+        if (window.acoustic) window.acoustic.play('switch');
+      });
+    });
+
+    swatchBtns.forEach(dot => {
+      dot.addEventListener('click', () => {
+        swatchBtns.forEach(d => d.classList.remove('is-active-swatch'));
+        dot.classList.add('is-active-swatch');
+        const color = dot.getAttribute('data-color');
+        if (previewShape && color) {
+          previewShape.style.borderColor = color;
+          previewShape.style.background = `${color}22`;
+        }
+        if (window.acoustic) window.acoustic.play('ping-high');
+      });
+    });
+  })();
+
+  // 5. Project Card 02: SafeSpace Interactive Cipher Test
+  (function initSafeSpaceCipher() {
+    const testBtn = document.getElementById('btn-test-cipher');
+    const hashHex = document.getElementById('safespace-hash-hex');
+    if (!testBtn || !hashHex) return;
+
+    testBtn.addEventListener('click', () => {
+      if (window.acoustic) window.acoustic.play('lock');
+      testBtn.disabled = true;
+      testBtn.style.opacity = '0.6';
+
+      let frames = 0;
+      const interval = setInterval(() => {
+        const randHex = '0x' + Array.from({ length: 20 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
+        hashHex.textContent = randHex;
+        frames++;
+        if (frames > 7) {
+          clearInterval(interval);
+          testBtn.disabled = false;
+          testBtn.style.opacity = '1';
+          if (window.acoustic) window.acoustic.play('ping-high');
+        }
+      }, 50);
+    });
+  })();
+
+  // 6. Project Card 03: Nuvio Journal Checklist
+  (function initNuvioChecklist() {
+    const tasks = document.querySelectorAll('.nuvio-task-item');
+    const streakPill = document.getElementById('nuvio-streak-pill');
+
+    tasks.forEach(task => {
+      task.addEventListener('click', () => {
+        const isChecked = task.classList.toggle('is-checked');
+        task.setAttribute('aria-checked', isChecked ? 'true' : 'false');
+        if (window.acoustic) window.acoustic.play('pencil');
+
+        const allChecked = [...tasks].every(t => t.classList.contains('is-checked'));
+        if (streakPill) {
+          streakPill.textContent = allChecked ? '🔥 25 Day Streak!' : '🔥 24 Day Streak';
+          streakPill.style.transform = 'scale(1.08)';
+          setTimeout(() => streakPill.style.transform = '', 200);
+        }
+      });
+    });
+  })();
+
+  // 7. Project Card 04: Foundu Math Tangent Scrubber
+  (function initFounduTangent() {
+    const track = document.getElementById('foundu-slider-track');
+    const fill = document.getElementById('foundu-slider-fill');
+    const thumb = document.getElementById('foundu-slider-thumb');
+    const valText = document.getElementById('foundu-slider-val');
+    const tangentLine = document.getElementById('foundu-tangent-line');
+    const tangentPoint = document.getElementById('foundu-tangent-point');
+    const coordText = document.getElementById('foundu-coord-text');
+
+    if (!track || !fill || !thumb || !tangentLine || !tangentPoint) return;
+
+    function updateTangent(pct) {
+      pct = Math.max(0.1, Math.min(0.9, pct));
+      fill.style.width = (pct * 100) + '%';
+      thumb.style.left = (pct * 100) + '%';
+
+      // Polynomial curve coordinates: x in [30, 280]
+      const px = 30 + pct * 250;
+      // y on curve approximation
+      const normX = (pct - 0.5) * 2; // -1 to 1
+      const py = 52 - normX * 34 + Math.pow(normX, 3) * 6;
+      // Derivative slope
+      const slope = -1.2 + 3 * Math.pow(normX, 2);
+
+      tangentPoint.setAttribute('cx', px.toFixed(1));
+      tangentPoint.setAttribute('cy', py.toFixed(1));
+
+      // Tangent line span
+      const dx = 55;
+      const dy = dx * (slope * -0.4);
+      tangentLine.setAttribute('x1', (px - dx).toFixed(1));
+      tangentLine.setAttribute('y1', (py + dy).toFixed(1));
+      tangentLine.setAttribute('x2', (px + dx).toFixed(1));
+      tangentLine.setAttribute('y2', (py - dy).toFixed(1));
+
+      if (valText) {
+        valText.textContent = `slope m = ${slope >= 0 ? '+' : ''}${slope.toFixed(2)}`;
+      }
+      if (coordText) {
+        coordText.textContent = `P(${(pct * 3).toFixed(1)}, ${(py / 20).toFixed(1)})`;
+      }
+    }
+
+    let isDragging = false;
+    function handlePointer(e) {
+      const rect = track.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const pct = (clientX - rect.left) / rect.width;
+      updateTangent(pct);
+    }
+
+    track.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      handlePointer(e);
+      if (window.acoustic) window.acoustic.play('caliper');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) handlePointer(e);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    track.addEventListener('touchstart', (e) => {
+      handlePointer(e);
+    }, { passive: true });
+
+    track.addEventListener('touchmove', (e) => {
+      handlePointer(e);
+    }, { passive: true });
+  })();
+
+  // 8. Section 03: Propose This Trade Quick-Fill
+  (function initTradeProposalPills() {
+    const btns = document.querySelectorAll('.btn-favor-propose');
+    const contactMsg = document.getElementById('contact-message');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const favorName = btn.getAttribute('data-favor');
+        if (contactMsg && favorName) {
+          contactMsg.value = `Hi Pickle Corp! I'd love to propose a trade: [${favorName}]. Let's build together!`;
+        }
+        if (window.acoustic) window.acoustic.play('switch');
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            if (contactMsg) contactMsg.focus();
+          }, 600);
+        }
+      });
+    });
+  })();
+
+  // 9. Section 05: 3D Card Live Telemetry HUD Hook
+  (function init3DCardTelemetryHUD() {
+    const cardScene = document.getElementById('siteCardScene');
+    const hudX = document.getElementById('hud-tilt-x');
+    const hudY = document.getElementById('hud-tilt-y');
+    if (!cardScene || !hudX || !hudY) return;
+
+    cardScene.addEventListener('mousemove', (e) => {
+      const rect = cardScene.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const rx = (-y * 30).toFixed(1);
+      const ry = (x * 30).toFixed(1);
+      hudX.textContent = `${rx >= 0 ? '+' : ''}${rx}°`;
+      hudY.textContent = `${ry >= 0 ? '+' : ''}${ry}°`;
+    });
+
+    cardScene.addEventListener('mouseleave', () => {
+      hudX.textContent = '0.0°';
+      hudY.textContent = '0.0°';
+    });
+  })();
 
   // Expose modal API to window
   window.openProjectPreview = openProjectPreview;
