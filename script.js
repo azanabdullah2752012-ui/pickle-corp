@@ -1067,6 +1067,45 @@ document.addEventListener('DOMContentLoaded', () => {
       osc.start(t);
       osc.stop(t + 0.18);
     }
+
+    startLoFiTape() {
+      this.initCtx();
+      if (!this.ctx) return;
+      if (this.tapeTimer) return;
+      // Procedural Web Audio Lo-Fi tape loop: Cmaj7 -> Am7 -> Fmaj7 -> G7
+      const notes = [
+        261.63, 329.63, 392.00, 493.88,
+        220.00, 261.63, 329.63, 392.00,
+        174.61, 220.00, 261.63, 329.63,
+        196.00, 246.94, 293.66, 349.23
+      ];
+      let step = 0;
+      this.tapeTimer = setInterval(() => {
+        try {
+          if (!this.ctx || this.ctx.state === 'suspended') return;
+          const f = notes[step % notes.length];
+          step++;
+          const t = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(f, t);
+          gain.gain.setValueAtTime(0.022, t);
+          gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.36);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.38);
+        } catch(e) {}
+      }, 320);
+    }
+
+    stopLoFiTape() {
+      if (this.tapeTimer) {
+        clearInterval(this.tapeTimer);
+        this.tapeTimer = null;
+      }
+    }
   }
 
   const sound = new AcousticEngine();
@@ -2083,16 +2122,39 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // 2. Interactive Chai Mug Clink & Steam
+  // 2. Interactive Chai Mug Clink & Steam
   (function initChaiMug() {
     const mug = document.getElementById('hero-chai-mug');
     if (!mug) return;
 
     let clinkTimeout = null;
+    let sipCount = 0;
+    const toast = document.getElementById('mug-toast');
+    const sipPhrases = [
+      '☕ Sip #1: Warm cardamom chai!',
+      '☕ Sip #2: Coding fuel replenished!',
+      '☕ Sip #3: 3 students, 0 caffeine crashes!',
+      '☕ Sip #4: Pure artisanal ginger brew!',
+      '☕ Sip #5: Ready to ship pure craft!'
+    ];
+
     mug.addEventListener('click', () => {
       if (window.acoustic) window.acoustic.play('tea');
       mug.classList.add('mug-clinked');
       clearTimeout(clinkTimeout);
-      clinkTimeout = setTimeout(() => mug.classList.remove('mug-clinked'), 1800);
+      sipCount++;
+      if (toast) {
+        toast.textContent = sipPhrases[(sipCount - 1) % sipPhrases.length];
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+      }
+      clinkTimeout = setTimeout(() => {
+        mug.classList.remove('mug-clinked');
+        if (toast) {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(-50%) translateY(6px)';
+        }
+      }, 2200);
     });
 
     mug.addEventListener('keydown', (e) => {
@@ -2103,49 +2165,381 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // 3. Interactive Vignette Props across all shelves
-  (function initVignetteProps() {
-    const props = document.querySelectorAll('.vignette-prop[data-prop]');
-    props.forEach(prop => {
-      const type = prop.getAttribute('data-prop');
-      const soundType = prop.getAttribute('data-sound') || 'switch';
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 3. INTERACTIVE STUDIO PROPS, TOYS & FLOATING DOCK ENGINE
+  // ═══════════════════════════════════════════════════════════════════════════
+  (function initInteractiveStudioToys() {
+    // State
+    let isWalkmanPlaying = false;
+    let isStampModeActive = false;
+    let bellRingsCount = 0;
+    let gummyPokeCount = 0;
 
-      prop.addEventListener('click', () => {
-        if (window.acoustic) window.acoustic.play(soundType);
+    // Elements
+    const propWalkman = document.getElementById('prop-walkman');
+    const btnToyWalkman = document.getElementById('btn-toy-walkman');
+    const labelToyWalkman = document.getElementById('toy-walkman-label');
+    const badgeWalkmanNowPlaying = document.getElementById('walkman-now-playing');
 
-        if (type === 'bell') {
-          prop.classList.remove('bell-ringing');
-          void prop.offsetWidth; // reflow
-          prop.classList.add('bell-ringing');
-        } else if (type === 'polaroid') {
-          const flash = document.getElementById('polaroid-flash');
-          if (flash) {
-            flash.classList.remove('active');
-            void flash.offsetWidth;
-            flash.classList.add('active');
-          }
-        } else if (type === 'walkman') {
-          prop.style.transition = 'transform 0.4s ease';
-          prop.style.transform = 'translateY(-4px) rotate(4deg)';
-          setTimeout(() => prop.style.transform = '', 400);
-        } else if (type === 'caliper') {
-          prop.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
-          prop.style.transform = 'scale(1.08) rotate(-6deg)';
-          setTimeout(() => prop.style.transform = '', 350);
-        } else if (type === 'pickle-jar') {
-          prop.style.transition = 'transform 0.25s ease';
-          prop.style.transform = 'scale(1.05)';
-          setTimeout(() => prop.style.transform = '', 250);
+    const propPolaroid = document.getElementById('prop-polaroid');
+    const btnToyPhoto = document.getElementById('btn-toy-photo');
+    const cameraFlashOverlay = document.getElementById('camera-flash-overlay');
+    const polaroidEjectedPhoto = document.getElementById('polaroid-photo-ejected');
+
+    const propBell = document.getElementById('prop-bell');
+    const btnToyBell = document.getElementById('btn-toy-bell');
+    const labelToyBell = document.getElementById('toy-bell-label');
+
+    const propStamp = document.getElementById('prop-stamp');
+    const btnToyStamp = document.getElementById('btn-toy-stamp');
+    const labelToyStamp = document.getElementById('toy-stamp-label');
+    const stampSurfaceLayer = document.getElementById('stamp-surface-layer');
+
+    const btnToyGummy = document.getElementById('btn-toy-gummy');
+    const propLamp = document.getElementById('prop-lamp');
+    const propClock = document.getElementById('prop-clock');
+    const flipClockHours = document.getElementById('flip-clock-hours');
+    const flipClockMinutes = document.getElementById('flip-clock-minutes');
+
+    // ── 1. Lo-Fi Walkman Player ───────────────────────────────────────────
+    function toggleWalkman(forceState) {
+      isWalkmanPlaying = typeof forceState === 'boolean' ? forceState : !isWalkmanPlaying;
+      if (window.acoustic) window.acoustic.play('switch');
+
+      if (isWalkmanPlaying) {
+        if (propWalkman) propWalkman.classList.add('walkman-playing');
+        if (btnToyWalkman) btnToyWalkman.classList.add('active');
+        if (labelToyWalkman) labelToyWalkman.textContent = 'Playing Tape ♫';
+        if (badgeWalkmanNowPlaying) badgeWalkmanNowPlaying.textContent = 'CHILLHOP 60BPM ♫';
+        if (window.acoustic && typeof window.acoustic.startLoFiTape === 'function') {
+          window.acoustic.startLoFiTape();
         }
-      });
-
-      prop.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          prop.click();
+      } else {
+        if (propWalkman) propWalkman.classList.remove('walkman-playing');
+        if (btnToyWalkman) btnToyWalkman.classList.remove('active');
+        if (labelToyWalkman) labelToyWalkman.textContent = 'Lo-Fi Tape';
+        if (badgeWalkmanNowPlaying) badgeWalkmanNowPlaying.textContent = 'CASSETTE READY';
+        if (window.acoustic && typeof window.acoustic.stopLoFiTape === 'function') {
+          window.acoustic.stopLoFiTape();
         }
+      }
+    }
+
+    if (propWalkman) {
+      propWalkman.addEventListener('click', () => toggleWalkman());
+      propWalkman.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleWalkman(); }
       });
+    }
+    if (btnToyWalkman) {
+      btnToyWalkman.addEventListener('click', () => toggleWalkman());
+    }
+
+    // ── 2. Polaroid Camera Snap & Photo Ejection ─────────────────────────
+    function snapPolaroid() {
+      if (window.acoustic) window.acoustic.play('shutter');
+
+      // High-speed camera flash
+      if (cameraFlashOverlay) {
+        cameraFlashOverlay.classList.remove('flashing');
+        void cameraFlashOverlay.offsetWidth; // reflow
+        cameraFlashOverlay.classList.add('flashing');
+        setTimeout(() => cameraFlashOverlay.classList.remove('flashing'), 380);
+      }
+
+      // Camera prop shutter kick
+      if (propPolaroid) {
+        propPolaroid.style.transition = 'transform 0.15s cubic-bezier(0.1, 0.9, 0.2, 1)';
+        propPolaroid.style.transform = 'scale(0.96) rotate(-2deg)';
+        setTimeout(() => propPolaroid.style.transform = '', 180);
+      }
+
+      // Eject developing film slide
+      if (polaroidEjectedPhoto) {
+        polaroidEjectedPhoto.classList.remove('polaroid-ejected');
+        void polaroidEjectedPhoto.offsetWidth; // reflow
+        polaroidEjectedPhoto.classList.add('polaroid-ejected');
+      }
+
+      // Button feedback
+      if (btnToyPhoto) {
+        btnToyPhoto.classList.add('active');
+        setTimeout(() => btnToyPhoto.classList.remove('active'), 400);
+      }
+    }
+
+    if (propPolaroid) {
+      propPolaroid.addEventListener('click', snapPolaroid);
+      propPolaroid.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); snapPolaroid(); }
+      });
+    }
+    if (btnToyPhoto) {
+      btnToyPhoto.addEventListener('click', snapPolaroid);
+    }
+
+    // ── 3. Solid Brass Service Desk Bell ──────────────────────────────────
+    function spawnBellParticles(parentEl) {
+      const notes = ['♪', '♫', '♩', '✦', '♬'];
+      for (let i = 0; i < 3; i++) {
+        const particle = document.createElement('span');
+        particle.className = 'bell-note-particle';
+        particle.textContent = notes[Math.floor(Math.random() * notes.length)];
+        const dx = (Math.random() * 40 - 20).toFixed(0);
+        particle.style.setProperty('--dx', `${dx}px`);
+        particle.style.left = `calc(50% + ${dx}px)`;
+        particle.style.top = '10px';
+        parentEl.appendChild(particle);
+        setTimeout(() => particle.remove(), 850);
+      }
+    }
+
+    function ringDeskBell() {
+      bellRingsCount++;
+      if (window.acoustic) window.acoustic.play('bell');
+
+      if (propBell) {
+        propBell.classList.remove('bell-ringing');
+        void propBell.offsetWidth; // reflow
+        propBell.classList.add('bell-ringing');
+        spawnBellParticles(propBell);
+      }
+
+      if (labelToyBell) {
+        labelToyBell.textContent = `Ding #${bellRingsCount}!`;
+      }
+
+      if (btnToyBell) {
+        btnToyBell.classList.add('active');
+        setTimeout(() => btnToyBell.classList.remove('active'), 250);
+      }
+
+      if (bellRingsCount % 5 === 0 && window.heroGummy) {
+        setTimeout(() => {
+          window.heroGummy.backflip();
+        }, 150);
+      }
+    }
+
+    if (propBell) {
+      propBell.addEventListener('click', ringDeskBell);
+      propBell.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ringDeskBell(); }
+      });
+    }
+    if (btnToyBell) {
+      btnToyBell.addEventListener('click', ringDeskBell);
+    }
+
+    // ── 4. Rubber Stamp Tool ──────────────────────────────────────────────
+    function toggleStampMode(forceState) {
+      isStampModeActive = typeof forceState === 'boolean' ? forceState : !isStampModeActive;
+      if (window.acoustic) window.acoustic.play('switch');
+
+      if (isStampModeActive) {
+        document.body.classList.add('stamp-mode-cursor');
+        if (btnToyStamp) btnToyStamp.classList.add('active');
+        if (labelToyStamp) labelToyStamp.textContent = 'Click to Stamp!';
+        if (propStamp) propStamp.classList.add('stamp-active');
+      } else {
+        document.body.classList.remove('stamp-mode-cursor');
+        if (btnToyStamp) btnToyStamp.classList.remove('active');
+        if (labelToyStamp) labelToyStamp.textContent = 'Stamp Page';
+        if (propStamp) propStamp.classList.remove('stamp-active');
+      }
+    }
+
+    function placeInkStamp(x, y) {
+      const stamp = document.createElement('div');
+      stamp.className = 'placed-ink-stamp';
+      stamp.style.left = `${x}px`;
+      stamp.style.top = `${y}px`;
+      const rot = (Math.random() * 28 - 14).toFixed(1);
+      stamp.style.setProperty('--rot', `${rot}deg`);
+
+      const stampPhrases = [
+        { top: 'PICKLE CORP', center: 'APPROVED', bot: 'RAW CRAFT' },
+        { top: 'HAND-BUILT', center: '100%', bot: 'NO TEMPLATES' },
+        { top: 'EST. 2024', center: 'VERIFIED', bot: '3 STUDENTS' },
+        { top: 'STUDIO CRAFT', center: 'ZERO', bot: 'INVOICES' }
+      ];
+      const p = stampPhrases[Math.floor(Math.random() * stampPhrases.length)];
+      stamp.innerHTML = `
+        <span class="stamp-text-1">${p.top}</span>
+        <span class="stamp-text-2">${p.center}</span>
+        <span class="stamp-text-3">${p.bot}</span>
+      `;
+
+      const layer = stampSurfaceLayer || document.body;
+      layer.appendChild(stamp);
+      if (window.acoustic) window.acoustic.play('lock');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!isStampModeActive) return;
+      if (e.target.closest('#studio-toy-dock') || e.target.closest('a') || e.target.closest('button') || e.target.closest('input') || e.target.closest('textarea')) {
+        return;
+      }
+      placeInkStamp(e.pageX, e.pageY);
     });
+
+    if (propStamp) {
+      propStamp.addEventListener('click', () => toggleStampMode());
+      propStamp.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStampMode(); }
+      });
+    }
+    if (btnToyStamp) {
+      btnToyStamp.addEventListener('click', () => toggleStampMode());
+    }
+
+    // ── 5. Gummy Mascot Hop & Poke ────────────────────────────────────────
+    function pokeGummy() {
+      gummyPokeCount++;
+      if (window.heroGummy) {
+        if (gummyPokeCount % 4 === 0) {
+          window.heroGummy.backflip();
+          if (window.acoustic) window.acoustic.play('lock');
+        } else {
+          window.heroGummy.hop(65, 620);
+          if (window.acoustic) window.acoustic.play('gummy-hop');
+        }
+      }
+      if (btnToyGummy) {
+        btnToyGummy.classList.add('active');
+        setTimeout(() => btnToyGummy.classList.remove('active'), 250);
+      }
+    }
+
+    if (btnToyGummy) {
+      btnToyGummy.addEventListener('click', pokeGummy);
+    }
+
+    // ── 6. Studio Drafting Lamp Beam ──────────────────────────────────────
+    function toggleLamp() {
+      if (propLamp) {
+        propLamp.classList.toggle('lamp-lit');
+        if (window.acoustic) window.acoustic.play('switch');
+      }
+    }
+
+    if (propLamp) {
+      propLamp.addEventListener('click', toggleLamp);
+      propLamp.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLamp(); }
+      });
+    }
+
+    // ── 7. Retro Flip Clock Dynamic Sync & Manual Fast-Forward ─────────────
+    let clockManualMinutes = 0;
+    function syncFlipClock() {
+      const now = new Date();
+      let m = now.getMinutes() + clockManualMinutes;
+      let h = now.getHours();
+      if (m >= 60) {
+        h = (h + Math.floor(m / 60)) % 24;
+        m = m % 60;
+      }
+      const hhStr = String(h).padStart(2, '0');
+      const mmStr = String(m).padStart(2, '0');
+      if (flipClockHours) flipClockHours.textContent = hhStr;
+      if (flipClockMinutes) flipClockMinutes.textContent = mmStr;
+    }
+
+    syncFlipClock();
+    setInterval(syncFlipClock, 1000);
+
+    if (propClock) {
+      propClock.addEventListener('click', () => {
+        clockManualMinutes++;
+        syncFlipClock();
+        if (window.acoustic) window.acoustic.play('switch');
+        propClock.style.transition = 'transform 0.15s ease';
+        propClock.style.transform = 'scale(1.08) rotate(3deg)';
+        setTimeout(() => propClock.style.transform = '', 180);
+      });
+      propClock.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); propClock.click(); }
+      });
+    }
+
+    // ── 8. Caliper, Pantone, Pickle Jar & Inkwell ─────────────────────────
+    const propCaliper = document.getElementById('prop-caliper');
+    if (propCaliper) {
+      propCaliper.addEventListener('click', () => {
+        propCaliper.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        propCaliper.style.transform = 'scale(1.1) rotate(-8deg)';
+        if (window.acoustic) window.acoustic.play('caliper');
+        setTimeout(() => propCaliper.style.transform = '', 350);
+      });
+    }
+
+    const propPantone = document.getElementById('prop-pantone');
+    if (propPantone) {
+      propPantone.addEventListener('click', () => {
+        propPantone.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        propPantone.style.transform = 'scale(1.08) rotate(6deg)';
+        if (window.acoustic) window.acoustic.play('switch');
+        setTimeout(() => propPantone.style.transform = '', 350);
+      });
+    }
+
+    const propPickleJar = document.getElementById('prop-pickle-jar');
+    if (propPickleJar) {
+      propPickleJar.addEventListener('click', () => {
+        propPickleJar.style.transition = 'transform 0.25s ease';
+        propPickleJar.style.transform = 'scale(1.08)';
+        if (window.acoustic) window.acoustic.play('ping-high');
+        setTimeout(() => propPickleJar.style.transform = '', 250);
+      });
+    }
+
+    const propInkwell = document.getElementById('prop-inkwell');
+    if (propInkwell) {
+      propInkwell.addEventListener('click', () => {
+        propInkwell.style.transition = 'transform 0.25s ease';
+        propInkwell.style.transform = 'scale(1.08) rotate(-4deg)';
+        if (window.acoustic) window.acoustic.play('pencil');
+        setTimeout(() => propInkwell.style.transform = '', 250);
+      });
+    }
+
+    // ── 9. Global Keyboard Shortcuts (G, B, P, W, S, L, M) ─────────────────
+    window.addEventListener('keydown', (e) => {
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) {
+        return;
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      const key = e.key.toUpperCase();
+      if (key === 'G') {
+        e.preventDefault();
+        pokeGummy();
+      } else if (key === 'B') {
+        e.preventDefault();
+        ringDeskBell();
+      } else if (key === 'P') {
+        e.preventDefault();
+        snapPolaroid();
+      } else if (key === 'W') {
+        e.preventDefault();
+        toggleWalkman();
+      } else if (key === 'S') {
+        e.preventDefault();
+        toggleStampMode();
+      } else if (key === 'L') {
+        e.preventDefault();
+        toggleLamp();
+      } else if (key === 'M') {
+        const soundToggle = document.getElementById('btn-sound-toggle');
+        if (soundToggle) {
+          e.preventDefault();
+          soundToggle.click();
+        }
+      }
+    });
+
   })();
 
   // 4. Project Card 01: Pickle Studio Interactive Sandbox

@@ -8548,3 +8548,284 @@ html, body {
   font-weight: 800;
   letter-spacing: 0.05em;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HYPER-INTERACTIVE STUDIO TOYS, PROPS & MICRO-MECHANISMS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Fullscreen Camera Flash Overlay */
+.camera-flash-overlay {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.05s ease;
+}
+
+.camera-flash-overlay.flashing {
+  opacity: 0.95;
+  animation: cameraFlashAnim 0.35s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes cameraFlashAnim {
+  0% { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+/* 2. Walkman Cassette Spool Spinning & Tape Player */
+.walkman-spool-group {
+  transition: transform 0.2s ease;
+}
+
+.walkman-playing .walkman-spool-group {
+  animation: spoolSpin 1.6s linear infinite;
+}
+
+@keyframes spoolSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.walkman-speech-badge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #334155;
+  color: #fffefb;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 7px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.vignette-walkman-set.walkman-playing .walkman-speech-badge {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 3. Polaroid Ejected Photo Animation & Developing Filter */
+.polaroid-photo-slide {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.polaroid-ejected {
+  animation: photoEject 0.7s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes photoEject {
+  0% { transform: translate(42px, 22px) rotate(14deg); }
+  50% { transform: translate(42px, 48px) rotate(8deg); }
+  100% { transform: translate(40px, 42px) rotate(12deg); }
+}
+
+.polaroid-film-surface {
+  transition: filter 1.8s ease, fill 1.8s ease;
+}
+
+.polaroid-ejected .polaroid-film-surface {
+  animation: filmDevelop 2.4s ease forwards;
+}
+
+@keyframes filmDevelop {
+  0% { fill: #1b1f18; filter: blur(2px); }
+  40% { fill: #2d3826; filter: blur(1px); }
+  100% { fill: #333d29; filter: blur(0); }
+}
+
+/* 4. Lamp Light Beam Glow Toggle */
+.lamp-beam-cone {
+  transition: opacity 0.25s ease, fill 0.25s ease;
+}
+
+.vignette-drafting-lamp.lamp-lit .lamp-beam-cone {
+  opacity: 0.45 !important;
+  fill: #fde047 !important;
+  filter: drop-shadow(0 10px 20px rgba(253, 224, 71, 0.45));
+}
+
+/* 5. Service Bell Particles & Sparks */
+.bell-sparks-float {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bell-note-particle {
+  position: absolute;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 800;
+  color: #d94e34;
+  animation: noteFloatUp 0.8s ease-out forwards;
+}
+
+@keyframes noteFloatUp {
+  0% { opacity: 1; transform: translate(-50%, 0) scale(0.8); }
+  50% { transform: translate(calc(-50% + var(--dx, 0px)), -28px) scale(1.2); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx, 0px)), -48px) scale(0.6); }
+}
+
+/* 6. Stamp Surface & Placed Ink Stamps */
+.stamp-surface-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: visible;
+}
+
+.placed-ink-stamp {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 2.5px dashed rgba(217, 78, 52, 0.85);
+  box-shadow: inset 0 0 0 2px rgba(217, 78, 52, 0.5);
+  background: rgba(217, 78, 52, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #d94e34;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 900;
+  user-select: none;
+  pointer-events: none;
+  animation: stampHit 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  transform-origin: center center;
+}
+
+.placed-ink-stamp .stamp-text-1 {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+
+.placed-ink-stamp .stamp-text-2 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #582f0e;
+}
+
+.placed-ink-stamp .stamp-text-3 {
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+
+@keyframes stampHit {
+  0% { transform: translate(-50%, -50%) scale(1.8) rotate(var(--rot, 0deg)); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(0.92) rotate(var(--rot, 0deg)); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1) rotate(var(--rot, 0deg)); opacity: 0.9; }
+}
+
+body.stamp-mode-cursor {
+  cursor: crosshair !important;
+}
+
+/* 7. Floating Studio Toys Dock */
+.studio-toy-dock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background: rgba(254, 252, 248, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(88, 47, 14, 0.2);
+  border-radius: 40px;
+  padding: 6px 12px;
+  box-shadow: 0 12px 32px rgba(88, 47, 14, 0.16);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+}
+
+.studio-toy-dock:hover {
+  box-shadow: 0 16px 40px rgba(88, 47, 14, 0.24);
+}
+
+.toy-dock-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toy-dock-label {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 7.5px;
+  font-weight: 800;
+  color: #7f4f24;
+  letter-spacing: 0.06em;
+  padding-right: 4px;
+  border-right: 1px solid rgba(88, 47, 14, 0.18);
+}
+
+.toy-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(88, 47, 14, 0.05);
+  border: 1px solid rgba(88, 47, 14, 0.14);
+  border-radius: 16px;
+  padding: 4px 8px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--c1-espresso, #582f0e);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toy-pill-btn:hover {
+  background: var(--c1-espresso, #582f0e);
+  color: #fffefb;
+  transform: translateY(-2px);
+}
+
+.toy-pill-btn.active {
+  background: #d94e34;
+  color: #fffefb;
+  border-color: #d94e34;
+}
+
+.toy-pill-btn kbd {
+  background: rgba(88, 47, 14, 0.12);
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-size: 6.5px;
+  font-weight: 800;
+}
+
+.toy-pill-btn:hover kbd {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .studio-toy-dock {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    border-radius: 18px;
+    padding: 6px 8px;
+    overflow-x: auto;
+  }
+  .toy-dock-label {
+    display: none;
+  }
+}
