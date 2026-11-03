@@ -8548,3 +8548,120 @@ html, body {
   font-weight: 800;
   letter-spacing: 0.05em;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARTISANAL WORKSHOP DETAILS (Distributed Across Site Margins & Cards)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Washi Tape Strips (Torn-edge textured craft tape pinning cards) */
+.craft-washi-tape {
+  position: absolute;
+  width: 84px;
+  height: 22px;
+  background: rgba(205, 185, 166, 0.72);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 1px 4px rgba(88, 47, 14, 0.12);
+  clip-path: polygon(2% 0%, 98% 3%, 100% 97%, 0% 100%, 1% 48%);
+  pointer-events: none;
+  z-index: 5;
+  user-select: none;
+}
+.craft-washi-tape.tape-terracotta {
+  background: rgba(217, 119, 87, 0.45);
+}
+.craft-washi-tape.tape-sage {
+  background: rgba(164, 172, 134, 0.55);
+}
+.craft-washi-tape.tape-kraft {
+  background: rgba(212, 191, 163, 0.75);
+}
+
+/* 2. Coffee / Chai Watercolor Ring Stains */
+.craft-coffee-ring {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.14;
+  user-select: none;
+  filter: blur(0.2px);
+}
+
+/* 3. Brass Wire Paperclip */
+.craft-paperclip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 2px 4px rgba(88, 47, 14, 0.16));
+}
+
+/* 4. Brass Wire Binder Clip */
+.craft-binder-clip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 3px 6px rgba(88, 47, 14, 0.18));
+}
+
+/* 5. Carpenter Cedar Pencil */
+.craft-pencil-horizontal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: clamp(16px, 2.5vw, 28px) auto;
+  pointer-events: none;
+  z-index: 2;
+  user-select: none;
+  opacity: 0.85;
+}
+
+/* 6. Hand-Drawn Pencil Doodles & Annotations */
+.craft-pencil-annotation {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #7f4f24;
+  opacity: 0.75;
+}
+
+/* 7. Botanical Olive & Eucalyptus Stems */
+.craft-botanical-stem {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(65, 72, 51, 0.12));
+}
+
+/* 8. Vintage Scalloped Postage / Mail Stamp */
+.craft-postage-stamp {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  user-select: none;
+  filter: drop-shadow(0 2px 5px rgba(88, 47, 14, 0.15));
+}
+
+/* Mobile responsive safeguards: scale down or tuck gracefully */
+@media (max-width: 768px) {
+  .craft-coffee-ring {
+    opacity: 0.08;
+    transform: scale(0.7);
+  }
+  .craft-botanical-stem {
+    transform: scale(0.65);
+    opacity: 0.6;
+  }
+  .craft-pencil-annotation {
+    display: none;
+  }
+}
