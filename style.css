@@ -8665,3 +8665,107 @@ html, body {
     display: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FAST STUDIO STAMP INTRO (0.6s Preloader Stamp Punch)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.studio-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: var(--bg-cream, #fdfbf7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+}
+
+.studio-intro-overlay.intro-dismissed {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease-out, visibility 0.35s step-end;
+}
+
+.intro-stamp-badge {
+  animation: introStampHit 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  transform-origin: center center;
+}
+
+@keyframes introStampHit {
+  0% { transform: scale(1.6) rotate(-8deg); opacity: 0; }
+  50% { transform: scale(0.92) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CUTE MINI GUMMY MASCOT CUSTOM CURSOR
+   ═══════════════════════════════════════════════════════════════════════════ */
+.gummy-custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 25px;
+  pointer-events: none;
+  z-index: 9999999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  display: none;
+}
+
+@media (pointer: fine) {
+  body.has-gummy-cursor .gummy-custom-cursor {
+    display: block;
+  }
+}
+
+.cursor-gummy-body {
+  transform-origin: center bottom;
+  transition: transform 0.12s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Tactile Click Squish */
+.gummy-custom-cursor.cursor-squished .cursor-gummy-body {
+  transform: scale(1.35, 0.65) translateY(4px);
+  transition: transform 0.05s ease;
+}
+
+/* Hovering interactive links or buttons */
+.gummy-custom-cursor.cursor-hover .cursor-gummy-body {
+  transform: scale(1.15, 1.15) translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIVING INK FOUNTAIN PEN FOUNDER SIGNATURES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.dossier-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.founder-sig-svg {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.founder-sig-svg .sig-path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tactile-member-card.sig-animated .founder-sig-svg .sig-path,
+.site-card.sig-animated .founder-sig-svg .sig-path {
+  stroke-dashoffset: 0;
+}
+
+.card-sigs-bar .card-sig-col {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

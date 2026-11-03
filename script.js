@@ -2408,6 +2408,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  // 10. Fast Studio Stamp Intro (0.6s Session Preloader)
+  (function initStudioIntro() {
+    const overlay = document.getElementById('studio-intro-overlay');
+    if (!overlay) return;
+
+    if (sessionStorage.getItem('pickle_intro_seen') === 'true') {
+      overlay.style.display = 'none';
+      return;
+    }
+
+    sessionStorage.setItem('pickle_intro_seen', 'true');
+    setTimeout(() => {
+      overlay.classList.add('intro-dismissed');
+      setTimeout(() => overlay.remove(), 400);
+    }, 620);
+  })();
+
+  // 11. Cute Mini Gummy Mascot Custom Cursor & Click-Squish
+  (function initGummyCursor() {
+    const cursor = document.getElementById('gummy-cursor');
+    if (!cursor) return;
+
+    const isFine = window.matchMedia('(pointer: fine)').matches;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!isFine || isReduced) return;
+
+    document.body.classList.add('has-gummy-cursor');
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let curX = -100;
+    let curY = -100;
+    let prevX = -100;
+    let tilt = 0;
+    const eyesNormal = cursor.querySelector('.cur-eyes-normal');
+    const eyesBlink = cursor.querySelector('.cur-eyes-blink');
+
+    window.addEventListener('pointermove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mousedown', () => {
+      cursor.classList.add('cursor-squished');
+      if (eyesBlink && eyesNormal) {
+        eyesNormal.style.display = 'none';
+        eyesBlink.style.display = 'block';
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      cursor.classList.remove('cursor-squished');
+      if (eyesBlink && eyesNormal) {
+        setTimeout(() => {
+          eyesNormal.style.display = 'block';
+          eyesBlink.style.display = 'none';
+        }, 120);
+      }
+    });
+
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest('a, button, input, select, textarea, [role="button"]')) {
+        cursor.classList.add('cursor-hover');
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest('a, button, input, select, textarea, [role="button"]')) {
+        cursor.classList.remove('cursor-hover');
+      }
+    });
+
+    function cursorLoop() {
+      curX += (mouseX - curX) * 0.35;
+      curY += (mouseY - curY) * 0.35;
+      
+      const dx = curX - prevX;
+      prevX = curX;
+      tilt += (dx * 1.2 - tilt) * 0.2;
+      tilt = Math.max(-16, Math.min(16, tilt));
+
+      cursor.style.transform = `translate(${curX.toFixed(1)}px, ${curY.toFixed(1)}px) rotate(${tilt.toFixed(1)}deg)`;
+      requestAnimationFrame(cursorLoop);
+    }
+    requestAnimationFrame(cursorLoop);
+  })();
+
+  // 12. Living Ink Fountain Pen Founder Signatures
+  (function initLivingInkSignatures() {
+    const cards = document.querySelectorAll('.tactile-member-card, .site-card');
+    if (!cards.length) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sig-animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      cards.forEach(card => observer.observe(card));
+    } else {
+      cards.forEach(card => card.classList.add('sig-animated'));
+    }
+  })();
+
   // Expose modal API to window
   window.openProjectPreview = openProjectPreview;
   window.setModalMode = setModalMode;
