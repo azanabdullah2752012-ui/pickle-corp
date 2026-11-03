@@ -6627,11 +6627,33 @@ section {
   padding: clamp(48px, 5.5vw, 64px) 0 !important;
 }
 .section-hero,
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO & PHILOSOPHY TIGHT GAP COUPLING (Eliminate awkward empty void)
+   ═══════════════════════════════════════════════════════════════════════════ */
 .home-hero {
-  padding: clamp(84px, 8vw, 108px) 0 clamp(16px, 2vw, 28px) !important;
+  padding-top: clamp(68px, 6vw, 88px) !important;
+  padding-bottom: 0 !important;
+  min-height: auto !important;
 }
+
+.hero-container {
+  align-items: flex-end !important;
+  padding-bottom: 8px !important;
+}
+
+.desk-scene-card {
+  height: 320px !important;
+  padding-bottom: 8px !important;
+}
+
 .section-philosophy {
-  padding-top: clamp(20px, 2.5vw, 36px) !important;
+  padding-top: clamp(16px, 2vw, 28px) !important;
+  padding-bottom: clamp(40px, 5vw, 60px) !important;
+}
+
+#philosophy .tactile-section-head {
+  margin-top: 0 !important;
+  margin-bottom: clamp(20px, 3vw, 32px) !important;
 }
 
 /* Equalized Selected Work Dossiers */
