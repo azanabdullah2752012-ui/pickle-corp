@@ -543,8 +543,6 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 6px 16px rgba(88, 47, 14, 0.3);
   color: #ffffff !important;
 }
-  transform: translateY(-1px);
-}
 
 /* Magnetic button / link physics */
 .magnetic-btn, .magnetic-link {
@@ -7623,4 +7621,251 @@ section {
   padding: 3px 8px;
   border-radius: 4px;
   border: 1px solid rgba(88, 47, 14, .1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE MOBILE ENGINE (Strict Zero-Cutoff & No Horizontal Overflow)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Global container & viewport guard */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container, 
+.hero-container, 
+.hero-cards-shelf-container {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    padding: 20px 20px 36px !important;
+  }
+  .hero-cards-shelf {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .tactile-projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .favors-board {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+  .tactile-steps-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+  .tactile-team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+/* Smartphone Viewports (<= 640px) */
+@media (max-width: 640px) {
+  /* Prevent large typography from clipping */
+  .hero-title {
+    font-size: clamp(2.1rem, 9vw, 3.2rem) !important;
+    line-height: 1.1 !important;
+    word-break: break-word;
+  }
+  .tactile-section-title {
+    font-size: clamp(1.85rem, 8vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+    word-break: break-word;
+  }
+  .hero-manifest, .tactile-section-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  /* Desk scene containment */
+  .hero-desk-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .desk-scene-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding-bottom: 16px !important;
+  }
+  .desk-table-wood {
+    width: 100% !important;
+  }
+  .desk-plant-foliage {
+    right: -10px !important;
+    transform: scale(0.7) !important;
+    transform-origin: bottom right !important;
+  }
+
+  /* Philosophy triad stacking */
+  .philosophy-triad {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .triad-divider {
+    display: none !important;
+  }
+  .triad-col {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    text-align: left !important;
+  }
+  .triad-label {
+    text-align: left !important;
+  }
+
+  /* Cards & Work grids: clean 1 column */
+  .tactile-projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 24px !important;
+  }
+  .tactile-project-card {
+    padding: 20px 18px 18px !important;
+    min-height: auto !important;
+  }
+  .pcard-title {
+    font-size: 1.4rem !important;
+  }
+  .pcard-visual-plate {
+    margin: 12px 0 14px !important;
+  }
+
+  /* Studio canvas mockup scaling */
+  .studio-workspace {
+    padding: 8px 6px !important;
+    gap: 6px !important;
+  }
+  .studio-browser-bar {
+    padding: 5px 8px !important;
+  }
+  .browser-address-pill {
+    padding: 2px 6px !important;
+    font-size: 0.58rem !important;
+  }
+  .studio-artboard-frame {
+    padding: 6px !important;
+  }
+
+  /* Nuvio heatmap stack on mobile */
+  .nuvio-heat-section {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .nuvio-habits-col {
+    width: 100% !important;
+  }
+
+  /* SafeSpace box */
+  .safespace-secure-box {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  /* Favors board: 1 column */
+  .favors-board {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
+  }
+  .sticky-favor {
+    min-height: auto !important;
+    padding: 20px 18px 16px !important;
+  }
+
+  /* Steps row: 1 column */
+  .tactile-steps-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .process-step-card {
+    padding: 16px 18px !important;
+  }
+
+  /* Team grid: 1 column */
+  .tactile-team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 24px !important;
+  }
+  .tactile-member-card {
+    min-height: auto !important;
+    padding: 24px 20px 20px !important;
+  }
+
+  /* 3D Business Card on mobile */
+  .card-showcase-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .site-card-scene {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1.7 / 1 !important;
+  }
+  .site-card-face {
+    padding: 14px 16px !important;
+  }
+  .card-title-text {
+    font-size: 1.15rem !important;
+  }
+  .card-torch-mark {
+    width: 16px !important;
+    height: 34px !important;
+  }
+  .card-fiat-zero {
+    font-size: 1.15rem !important;
+  }
+  .card-covenant-quote {
+    font-size: 0.65rem !important;
+    line-height: 1.35 !important;
+    margin: 4px 0 !important;
+  }
+  .card-contacts-list {
+    font-size: 0.58rem !important;
+    gap: 2px !important;
+  }
+  .card-qr-img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .card-sigs-bar {
+    font-size: 0.58rem !important;
+    padding-top: 4px !important;
+  }
+  .card-interaction-hint {
+    font-size: 0.65rem !important;
+    padding: 4px 12px !important;
+  }
+
+  /* Contact Form */
+  .contact-compact-form {
+    padding: 20px 18px !important;
+    width: 100% !important;
+  }
+  .form-row-split {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
 }
