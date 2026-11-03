@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=5.1.0" />
+  <link rel="stylesheet" href="style.css?v=5.2.0" />
 </head>
 <body>
   <!-- Ambient Substrate Layers -->
@@ -383,17 +383,39 @@
       <div class="section-vignette-shelf maker-shelf" aria-hidden="true">
         <div class="vignette-props-stage">
 
-          <!-- Left: Snake Plant (Sansevieria) — upright architectural blades -->
-          <div class="vignette-foliage-left">
-            <svg viewBox="0 0 80 120" width="68" height="102" fill="none">
-              <!-- Tall back blade -->
-              <path d="M44 120 C42 95 36 60 40 20 C43 8 47 8 50 20 C54 60 48 95 46 120Z" fill="#414833" opacity="0.85"/>
-              <!-- Front left blade (shorter, tilted) -->
-              <path d="M28 120 C24 100 20 72 28 40 C32 28 37 30 36 42 C34 68 30 98 32 120Z" fill="#656d4a" opacity="0.9" transform="rotate(-8, 32, 80)"/>
-              <!-- Short right blade -->
-              <path d="M50 120 C50 105 52 88 56 68 C59 56 63 58 62 70 C60 88 56 108 54 120Z" fill="#a4ac86" opacity="0.7" transform="rotate(6, 56, 90)"/>
-              <!-- Pot -->
-              <path d="M32 120 L48 120 L52 115 L28 115Z" fill="#c2b4a1"/>
+          <!-- Left: Architectural Blueprint & Brass Drafting Caliper (Tactile Maker Gear) -->
+          <div class="vignette-prop vignette-blueprint-caliper" title="Architectural Blueprint & Drafting Caliper">
+            <svg viewBox="0 0 85 105" width="76" height="94" fill="none">
+              <!-- Rolled Blueprint Scroll (angled cylinder) -->
+              <g transform="translate(6, 6) rotate(-10, 25, 50)">
+                <rect x="18" y="12" width="18" height="78" rx="3" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.6"/>
+                <ellipse cx="27" cy="12" rx="9" ry="3.5" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.4"/>
+                <circle cx="27" cy="12" r="2" fill="#1d4ed8"/>
+                <path d="M18 90 C18 94 36 94 36 90" stroke="#1d4ed8" stroke-width="1.4" fill="none"/>
+                <!-- Blueprint grid lines -->
+                <line x1="21" y1="26" x2="33" y2="26" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+                <line x1="21" y1="38" x2="33" y2="38" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+                <line x1="21" y1="50" x2="33" y2="50" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+                <line x1="21" y1="62" x2="33" y2="62" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+                <line x1="21" y1="74" x2="33" y2="74" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+                <!-- Paper wrap band with washi label -->
+                <rect x="17" y="44" width="20" height="9" rx="1.5" fill="#f4ebd9" stroke="#bda793" stroke-width="1"/>
+                <text x="27" y="48.5" font-family="'JetBrains Mono', monospace" font-size="4" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">v5.2</text>
+              </g>
+              <!-- Brass Drafting Compass / Caliper -->
+              <g transform="translate(36, 16)">
+                <circle cx="20" cy="12" r="5" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
+                <circle cx="20" cy="12" r="2.2" fill="#fffefb"/>
+                <rect x="18.5" y="4" width="3" height="5" rx="1" fill="#b89728" stroke="#582f0e" stroke-width="1"/>
+                <line x1="18" y1="16" x2="7" y2="76" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+                <line x1="18" y1="16" x2="7" y2="76" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
+                <line x1="22" y1="16" x2="33" y2="76" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+                <line x1="22" y1="16" x2="33" y2="76" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
+                <polygon points="6,76 8,76 7,83" fill="#64748b"/>
+                <polygon points="32,76 34,76 33,83" fill="#1e251b"/>
+                <path d="M11 46 Q20 50 29 46" stroke="#b89728" stroke-width="2.2" fill="none"/>
+                <circle cx="20" cy="48" r="3.2" fill="#7f4f24" stroke="#582f0e" stroke-width="1"/>
+              </g>
             </svg>
           </div>
 
@@ -434,21 +456,51 @@
             <div class="pencil-cup-body"></div>
           </div>
 
-          <!-- Right: Succulent Rosette -->
-          <div class="vignette-foliage-right">
-            <svg viewBox="0 0 80 80" width="68" height="68" fill="none">
-              <ellipse cx="40" cy="28" rx="10" ry="18" fill="#414833" opacity="0.8" transform="rotate(0, 40, 40)"/>
-              <ellipse cx="40" cy="28" rx="10" ry="18" fill="#4a5438" opacity="0.75" transform="rotate(45, 40, 40)"/>
-              <ellipse cx="40" cy="28" rx="10" ry="18" fill="#414833" opacity="0.7" transform="rotate(90, 40, 40)"/>
-              <ellipse cx="40" cy="28" rx="10" ry="18" fill="#4a5438" opacity="0.75" transform="rotate(135, 40, 40)"/>
-              <ellipse cx="40" cy="31" rx="7" ry="13" fill="#656d4a" opacity="0.9" transform="rotate(22, 40, 40)"/>
-              <ellipse cx="40" cy="31" rx="7" ry="13" fill="#656d4a" opacity="0.85" transform="rotate(67, 40, 40)"/>
-              <ellipse cx="40" cy="31" rx="7" ry="13" fill="#656d4a" opacity="0.9" transform="rotate(112, 40, 40)"/>
-              <ellipse cx="40" cy="31" rx="7" ry="13" fill="#656d4a" opacity="0.85" transform="rotate(157, 40, 40)"/>
-              <circle cx="40" cy="40" r="8" fill="#a4ac86"/>
-              <circle cx="40" cy="40" r="4" fill="#c4cba8"/>
-              <path d="M28 72 L52 72 L56 64 L24 64Z" fill="#c2b4a1"/>
-              <rect x="24" y="60" width="32" height="4" rx="2" fill="#ab947e"/>
+          <!-- Right: Pantone Color Swatch Fan Deck & Precision Scalpel (Tactile Art Tool) -->
+          <div class="vignette-prop vignette-pantone-deck" title="Pantone Color Swatch Deck & Precision Knife">
+            <svg viewBox="0 0 95 95" width="80" height="80" fill="none">
+              <!-- Swatch fan pivot at bottom -->
+              <g transform="translate(28, 12)">
+                <!-- Swatch 1: Espresso (angled -32deg) -->
+                <g transform="rotate(-32, 20, 72)">
+                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#582f0e"/>
+                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#582f0e" font-weight="700">#582</text>
+                </g>
+                <!-- Swatch 2: Olive Green (angled -16deg) -->
+                <g transform="rotate(-16, 20, 72)">
+                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#656d4a"/>
+                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#656d4a" font-weight="700">#656</text>
+                </g>
+                <!-- Swatch 3: Warm Caramel (straight 0deg) -->
+                <g transform="rotate(0, 20, 72)">
+                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#bda793"/>
+                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#7f4f24" font-weight="700">#BDA</text>
+                </g>
+                <!-- Swatch 4: Terracotta Pop (angled 16deg) -->
+                <g transform="rotate(16, 20, 72)">
+                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#d94e34"/>
+                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#d94e34" font-weight="700">#D94</text>
+                </g>
+                <!-- Swatch 5: Cream Canvas (angled 32deg) -->
+                <g transform="rotate(32, 20, 72)">
+                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#e9d8a6"/>
+                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#7f4f24" font-weight="700">#E9D</text>
+                </g>
+                <!-- Brass screw rivet -->
+                <circle cx="20" cy="72" r="4" fill="#d4af37" stroke="#582f0e" stroke-width="1.2"/>
+                <circle cx="20" cy="72" r="1.6" fill="#fffefb"/>
+              </g>
+              <!-- Precision Craft Scalpel resting angled -->
+              <g transform="translate(64, 26) rotate(18)">
+                <rect x="2" y="22" width="6" height="42" rx="2" fill="#333d29" stroke="#1e251b" stroke-width="1"/>
+                <rect x="3" y="13" width="4" height="10" fill="#94a3b8" stroke="#475569" stroke-width="0.8"/>
+                <polygon points="3,13 7,13 7,2 3,8" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8"/>
+              </g>
             </svg>
           </div>
         </div>
@@ -800,22 +852,38 @@
       <div class="section-vignette-shelf barter-shelf" aria-hidden="true">
         <div class="vignette-props-stage">
 
-          <!-- Left: Trailing Pothos Vine — drooping heart-shaped leaves cascading down, totally unlike the upright snake plant -->
-          <div class="vignette-foliage-left">
-            <svg viewBox="0 0 90 110" width="76" height="93" fill="none">
-              <!-- Vine stem -->
-              <path d="M55 0 C54 20 50 45 42 70 C36 88 28 100 20 110" stroke="#414833" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
-              <!-- Leaf 1 top right -->
-              <ellipse cx="62" cy="22" rx="14" ry="10" fill="#656d4a" opacity="0.9" transform="rotate(-30, 62, 22)"/>
-              <path d="M55 22 L62 32" stroke="#414833" stroke-width="1.2" opacity="0.4"/>
-              <!-- Leaf 2 mid left -->
-              <ellipse cx="38" cy="52" rx="13" ry="9" fill="#414833" opacity="0.8" transform="rotate(20, 38, 52)"/>
-              <path d="M46 49 L38 62" stroke="#3a4028" stroke-width="1.2" opacity="0.4"/>
-              <!-- Leaf 3 lower right -->
-              <ellipse cx="30" cy="80" rx="12" ry="8" fill="#a4ac86" opacity="0.85" transform="rotate(-15, 30, 80)"/>
-              <path d="M38 77 L30 90" stroke="#7a8558" stroke-width="1.2" opacity="0.4"/>
-              <!-- Leaf 4 bottom -->
-              <ellipse cx="16" cy="102" rx="11" ry="7" fill="#656d4a" opacity="0.7" transform="rotate(10, 16, 102)"/>
+          <!-- Left: Vintage Walkman Cassette Player & Retro Foam Headphones (Tactile Gear) -->
+          <div class="vignette-prop vignette-walkman-set" title="Vintage Walkman & Retro Foam Headphones">
+            <svg viewBox="0 0 95 95" width="82" height="82" fill="none">
+              <!-- Walkman Main Body -->
+              <rect x="12" y="32" width="44" height="58" rx="4" fill="#334155" stroke="#1e293b" stroke-width="1.8"/>
+              <!-- Faceplate -->
+              <rect x="16" y="36" width="36" height="34" rx="3" fill="#475569" stroke="#1e293b" stroke-width="1"/>
+              <!-- Cassette clear window -->
+              <rect x="20" y="40" width="28" height="20" rx="2" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
+              <!-- Cassette spools & tape ribbon -->
+              <circle cx="28" cy="50" r="4.5" fill="#0f172a"/>
+              <circle cx="28" cy="50" r="2" fill="#cbd5e1"/>
+              <circle cx="40" cy="50" r="4.5" fill="#0f172a"/>
+              <circle cx="40" cy="50" r="2" fill="#cbd5e1"/>
+              <rect x="26" y="48" width="16" height="4" fill="#78350f" opacity="0.85"/>
+              <!-- Physical top control buttons -->
+              <rect x="16" y="27" width="8" height="5" rx="1.5" fill="#94a3b8" stroke="#1e293b" stroke-width="0.8"/>
+              <rect x="26" y="27" width="8" height="5" rx="1.5" fill="#94a3b8" stroke="#1e293b" stroke-width="0.8"/>
+              <rect x="36" y="27" width="8" height="5" rx="1.5" fill="#d94e34" stroke="#1e293b" stroke-width="0.8"/>
+              <!-- Volume dial on side -->
+              <rect x="8" y="48" width="4" height="12" rx="1.5" fill="#64748b" stroke="#1e293b" stroke-width="0.8"/>
+              <!-- 3.5mm headphone cord curling down -->
+              <circle cx="50" cy="36" r="2.2" fill="#0f172a"/>
+              <path d="M50 36 C56 30 62 45 68 52 C72 58 70 70 65 78" stroke="#0f172a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <!-- Retro Orange Foam Headphones leaning on side -->
+              <g transform="translate(48, 12)">
+                <path d="M12 42 C12 18 36 12 44 26" stroke="#94a3b8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                <!-- Orange foam earpad -->
+                <ellipse cx="14" cy="46" rx="9" ry="12" fill="#ea580c" stroke="#c2410c" stroke-width="1.4"/>
+                <ellipse cx="14" cy="46" rx="4" ry="6" fill="#fb923c"/>
+                <rect x="12" y="38" width="4" height="6" fill="#334155" rx="1"/>
+              </g>
             </svg>
           </div>
 
@@ -841,23 +909,61 @@
             <div style="font-family: 'Caveat', cursive; font-size: 0.9rem; color: #582f0e; font-weight: 700;">Hello! ✦</div>
           </div>
 
-          <!-- Right: Squat Cactus — chunky columnar with ribs, nothing like any other shelf's plants -->
-          <div class="vignette-foliage-right">
-            <svg viewBox="0 0 80 110" width="65" height="90" fill="none">
-              <!-- Main column -->
-              <path d="M30 108 C28 85 26 60 28 30 C29 16 51 16 52 30 C54 60 52 85 50 108Z" fill="#656d4a" opacity="0.9"/>
-              <!-- Left arm -->
-              <path d="M30 65 C20 60 14 52 16 44 C18 36 24 36 26 44 C28 52 28 60 30 65Z" fill="#414833" opacity="0.85"/>
-              <!-- Right arm -->
-              <path d="M50 55 C60 50 66 42 64 34 C62 26 56 26 54 34 C52 42 52 50 50 55Z" fill="#414833" opacity="0.85"/>
-              <!-- Spines (tiny lines) -->
-              <line x1="35" y1="40" x2="32" y2="36" stroke="#a4ac86" stroke-width="1" opacity="0.7"/>
-              <line x1="40" y1="55" x2="37" y2="51" stroke="#a4ac86" stroke-width="1" opacity="0.7"/>
-              <line x1="45" y1="70" x2="48" y2="66" stroke="#a4ac86" stroke-width="1" opacity="0.7"/>
-              <line x1="36" y1="85" x2="33" y2="81" stroke="#a4ac86" stroke-width="1" opacity="0.7"/>
-              <!-- Pot -->
-              <path d="M22 108 L58 108 L62 100 L18 100Z" fill="#c2b4a1"/>
-              <rect x="18" y="96" width="44" height="4" rx="2" fill="#ab947e"/>
+          <!-- Right: The Authentic Artisanal Pickle Corp Mason Jar (Hand-Packed Reserve) -->
+          <div class="vignette-prop vignette-pickle-jar" title="Pickle Corp Hand-Packed Pickles">
+            <svg viewBox="0 0 85 105" width="74" height="92" fill="none">
+              <!-- Jar shadow -->
+              <ellipse cx="42" cy="98" rx="28" ry="4" fill="rgba(88, 47, 14, 0.18)"/>
+              <!-- Jar body (thick glass) -->
+              <path d="M20 32 L64 32 C68 32 72 36 72 42 L72 90 C72 96 68 98 64 98 L20 98 C16 98 12 96 12 90 L12 42 C12 36 16 32 20 32 Z"
+                    fill="rgba(244, 235, 217, 0.35)" stroke="#7f4f24" stroke-width="1.8"/>
+              <!-- Golden-Olive Dill Brine -->
+              <path d="M14 46 L70 46 C70 46 70 88 68 94 C66 96 62 96 42 96 C22 96 18 96 16 94 C14 88 14 46 14 46 Z"
+                    fill="#808c5c" opacity="0.65"/>
+              <!-- Pickled Cucumbers inside -->
+              <path d="M22 84 C20 74 22 62 26 54 C28 50 33 52 32 58 C30 68 28 78 28 84 C28 88 23 88 22 84 Z"
+                    fill="#414833" stroke="#283618" stroke-width="1.2"/>
+              <circle cx="25" cy="62" r="1" fill="#656d4a"/>
+              <circle cx="28" cy="72" r="1" fill="#656d4a"/>
+              <path d="M36 88 C34 76 35 60 42 50 C46 46 51 48 49 56 C46 66 45 78 44 88 C43 92 37 92 36 88 Z"
+                    fill="#4a5438" stroke="#283618" stroke-width="1.2"/>
+              <circle cx="41" cy="58" r="1.1" fill="#a4ac86"/>
+              <circle cx="44" cy="70" r="1.1" fill="#a4ac86"/>
+              <path d="M52 86 C52 76 56 66 62 58 C65 54 69 57 66 64 C62 72 59 80 58 86 C57 90 53 90 52 86 Z"
+                    fill="#333d29" stroke="#1e251b" stroke-width="1.2"/>
+              <!-- Spices: peppercorns & dill frond -->
+              <circle cx="34" cy="52" r="1.6" fill="#1b1c1e"/>
+              <circle cx="56" cy="54" r="1.4" fill="#1b1c1e"/>
+              <circle cx="24" cy="78" r="1.4" fill="#d4a373"/>
+              <!-- Kraft Paper Jar Label -->
+              <rect x="22" y="62" width="40" height="22" rx="2" fill="#fffefb" stroke="#7f4f24" stroke-width="1.2"/>
+              <rect x="24" y="64" width="36" height="18" fill="none" stroke="#bda793" stroke-width="0.8" stroke-dasharray="2,1"/>
+              <text x="42" y="70" font-family="'JetBrains Mono', monospace" font-size="5" fill="#582f0e" font-weight="800" text-anchor="middle" dominant-baseline="central">PICKLE CORP</text>
+              <text x="42" y="78" font-family="'Caveat', cursive" font-size="6.5" fill="#d94e34" font-weight="700" text-anchor="middle" dominant-baseline="central">Crunch Reserve</text>
+              <!-- Glass reflection highlight -->
+              <path d="M16 42 L16 88" stroke="#ffffff" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+              <!-- Gingham Checkered Fabric Lid Cover -->
+              <path d="M14 32 C14 26 24 24 42 24 C60 24 70 26 70 32 L72 36 C72 38 68 39 42 39 C16 39 12 38 12 36 Z"
+                    fill="#d94e34" stroke="#582f0e" stroke-width="1.5"/>
+              <!-- Gingham grid lines -->
+              <g opacity="0.4" stroke="#ffffff" stroke-width="1.5">
+                <line x1="22" y1="26" x2="22" y2="38"/>
+                <line x1="32" y1="25" x2="32" y2="39"/>
+                <line x1="42" y1="24" x2="42" y2="39"/>
+                <line x1="52" y1="25" x2="52" y2="39"/>
+                <line x1="62" y1="26" x2="62" y2="38"/>
+                <line x1="16" y1="29" x2="68" y2="29"/>
+                <line x1="14" y1="34" x2="70" y2="34"/>
+              </g>
+              <!-- Twine String Tie around jar neck -->
+              <ellipse cx="42" cy="35" rx="27" ry="3" fill="none" stroke="#7f4f24" stroke-width="2"/>
+              <circle cx="24" cy="36" r="2.5" fill="#bda793" stroke="#582f0e" stroke-width="1"/>
+              <!-- Mini hang tag -->
+              <g transform="translate(14, 46) rotate(12)">
+                <polygon points="4,0 12,0 16,6 16,14 0,14 0,6" fill="#f4ebd9" stroke="#7f4f24" stroke-width="0.8"/>
+                <circle cx="8" cy="3" r="1" fill="#7f4f24"/>
+                <text x="8" y="9" font-family="'JetBrains Mono', monospace" font-size="3" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">★ 100%</text>
+              </g>
             </svg>
           </div>
         </div>
@@ -1077,7 +1183,173 @@
         </p>
       </div>
 
-      <div class="tactile-team-grid">
+      <!-- Illustrated Studio Atelier Shelf Vignette (The Three Makers' Gear) -->
+      <div class="section-vignette-shelf team-shelf" aria-hidden="true">
+        <div class="vignette-props-stage">
+
+          <!-- Left: Jointed Wooden Artist Drafting Hand / Mannequin -->
+          <div class="vignette-prop vignette-artist-hand" title="Articulated Artist Drafting Hand">
+            <svg viewBox="0 0 75 100" width="64" height="86" fill="none">
+              <!-- Wooden wrist plinth -->
+              <rect x="26" y="78" width="22" height="18" rx="3" fill="#d4a373" stroke="#582f0e" stroke-width="1.6"/>
+              <circle cx="37" cy="87" r="2.5" fill="#7f4f24"/>
+              <!-- Palm base joint -->
+              <circle cx="37" cy="74" r="7" fill="#bc6c25" stroke="#582f0e" stroke-width="1.4"/>
+              <!-- Palm body -->
+              <path d="M28 72 L24 48 C24 42 48 42 48 48 L46 72 Z" fill="#faedcd" stroke="#582f0e" stroke-width="1.6"/>
+              <!-- Finger 1: Thumb with joints -->
+              <path d="M26 62 L15 52 L12 42" stroke="#d4a373" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="15" cy="52" r="2" fill="#582f0e"/>
+              <!-- Finger 2: Index finger extended holding pencil -->
+              <path d="M28 44 L28 26 L29 14" stroke="#d4a373" stroke-width="4.2" stroke-linecap="round"/>
+              <circle cx="28" cy="26" r="1.8" fill="#582f0e"/>
+              <!-- Finger 3: Middle finger curved -->
+              <path d="M35 43 L36 28 L37 18" stroke="#d4a373" stroke-width="4.2" stroke-linecap="round"/>
+              <circle cx="36" cy="28" r="1.8" fill="#582f0e"/>
+              <!-- Finger 4 & 5: Ring & Pinky curled -->
+              <path d="M42 45 L44 34 L43 28" stroke="#bc6c25" stroke-width="3.8" stroke-linecap="round"/>
+              <path d="M47 48 L48 40 L46 36" stroke="#bc6c25" stroke-width="3.4" stroke-linecap="round"/>
+              <!-- Graphite Drawing Pencil held in hand -->
+              <g transform="translate(18, 12) rotate(-35)">
+                <rect x="0" y="0" width="5" height="48" rx="1" fill="#f59e0b" stroke="#582f0e" stroke-width="1"/>
+                <polygon points="0,0 5,0 2.5,-8" fill="#f4ebd9" stroke="#582f0e" stroke-width="0.8"/>
+                <polygon points="1.5,-5 3.5,-5 2.5,-8" fill="#1e251b"/>
+                <rect x="0" y="44" width="5" height="5" rx="1" fill="#e11d48" stroke="#582f0e" stroke-width="0.8"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Center-Left: Vintage Instant Polaroid Camera & Ejected Photo -->
+          <div class="vignette-prop vignette-polaroid-camera" title="Vintage Instant Camera & Studio Photo">
+            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
+              <!-- Camera Main Cream Body -->
+              <rect x="10" y="38" width="52" height="42" rx="5" fill="#f8fafc" stroke="#582f0e" stroke-width="1.8"/>
+              <!-- Viewfinder hump on top -->
+              <rect x="16" y="30" width="16" height="9" rx="2" fill="#334155" stroke="#582f0e" stroke-width="1.2"/>
+              <circle cx="24" cy="34" r="2.2" fill="#93c5fd"/>
+              <!-- Iconic Rainbow Stripe (Red, Orange, Yellow, Green, Blue) -->
+              <rect x="34" y="38" width="2.5" height="42" fill="#ef4444"/>
+              <rect x="36.5" y="38" width="2.5" height="42" fill="#f97316"/>
+              <rect x="39" y="38" width="2.5" height="42" fill="#eab308"/>
+              <rect x="41.5" y="38" width="2.5" height="42" fill="#22c55e"/>
+              <rect x="44" y="38" width="2.5" height="42" fill="#3b82f6"/>
+              <!-- Big Center Lens Optic -->
+              <circle cx="28" cy="58" r="14" fill="#1e293b" stroke="#582f0e" stroke-width="1.6"/>
+              <circle cx="28" cy="58" r="10" fill="#0f172a"/>
+              <circle cx="28" cy="58" r="6" fill="#1e3a8a"/>
+              <ellipse cx="25" cy="55" rx="3.5" ry="2" fill="#60a5fa" opacity="0.85" transform="rotate(-30, 25, 55)"/>
+              <!-- Red Shutter Button -->
+              <circle cx="54" cy="46" r="3.8" fill="#d94e34" stroke="#582f0e" stroke-width="1.2"/>
+              <!-- Flash Sensor Window -->
+              <rect x="48" y="56" width="10" height="8" rx="1.5" fill="#cbd5e1" stroke="#582f0e" stroke-width="1"/>
+              <!-- Ejected Square Polaroid Photo (leaning front-right) -->
+              <g transform="translate(42, 22) rotate(14)">
+                <rect x="0" y="0" width="34" height="42" rx="2" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
+                <rect x="3" y="3" width="28" height="26" fill="#333d29"/>
+                <!-- Mini Gummy Mascot silhouette inside photo! -->
+                <path d="M8 23 C6 21 10 14 17 14 C24 14 28 21 26 23 Z" fill="#bda793"/>
+                <circle cx="14" cy="18" r="1.2" fill="#582f0e"/>
+                <circle cx="20" cy="18" r="1.2" fill="#582f0e"/>
+                <!-- Handwritten caption -->
+                <text x="17" y="36" font-family="'Caveat', cursive" font-size="5" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">Studio '26 ✦</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Center: Studio Over-Ear Headphones draped on Cassette Mix Stack -->
+          <div class="vignette-prop vignette-studio-headphones" title="Studio Headphones & Mix Tapes">
+            <svg viewBox="0 0 90 95" width="78" height="82" fill="none">
+              <!-- Bottom Cassette Tape 1 -->
+              <rect x="18" y="66" width="46" height="12" rx="2" fill="#414833" stroke="#582f0e" stroke-width="1.2"/>
+              <rect x="24" y="68" width="34" height="6" fill="#f4ebd9" rx="1"/>
+              <text x="41" y="71" font-family="'JetBrains Mono', monospace" font-size="3.5" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">LO-FI DEPLOYS</text>
+              <!-- Top Cassette Tape 2 (slightly skewed) -->
+              <g transform="rotate(-3, 40, 58)">
+                <rect x="18" y="52" width="46" height="12" rx="2" fill="#7f4f24" stroke="#582f0e" stroke-width="1.2"/>
+                <rect x="24" y="54" width="34" height="6" fill="#f4ebd9" rx="1"/>
+                <text x="41" y="57" font-family="'JetBrains Mono', monospace" font-size="3.5" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">SYNTH CHILL // 03</text>
+              </g>
+              <!-- Cushioned Headband Arc -->
+              <path d="M16 54 C16 16 66 16 66 54" stroke="#1e293b" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M22 28 C30 20 52 20 60 28" stroke="#475569" stroke-width="2.5" fill="none"/>
+              <!-- Left Ear Cup -->
+              <g transform="translate(8, 44)">
+                <rect x="0" y="0" width="14" height="24" rx="6" fill="#0f172a" stroke="#582f0e" stroke-width="1.4"/>
+                <rect x="3" y="3" width="8" height="18" rx="4" fill="#334155"/>
+                <circle cx="7" cy="12" r="2.5" fill="#d4af37"/>
+              </g>
+              <!-- Right Ear Cup -->
+              <g transform="translate(60, 44)">
+                <rect x="0" y="0" width="14" height="24" rx="6" fill="#0f172a" stroke="#582f0e" stroke-width="1.4"/>
+                <rect x="3" y="3" width="8" height="18" rx="4" fill="#334155"/>
+                <circle cx="7" cy="12" r="2.5" fill="#d4af37"/>
+              </g>
+              <!-- Braided Audio Cable -->
+              <path d="M15 66 C15 76 22 84 32 82 C42 80 48 88 56 86" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Center-Right: Anglepoise Architect Drafting Desk Lamp -->
+          <div class="vignette-prop vignette-drafting-lamp" title="Articulated Drafting Lamp">
+            <svg viewBox="0 0 95 105" width="82" height="92" fill="none">
+              <!-- Lamp Weighted Base Plinth on shelf -->
+              <ellipse cx="62" cy="88" rx="16" ry="5" fill="#333d29" stroke="#582f0e" stroke-width="1.5"/>
+              <ellipse cx="62" cy="87" rx="10" ry="2.5" fill="#414833"/>
+              <!-- Swivel joint pin -->
+              <circle cx="62" cy="84" r="3" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
+              <!-- Lower arm beam -->
+              <line x1="62" y1="84" x2="48" y2="46" stroke="#414833" stroke-width="3" stroke-linecap="round"/>
+              <line x1="62" y1="84" x2="48" y2="46" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
+              <!-- Tension spring lines -->
+              <line x1="59" y1="78" x2="49" y2="52" stroke="#d4af37" stroke-width="0.9" stroke-dasharray="2,1"/>
+              <!-- Mid pivot elbow joint -->
+              <circle cx="48" cy="46" r="4" fill="#d4af37" stroke="#582f0e" stroke-width="1.2"/>
+              <circle cx="48" cy="46" r="1.6" fill="#fffefb"/>
+              <!-- Upper arm beam leaning forward -->
+              <line x1="48" y1="46" x2="26" y2="28" stroke="#414833" stroke-width="3" stroke-linecap="round"/>
+              <line x1="48" y1="46" x2="26" y2="28" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
+              <!-- Lamp Shade Bell / Cone angled down -->
+              <g transform="translate(14, 18) rotate(32, 12, 10)">
+                <path d="M4 14 L12 2 L20 14 Z" fill="#656d4a" stroke="#582f0e" stroke-width="1.4"/>
+                <ellipse cx="12" cy="14" rx="8" ry="3" fill="#fef08a" stroke="#582f0e" stroke-width="1"/>
+                <!-- Warm Glow Light Cone falling downward -->
+                <polygon points="4,15 20,15 36,65 -12,65" fill="#fef08a" opacity="0.14"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Right: Retro Mechanical Flip Clock (15:42) -->
+          <div class="vignette-prop vignette-flip-clock" title="Retro Mechanical Flip Clock (15:42 After-School Studio Time)">
+            <svg viewBox="0 0 90 90" width="76" height="76" fill="none">
+              <!-- Wooden Housing -->
+              <rect x="8" y="32" width="68" height="46" rx="6" fill="#7f4f24" stroke="#582f0e" stroke-width="1.8"/>
+              <rect x="12" y="36" width="60" height="38" rx="4" fill="#2d3748" stroke="#1a202c" stroke-width="1.4"/>
+              <!-- Brass side tuning dial -->
+              <rect x="76" y="44" width="5" height="14" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
+              <!-- Hours Card (15) -->
+              <g transform="translate(16, 40)">
+                <rect x="0" y="0" width="24" height="30" rx="3" fill="#1a202c" stroke="#4a5568" stroke-width="1"/>
+                <line x1="0" y1="15" x2="24" y2="15" stroke="#000000" stroke-width="1.5"/>
+                <text x="12" y="15" font-family="'JetBrains Mono', monospace" font-size="14" fill="#f8fafc" font-weight="900" text-anchor="middle" dominant-baseline="central">15</text>
+              </g>
+              <!-- Center Colon separator -->
+              <circle cx="42" cy="51" r="1.8" fill="#f59e0b"/>
+              <circle cx="42" cy="59" r="1.8" fill="#f59e0b"/>
+              <!-- Minutes Card (42) -->
+              <g transform="translate(44, 40)">
+                <rect x="0" y="0" width="24" height="30" rx="3" fill="#1a202c" stroke="#4a5568" stroke-width="1"/>
+                <line x1="0" y1="15" x2="24" y2="15" stroke="#000000" stroke-width="1.5"/>
+                <text x="12" y="15" font-family="'JetBrains Mono', monospace" font-size="14" fill="#f8fafc" font-weight="900" text-anchor="middle" dominant-baseline="central">42</text>
+              </g>
+              <!-- Tiny brass feet -->
+              <rect x="16" y="78" width="8" height="4" rx="1" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
+              <rect x="60" y="78" width="8" height="4" rx="1" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
+            </svg>
+          </div>
+
+        </div>
+        <div class="vignette-shelf-wood"></div>
+      </div>
         <!-- Azan -->
         <div class="tactile-member-card member-forest reveal-on-scroll delay-1">
           <div class="team-washi-tape washi-forest" aria-hidden="true"></div>
@@ -1390,33 +1662,33 @@
         </p>
       </div>
 
-      <!-- Illustrated Studio Dispatch Shelf Vignette -->
+      <!-- Illustrated Studio Dispatch Shelf Vignette (Tactile Postal & Studio Gear) -->
       <div class="section-vignette-shelf contact-shelf" aria-hidden="true">
         <div class="vignette-props-stage">
 
-          <!-- Left: Monstera — distinctive split/fenestrated leaf, nothing like the snake plant or pothos vine -->
-          <div class="vignette-foliage-left">
-            <svg viewBox="0 0 100 120" width="82" height="98" fill="none">
-              <!-- Stem -->
-              <path d="M50 120 C50 90 52 60 55 30" stroke="#414833" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <!-- Big split leaf -->
-              <path d="M55 35 C80 20 98 35 92 58 C86 78 70 88 55 82 C44 78 38 70 40 58 C42 46 50 40 55 35Z" fill="#656d4a" opacity="0.9"/>
-              <!-- Fenestration holes -->
-              <ellipse cx="72" cy="52" rx="7" ry="5" fill="#f7f2ea" opacity="0.85" transform="rotate(-20, 72, 52)"/>
-              <ellipse cx="58" cy="65" rx="6" ry="4" fill="#f7f2ea" opacity="0.85" transform="rotate(10, 58, 65)"/>
-              <!-- Split cut left -->
-              <path d="M55 35 C46 45 40 58 40 58" stroke="#f7f2ea" stroke-width="5" fill="none" opacity="0.9" stroke-linecap="round"/>
-              <!-- Leaf vein midrib -->
-              <path d="M55 35 C68 50 75 65 70 82" stroke="#414833" stroke-width="1.5" fill="none" opacity="0.35" stroke-linecap="round"/>
-              <!-- Small second leaf -->
-              <path d="M48 75 C32 65 22 50 30 38 C36 28 46 35 48 45 C50 55 50 65 48 75Z" fill="#414833" opacity="0.7"/>
-              <!-- Pot -->
-              <path d="M38 120 L62 120 L66 112 L34 112Z" fill="#c2b4a1"/>
-              <rect x="34" y="108" width="32" height="4" rx="2" fill="#ab947e"/>
+          <!-- Left: Vintage Solid Brass Service Desk Bell (Ring for Inquiry!) -->
+          <div class="vignette-prop vignette-desk-bell" title="Solid Brass Service Desk Bell (Ding for Inquiry!)">
+            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
+              <!-- Wooden circular base plinth -->
+              <ellipse cx="42" cy="82" rx="30" ry="6" fill="#582f0e" stroke="#331800" stroke-width="1.5"/>
+              <ellipse cx="42" cy="80" rx="26" ry="4" fill="#7f4f24"/>
+              <!-- Polished Brass Dome Bell -->
+              <path d="M18 78 C18 52 28 40 42 40 C56 40 66 52 66 78 Z" fill="#eab308" stroke="#582f0e" stroke-width="1.8"/>
+              <!-- Metallic 3D sheen highlights -->
+              <path d="M22 76 C22 56 30 46 42 46 C44 46 44 43 42 43 C28 43 18 54 18 78 Z" fill="#fde047" opacity="0.6"/>
+              <path d="M54 52 C60 60 64 68 64 78" stroke="#ca8a04" stroke-width="3" fill="none" opacity="0.7"/>
+              <!-- Brass plunger stem & strike button on top -->
+              <rect x="40" y="32" width="4" height="9" fill="#ca8a04" stroke="#582f0e" stroke-width="1.2"/>
+              <ellipse cx="42" cy="32" rx="7" ry="3.5" fill="#eab308" stroke="#582f0e" stroke-width="1.4"/>
+              <circle cx="42" cy="30" r="2.2" fill="#fef08a"/>
+              <!-- Motion chime sparks "Ding!" -->
+              <g class="bell-spark">
+                <text x="42" y="18" font-family="'Caveat', cursive" font-size="12" fill="#d94e34" font-weight="700" text-anchor="middle" dominant-baseline="central">✦ Ding! ✦</text>
+              </g>
             </svg>
           </div>
 
-          <!-- Sealed Studio Dispatch Envelope -->
+          <!-- Center-Left: Sealed Studio Dispatch Envelopes Stack -->
           <div class="vignette-envelope" title="Official Studio Dispatch">
             <div class="envelope-torch-seal">
               <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="9" height="18" class="envelope-torch-img" />
@@ -1424,28 +1696,50 @@
             <div class="vignette-pen"></div>
           </div>
 
-          <!-- Right: Round Topiary Ball in Pot — a completely different, more structured, geometric plant form -->
-          <div class="vignette-foliage-right">
-            <svg viewBox="0 0 80 110" width="66" height="91" fill="none">
-              <!-- Thin stem -->
-              <rect x="37" y="55" width="6" height="30" rx="3" fill="#9e7f62"/>
-              <!-- Round ball canopy -->
-              <circle cx="40" cy="38" r="28" fill="#4a5438" opacity="0.85"/>
-              <!-- Highlight on ball (gives it roundness) -->
-              <circle cx="33" cy="28" r="10" fill="#656d4a" opacity="0.6"/>
-              <!-- Small berries / dots for texture -->
-              <circle cx="36" cy="22" r="2.5" fill="#a4ac86" opacity="0.9"/>
-              <circle cx="48" cy="30" r="2" fill="#a4ac86" opacity="0.9"/>
-              <circle cx="30" cy="40" r="2.5" fill="#a4ac86" opacity="0.8"/>
-              <circle cx="50" cy="48" r="2" fill="#a4ac86" opacity="0.9"/>
-              <circle cx="38" cy="50" r="2" fill="#a4ac86" opacity="0.7"/>
-              <!-- Pot -->
-              <path d="M24 95 L56 95 L60 87 L20 87Z" fill="#c2b4a1"/>
-              <rect x="20" y="83" width="40" height="4" rx="2" fill="#ab947e"/>
-              <!-- Pot rim -->
-              <rect x="22" y="85" width="36" height="3" rx="1.5" fill="#c2b4a1" opacity="0.5"/>
+          <!-- Center: Faceted Amber Glass Inkwell & Dipped Calligraphy Pen -->
+          <div class="vignette-prop vignette-inkwell-pen" title="Amber Glass Inkwell & Brass Calligraphy Pen">
+            <svg viewBox="0 0 75 90" width="62" height="74" fill="none">
+              <!-- Glass Ink Bottle Base -->
+              <path d="M20 54 L20 80 C20 83 23 85 27 85 L47 85 C51 85 54 83 54 80 L54 54 L48 46 L26 46 Z"
+                    fill="#b45309" stroke="#582f0e" stroke-width="1.6" opacity="0.9"/>
+              <!-- Sepia Ink inside -->
+              <path d="M22 62 L52 62 L52 82 C52 84 50 84 46 84 L28 84 C24 84 22 84 22 82 Z"
+                    fill="#3b1d06"/>
+              <!-- Neck and cork stopper -->
+              <rect x="30" y="38" width="14" height="9" rx="1.5" fill="#d97706" stroke="#582f0e" stroke-width="1.2"/>
+              <polygon points="31,38 43,38 41,32 33,32" fill="#d4a373" stroke="#582f0e" stroke-width="1"/>
+              <!-- Glass facet shine lines -->
+              <line x1="25" y1="56" x2="25" y2="78" stroke="#fef3c7" stroke-width="1.8" opacity="0.6"/>
+              <line x1="37" y1="54" x2="37" y2="82" stroke="#fef3c7" stroke-width="1" opacity="0.4"/>
+              <!-- Vintage Calligraphy Pen resting angled -->
+              <g transform="translate(38, 20) rotate(35)">
+                <rect x="1" y="16" width="4.5" height="48" rx="1.5" fill="#582f0e" stroke="#331800" stroke-width="0.8"/>
+                <rect x="1" y="10" width="4.5" height="7" fill="#d4af37" stroke="#582f0e" stroke-width="0.8"/>
+                <polygon points="1,10 5.5,10 3.25,0" fill="#fef08a" stroke="#582f0e" stroke-width="0.8"/>
+                <line x1="3.25" y1="2" x2="3.25" y2="6" stroke="#582f0e" stroke-width="0.6"/>
+              </g>
             </svg>
           </div>
+
+          <!-- Right: Hand-Carved Wooden Rubber Stamp & Brass Ink Box -->
+          <div class="vignette-prop vignette-rubber-stamp" title="Hand-Carved Rubber Stamp & Brass Ink Box">
+            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
+              <!-- Brass Ink Pad Box -->
+              <rect x="12" y="68" width="38" height="16" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
+              <rect x="15" y="70" width="32" height="12" rx="1" fill="#414833" stroke="#582f0e" stroke-width="0.8"/>
+              <path d="M12 68 L8 50 L46 50 L50 68" fill="#b89728" stroke="#582f0e" stroke-width="1.2"/>
+              <!-- Turned Wooden Handle Rubber Stamp -->
+              <g transform="translate(44, 28)">
+                <rect x="6" y="44" width="28" height="8" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
+                <rect x="8" y="52" width="24" height="4" rx="1" fill="#d94e34"/>
+                <path d="M16 44 C16 36 14 26 17 18 C17 10 23 10 23 18 C26 26 24 36 24 44 Z" fill="#7f4f24" stroke="#582f0e" stroke-width="1.4"/>
+                <circle cx="20" cy="10" r="7" fill="#9c6644" stroke="#582f0e" stroke-width="1.4"/>
+                <circle cx="18" cy="8" r="2" fill="#faedcd" opacity="0.6"/>
+                <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#582f0e" font-weight="800" text-anchor="middle" dominant-baseline="central">DISPATCH</text>
+              </g>
+            </svg>
+          </div>
+
         </div>
         <div class="vignette-shelf-wood"></div>
       </div>

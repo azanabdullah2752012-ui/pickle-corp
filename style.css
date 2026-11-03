@@ -6840,6 +6840,66 @@ section {
 .vignette-foliage-right {
   right: 10px;
 }
+
+/* ── Tactile Physical Maker Props on Shelves ─────────────────────────────── */
+.vignette-prop {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+.vignette-prop:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+.vignette-prop svg {
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(88, 47, 14, 0.08));
+}
+.vignette-blueprint-caliper {
+  transform: rotate(-1deg);
+}
+.vignette-pantone-deck {
+  transform: rotate(2deg);
+}
+.vignette-walkman-set {
+  transform: rotate(-1.5deg);
+}
+.vignette-pickle-jar {
+  transform: rotate(1deg);
+}
+.vignette-artist-hand {
+  transform: rotate(-1deg);
+}
+.vignette-polaroid-camera {
+  transform: rotate(1.5deg);
+}
+.vignette-drafting-lamp {
+  transform: rotate(-1deg);
+}
+.vignette-flip-clock {
+  transform: rotate(0.5deg);
+}
+.vignette-desk-bell {
+  transform: rotate(-1deg);
+}
+.vignette-inkwell-pen {
+  transform: rotate(1deg);
+}
+.vignette-rubber-stamp {
+  transform: rotate(2deg);
+}
+.bell-spark text {
+  animation: bellDing 2.8s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+@keyframes bellDing {
+  0%, 72%, 100% { transform: scale(0.95); opacity: .7; }
+  82% { transform: scale(1.08) translateY(-2px); opacity: 1; }
+}
 .vignette-sketchbook {
   position: relative;
   width: 90px;
@@ -7059,12 +7119,18 @@ section {
 @media (max-width: 640px) {
   .section-vignette-shelf {
     max-width: 100%;
-    margin: 0 16px 24px;
+    margin: 0 auto 24px;
+    padding: 0 10px;
   }
   .vignette-props-stage {
-    gap: 12px;
-    height: 80px;
-    padding: 0 10px;
+    gap: 10px;
+    height: 75px;
+    padding: 0 6px;
+    justify-content: space-around;
+  }
+  .vignette-prop svg {
+    max-height: 65px;
+    width: auto;
   }
   .vignette-foliage-left,
   .vignette-foliage-right {
@@ -7075,10 +7141,26 @@ section {
     height: 22px;
   }
   .vignette-sketchbook {
-    width: 68px;
-    height: 44px;
+    width: 64px;
+    height: 42px;
+  }
+  .vignette-envelope {
+    width: 52px;
+    height: 34px;
   }
   .card-side-foliage {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .vignette-props-stage {
+    gap: 6px;
+    padding: 0 4px;
+  }
+  .maker-shelf .vignette-props-stage > :first-child,
+  .barter-shelf .vignette-props-stage > :first-child,
+  .team-shelf .vignette-props-stage > :first-child,
+  .contact-shelf .vignette-props-stage > :first-child {
     display: none;
   }
 }
