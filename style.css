@@ -6631,25 +6631,37 @@ section {
    HERO ELEVATED DESK WORKSPACE ARCHITECTURE (Brought up high alongside title)
    ═══════════════════════════════════════════════════════════════════════════ */
 .home-hero {
-  padding-top: clamp(68px, 6vw, 88px) !important;
+  padding-top: clamp(48px, 4.5vw, 68px) !important;
   padding-bottom: 0 !important;
   min-height: auto !important;
 }
 
 .hero-container {
   align-items: flex-start !important;
-  padding-bottom: 24px !important;
+  padding-bottom: 18px !important;
 }
 
 .hero-desk-col {
   align-self: flex-start !important;
-  margin-top: clamp(14px, 2.2vw, 32px) !important;
+  margin-top: -6px !important;
 }
 
 .desk-scene-card {
-  height: clamp(390px, 34vw, 450px) !important;
+  height: clamp(320px, 30vw, 360px) !important;
   max-width: 520px !important;
-  padding-bottom: 16px !important;
+  padding-bottom: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+}
+
+@media (max-width: 960px) {
+  .hero-desk-col {
+    order: -1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+  }
 }
 
 .section-philosophy {
@@ -9759,4 +9771,559 @@ html, body {
   }
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DELIGHTFUL ATELIER VISUAL DESIGNS & PHYSICAL GRAPHIC ARTIFACTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Hero Golden Ratio & Fibonacci Drafting Geometry Overlay ─────────── */
+.hero-drafting-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.55;
+}
+.hero-drafting-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ── 2. Dimensional Terracotta Sealing Wax with Silk Ribbons ───────────── */
+.atelier-wax-seal {
+  position: absolute;
+  bottom: -24px;
+  right: -20px;
+  width: 78px;
+  height: 105px;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 6px 12px rgba(88, 47, 14, 0.22));
+}
+.wax-ribbon-tail {
+  position: absolute;
+  top: 32px;
+  width: 18px;
+  height: 62px;
+  transform-origin: top center;
+}
+.wax-ribbon-terracotta {
+  left: 20px;
+  background: linear-gradient(180deg, #c85a17 0%, #a83220 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  transform: rotate(-10deg);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+.wax-ribbon-olive {
+  left: 36px;
+  width: 16px;
+  height: 54px;
+  background: linear-gradient(180deg, #656d4a 0%, #414833 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  transform: rotate(14deg);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+.wax-seal-disc {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e65c40 0%, #ba2d16 55%, #7a1506 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.45),
+    0 4px 10px rgba(88, 47, 14, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wax-seal-inner-ring {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 220, 210, 0.4);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffddd5;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+}
+.wax-seal-pc {
+  font-family: var(--font-display, 'Cabinet Grotesk', sans-serif);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.wax-seal-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+/* ── 3. 35mm Celluloid Film Negative Strip ─────────────────────────────── */
+.film-negative-strip-wrap {
+  margin: 36px 0 40px;
+  position: relative;
+  overflow: visible;
+}
+.film-negative-strip {
+  position: relative;
+  width: 100%;
+  background: #141210;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: rotate(-0.6deg);
+  transition: transform 0.3s ease;
+}
+.film-negative-strip:hover {
+  transform: rotate(0deg);
+}
+.film-sprocket-rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-bottom: 1px dashed rgba(255, 180, 100, 0.2);
+}
+.film-sprocket-rail-bottom {
+  border-bottom: none;
+  border-top: 1px dashed rgba(255, 180, 100, 0.2);
+  margin-top: 14px;
+}
+.sprocket-hole {
+  width: 13px;
+  height: 9px;
+  background: #fdfbf7;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.film-edge-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  color: #d97706;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  opacity: 0.85;
+  user-select: none;
+}
+.film-frames-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 14px 10px 4px;
+}
+.film-frame {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #26211a 0%, #151310 100%);
+  border: 1.5px solid rgba(255, 180, 100, 0.25);
+  border-radius: 4px;
+  padding: 14px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.7);
+}
+.film-frame-number {
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5px;
+  color: #f59e0b;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+.film-frame-art {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.film-frame-caption {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  color: #d4a373;
+}
+.film-frame-caption strong {
+  color: #fffefb;
+  font-weight: 700;
+}
+.film-grease-mark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+}
+.grease-crop-frame {
+  border: 2px solid #ef4444;
+  border-radius: 3px;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  opacity: 0.85;
+}
+.grease-star {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ef4444;
+  transform: rotate(12deg);
+  text-shadow: 0 0 4px rgba(239, 68, 68, 0.4);
+}
+
+/* ── 4. Perforated Vintage Studio Sprint Pass Ticket Stub ───────────────── */
+.studio-ticket-wrap {
+  margin: 36px auto 16px;
+  max-width: 640px;
+  width: 100%;
+}
+.studio-ticket-stub {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  background: #fdf8ee;
+  border: 1.5px solid rgba(88, 47, 14, 0.22);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 18px rgba(88, 47, 14, 0.07),
+    4px 4px 0 rgba(88, 47, 14, 0.05);
+  position: relative;
+}
+.ticket-notch-top, .ticket-notch-bottom {
+  position: absolute;
+  left: 140px;
+  width: 16px;
+  height: 16px;
+  background: #fcfbfa;
+  border: 1.5px solid rgba(88, 47, 14, 0.22);
+  border-radius: 50%;
+  z-index: 3;
+}
+.ticket-notch-top {
+  top: -9px;
+  transform: translateX(-50%);
+}
+.ticket-notch-bottom {
+  bottom: -9px;
+  transform: translateX(-50%);
+}
+.ticket-left-stub {
+  padding: 16px 14px;
+  background: #f5eedf;
+  border-right: 1.5px dashed rgba(88, 47, 14, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.ticket-serial-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  font-weight: 800;
+  color: #d94e34;
+  letter-spacing: 0.08em;
+}
+.ticket-hole-punch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fcfbfa;
+  border: 1px solid rgba(88, 47, 14, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+  margin: 6px 0;
+}
+.ticket-stub-vertical-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #7f4f24;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin: 6px 0;
+}
+.ticket-main-body {
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.ticket-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.15);
+  padding-bottom: 8px;
+}
+.ticket-title-brand {
+  font-family: var(--font-display, 'Cabinet Grotesk', sans-serif);
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--c1-espresso, #582f0e);
+  letter-spacing: -0.01em;
+}
+.ticket-class-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5px;
+  font-weight: 700;
+  background: rgba(101, 109, 74, 0.15);
+  color: #656d4a;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.ticket-route-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  margin: 12px 0;
+}
+.ticket-route-cell {
+  display: flex;
+  flex-direction: column;
+}
+.ticket-route-k {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5px;
+  color: #8c725c;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.ticket-route-v {
+  font-family: var(--font-display, 'Cabinet Grotesk', sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  color: #582f0e;
+}
+.ticket-foot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px dashed rgba(88, 47, 14, 0.15);
+  padding-top: 8px;
+}
+.ticket-barcode-svg {
+  height: 22px;
+  width: 110px;
+}
+.ticket-stamp-ink {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 900;
+  color: #d94e34;
+  border: 1.5px solid #d94e34;
+  padding: 2px 8px;
+  border-radius: 3px;
+  transform: rotate(-5deg);
+  letter-spacing: 0.08em;
+}
+
+/* ── 5. Prismatic Holographic Atelier Foil Seal ─────────────────────────── */
+.holographic-foil-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: #fffefb;
+  border: 1.5px solid rgba(88, 47, 14, 0.18);
+  border-radius: 30px;
+  box-shadow: 
+    0 4px 12px rgba(88, 47, 14, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+}
+.holo-star-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(
+    from 135deg, 
+    #ffc0cb, #ffd700, #98fb98, #00ffff, #dda0dd, #ffd700, #ffc0cb
+  );
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.holo-star-badge::after {
+  content: '★';
+  font-size: 13px;
+  color: #582f0e;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+.holo-seal-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #582f0e;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .film-frames-container {
+    grid-template-columns: 1fr;
+  }
+  .studio-ticket-stub {
+    grid-template-columns: 1fr;
+  }
+  .ticket-left-stub {
+    border-right: none;
+    border-bottom: 1.5px dashed rgba(88, 47, 14, 0.28);
+    flex-direction: row;
+  }
+  .ticket-stub-vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .ticket-notch-top, .ticket-notch-bottom {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VISUAL ARTIFACTS: ATELIER STICKY NOTE & BRASS ARCHIVAL PLAQUE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Yellow Atelier Sticky Note on Blueprint Mat */
+.desk-sticky-note {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 90px;
+  padding: 8px 6px 6px;
+  background: #fff8bd;
+  box-shadow: 2px 3px 8px rgba(88, 47, 14, 0.12), 0 1px 2px rgba(88, 47, 14, 0.08);
+  border-radius: 2px 2px 5px 2px;
+  transform: rotate(-5deg);
+  z-index: 3;
+  pointer-events: none;
+  border-left: 1px solid rgba(88, 47, 14, 0.08);
+}
+.sticky-tape-strip {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 34px;
+  height: 12px;
+  background: rgba(235, 225, 205, 0.65);
+  backdrop-filter: blur(1px);
+  border: 1px dashed rgba(88, 47, 14, 0.2);
+}
+.sticky-text {
+  font-family: 'Caveat', cursive;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #582f0e;
+  display: block;
+}
+
+/* 2. Vintage Brushed Brass Archival Plaque */
+.atelier-brass-plaque-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 32px;
+  max-width: 600px;
+}
+.atelier-brass-plaque {
+  position: relative;
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #d4af37 0%, #aa771c 50%, #d4af37 100%);
+  border: 2px solid #8b6508;
+  border-radius: 4px;
+  box-shadow: 
+    0 4px 14px rgba(88, 47, 14, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plaque-inner-frame {
+  border: 1px solid rgba(88, 47, 14, 0.35);
+  padding: 8px 18px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: rgba(255, 235, 175, 0.15);
+}
+.plaque-screw {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6a4e0a;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0,0,0,0.3);
+}
+.plaque-screw::after {
+  content: '';
+  position: absolute;
+  top: 3.5px;
+  left: 1.5px;
+  width: 5px;
+  height: 1px;
+  background: #2b1f04;
+}
+.plaque-screw-tl { top: 6px; left: 6px; }
+.plaque-screw-tr { top: 6px; right: 6px; }
+.plaque-screw-bl { bottom: 6px; left: 6px; }
+.plaque-screw-br { bottom: 6px; right: 6px; }
+
+.plaque-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #3d2605;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.plaque-title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #2b1a03;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.plaque-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #4a3209;
+}
 
