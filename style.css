@@ -6628,7 +6628,7 @@ section {
 }
 .section-hero,
 /* ═══════════════════════════════════════════════════════════════════════════
-   HERO & PHILOSOPHY TIGHT GAP COUPLING (Eliminate awkward empty void)
+   HERO ELEVATED DESK WORKSPACE ARCHITECTURE (Brought up high alongside title)
    ═══════════════════════════════════════════════════════════════════════════ */
 .home-hero {
   padding-top: clamp(68px, 6vw, 88px) !important;
@@ -6637,13 +6637,19 @@ section {
 }
 
 .hero-container {
-  align-items: flex-end !important;
-  padding-bottom: 8px !important;
+  align-items: flex-start !important;
+  padding-bottom: 24px !important;
+}
+
+.hero-desk-col {
+  align-self: flex-start !important;
+  margin-top: clamp(14px, 2.2vw, 32px) !important;
 }
 
 .desk-scene-card {
-  height: 320px !important;
-  padding-bottom: 8px !important;
+  height: clamp(390px, 34vw, 450px) !important;
+  max-width: 520px !important;
+  padding-bottom: 16px !important;
 }
 
 .section-philosophy {
@@ -7778,6 +7784,8 @@ html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important;
+    margin-top: 0 !important;
+    align-self: stretch !important;
   }
   .desk-scene-card {
     max-width: 100% !important;
@@ -7990,6 +7998,8 @@ html, body {
     max-width: 100% !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
+    margin-top: 0 !important;
+    align-self: stretch !important;
   }
 
   .desk-scene-card {
