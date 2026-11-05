@@ -680,9 +680,9 @@ img { display: block; max-width: 100%; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 6.8vw, 5.4rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 22px;
   color: var(--c1-espresso);
@@ -6648,17 +6648,17 @@ section {
 }
 
 .hero-container {
-  align-items: flex-start !important;
+  align-items: center !important;
   padding-bottom: 18px !important;
 }
 
 .hero-desk-col {
-  align-self: flex-start !important;
-  margin-top: -6px !important;
+  align-self: center !important;
+  margin-top: 0 !important;
 }
 
 .desk-scene-card {
-  height: clamp(320px, 30vw, 360px) !important;
+  height: clamp(380px, 32vw, 440px) !important;
   max-width: 520px !important;
   padding-bottom: 10px !important;
   display: flex !important;
@@ -10082,8 +10082,8 @@ html, body {
 /* 1. Yellow Atelier Sticky Note on Blueprint Mat */
 .desk-sticky-note {
   position: absolute;
-  top: 18px;
-  left: 20px;
+  top: 36px;
+  left: 16px;
   width: 90px;
   padding: 8px 6px 6px;
   background: #fff8bd;
