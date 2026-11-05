@@ -8688,7 +8688,7 @@ html, body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FAST STUDIO STAMP INTRO (0.6s Preloader Stamp Punch)
+   CINEMATIC STUDIO CRAFT INTRO (2.0s Preloader)
    ═══════════════════════════════════════════════════════════════════════════ */
 .studio-intro-overlay {
   position: fixed;
@@ -8700,24 +8700,98 @@ html, body {
   justify-content: center;
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.35s ease-out;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease-out;
 }
 
 .studio-intro-overlay.intro-dismissed {
+  transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease-out, visibility 0.35s step-end;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease-out, visibility 0.65s step-end;
+}
+
+.intro-stamp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .intro-stamp-badge {
-  animation: introStampHit 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: introStampHit 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transform-origin: center center;
+  filter: drop-shadow(0 10px 24px rgba(88, 47, 14, 0.14));
 }
 
 @keyframes introStampHit {
-  0% { transform: scale(1.6) rotate(-8deg); opacity: 0; }
-  50% { transform: scale(0.92) rotate(2deg); opacity: 1; }
-  100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+  0% { transform: scale(1.4) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(0.96) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.stamp-ring-outer {
+  stroke-dasharray: 460;
+  stroke-dashoffset: 460;
+  animation: drawStampRing 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+.stamp-ring-inner {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: drawStampRing 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+@keyframes drawStampRing {
+  to { stroke-dashoffset: 0; }
+}
+
+.intro-caption-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: introCaptionFade 0.6s ease 0.4s both;
+}
+
+@keyframes introCaptionFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-craft-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c1-espresso, #582f0e);
+}
+
+.intro-progress-bar {
+  width: 130px;
+  height: 3px;
+  background: rgba(88, 47, 14, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.intro-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #b83218;
+  border-radius: 999px;
+  animation: fillIntroProgress 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes fillIntroProgress {
+  0% { width: 0%; }
+  60% { width: 75%; }
+  100% { width: 100%; }
+}
+
+.intro-craft-sub {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #444c2f;
+  letter-spacing: 0.04em;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -9549,38 +9623,98 @@ html, body {
   background: #d94e34;
 }
 
-/* --- 2. Hero Blueprint & Drafting Mat --- */
+/* --- 2. Hero Creative Workspace & Open Sketchbook --- */
 .desk-blueprint-board {
   position: absolute;
   inset: 0 0 24px 0;
   background-color: #f7f3ea;
   background-image: 
-    linear-gradient(rgba(88, 47, 14, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(88, 47, 14, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-  border: 1.5px solid rgba(88, 47, 14, 0.18);
+    linear-gradient(rgba(88, 47, 14, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 47, 14, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 1.5px solid rgba(88, 47, 14, 0.16);
   border-radius: 16px;
   box-shadow: 
-    0 4px 14px rgba(88, 47, 14, 0.05),
-    6px 6px 0 rgba(88, 47, 14, 0.04);
+    0 4px 14px rgba(88, 47, 14, 0.04),
+    5px 5px 0 rgba(88, 47, 14, 0.03);
   z-index: 1;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.blueprint-corner-tag {
+.desk-sketchbook-open {
   position: absolute;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--c1-espresso, #582f0e);
-  letter-spacing: 0.08em;
-  opacity: 0.9;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: clamp(230px, 25vw, 310px);
+  height: clamp(120px, 13vw, 165px);
+  z-index: 2;
+  filter: drop-shadow(0 6px 14px rgba(88, 47, 14, 0.08));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
 }
 
-.tag-tl { top: 8px; left: 12px; }
-.tag-tr { top: 8px; right: 12px; }
-.tag-bl { bottom: 8px; left: 12px; }
-.tag-br { bottom: 8px; right: 12px; }
+.desk-scene-card:hover .desk-sketchbook-open {
+  transform: translateX(-50%) rotate(0deg) scale(1.02);
+}
+
+/* Emil Kowalski Organic Living Animations */
+@keyframes gummyNaturalBlink {
+  0%, 93%, 100% {
+    transform: scaleY(1);
+  }
+  95%, 97% {
+    transform: scaleY(0.08);
+  }
+}
+
+.gummy-eyes-group {
+  animation: gummyNaturalBlink 4.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-origin: 55px 44px;
+}
+
+.gummy-hero-mascot {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gummy-hero-mascot:hover .gummy-body-group {
+  animation: gummyHappyHop 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gummyHappyHop {
+  0% { transform: scale(1, 1); }
+  35% { transform: scale(1.12, 0.88) translateY(-4px) rotate(-2deg); }
+  65% { transform: scale(0.94, 1.06) translateY(-8px) rotate(2deg); }
+  100% { transform: scale(1, 1) translateY(0) rotate(0deg); }
+}
+
+.gummy-hero-mascot:active .gummy-body-group {
+  transform: scale(1.18, 0.82) translateY(3px);
+  transition: transform 0.12s ease;
+}
+
+/* Subtle gentle breeze on desk foliage */
+@keyframes plantGentleSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.8deg) translateY(-2px); }
+}
+
+.desk-plant-foliage {
+  animation: plantGentleSway 6.5s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+/* Chai mug steam gentle float */
+@keyframes chaiSteamWisp {
+  0% { transform: translateY(0) scaleX(1); opacity: 0.3; }
+  50% { transform: translateY(-4px) scaleX(1.1); opacity: 0.8; }
+  100% { transform: translateY(-8px) scaleX(1.25); opacity: 0; }
+}
+
+.steam-path {
+  animation: chaiSteamWisp 2.6s ease-in-out infinite;
+}
 
 /* --- 3. Full-Bleed Kinetic Studio Marquee Ribbon --- */
 .studio-marquee-strip {
@@ -9712,7 +9846,7 @@ html, body {
   font-weight: 800;
 }
 
-/* --- 5. Section 02: Full-Width Panoramic Project Monograph Showcase --- */
+/* --- 5. Section 02: Full-Width Interactive Project Showcase --- */
 .project-card-hero-panoramic {
   grid-column: 1 / -1;
   display: grid;

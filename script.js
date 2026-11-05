@@ -2412,12 +2412,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // 10. Fast Studio Stamp Intro (0.6s Session Preloader)
+  // 10. Cinematic Studio Craft Intro (2.0s Handcrafted Preloader)
   (function initStudioIntro() {
     const overlay = document.getElementById('studio-intro-overlay');
     if (!overlay) return;
 
-    if (sessionStorage.getItem('pickle_intro_seen') === 'true') {
+    // Check query param forceIntro=true or first visit in session
+    const urlParams = new URLSearchParams(window.location.search);
+    const forceIntro = urlParams.has('intro') || urlParams.has('v');
+    if (!forceIntro && sessionStorage.getItem('pickle_intro_seen') === 'true') {
       overlay.style.display = 'none';
       return;
     }
@@ -2425,8 +2428,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('pickle_intro_seen', 'true');
     setTimeout(() => {
       overlay.classList.add('intro-dismissed');
-      setTimeout(() => overlay.remove(), 400);
-    }, 620);
+      setTimeout(() => overlay.remove(), 700);
+    }, 2000);
   })();
 
   // 11. Cute Mini Gummy Mascot Custom Cursor & Click-Squish

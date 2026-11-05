@@ -24,24 +24,31 @@
   <link rel="stylesheet" href="style.css?v=8.1.0" />
 </head>
 <body>
-  <!-- Fast Studio Intro Stamp Punch (0.6s session preloader) -->
+  <!-- Cinematic Studio Craft Intro (2-Second Handcrafted Seal) -->
   <div id="studio-intro-overlay" class="studio-intro-overlay" aria-hidden="true">
-    <div class="intro-stamp-badge">
-      <svg viewBox="0 0 140 140" width="124" height="124" class="intro-stamp-svg">
-        <defs>
-          <path id="intro-stamp-path" d="M 70, 70 m -52, 0 a 52,52 0 1,1 104,0 a 52,52 0 1,1 -104,0" />
-        </defs>
-        <circle cx="70" cy="70" r="64" fill="none" stroke="#d94e34" stroke-width="2.4" stroke-dasharray="4 2.5"/>
-        <circle cx="70" cy="70" r="58" fill="none" stroke="#d94e34" stroke-width="1.6"/>
-        <circle cx="70" cy="70" r="40" fill="rgba(217, 78, 52, 0.08)" stroke="#d94e34" stroke-width="1.2"/>
-        <text font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="900" fill="#d94e34" letter-spacing="0.14em">
-          <textPath href="#intro-stamp-path" startOffset="50%" text-anchor="middle" dominant-baseline="central">
-            PICKLE CORP • EST. 2024 • RAW CRAFT •
-          </textPath>
-        </text>
-        <text x="70" y="65" text-anchor="middle" dominant-baseline="central" font-family="'Cabinet Grotesk', sans-serif" font-size="20" font-weight="900" fill="#582f0e">PC</text>
-        <text x="70" y="80" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#656d4a">★ HAND-BUILT ★</text>
-      </svg>
+    <div class="intro-stamp-container">
+      <div class="intro-stamp-badge">
+        <svg viewBox="0 0 160 160" width="144" height="144" class="intro-stamp-svg">
+          <defs>
+            <path id="intro-stamp-path" d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" />
+          </defs>
+          <circle cx="80" cy="80" r="72" fill="none" stroke="#b83218" stroke-width="2.4" stroke-dasharray="5 3" class="stamp-ring-outer"/>
+          <circle cx="80" cy="80" r="66" fill="none" stroke="#b83218" stroke-width="1.8" class="stamp-ring-inner"/>
+          <circle cx="80" cy="80" r="46" fill="rgba(184, 50, 24, 0.06)" stroke="#b83218" stroke-width="1.2"/>
+          <text font-family="'JetBrains Mono', monospace" font-size="8.8" font-weight="900" fill="#b83218" letter-spacing="0.14em">
+            <textPath href="#intro-stamp-path" startOffset="50%" text-anchor="middle" dominant-baseline="central">
+              PICKLE CORP • 2024 • HAND-BUILT •
+            </textPath>
+          </text>
+          <text x="80" y="74" text-anchor="middle" dominant-baseline="central" font-family="'Cabinet Grotesk', sans-serif" font-size="24" font-weight="900" fill="#582f0e">PC</text>
+          <text x="80" y="92" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="800" fill="#444c2f">✦ PURE CRAFT ✦</text>
+        </svg>
+      </div>
+      <div class="intro-caption-wrap">
+        <span class="intro-craft-title">Pickle Corp</span>
+        <div class="intro-progress-bar"><div class="intro-progress-fill"></div></div>
+        <span class="intro-craft-sub">Hand-built web software</span>
+      </div>
     </div>
   </div>
 
@@ -170,19 +177,19 @@
       
       <!-- Left Column: Confident Editorial Copy -->
       <div class="hero-text-col">
-        <div class="hero-eyebrow-docket" aria-label="Studio Dispatch Coordinates">
-          <span class="eyebrow-pill">STUDIO MANIFESTO ✦ 2024</span>
-          <span class="eyebrow-coords">BANGALORE // 12.9716° N, 77.5946° E</span>
+        <div class="hero-eyebrow-docket" aria-label="Studio Tag">
+          <span class="eyebrow-pill">PICKLE CORP ✦ 2024</span>
+          <span class="eyebrow-coords">HANDMADE WEB SOFTWARE</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="hero-line">We engineer fast,</span>
-          <span class="hero-line">zero-bloat web software</span>
-          <span class="hero-line">&amp; creative canvases.</span>
+          <span class="hero-line">We build fast,</span>
+          <span class="hero-line">clean web software</span>
+          <span class="hero-line">&amp; creative tools.</span>
         </h1>
 
         <p class="hero-manifest">
-          Three students building 2D/3D visual engines and web tools &mdash; funded by favors, not invoices.
+          Three high school makers building fast websites and interactive visual tools &mdash; traded for favors, not money.
         </p>
 
         <div class="hero-actions">
@@ -197,10 +204,10 @@
         </div>
 
         <!-- Studio Spec Telemetry Strip -->
-        <div class="hero-spec-strip" aria-label="Studio Specifications">
-          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>60FPS CANVAS ENGINE</span></div>
-          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>ZERO CMS BLOAT</span></div>
-          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>PURE BARTER TRADE</span></div>
+        <div class="hero-spec-strip" aria-label="Studio Highlights">
+          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>FAST 60FPS VISUALS</span></div>
+          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>ZERO BLOAT CODE</span></div>
+          <div class="hero-spec-item"><span class="hero-spec-dot"></span><span>TRADE FOR FAVORS</span></div>
         </div>
 
         <!-- Studio Craft Seal Watermark Badge -->
@@ -230,17 +237,43 @@
       <!-- Right Column: Cozy Illustrated Desk Workspace with Laptop, Plant & Authentic Gummy -->
       <div class="hero-desk-col">
         <div class="desk-scene-card">
-          <!-- Architectural Blueprint Cutting Mat Substrate -->
+          <!-- Warm Creative Desk Mat with Student Sketchbook & Doodles -->
           <div class="desk-blueprint-board" aria-hidden="true">
-            <span class="blueprint-corner-tag tag-tl">SEC: 00 // HERO ATELIER</span>
-            <span class="blueprint-corner-tag tag-tr">SCALE: 1:1 ISOMETRIC</span>
-            <span class="blueprint-corner-tag tag-bl">DIM: 1440 × 900 RETINA</span>
-            <span class="blueprint-corner-tag tag-br">STATUS: ONLINE 60FPS</span>
+            <!-- Open Creative Sketchbook in Workspace Midground -->
+            <div class="desk-sketchbook-open">
+              <svg viewBox="0 0 260 140" width="100%" height="100%" fill="none">
+                <!-- Open Book Pages (Left & Right) -->
+                <rect x="8" y="10" width="118" height="118" rx="4" fill="#ffffff" stroke="#ab947e" stroke-width="1.2"/>
+                <rect x="134" y="10" width="118" height="118" rx="4" fill="#ffffff" stroke="#ab947e" stroke-width="1.2"/>
+                <!-- Center Spiral Wire Rings -->
+                <g stroke="#7f4f24" stroke-width="1.4" opacity="0.7">
+                  <path d="M120 18 Q130 16 138 20"/><path d="M120 32 Q130 30 138 34"/>
+                  <path d="M120 46 Q130 44 138 48"/><path d="M120 60 Q130 58 138 62"/>
+                  <path d="M120 74 Q130 72 138 76"/><path d="M120 88 Q130 86 138 90"/>
+                  <path d="M120 102 Q130 100 138 104"/><path d="M120 116 Q130 114 138 118"/>
+                </g>
+                <!-- Left Page: Wireframe Sketch -->
+                <rect x="20" y="24" width="94" height="52" rx="3" fill="#fcfaf6" stroke="#c2b4a1" stroke-width="1"/>
+                <line x1="20" y1="36" x2="114" y2="36" stroke="#c2b4a1" stroke-width="0.8"/>
+                <rect x="26" y="44" width="36" height="24" rx="2" fill="#eee6d8"/>
+                <line x1="70" y1="48" x2="106" y2="48" stroke="#582f0e" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="70" y1="56" x2="98" y2="56" stroke="#a4ac86" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="70" y1="64" x2="92" y2="64" stroke="#a4ac86" stroke-width="1.2" stroke-linecap="round"/>
+                <!-- Hand-drawn notes -->
+                <text x="22" y="92" font-family="'Caveat', cursive" font-size="12" fill="#582f0e" font-weight="700">~ 60fps canvas engine</text>
+                <text x="22" y="108" font-family="'Caveat', cursive" font-size="11" fill="#b83218">no frameworks needed!</text>
+                <!-- Right Page: Geometric Compass Doodle -->
+                <circle cx="193" cy="56" r="30" stroke="#bda793" stroke-width="1" stroke-dasharray="3 3"/>
+                <circle cx="193" cy="56" r="18" stroke="#582f0e" stroke-width="1.2"/>
+                <polygon points="193,34 212,68 174,68" fill="none" stroke="#b83218" stroke-width="1.2"/>
+                <text x="193" y="100" text-anchor="middle" font-family="'Caveat', cursive" font-size="13" fill="#444c2f" font-weight="700">pure web craft ✦</text>
+              </svg>
+            </div>
           </div>
-          <!-- Yellow Atelier Sticky Note Pinned to Blueprint -->
+          <!-- Yellow Sticky Note Resting on Desk -->
           <div class="desk-sticky-note" aria-hidden="true">
             <div class="sticky-tape-strip"></div>
-            <span class="sticky-text">✦ SHIP 60FPS<br>RAW CRAFT!</span>
+            <span class="sticky-text">✦ BUILT AFTER<br>HOMEWORK!</span>
           </div>
           <!-- Atmospheric Foliage Framing Right Edge -->
           <div class="desk-plant-foliage" aria-hidden="true">
@@ -443,19 +476,19 @@
       <div class="philosophy-manifesto-slate reveal-on-scroll">
         <div class="manifesto-left-col">
           <p class="manifesto-quote-large">
-            “Built after homework. One mathematical vector at a time.”
+            “We build clean, fast websites after school.”
           </p>
           <div class="manifesto-lead-meta">
-            <span>AZAN, THANVI &amp; VIREN // ATELIER STATEMENT // BANGALORE</span>
+            <span>AZAN, THANVI &amp; VIREN • FOUNDERS</span>
           </div>
         </div>
         <div class="manifesto-charter-box" style="position: relative;">
-          <h3 class="charter-title">Atelier Charter</h3>
+          <h3 class="charter-title">Our Promise</h3>
           <ul class="charter-list">
-            <li>Zero retainers or invoices</li>
-            <li>Direct barter &amp; gear swaps</li>
-            <li>Guaranteed 60fps engines</li>
-            <li>100% hand-crafted code</li>
+            <li>No retainers or invoices</li>
+            <li>Trade for favors &amp; cool gear</li>
+            <li>Fast 60fps interactive websites</li>
+            <li>100% hand-written code from scratch</li>
           </ul>
           <!-- Dimensional Terracotta Sealing Wax with Silk Ribbons -->
           <div class="atelier-wax-seal" aria-hidden="true">
@@ -769,16 +802,16 @@
           <div class="plaque-screw plaque-screw-bl"></div>
           <div class="plaque-screw plaque-screw-br"></div>
           <div class="plaque-inner-frame">
-            <span class="plaque-num">REG. № PC-ARCHIVE-04</span>
-            <span class="plaque-title">PERMANENT COLLECTION ✦ ZERO SLOP VERIFIED</span>
-            <span class="plaque-sub">BANGALORE ATELIER • 60 FPS NATIVE CANVASES</span>
+            <span class="plaque-num">PC-ARCHIVE ✦ 4 VERIFIED BUILDS</span>
+            <span class="plaque-title">HAND-BUILT PROJECTS ✦ 100% PURE CODE</span>
+            <span class="plaque-sub">INDEPENDENT STUDENT STUDIO • FAST 60FPS WEBSITES</span>
           </div>
         </div>
       </div>
 
       <div class="tactile-projects-grid">
 
-        <!-- Build 01: Pickle Studio (Full-Width Panoramic Feature Monograph) -->
+        <!-- Build 01: Pickle Studio (Full-Width Interactive Showcase) -->
         <article class="tactile-project-card project-caramel project-card-hero-panoramic reveal-on-scroll" style="position: relative;">
           <!-- Left Column: Dossier Specs & Launch -->
           <div class="panoramic-left-content">
@@ -794,9 +827,9 @@
             <div class="pcard-docket-bar">
               <span class="pcard-docket-id">
                 <svg class="pcard-barcode-glyph" viewBox="0 0 24 10" width="20" height="8" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="2" height="10"/><rect x="4" y="0" width="1" height="10"/><rect x="7" y="0" width="3" height="10"/><rect x="12" y="0" width="1.5" height="10"/><rect x="16" y="0" width="2" height="10"/><rect x="20" y="0" width="1" height="10"/><rect x="23" y="0" width="1" height="10"/></svg>
-                DOCKET PC-001 // PANORAMIC ATELIER ENGINE
+                PROJECT 01 // PICKLE CANVAS
               </span>
-              <span class="pcard-docket-stamp">FEATURE MONOGRAPH</span>
+              <span class="pcard-docket-stamp">CANVAS ENGINE</span>
             </div>
 
             <div class="pcard-top-row">
@@ -902,7 +935,7 @@
           <div class="pcard-docket-bar">
             <span class="pcard-docket-id">
               <svg class="pcard-barcode-glyph" viewBox="0 0 24 10" width="20" height="8" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="1.5" height="10"/><rect x="3" y="0" width="2.5" height="10"/><rect x="8" y="0" width="1" height="10"/><rect x="11" y="0" width="3" height="10"/><rect x="16" y="0" width="1" height="10"/><rect x="19" y="0" width="2" height="10"/><rect x="23" y="0" width="1" height="10"/></svg>
-              DOCKET PC-002 // PRIVACY PORTAL
+              PROJECT 02 // SAFESPACE
             </span>
             <span class="pcard-docket-stamp">E2E ENCRYPTED</span>
           </div>
@@ -990,7 +1023,7 @@
           <div class="pcard-docket-bar">
             <span class="pcard-docket-id">
               <svg class="pcard-barcode-glyph" viewBox="0 0 24 10" width="20" height="8" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="2" height="10"/><rect x="4" y="0" width="1" height="10"/><rect x="7" y="0" width="2" height="10"/><rect x="11" y="0" width="1" height="10"/><rect x="14" y="0" width="3" height="10"/><rect x="19" y="0" width="1" height="10"/><rect x="22" y="0" width="2" height="10"/></svg>
-              DOCKET PC-003 // HABIT OS
+              PROJECT 03 // NUVIO OS
             </span>
             <span class="pcard-docket-stamp">PERSISTENT V3.1</span>
           </div>
@@ -1069,7 +1102,7 @@
           <div class="pcard-docket-bar">
             <span class="pcard-docket-id">
               <svg class="pcard-barcode-glyph" viewBox="0 0 24 10" width="20" height="8" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="1" height="10"/><rect x="3" y="0" width="2" height="10"/><rect x="7" y="0" width="1.5" height="10"/><rect x="11" y="0" width="1" height="10"/><rect x="14" y="0" width="2.5" height="10"/><rect x="19" y="0" width="1.5" height="10"/><rect x="23" y="0" width="1" height="10"/></svg>
-              DOCKET PC-004 // SVG CALCULUS
+              PROJECT 04 // FOUNDU MATH
             </span>
             <span class="pcard-docket-stamp">REALTIME SCRUB</span>
           </div>
@@ -1160,16 +1193,16 @@
       <!-- Studio Project Archives / Exhibition Index Table -->
       <div class="studio-archives-container reveal-on-scroll">
         <div class="studio-archives-header">
-          <h3 class="archives-title">Studio Archives // Index of Experiments &amp; Releases</h3>
-          <span class="archives-meta">2024–2025 Atelier Catalog / 4 verified releases</span>
+          <h3 class="archives-title">Shipped Projects // All Releases</h3>
+          <span class="archives-meta">2024–2025 • 4 Live Releases</span>
         </div>
         <div class="archives-table-wrap">
           <table class="archives-table">
             <thead>
               <tr>
                 <th>№</th>
-                <th>Project / Artifact</th>
-                <th>Substrate &amp; Engine</th>
+                <th>Project</th>
+                <th>Tech Stack</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -1583,7 +1616,7 @@
         <div class="barter-ledger-header">
           <div class="barter-ledger-title-group">
             <h3>Barter Ledger</h3>
-            <p>BANGALORE ATELIER &bull; PC-BARTER-2024</p>
+            <p>STUDIO TRADE AGREEMENT &bull; PC-BARTER-2024</p>
           </div>
           <div class="barter-stamp-circle" aria-hidden="true">
             <span>BARTER</span>
@@ -1611,7 +1644,7 @@
               <li>Vintage 35mm cameras &amp; film</li>
               <li>Audio pedals &amp; synth patch cables</li>
               <li>Artisan South Indian filter coffee</li>
-              <li>Design monographs &amp; math zines</li>
+              <li>Design books &amp; math zines</li>
             </ul>
           </div>
         </div>
@@ -1626,17 +1659,17 @@
             <span class="ticket-serial-mono">№ 00842-PC</span>
             <div class="ticket-hole-punch" title="Perforated admission punch"></div>
             <span class="ticket-stub-vertical-text">STUDIO SPRINT PASS</span>
-            <span class="ticket-serial-mono">BANGALORE</span>
+            <span class="ticket-serial-mono">ADMIT ONE</span>
           </div>
           <div class="ticket-main-body">
             <div class="ticket-head-row">
-              <span class="ticket-title-brand">PICKLE CORP ✦ SOVEREIGN ATELIER</span>
+              <span class="ticket-title-brand">PICKLE CORP ✦ STUDENT STUDIO</span>
               <span class="ticket-class-pill">CLASS: HONEST BARTER</span>
             </div>
             <div class="ticket-route-grid">
               <div class="ticket-route-cell">
                 <span class="ticket-route-k">ORIGIN</span>
-                <span class="ticket-route-v">BANGALORE // 12.97° N</span>
+                <span class="ticket-route-v">STUDIO DESK</span>
               </div>
               <div class="ticket-route-cell">
                 <span class="ticket-route-k">DESTINATION</span>
@@ -2214,8 +2247,8 @@
             <!-- BACK -->
             <div class="site-card-face site-card-back" aria-label="Card Back">
               <div class="card-top-bar" style="border-bottom: 1px solid rgba(88, 47, 14, 0.14); padding-bottom: 6px;">
-                <span class="card-telemetry-mono">STUDIO COVENANT &bull; BARTER RECORD</span>
-                <span class="card-slot-pill" style="font-size: 0.8rem; padding: 3px 8px;">COLLABORATIVE MARKER</span>
+                <span class="card-telemetry-mono">FOUNDERS COVENANT &bull; TRADE RECORD</span>
+                <span class="card-slot-pill" style="font-size: 0.8rem; padding: 3px 8px;">FOUNDERS CARD</span>
               </div>
 
               <p class="card-covenant-quote" id="main-covenant-text">
@@ -2446,7 +2479,7 @@
         <!-- Vintage Scalloped Postage / Mail Stamp in Corner -->
         <div class="contact-postage-stamp" aria-hidden="true">
           <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="14" height="30" class="postage-torch-img" loading="lazy" decoding="async" />
-          <span class="postage-val">BANGALORE</span>
+          <span class="postage-val">AIR MAIL</span>
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #b83218; font-weight: 800;">₹0.00</span>
           <!-- Wavy Postmark -->
           <div class="postage-postmark">
@@ -2565,10 +2598,10 @@
           <span style="font-size: 0.65rem; margin-top: 6px; display: block; opacity: 0.8;">100% High-Contrast WCAG AA Compliant</span>
         </div>
         <div class="colophon-block">
-          <h3>03 // Studio Telemetry</h3>
+          <h3>03 // Studio Standards</h3>
           <div style="line-height: 1.5; font-size: 0.68rem;">
-            <div>COORD: 12.9716° N, 77.5946° E</div>
-            <div>LOCATION: Bangalore, India</div>
+            <div>STACK: Clean HTML5, CSS3, ES6</div>
+            <div>INVOICES: $0.00 • Zero Retainers</div>
             <div>FRAME BUDGET: 60 FPS Native DOM</div>
             <div>TRACKERS: 0 &bull; COOKIES: 0</div>
           </div>
