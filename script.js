@@ -2538,48 +2538,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
-  // 13. Multi-Palette Studio Theme Switcher (Warm / Dark / Blueprint)
-  (function initThemeSwitcher() {
-    const btn = document.getElementById('theme-toggle-btn');
-    const label = document.getElementById('theme-label-text');
-    if (!btn) return;
-
-    const themes = [
-      { id: 'warm', name: 'Warm Earth' },
-      { id: 'dark', name: 'Obsidian' },
-      { id: 'blueprint', name: 'Blueprint' }
-    ];
-
-    let saved = localStorage.getItem('pickle_theme') || 'warm';
-    // Validate saved theme
-    if (!themes.some(t => t.id === saved)) saved = 'warm';
-
-    function applyTheme(themeId) {
-      document.documentElement.setAttribute('data-theme', themeId);
-      localStorage.setItem('pickle_theme', themeId);
-      const match = themes.find(t => t.id === themeId);
-      if (label && match) {
-        label.textContent = match.name;
-      }
-    }
-
-    applyTheme(saved);
-
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'warm';
-      const currentIndex = themes.findIndex(t => t.id === current);
-      const nextIndex = (currentIndex + 1) % themes.length;
-      const nextTheme = themes[nextIndex];
-      applyTheme(nextTheme.id);
-
-      // Play soft click sound if audio manager exists
-      if (typeof playSound === 'function') {
-        playSound('click');
-      }
-    });
-  })();
-
-  // 14. Kodak 400TX 35mm Studio Film Negative Strip Interactive Navigation
+  // 13. Kodak 400TX 35mm Studio Film Negative Strip Interactive Navigation
   (function initFilmStripInteraction() {
     const frameAzan = document.getElementById('film-frame-azan');
     const frameThanvi = document.getElementById('film-frame-thanvi');
