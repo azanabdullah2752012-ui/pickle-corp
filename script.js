@@ -2523,6 +2523,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
+  // 13. Multi-Palette Studio Theme Switcher (Warm / Dark / Blueprint)
+  (function initThemeSwitcher() {
+    const btn = document.getElementById('theme-toggle-btn');
+    const label = document.getElementById('theme-label-text');
+    if (!btn) return;
+
+    const themes = [
+      { id: 'warm', name: 'Warm Earth' },
+      { id: 'dark', name: 'Obsidian' },
+      { id: 'blueprint', name: 'Blueprint' }
+    ];
+
+    let saved = localStorage.getItem('pickle_theme') || 'warm';
+    // Validate saved theme
+    if (!themes.some(t => t.id === saved)) saved = 'warm';
+
+    function applyTheme(themeId) {
+      document.documentElement.setAttribute('data-theme', themeId);
+      localStorage.setItem('pickle_theme', themeId);
+      const match = themes.find(t => t.id === themeId);
+      if (label && match) {
+        label.textContent = match.name;
+      }
+    }
+
+    applyTheme(saved);
+
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'warm';
+      const currentIndex = themes.findIndex(t => t.id === current);
+      const nextIndex = (currentIndex + 1) % themes.length;
+      const nextTheme = themes[nextIndex];
+      applyTheme(nextTheme.id);
+
+      // Play soft click sound if audio manager exists
+      if (typeof playSound === 'function') {
+        playSound('click');
+      }
+    });
+  })();
+
+  // 14. Kodak 400TX 35mm Studio Film Negative Strip Interactive Navigation
+  (function initFilmStripInteraction() {
+    const frameAzan = document.getElementById('film-frame-azan');
+    const frameThanvi = document.getElementById('film-frame-thanvi');
+    const frameViren = document.getElementById('film-frame-viren');
+    const memberCards = document.querySelectorAll('.tactile-team-grid .tactile-member-card');
+
+    if (!frameAzan || !frameThanvi || !frameViren || memberCards.length < 3) return;
+
+    const frames = [
+      { el: frameAzan, target: memberCards[0] },
+      { el: frameThanvi, target: memberCards[1] },
+      { el: frameViren, target: memberCards[2] }
+    ];
+
+    frames.forEach(({ el, target }) => {
+      el.addEventListener('click', () => {
+        // Toggle selected outline on SVG frame
+        frames.forEach(f => f.el.classList.remove('film-frame-selected'));
+        el.classList.add('film-frame-selected');
+
+        // Smooth scroll to card
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Flash target card border
+        target.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
+        target.style.borderColor = '#d9381e';
+        target.style.boxShadow = '0 0 24px rgba(217, 56, 30, 0.35)';
+        setTimeout(() => {
+          target.style.borderColor = '';
+          target.style.boxShadow = '';
+        }, 1200);
+
+        // Sound trigger
+        if (typeof playSound === 'function') {
+          playSound('shutter');
+        }
+      });
+    });
+  })();
+
   // Expose modal API to window
   window.openProjectPreview = openProjectPreview;
   window.setModalMode = setModalMode;

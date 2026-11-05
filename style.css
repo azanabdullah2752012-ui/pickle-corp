@@ -90,6 +90,179 @@
   --sp: clamp(56px, 7vw, 92px);
 }
 
+/* ── Multi-Palette Studio Themes (Preserving original earth palette while unlocking alternative worlds) ── */
+[data-theme="warm"] {
+  --bg-canvas:       #f4eee2;
+  --bg-subtle:       #ebd9c2;
+  --surface-base:    #f4eee2;
+  --surface-raised:  #f0e2cc;
+  --surface-card:    #ffffff;
+  --border:          rgba(60, 32, 10, 0.28);
+  --border-subtle:   rgba(60, 32, 10, 0.16);
+  --text-primary:    #1e130a;
+  --text-secondary:  #362214;
+  --text-muted:      #4e321d;
+  --text-light:      #4e321d;
+  --white:           #1e130a;
+  --ink:             #1e130a;
+  --c1-espresso:     #2e1606;
+  --c2-caramel:      #5a2f0c;
+  --c3-biscuit:      #6b3e14;
+  --c4-dough:        #4a341e;
+  --c5-oatmeal:      #54452e;
+  --c6-sage-cream:   #344128;
+  --c7-celadon:      #2d3b20;
+  --c8-olive:        #2a341b;
+  --c9-forest:       #222b16;
+  --c10-ink:         #1e130a;
+  --card-shadow:     0 4px 18px rgba(46, 22, 6, 0.07), 0 1px 3px rgba(46, 22, 6, 0.05);
+  --card-shadow-hover: 0 14px 38px rgba(46, 22, 6, 0.12), 0 3px 8px rgba(46, 22, 6, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg-canvas:       #0e1117;
+  --bg-subtle:       #161b22;
+  --surface-base:    #0e1117;
+  --surface-raised:  #181d26;
+  --surface-card:    #151922;
+  --border:          rgba(230, 237, 243, 0.18);
+  --border-subtle:   rgba(230, 237, 243, 0.10);
+  --text-primary:    #f0f6fc;
+  --text-secondary:  #c9d1d9;
+  --text-muted:      #8b949e;
+  --text-light:      #8b949e;
+  --white:           #f0f6fc;
+  --ink:             #f0f6fc;
+  --c1-espresso:     #f0f6fc;
+  --c2-caramel:      #e6edf3;
+  --c3-biscuit:      #d29922;
+  --c4-dough:        #b1bac4;
+  --c5-oatmeal:      #8b949e;
+  --c6-sage-cream:   #3fb950;
+  --c7-celadon:      #56d364;
+  --c8-olive:        #3fb950;
+  --c9-forest:       #238636;
+  --c10-ink:         #f0f6fc;
+  --card-shadow:     0 8px 24px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.60);
+}
+
+[data-theme="blueprint"] {
+  --bg-canvas:       #091726;
+  --bg-subtle:       #0f233a;
+  --surface-base:    #091726;
+  --surface-raised:  #122c4a;
+  --surface-card:    #0d2036;
+  --border:          rgba(88, 166, 255, 0.32);
+  --border-subtle:   rgba(88, 166, 255, 0.16);
+  --text-primary:    #f0f6fc;
+  --text-secondary:  #a5d6ff;
+  --text-muted:      #79c0ff;
+  --text-light:      #79c0ff;
+  --white:           #f0f6fc;
+  --ink:             #f0f6fc;
+  --c1-espresso:     #f0f6fc;
+  --c2-caramel:      #79c0ff;
+  --c3-biscuit:      #e3b341;
+  --c4-dough:        #a5d6ff;
+  --c5-oatmeal:      #79c0ff;
+  --c6-sage-cream:   #56d364;
+  --c7-celadon:      #7ee787;
+  --c8-olive:        #58a6ff;
+  --c9-forest:       #1f6feb;
+  --c10-ink:         #f0f6fc;
+  --card-shadow:     0 8px 24px rgba(4, 12, 22, 0.55);
+  --card-shadow-hover: 0 16px 36px rgba(4, 12, 22, 0.75);
+}
+
+/* Global Theme Transition */
+body, .home-hero, .section-philosophy, .section-work, .section-collaboration, .section-team, .section-card, .section-contact {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .tactile-member-card,
+[data-theme="blueprint"] .tactile-member-card,
+[data-theme="dark"] .craft-feature-card,
+[data-theme="blueprint"] .craft-feature-card,
+[data-theme="dark"] .tactile-slate,
+[data-theme="blueprint"] .tactile-slate,
+[data-theme="dark"] .philosophy-pillar-card,
+[data-theme="blueprint"] .philosophy-pillar-card,
+[data-theme="dark"] .desk-scene-card,
+[data-theme="blueprint"] .desk-scene-card,
+[data-theme="dark"] .tactile-contact-card,
+[data-theme="blueprint"] .tactile-contact-card {
+  background: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .tactile-section-title,
+[data-theme="blueprint"] .tactile-section-title,
+[data-theme="dark"] .hero-title,
+[data-theme="blueprint"] .hero-title,
+[data-theme="dark"] .pillar-title,
+[data-theme="blueprint"] .pillar-title,
+[data-theme="dark"] .founder-card-name,
+[data-theme="blueprint"] .founder-card-name {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .tactile-section-subtitle,
+[data-theme="blueprint"] .tactile-section-subtitle,
+[data-theme="dark"] .hero-manifest,
+[data-theme="blueprint"] .hero-manifest,
+[data-theme="dark"] .pillar-body,
+[data-theme="blueprint"] .pillar-body {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] #nav.scrolled {
+  background: rgba(14, 17, 23, 0.94);
+  border-color: rgba(230, 237, 243, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+[data-theme="blueprint"] #nav.scrolled {
+  background: rgba(9, 23, 38, 0.94);
+  border-color: rgba(88, 166, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(4, 12, 22, 0.45);
+}
+
+[data-theme="dark"] .nav-logo .logo-mark,
+[data-theme="blueprint"] .nav-logo .logo-mark {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .nav-links a,
+[data-theme="blueprint"] .nav-links a {
+  color: var(--text-secondary) !important;
+}
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="blueprint"] .nav-links a:hover {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .nav-cta,
+[data-theme="blueprint"] .nav-cta {
+  background: #f0f6fc !important;
+  color: #0e1117 !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="dark"] .nav-status-badge,
+[data-theme="blueprint"] .nav-status-badge {
+  background: var(--surface-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .nav-snd-btn,
+[data-theme="blueprint"] .nav-snd-btn {
+  background: var(--surface-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
 /* Accessible focus ring (X14) */
 :focus-visible {
   outline: 2px solid var(--chocolate-plum);
@@ -437,7 +610,7 @@ img { display: block; max-width: 100%; }
 .nav-links a {
   font-size: 0.92rem;
   font-weight: 700;
-  color: #2e1808;
+  color: var(--text-primary);
   transition: color 0.2s, transform 0.2s var(--ease);
   display: inline-block;
   padding: 10px 6px;
@@ -522,6 +695,46 @@ img { display: block; max-width: 100%; }
 @keyframes sndWavePulse {
   0%   { opacity: .3; transform: scale(0.9); }
   100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Studio Palette Switcher Button */
+.nav-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 12px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(46, 22, 6, 0.05);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: all 0.2s var(--ease);
+}
+.nav-theme-btn:hover {
+  border-color: var(--text-primary);
+  background: var(--bg-subtle);
+  transform: translateY(-1px);
+}
+.nav-theme-btn .theme-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d94e34;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+[data-theme="dark"] .nav-theme-btn .theme-dot {
+  background: #3fb950;
+  box-shadow: 0 0 8px rgba(63, 185, 80, 0.6);
+}
+[data-theme="blueprint"] .nav-theme-btn .theme-dot {
+  background: #58a6ff;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
 }
 
 .nav-cta {
@@ -5715,6 +5928,40 @@ body.modal-open {
   padding: 80px 0;
   background: var(--bg-canvas);
 }
+
+/* Kodak 400TX 35mm Studio Film Negative Strip */
+.team-film-strip-wrap {
+  margin: 28px auto 36px;
+  max-width: 980px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(20, 18, 16, 0.28), 0 4px 12px rgba(20, 18, 16, 0.16);
+  background: #141210;
+  padding: 6px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.team-film-strip-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(20, 18, 16, 0.36), 0 6px 16px rgba(20, 18, 16, 0.2);
+}
+.film-negative-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+.film-frame {
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.film-frame:hover {
+  filter: brightness(1.18);
+}
+.film-frame-selected {
+  filter: drop-shadow(0 0 8px rgba(217, 56, 30, 0.4));
+}
+
 .tactile-team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
