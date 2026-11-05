@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=7.1.0" />
+  <link rel="stylesheet" href="style.css?v=7.2.0" />
 </head>
 <body>
   <!-- Fast Studio Intro Stamp Punch (0.6s session preloader) -->
@@ -88,11 +88,14 @@
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" aria-hidden="true"></div>
 
+  <!-- ═══════════════════════════════════════════════════════════ SKIP LINK ══ -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
   <!-- ═══════════════════════════════════════════════════════════ NAV ══ -->
   <nav id="nav" role="navigation" aria-label="Main Navigation">
     <div class="nav-brand-group">
       <a href="#hero" class="nav-logo" aria-label="Pickle Corp Home">
-        <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="nav-logo-torch" width="16" height="34" />
+        <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="nav-logo-torch" width="16" height="34" fetchpriority="high" />
         <span class="logo-mark">Pickle Corp</span>
       </a>
       <div class="nav-status-badge" aria-label="Studio status: Open to collaborations" title="Studio Status: Open to collaborations">
@@ -270,7 +273,7 @@
                   <div class="terminal-line term-status"><span class="term-bullet">&bull;</span> <span id="laptop-sub-status">studio online</span><span class="term-cursor">_</span></div>
                 </div>
                 <div class="laptop-torch-badge-corner" title="Official Studio Torch">
-                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="10" height="21" class="laptop-torch-img" />
+                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="10" height="21" class="laptop-torch-img" fetchpriority="high" />
                 </div>
               </div>
               <div class="laptop-keyboard-chassis"></div>
@@ -2275,7 +2278,7 @@
 
               <div class="card-center-row">
                 <div class="card-brand-lockup">
-                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="card-torch-mark" width="22" height="46" />
+                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="card-torch-mark" width="22" height="46" loading="lazy" decoding="async" />
                   <div>
                     <h3 class="card-title-text">Pickle Corp™</h3>
                     <p class="card-motto-text">Reasonable Agreed Favours. Zero Fiat.</p>
@@ -2336,7 +2339,7 @@
 
               <div class="card-back-split">
                 <div class="card-qr-box" title="Scan to visit Pickle Corp">
-                  <img src="qr-code.svg" alt="Pickle Corp QR Code" class="card-qr-img" width="68" height="68" />
+                  <img src="qr-code.svg" alt="Pickle Corp QR Code" class="card-qr-img" width="68" height="68" loading="lazy" decoding="async" />
                 </div>
 
                 <div class="card-contacts-list">
@@ -2499,7 +2502,7 @@
           <!-- Center-Left: Sealed Studio Dispatch Envelopes Stack -->
           <div class="vignette-envelope" title="Official Studio Dispatch">
             <div class="envelope-torch-seal">
-              <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="9" height="18" class="envelope-torch-img" />
+              <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="9" height="18" class="envelope-torch-img" loading="lazy" decoding="async" />
             </div>
             <div class="vignette-pen"></div>
           </div>
@@ -2558,7 +2561,7 @@
 
         <!-- Vintage Scalloped Postage / Mail Stamp in Corner -->
         <div class="contact-postage-stamp" aria-hidden="true">
-          <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="14" height="30" class="postage-torch-img" />
+          <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="14" height="30" class="postage-torch-img" loading="lazy" decoding="async" />
           <span class="postage-val">BANGALORE</span>
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: #d94e34; font-weight: 800;">₹0.00</span>
           <!-- Wavy Postmark -->
@@ -2578,13 +2581,13 @@
           <div class="form-row form-row-split">
             <div class="form-field">
               <label for="contact-name" class="field-label">Your Name <span class="req-star">*</span></label>
-              <input type="text" id="contact-name" name="name" class="field-input field-input-compact" placeholder="e.g. Alex" required autocomplete="name" />
+              <input type="text" id="contact-name" name="name" class="field-input field-input-compact" placeholder="e.g. Alex" required autocomplete="name" spellcheck="false" />
               <span class="field-error-msg" id="name-error"></span>
             </div>
 
             <div class="form-field">
               <label for="contact-email" class="field-label">Email or Handle <span class="req-star">*</span></label>
-              <input type="email" id="contact-email" name="email" class="field-input field-input-compact" placeholder="e.g. alex@example.com" required autocomplete="email" />
+              <input type="email" id="contact-email" name="email" class="field-input field-input-compact" placeholder="e.g. alex@example.com" required autocomplete="email" inputmode="email" spellcheck="false" />
               <span class="field-error-msg" id="email-error"></span>
             </div>
           </div>
@@ -2593,7 +2596,7 @@
             <div class="form-field">
               <label for="contact-type" class="field-label">Project Type <span class="req-star">*</span></label>
               <select id="contact-type" name="type" class="field-select field-input-compact" required>
-                <option value="" disabled selected>Select category...</option>
+                <option value="" disabled selected>Select category…</option>
                 <option value="landing-page">Website / Landing Page</option>
                 <option value="web-app">Interactive Web App</option>
                 <option value="creative-exp">Creative / Experimental</option>
@@ -2604,14 +2607,14 @@
 
             <div class="form-field">
               <label for="contact-favor" class="field-label">Proposed Favor / Trade</label>
-              <input type="text" id="contact-favor" name="favor" class="field-input field-input-compact" placeholder="e.g. Tutoring, design, pizza, or cool skill" />
+              <input type="text" id="contact-favor" name="favor" class="field-input field-input-compact" placeholder="e.g. Tutoring, design, pizza, or cool skill" autocomplete="off" spellcheck="false" />
               <span class="field-error-msg"></span>
             </div>
           </div>
 
           <div class="form-field" style="margin-bottom: 14px;">
             <label for="contact-idea" class="field-label">Tell us about your idea <span class="req-star">*</span></label>
-            <textarea id="contact-idea" name="idea" class="field-textarea field-input-compact" rows="2" placeholder="What are you trying to build and who is it for?" required></textarea>
+            <textarea id="contact-idea" name="idea" class="field-textarea field-input-compact" rows="2" placeholder="What are you trying to build and who is it for?" required spellcheck="true"></textarea>
             <span class="field-error-msg" id="idea-error"></span>
           </div>
 
@@ -2636,7 +2639,7 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <div class="footer-brand-lockup">
-          <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="footer-logo-torch" width="14" height="30" />
+          <img src="logo-torch.png" alt="Pickle Corp Torch Logo" class="footer-logo-torch" width="14" height="30" loading="lazy" decoding="async" />
           <span class="footer-logo">Pickle Corp</span>
         </div>
         <p class="footer-sub">Independent creative web-development studio for students and young creators.</p>
