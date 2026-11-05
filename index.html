@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=7.2.0" />
+  <link rel="stylesheet" href="style.css?v=7.4.0" />
 </head>
 <body>
   <!-- Fast Studio Intro Stamp Punch (0.6s session preloader) -->
@@ -128,14 +128,15 @@
         </span>
       </button>
       <a class="nav-cta magnetic-btn" href="#contact" data-sound="ping-high">Start a conversation &rarr;</a>
-      <button class="nav-burger" id="burger" aria-label="Toggle navigation menu">
-        <span></span><span></span>
+      <button class="nav-burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-burger-bar" aria-hidden="true"></span>
+        <span class="nav-burger-bar" aria-hidden="true"></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
     <a href="#philosophy"    class="mm-link">Philosophy</a>
     <a href="#work"          class="mm-link">Selected Work</a>
     <a href="#collaboration" class="mm-link">The Trade</a>
@@ -450,7 +451,7 @@
           </div>
         </div>
         <div class="manifesto-charter-box" style="position: relative;">
-          <h4 class="charter-title">Atelier Charter</h4>
+          <h3 class="charter-title">Atelier Charter</h3>
           <ul class="charter-list">
             <li>Zero retainers or invoices</li>
             <li>Direct barter &amp; gear swaps</li>
@@ -1398,7 +1399,7 @@
               <line x1="47" y1="10" x2="50" y2="16" stroke="#bda793" stroke-width="1.4"/>
             </svg>
           </div>
-          <h4 class="favor-title">Teach us a skill</h4>
+          <h3 class="favor-title">Teach us a skill</h3>
           <p class="favor-text">Teach us 3D shaders, music synthesis, or your craft.</p>
           <button type="button" class="btn-favor-propose" data-favor="Teach us a skill" data-sound="switch" aria-label="Propose trade: Teach us a skill">
             <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
@@ -1424,7 +1425,7 @@
               <circle cx="32" cy="19" r="2" fill="#fffefb"/>
             </svg>
           </div>
-          <h4 class="favor-title">Show us your city</h4>
+          <h3 class="favor-title">Show us your city</h3>
           <p class="favor-text">Send local stickers, maps, or postcards.</p>
           <button type="button" class="btn-favor-propose" data-favor="Show us your city" data-sound="switch" aria-label="Propose trade: Show us your city">
             <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
@@ -1452,7 +1453,7 @@
               <line x1="33" y1="42" x2="36" y2="44" stroke="#ab947e" stroke-width="1.2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h4 class="favor-title">Trade cool gear</h4>
+          <h3 class="favor-title">Trade cool gear</h3>
           <p class="favor-text">Retro cameras, mechanical keyboards, or audio pedals.</p>
           <button type="button" class="btn-favor-propose" data-favor="Trade cool gear" data-sound="switch" aria-label="Propose trade: Trade cool gear">
             <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
@@ -1480,7 +1481,7 @@
               </g>
             </svg>
           </div>
-          <h4 class="favor-title">The Student Special</h4>
+          <h3 class="favor-title">The Student Special</h3>
           <p class="favor-text">Study notes, pizza, or wild collaborations.</p>
           <button type="button" class="btn-favor-propose" data-favor="The Student Special" data-sound="switch" aria-label="Propose trade: The Student Special">
             <span>Propose trade</span> <span class="btn-arr" aria-hidden="true">&rarr;</span>
@@ -2660,9 +2661,10 @@
       </div>
 
       <!-- Architectural Studio Colophon & Specifications -->
+      <h2 class="sr-only">Studio Colophon</h2>
       <div class="colophon-spec-matrix">
         <div class="colophon-block">
-          <h4>01 // Typography System</h4>
+          <h3>01 // Typography System</h3>
           <div class="colophon-type-sample">
             <span class="type-sample-display">Cabinet Grotesk 900</span>
             <span class="type-sample-serif">Newsreader Editorial Italic</span>
@@ -2670,7 +2672,7 @@
           </div>
         </div>
         <div class="colophon-block">
-          <h4>02 // Atelier Ink Palette</h4>
+          <h3>02 // Atelier Ink Palette</h3>
           <div class="colophon-palette-swatches" aria-label="Brand ink swatches">
             <span class="palette-swatch-box" style="background: #151311;" title="#151311 Raw Charcoal"></span>
             <span class="palette-swatch-box" style="background: #fdfbf7;" title="#FDFBF7 Atelier Cream"></span>
@@ -2681,7 +2683,7 @@
           <span style="font-size: 0.65rem; margin-top: 6px; display: block; opacity: 0.8;">100% High-Contrast WCAG AA Compliant</span>
         </div>
         <div class="colophon-block">
-          <h4>03 // Studio Telemetry</h4>
+          <h3>03 // Studio Telemetry</h3>
           <div style="line-height: 1.5; font-size: 0.68rem;">
             <div>COORD: 12.9716° N, 77.5946° E</div>
             <div>LOCATION: Bangalore, India</div>

@@ -59,11 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
       burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
     });
     mobileMenu.querySelectorAll('.mm-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
       });
     });
   }
