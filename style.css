@@ -8814,28 +8814,7 @@ html, body {
   overflow: visible;
 }
 
-.ghost-section-num {
-  position: absolute;
-  top: -28px;
-  right: 0;
-  font-family: 'Cabinet Grotesk', sans-serif;
-  font-size: clamp(88px, 13vw, 160px);
-  font-weight: 900;
-  line-height: 0.85;
-  color: var(--c1-espresso, #582f0e);
-  opacity: 0.045;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-
-@media (max-width: 640px) {
-  .ghost-section-num {
-    font-size: 72px;
-    top: -16px;
-    opacity: 0.035;
-  }
-}
+/* Ghost section numbers purged per frontend-design guidance */
 
 /* 2. Architectural Drafting Corner Registration Crosshairs (+) */
 .drafting-reg-mark {
