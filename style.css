@@ -441,6 +441,9 @@ img { display: block; max-width: 100%; }
   color: #634b3e;
   transition: color 0.2s, transform 0.2s var(--ease);
   display: inline-block;
+  padding: 10px 6px;
+  min-height: 44px;
+  line-height: 24px;
   letter-spacing: -0.01em;
   white-space: nowrap;
   text-decoration: none;
@@ -1052,9 +1055,9 @@ img { display: block; max-width: 100%; }
 }
 
 .philosophy-pillar-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(88, 47, 14, 0.28);
-  box-shadow: 0 12px 32px rgba(88, 47, 14, 0.08);
+  border-color: rgba(88, 47, 14, 0.35);
+  box-shadow: 0 4px 16px rgba(88, 47, 14, 0.08);
+  background-color: #fffefb;
 }
 
 .pillar-top-meta {
@@ -1677,6 +1680,11 @@ img { display: block; max-width: 100%; }
   transition: transform 0.28s var(--ease), -webkit-text-stroke-color 0.28s, color 0.28s, filter 0.28s;
   display: inline-block;
 }
+.k-char:focus-visible {
+  outline: 2px solid var(--c1-espresso, #582f0e);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 /* Individual Earthy Letter Colors - All 5 Palette Tones Visible Across PICKLE */
 .k-char[data-letter="P"], .k-char[data-char="P"] {
@@ -1984,9 +1992,9 @@ img { display: block; max-width: 100%; }
 }
 
 .pickle-tenet-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(89, 61, 59, 0.08);
-  border-color: rgba(89, 61, 59, 0.35);
+  box-shadow: 0 4px 16px rgba(89, 61, 59, 0.08);
+  border-color: rgba(89, 61, 59, 0.45);
+  background-color: #ffffff;
 }
 
 .tenet-top {
@@ -2382,9 +2390,9 @@ img { display: block; max-width: 100%; }
 }
 
 .work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(89, 61, 59, 0.08);
-  border-color: rgba(89, 61, 59, 0.35);
+  box-shadow: 0 4px 18px rgba(89, 61, 59, 0.08);
+  border-color: rgba(89, 61, 59, 0.45);
+  background-color: #ffffff;
 }
 
 .work-card-top {
@@ -4395,9 +4403,9 @@ body.modal-open {
 }
 
 .blueprint-cta-btn:hover {
-  transform: translateY(-2px);
   border-color: var(--gold-accent);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Modal Bottom Hardware Ledger Bar */
@@ -5049,9 +5057,9 @@ body.modal-open {
   transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s;
 }
 .service-box:hover {
-  transform: translateY(-2px);
   border-color: var(--c3-biscuit);
-  box-shadow: 0 10px 30px rgba(51, 61, 41, 0.08);
+  box-shadow: 0 4px 14px rgba(51, 61, 41, 0.08);
+  background-color: #fffefb;
 }
 .service-box-top {
   display: flex;
@@ -5301,8 +5309,8 @@ body.modal-open {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .tactile-project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(88, 47, 14, 0.08);
+  box-shadow: 0 4px 18px rgba(88, 47, 14, 0.09);
+  border-color: rgba(88, 47, 14, 0.4);
 }
 
 /* Color theme borders & accents */
@@ -5448,8 +5456,8 @@ body.modal-open {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .btn-project-launch:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(88, 47, 14, 0.28);
+  filter: brightness(1.08);
+  box-shadow: 0 4px 14px rgba(88, 47, 14, 0.28);
 }
 .launch-caramel { background: #7f4f24; }
 .launch-forest { background: #333d29; }
@@ -5475,7 +5483,7 @@ body.modal-open {
 .spec-pill span {
   font-size: 0.68rem;
   text-transform: uppercase;
-  color: #7f4f24;
+  color: #582f0e;
   font-weight: 700;
 }
 .spec-pill strong {
@@ -5514,7 +5522,8 @@ body.modal-open {
   transition: transform 0.25s ease;
 }
 .sticky-favor:hover {
-  transform: translateY(-4px) rotate(1deg);
+  box-shadow: 2px 8px 24px rgba(88, 47, 14, 0.18);
+  filter: brightness(1.02);
 }
 
 .favor-skill {
@@ -5745,8 +5754,9 @@ body.modal-open {
   border-color: rgba(101, 109, 74, 0.22);
 }
 .tactile-member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(88, 47, 14, 0.08);
+  border-color: rgba(88, 47, 14, 0.38);
+  box-shadow: 0 4px 18px rgba(88, 47, 14, 0.08);
+  background: #ffffff;
 }
 
 /* Washi Tape Strip at Card Top */
@@ -6696,9 +6706,9 @@ section {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
 }
 .tactile-project-card:hover {
-  transform: translateY(-4px);
   border-color: #936639;
-  box-shadow: 0 18px 42px rgba(88, 47, 14, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 18px rgba(88, 47, 14, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: #ffffff;
 }
 .tactile-project-card .pcard-body {
   flex: 1;
@@ -7081,8 +7091,8 @@ section {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 .sticky-favor:hover {
-  transform: translateY(-4px) rotate(1deg);
-  box-shadow: 0 16px 36px rgba(88, 47, 14, 0.12);
+  box-shadow: 0 4px 18px rgba(88, 47, 14, 0.12);
+  filter: brightness(1.02);
 }
 .favor-step-num {
   font-family: var(--font-mono);
@@ -7225,7 +7235,8 @@ section {
 .seal-sub {
   font-family: var(--font-body);
   font-size: 0.74rem;
-  color: #7f4f24;
+  color: #582f0e;
+  font-weight: 500;
 }
 
 /* ── Hero Desk Steaming Chai Mug ─────────────────────────────────────────── */
@@ -9606,9 +9617,9 @@ html, body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   font-weight: 700;
-  color: var(--c4-caramel, #7f4f24);
+  color: var(--c1-espresso, #582f0e);
   letter-spacing: 0.08em;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .tag-tl { top: 8px; left: 12px; }
