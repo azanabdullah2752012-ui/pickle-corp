@@ -5415,7 +5415,7 @@ body.modal-open {
    TACTILE SECTIONS (Selected Work & The Trade) — Multi-Font, Multi-Color
    ═══════════════════════════════════════════════════════════════════════════ */
 .section-work, .section-collaboration {
-  padding: clamp(60px, 8vw, 100px) 0;
+  padding: clamp(72px, 8.5vw, 116px) 0;
   position: relative;
   overflow: visible;
 }
@@ -6307,6 +6307,17 @@ body.modal-open {
   color: var(--c10-ink);
   transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
+}
+.field-input::placeholder,
+.field-select::placeholder,
+.field-textarea::placeholder {
+  color: #554a3e;
+  opacity: 1;
+}
+
+/* Typographic orphans & line straggler prevention */
+p, .pcard-description, .pillar-body, .tactile-section-subtitle, .hero-manifest, .card-covenant-quote {
+  text-wrap: pretty;
 }
 .field-input:focus,
 .field-select:focus,
@@ -10571,9 +10582,9 @@ html, body {
 .plaque-sub {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.1em;
-  color: #4a3209;
+  color: #261603;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

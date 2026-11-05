@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="logo-torch.png" />
   <link rel="apple-touch-icon" href="logo-torch.png" />
   
-  <link rel="stylesheet" href="style.css?v=8.4.0" />
+  <link rel="stylesheet" href="style.css?v=8.5.0" />
 </head>
 <body>
   <!-- Cinematic Studio Craft Intro (2-Second Handcrafted Seal) -->
@@ -2657,13 +2657,13 @@
           <div class="form-row form-row-split">
             <div class="form-field">
               <label for="contact-name" class="field-label">Your Name <span class="req-star">*</span></label>
-              <input type="text" id="contact-name" name="name" class="field-input field-input-compact" placeholder="e.g. Alex" required autocomplete="name" spellcheck="false" />
+              <input type="text" id="contact-name" name="name" class="field-input field-input-compact" placeholder="e.g. Alex" required autocomplete="name" spellcheck="false" aria-describedby="name-error" />
               <span class="field-error-msg" id="name-error"></span>
             </div>
 
             <div class="form-field">
               <label for="contact-email" class="field-label">Email or Handle <span class="req-star">*</span></label>
-              <input type="email" id="contact-email" name="email" class="field-input field-input-compact" placeholder="e.g. alex@example.com" required autocomplete="email" inputmode="email" spellcheck="false" />
+              <input type="email" id="contact-email" name="email" class="field-input field-input-compact" placeholder="e.g. alex@example.com" required autocomplete="email" inputmode="email" spellcheck="false" aria-describedby="email-error" />
               <span class="field-error-msg" id="email-error"></span>
             </div>
           </div>
@@ -2671,7 +2671,7 @@
           <div class="form-row form-row-split">
             <div class="form-field">
               <label for="contact-type" class="field-label">Project Type <span class="req-star">*</span></label>
-              <select id="contact-type" name="type" class="field-select field-input-compact" required>
+              <select id="contact-type" name="type" class="field-select field-input-compact" required aria-describedby="type-error">
                 <option value="" disabled selected>Select category…</option>
                 <option value="landing-page">Website / Landing Page</option>
                 <option value="web-app">Interactive Web App</option>
@@ -2690,7 +2690,7 @@
 
           <div class="form-field" style="margin-bottom: 14px;">
             <label for="contact-idea" class="field-label">Tell us about your idea <span class="req-star">*</span></label>
-            <textarea id="contact-idea" name="idea" class="field-textarea field-input-compact" rows="2" placeholder="What are you trying to build and who is it for?" required spellcheck="true"></textarea>
+            <textarea id="contact-idea" name="idea" class="field-textarea field-input-compact" rows="2" placeholder="What are you trying to build and who is it for?" required spellcheck="true" aria-describedby="idea-error"></textarea>
             <span class="field-error-msg" id="idea-error"></span>
           </div>
 
@@ -2721,7 +2721,7 @@
       </div>
 
       <div class="footer-links">
-        <a href="#services">What We Do</a>
+        <a href="#philosophy">Philosophy</a>
         <a href="#collaboration">How We Work</a>
         <a href="#work">Selected Work</a>
         <a href="#team">Team</a>
@@ -2770,6 +2770,6 @@
   </footer>
 
   <script src="lenis.min.js"></script>
-  <script src="script.js?v=8.4.0"></script>
+  <script src="script.js?v=8.5.0"></script>
 </body>
 </html>

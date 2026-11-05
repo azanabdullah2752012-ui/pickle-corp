@@ -1857,13 +1857,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnFlip) btnFlip.addEventListener('click', flipCard);
 
-    // Spacebar to flip when viewing card section
-    window.addEventListener('keydown', (e) => {
-      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        const rect = cardScene.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
+    // Spacebar to flip ONLY when the card scene or flip button has active focus (WCAG 2.1 SC 2.1.1 compliant)
+    cardScene.addEventListener('keydown', (e) => {
+      if ((e.code === 'Space' || e.key === ' ' || e.key === 'Enter') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        flipCard();
+      }
+    });
+
+    // Universal keyboard accessibility handler for custom role="button" elements
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const btn = e.target.closest('[role="button"]:not(button):not(a)');
+        if (btn && btn !== cardScene) {
           e.preventDefault();
-          flipCard();
+          btn.click();
         }
       }
     });
@@ -2366,23 +2374,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   })();
 
-  // 8. Section 03: Propose This Trade Quick-Fill
+  // 8. Section 03: Propose This Trade Quick-Fill (Synced with contact-favor & contact-idea)
   (function initTradeProposalPills() {
     const btns = document.querySelectorAll('.btn-favor-propose');
-    const contactMsg = document.getElementById('contact-message');
+    const contactFavor = document.getElementById('contact-favor');
+    const contactIdea = document.getElementById('contact-idea');
 
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         const favorName = btn.getAttribute('data-favor');
-        if (contactMsg && favorName) {
-          contactMsg.value = `Hi Pickle Corp! I'd love to propose a trade: [${favorName}]. Let's build together!`;
+        if (contactFavor && favorName) {
+          contactFavor.value = favorName;
+        }
+        if (contactIdea) {
+          contactIdea.value = `Hi Pickle Corp! I'd love to propose a trade: [${favorName}]. Let's build together!`;
         }
         if (window.acoustic) window.acoustic.play('switch');
         const contactSection = document.getElementById('contact');
         if (contactSection) {
           contactSection.scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
-            if (contactMsg) contactMsg.focus();
+            if (contactIdea) {
+              contactIdea.focus();
+              contactIdea.select();
+            }
           }, 600);
         }
       });
