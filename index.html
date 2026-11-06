@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pickle Corp — Ideas Deserve Better Than Staying Ideas</title>
+  <meta name="description" content="Pickle Corp is a creative technology collective. We build websites, landing pages, and custom digital experiences — traded for favours, not invoices." />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Font stack: Inter (display/body) + Playfair Display (serif accent) + JetBrains Mono (stamps/labels) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="logo-torch.png" />
+  <link rel="apple-touch-icon" href="logo-torch.png" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-bar" id="scroll-bar" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════ NAVIGATION ══ -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="#" class="nav-logo" aria-label="Pickle Corp — home">
+        <img src="logo-torch.png" alt="" width="28" height="28" class="nav-logo-mark" />
+        <div>
+          <span class="nav-logo-text">Pickle Corp</span>
+          <span class="nav-logo-sub">Creative Technology</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services" class="nav-link">What We Build</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#approach" class="nav-link">Approach</a>
+        <a href="#favour" class="nav-link">The Favour System</a>
+        <a href="#team" class="nav-link">Team</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta desktop-only">Start a Project</a>
+
+      <button
+        class="burger"
+        id="burger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <a href="#services" class="mobile-menu-link mm-close">What We Build</a>
+      <a href="#work" class="mobile-menu-link mm-close">Work</a>
+      <a href="#approach" class="mobile-menu-link mm-close">Approach</a>
+      <a href="#favour" class="mobile-menu-link mm-close">The Favour System</a>
+      <a href="#team" class="mobile-menu-link mm-close">Team</a>
+      <a href="#contact" class="mobile-menu-link mm-close">Start a Project</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <span class="type-mono" style="color: var(--c3-wood);">Ideas deserve better.</span>
+      <span class="stamp" style="color: var(--c3-wood);">EST. 2024</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════ MAIN ══ -->
+  <main id="main-content">
+
+    <!-- ════════════════════════════════════════════════════ 01: HERO ══ -->
+    <section class="hero" aria-label="Introduction">
+
+      <!-- Large ghost background number -->
+      <div class="hero-bg-num" aria-hidden="true">01</div>
+
+      <div class="hero-inner">
+
+        <div class="hero-top">
+
+          <!-- Rotating circular stamp -->
+          <div class="hero-stamp-wrap reveal" aria-hidden="true">
+            <div class="stamp-rotate">
+              <svg viewBox="0 0 108 108" aria-hidden="true">
+                <defs>
+                  <path id="stamp-arc" d="M 54 54 m -40 0 a 40 40 0 1 1 80 0 a 40 40 0 1 1 -80 0" />
+                </defs>
+                <text font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#582f0e" letter-spacing="4.2">
+                  <textPath href="#stamp-arc" startOffset="0%">PICKLE CORP • CREATIVE TECH • </textPath>
+                </text>
+              </svg>
+              <div class="stamp-rotate-inner">
+                <img src="logo-torch.png" alt="Pickle Corp" width="28" height="28" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Main headline -->
+          <div class="hero-headline-wrap">
+            <div class="eyebrow eyebrow-espresso reveal" style="margin-bottom: 20px;">Creative Technology Collective</div>
+            <h1 class="hero-headline reveal reveal-delay-1">
+              Ideas deserve<br>
+              <span class="word-alt">better</span> than<br>
+              <span class="word-serif">staying ideas.</span>
+            </h1>
+          </div>
+
+        </div>
+
+        <div class="hero-bottom">
+
+          <div>
+            <p class="hero-desc reveal">
+              Pickle Corp turns ambitious ideas into thoughtful digital experiences. We build websites, landing pages, and custom tools — for students, startups, and anyone with something worth making.
+            </p>
+            <div class="hero-actions reveal reveal-delay-1">
+              <a href="#contact" class="btn btn-primary">
+                Start a project
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#work" class="btn btn-outline">
+                See our work
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-meta reveal reveal-delay-2">
+            <span class="hero-meta-label">Projects shipped</span>
+            <span class="hero-meta-stat">04</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ 02: TICKER ══ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <!-- Two identical sets for seamless loop -->
+        <div class="ticker-item">
+          <span class="ticker-text">Ideas Deserve Better</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Creative Technology</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Favour-Based Studio</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Students &amp; Startups</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Hand-Built Digital Experiences</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">No Invoices</span>
+          <span class="ticker-sep"></span>
+        </div>
+        <div class="ticker-item" aria-hidden="true">
+          <span class="ticker-text">Ideas Deserve Better</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Creative Technology</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Favour-Based Studio</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Students &amp; Startups</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">Hand-Built Digital Experiences</span>
+          <span class="ticker-sep"></span>
+          <span class="ticker-text">No Invoices</span>
+          <span class="ticker-sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════ 03: SERVICES ══ -->
+    <section id="services" class="services section-pad" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="services-layout">
+
+          <div class="services-left">
+            <div class="eyebrow eyebrow-espresso reveal">What We Build</div>
+            <h2 class="type-h2 services-left-title reveal reveal-delay-1" id="services-heading">
+              Three things.<br>Done properly.
+            </h2>
+            <p class="services-left-desc reveal reveal-delay-2">
+              We focus on what we're good at. We don't claim to do everything. We do three things — and we do them with care.
+            </p>
+          </div>
+
+          <div class="services-grid" role="list">
+
+            <div class="service-item reveal" role="listitem">
+              <span class="service-num type-mono">001</span>
+              <div>
+                <h3 class="service-title">Website Development</h3>
+                <p class="service-desc">
+                  Full websites — from portfolio sites to multi-page platforms. Fast, accessible, and built to last. No page-builder shortcuts.
+                </p>
+                <div class="service-tags">
+                  <span class="tag">HTML &amp; CSS</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Responsive</span>
+                  <span class="tag">Accessible</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item reveal reveal-delay-1" role="listitem">
+              <span class="service-num type-mono">002</span>
+              <div>
+                <h3 class="service-title">Landing Page Development</h3>
+                <p class="service-desc">
+                  Single-purpose pages that convert. For startup pitches, robotics competitions, school clubs, crowdfunding, or any idea that needs a home on the internet.
+                </p>
+                <div class="service-tags">
+                  <span class="tag">Conversion-focused</span>
+                  <span class="tag">Fast Loading</span>
+                  <span class="tag">Mobile-first</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-item reveal reveal-delay-2" role="listitem">
+              <span class="service-num type-mono">003</span>
+              <div>
+                <h3 class="service-title">Custom Digital Experiences</h3>
+                <p class="service-desc">
+                  Interactive tools, creative experiments, and anything that doesn't fit a template. If the idea is interesting, we'll figure out how to build it.
+                </p>
+                <div class="service-tags">
+                  <span class="tag">Interactive</span>
+                  <span class="tag">Canvas</span>
+                  <span class="tag">Experimental</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ 04: WORK ══ -->
+    <section id="work" class="work section-pad" aria-labelledby="work-heading">
+      <div class="container">
+
+        <div class="work-header">
+          <div>
+            <div class="eyebrow eyebrow-cream reveal">Selected Work</div>
+            <h2 class="type-h2 work-title reveal reveal-delay-1" id="work-heading">What we've shipped.</h2>
+          </div>
+          <p class="reveal reveal-delay-2" style="color: var(--c5-tan); font-size: 0.95rem; max-width: 360px; line-height: 1.6;">
+            Real projects. Real people. Everything listed here is live and functional.
+          </p>
+        </div>
+
+        <div class="work-grid">
+
+          <!-- Project 01: Pickle Studio -->
+          <article class="work-card reveal">
+            <div class="work-card-top">
+              <span class="work-card-num type-mono">01 / 04</span>
+              <span class="work-card-status">
+                <span class="work-card-status-dot" aria-hidden="true"></span>
+                Live
+              </span>
+            </div>
+
+            <!-- Visual mockup: canvas builder -->
+            <div class="work-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#141210"/>
+                <!-- toolbar -->
+                <rect width="48" height="220" fill="#1e1b18"/>
+                <rect x="8" y="12" width="32" height="32" rx="3" fill="#333d29"/>
+                <rect x="8" y="52" width="32" height="32" rx="3" fill="transparent" stroke="#b6ad90" stroke-width="1" opacity="0.4"/>
+                <rect x="8" y="92" width="32" height="32" rx="3" fill="transparent" stroke="#b6ad90" stroke-width="1" opacity="0.4"/>
+                <rect x="8" y="132" width="32" height="32" rx="3" fill="transparent" stroke="#b6ad90" stroke-width="1" opacity="0.4"/>
+                <!-- canvas area -->
+                <rect x="60" y="10" width="260" height="200" rx="2" fill="#1a1714" stroke="#2a2520" stroke-width="1"/>
+                <!-- grid dots -->
+                <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="0.8" fill="#b6ad90" opacity="0.15"/>
+                </pattern>
+                <rect x="60" y="10" width="260" height="200" fill="url(#grid)"/>
+                <!-- Elements on canvas -->
+                <rect x="90" y="40" width="80" height="56" rx="3" fill="none" stroke="#936639" stroke-width="1.5"/>
+                <circle cx="220" cy="80" r="38" fill="none" stroke="#656d4a" stroke-width="1.5"/>
+                <path d="M 130 140 L 230 170 L 280 140" fill="none" stroke="#b6ad90" stroke-width="1.5" opacity="0.6"/>
+                <!-- Selection handles -->
+                <rect x="87" y="37" width="6" height="6" fill="#fcfbfa"/>
+                <rect x="167" y="37" width="6" height="6" fill="#fcfbfa"/>
+                <rect x="87" y="93" width="6" height="6" fill="#fcfbfa"/>
+                <rect x="167" y="93" width="6" height="6" fill="#fcfbfa"/>
+                <!-- Label -->
+                <rect x="90" y="30" width="52" height="11" rx="2" fill="#582f0e"/>
+                <text x="94" y="39" font-family="monospace" font-size="7" fill="#fcfbfa" font-weight="600">Rectangle</text>
+                <!-- Right panel -->
+                <rect x="330" y="10" width="82" height="200" rx="2" fill="#1e1b18"/>
+                <rect x="336" y="20" width="70" height="1" fill="#b6ad90" opacity="0.1"/>
+                <text x="336" y="34" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.6" font-weight="500">PROPERTIES</text>
+                <text x="336" y="52" font-family="monospace" font-size="5.5" fill="#b6ad90" opacity="0.5">W  80 · H  56</text>
+                <text x="336" y="66" font-family="monospace" font-size="5.5" fill="#b6ad90" opacity="0.5">X  30 · Y  30</text>
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="work-card-title">Pickle Studio Canvas</h3>
+              <p class="work-card-desc">A 60fps vector layout and drawing engine. Built without a renderer library — raw Canvas 2D API, custom hit-testing, and a reactive state tree.</p>
+            </div>
+
+            <div style="display:flex; gap: 8px; flex-wrap:wrap;">
+              <span class="tag tag-dark">React 19</span>
+              <span class="tag tag-dark">Canvas 2D</span>
+              <span class="tag tag-dark">WebGL</span>
+            </div>
+
+            <a href="https://azanabdullah2752012-ui.github.io/builder/" target="_blank" rel="noopener noreferrer" class="work-card-link">
+              Open project <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- Project 02: SafeSpace -->
+          <article class="work-card reveal reveal-delay-1">
+            <div class="work-card-top">
+              <span class="work-card-num type-mono">02 / 04</span>
+              <span class="work-card-status">
+                <span class="work-card-status-dot" aria-hidden="true"></span>
+                Live
+              </span>
+            </div>
+
+            <div class="work-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#141210"/>
+                <!-- Lock icon large -->
+                <rect x="162" y="60" width="76" height="60" rx="6" fill="none" stroke="#656d4a" stroke-width="1.5"/>
+                <path d="M 178 60 Q 178 36 200 36 Q 222 36 222 60" fill="none" stroke="#656d4a" stroke-width="1.5"/>
+                <circle cx="200" cy="85" r="6" fill="#656d4a"/>
+                <line x1="200" y1="91" x2="200" y2="104" stroke="#656d4a" stroke-width="1.5"/>
+                <!-- Encryption text rows -->
+                <rect x="60" y="145" width="280" height="10" rx="2" fill="#1e1b18"/>
+                <text x="68" y="153.5" font-family="monospace" font-size="6.5" fill="#b6ad90" opacity="0.6">0x7f4b82d9 · AES-256-GCM · CLIENT-SIDE ONLY</text>
+                <rect x="60" y="162" width="200" height="10" rx="2" fill="#1e1b18"/>
+                <text x="68" y="170.5" font-family="monospace" font-size="6.5" fill="#b6ad90" opacity="0.4">NO IP LOGGING · ZERO TRACKING</text>
+                <!-- Label -->
+                <text x="200" y="30" font-family="monospace" font-size="8" fill="#b6ad90" opacity="0.5" text-anchor="middle" font-weight="600">ENCRYPTED REPORT</text>
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="work-card-title">SafeSpace Portal</h3>
+              <p class="work-card-desc">Anonymous student reporting platform. Client-side AES-256-GCM encryption — no server ever sees unencrypted content. Built for a school with a bullying problem.</p>
+            </div>
+
+            <div style="display:flex; gap: 8px; flex-wrap:wrap;">
+              <span class="tag tag-dark">Web Crypto API</span>
+              <span class="tag tag-dark">AES-256-GCM</span>
+              <span class="tag tag-dark">Vanilla JS</span>
+            </div>
+
+            <a href="https://azanabdullah2752012-ui.github.io/anti-bullying/" target="_blank" rel="noopener noreferrer" class="work-card-link">
+              Open project <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- Project 03: Nuvio -->
+          <article class="work-card reveal reveal-delay-2">
+            <div class="work-card-top">
+              <span class="work-card-num type-mono">03 / 04</span>
+              <span class="work-card-status">
+                <span class="work-card-status-dot" aria-hidden="true"></span>
+                Live
+              </span>
+            </div>
+
+            <div class="work-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#141210"/>
+                <!-- Journal interface -->
+                <rect x="60" y="20" width="130" height="180" rx="4" fill="#1e1b18" stroke="#2a2520" stroke-width="1"/>
+                <rect x="60" y="20" width="130" height="36" rx="4" fill="#333d29"/>
+                <text x="75" y="43" font-family="'Inter', sans-serif" font-size="9" fill="#fcfbfa" font-weight="700">Nuvio</text>
+                <text x="145" y="43" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.7">Nov 06</text>
+                <line x1="68" y1="68" x2="182" y2="68" stroke="#b6ad90" stroke-width="0.5" opacity="0.2"/>
+                <text x="68" y="82" font-family="'Inter', sans-serif" font-size="6.5" fill="#b6ad90" opacity="0.5">Today's habits</text>
+                <!-- habit items -->
+                <rect x="68" y="88" width="10" height="10" rx="2" fill="#656d4a"/>
+                <text x="82" y="97" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.7">Morning pages</text>
+                <rect x="68" y="104" width="10" height="10" rx="2" fill="#656d4a"/>
+                <text x="82" y="113" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.7">Code 30 mins</text>
+                <rect x="68" y="120" width="10" height="10" rx="2" fill="none" stroke="#b6ad90" stroke-width="0.8" opacity="0.4"/>
+                <text x="82" y="129" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.4">Evening walk</text>
+                <!-- Sound waves on right -->
+                <rect x="210" y="80" width="4" height="60" rx="2" fill="#936639" opacity="0.9"/>
+                <rect x="222" y="60" width="4" height="100" rx="2" fill="#936639" opacity="0.7"/>
+                <rect x="234" y="90" width="4" height="40" rx="2" fill="#936639" opacity="0.8"/>
+                <rect x="246" y="50" width="4" height="120" rx="2" fill="#936639" opacity="0.6"/>
+                <rect x="258" y="75" width="4" height="70" rx="2" fill="#936639" opacity="0.9"/>
+                <rect x="270" y="95" width="4" height="30" rx="2" fill="#936639" opacity="0.5"/>
+                <rect x="282" y="65" width="4" height="90" rx="2" fill="#936639" opacity="0.8"/>
+                <text x="240" y="175" font-family="monospace" font-size="6.5" fill="#b6ad90" opacity="0.5" text-anchor="middle">3D AMBIENT SOUNDSCAPE</text>
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="work-card-title">Nuvio Journal &amp; OS</h3>
+              <p class="work-card-desc">A calm habit tracker with generative Three.js ambient soundscapes, offline persistence, and a minimal journaling interface designed for focus.</p>
+            </div>
+
+            <div style="display:flex; gap: 8px; flex-wrap:wrap;">
+              <span class="tag tag-dark">React 19</span>
+              <span class="tag tag-dark">Three.js</span>
+              <span class="tag tag-dark">Web Audio</span>
+            </div>
+
+            <a href="https://azanabdullah2752012-ui.github.io/nuvio/" target="_blank" rel="noopener noreferrer" class="work-card-link">
+              Open project <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- Project 04: Foundu Math -->
+          <article class="work-card reveal reveal-delay-3">
+            <div class="work-card-top">
+              <span class="work-card-num type-mono">04 / 04</span>
+              <span class="work-card-status">
+                <span class="work-card-status-dot" aria-hidden="true"></span>
+                Live
+              </span>
+            </div>
+
+            <div class="work-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#141210"/>
+                <!-- Coordinate axes -->
+                <line x1="80" y1="180" x2="340" y2="180" stroke="#b6ad90" stroke-width="1" opacity="0.3"/>
+                <line x1="80" y1="30" x2="80" y2="180" stroke="#b6ad90" stroke-width="1" opacity="0.3"/>
+                <!-- Curve -->
+                <path d="M 100 165 Q 150 160 180 130 Q 210 100 240 80 Q 280 50 320 40" fill="none" stroke="#936639" stroke-width="2"/>
+                <!-- Tangent line -->
+                <line x1="150" y1="168" x2="260" y2="68" stroke="#b6ad90" stroke-width="1" stroke-dasharray="5 3" opacity="0.7"/>
+                <!-- Point on curve -->
+                <circle cx="200" cy="115" r="5" fill="#fcfbfa" stroke="#936639" stroke-width="1.5"/>
+                <!-- Labels -->
+                <text x="84" y="192" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.5">0</text>
+                <text x="204" y="109" font-family="monospace" font-size="6" fill="#fcfbfa" opacity="0.9">P</text>
+                <text x="258" y="62" font-family="monospace" font-size="6" fill="#b6ad90" opacity="0.7">tangent</text>
+                <text x="296" y="38" font-family="monospace" font-size="6" fill="#936639">f(x)</text>
+                <!-- Range scrubber -->
+                <rect x="100" y="195" width="220" height="6" rx="3" fill="#2a2520"/>
+                <rect x="100" y="195" width="130" height="6" rx="3" fill="#656d4a" opacity="0.8"/>
+                <circle cx="230" cy="198" r="6" fill="#fcfbfa"/>
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="work-card-title">Foundu Math</h3>
+              <p class="work-card-desc">A visual calculus engine for exploring derivatives, tangent lines, and geometric relationships in real time — scrubbing the curve, not reading textbooks.</p>
+            </div>
+
+            <div style="display:flex; gap: 8px; flex-wrap:wrap;">
+              <span class="tag tag-dark">Native SVG</span>
+              <span class="tag tag-dark">Calculus Engine</span>
+              <span class="tag tag-dark">60 FPS</span>
+            </div>
+
+            <a href="https://azanabdullah2752012-ui.github.io/FoundU/" target="_blank" rel="noopener noreferrer" class="work-card-link">
+              Open project <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ 05: APPROACH ══ -->
+    <section id="approach" class="approach section-pad" aria-labelledby="approach-heading">
+      <div class="container">
+
+        <div class="approach-header">
+          <div class="eyebrow eyebrow-espresso reveal">Our Approach</div>
+          <h2 class="type-h2 reveal reveal-delay-1" id="approach-heading" style="max-width: 640px;">
+            How we actually work.
+          </h2>
+          <p class="type-serif-pull reveal reveal-delay-2" style="margin-top: 20px; max-width: 540px;">
+            "No scrums. No decks. Just three people and a clear idea of what matters."
+          </p>
+        </div>
+
+        <div class="approach-steps">
+
+          <div class="approach-step reveal">
+            <div class="step-num-large" aria-hidden="true">01</div>
+            <div>
+              <span class="eyebrow eyebrow-espresso" style="margin-bottom: 10px;">Understand</span>
+              <h3 class="step-title">Your idea, clearly.</h3>
+            </div>
+            <p class="step-desc">
+              We start by understanding what you're actually trying to do — not just what you're asking for. What's the goal? Who's the audience? What does success look like for this specific project?
+            </p>
+          </div>
+
+          <div class="approach-step reveal reveal-delay-1">
+            <div class="step-num-large" aria-hidden="true">02</div>
+            <div>
+              <span class="eyebrow eyebrow-espresso" style="margin-bottom: 10px;">Agree</span>
+              <h3 class="step-title">On scope and the favour.</h3>
+            </div>
+            <p class="step-desc">
+              We define exactly what we're building — and we agree on a fair favour in return. No ambiguity. No surprises. If the scope changes, we talk about it.
+            </p>
+          </div>
+
+          <div class="approach-step reveal reveal-delay-2">
+            <div class="step-num-large" aria-hidden="true">03</div>
+            <div>
+              <span class="eyebrow eyebrow-espresso" style="margin-bottom: 10px;">Build &amp; ship</span>
+              <h3 class="step-title">Something that works.</h3>
+            </div>
+            <p class="step-desc">
+              We build it properly — accessible, responsive, performant. We test it. We hand it over with documentation so you actually understand what you've got.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ 06: FAVOUR ══ -->
+    <section id="favour" class="favour section-pad" aria-labelledby="favour-heading">
+      <div class="container">
+
+        <div class="favour-layout">
+
+          <div class="favour-left">
+            <div class="eyebrow eyebrow-cream reveal">The Favour System</div>
+            <h2 class="type-h2 favour-headline reveal reveal-delay-1" id="favour-heading">
+              No invoices.<br>No retainers.<br>No nonsense.
+            </h2>
+            <p class="favour-desc reveal reveal-delay-2">
+              Pickle Corp operates on a favour-based model. Instead of a price list, we agree on a mutual contribution — something that feels fair to both sides.
+            </p>
+
+            <blockquote class="favour-pull reveal reveal-delay-3">
+              "The best projects don't start with a quote. They start with a conversation."
+            </blockquote>
+          </div>
+
+          <div>
+            <div class="favour-steps reveal">
+              <div class="favour-step">
+                <span class="favour-step-num type-mono">01</span>
+                <div>
+                  <h3 class="favour-step-title">You explain your idea</h3>
+                  <p class="favour-step-desc">Tell us what you're building, who it's for, and what you need. The more context, the better the conversation.</p>
+                </div>
+              </div>
+              <div class="favour-step">
+                <span class="favour-step-num type-mono">02</span>
+                <div>
+                  <h3 class="favour-step-title">We discuss it together</h3>
+                  <p class="favour-step-desc">We ask questions. We define what's realistic. We figure out what a good outcome looks like — before anyone agrees to anything.</p>
+                </div>
+              </div>
+              <div class="favour-step">
+                <span class="favour-step-num type-mono">03</span>
+                <div>
+                  <h3 class="favour-step-title">We agree on a favour</h3>
+                  <p class="favour-step-desc">Not money. Something genuinely useful — a contribution, a collaboration, spreading the word, or another mutually agreed exchange.</p>
+                </div>
+              </div>
+              <div class="favour-step">
+                <span class="favour-step-num type-mono">04</span>
+                <div>
+                  <h3 class="favour-step-title">We build and hand over</h3>
+                  <p class="favour-step-desc">We work on the project according to the agreed scope and hand it over with the context you need to actually use it.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="favour-examples reveal reveal-delay-1">
+              <p class="favour-examples-title">What counts as a favour?</p>
+              <ul class="favour-examples-list">
+                <li class="favour-example-item">
+                  <span class="favour-example-bullet" aria-hidden="true">—</span>
+                  Helping Pickle Corp with something in your area of expertise
+                </li>
+                <li class="favour-example-item">
+                  <span class="favour-example-bullet" aria-hidden="true">—</span>
+                  Sharing the project — genuinely, with people who'd care about it
+                </li>
+                <li class="favour-example-item">
+                  <span class="favour-example-bullet" aria-hidden="true">—</span>
+                  A creative or technical collaboration on a future Pickle Corp project
+                </li>
+                <li class="favour-example-item">
+                  <span class="favour-example-bullet" aria-hidden="true">—</span>
+                  Connecting us with people building interesting things
+                </li>
+                <li class="favour-example-item">
+                  <span class="favour-example-bullet" aria-hidden="true">—</span>
+                  Any other exchange that both parties genuinely agree is fair
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ 07: TEAM ══ -->
+    <section id="team" class="team section-pad" aria-labelledby="team-heading">
+      <div class="container">
+
+        <div class="team-header">
+          <div class="eyebrow eyebrow-espresso reveal">The Team</div>
+          <h2 class="type-h2 reveal reveal-delay-1" id="team-heading" style="max-width: 560px;">
+            Three people.<br>One collective.
+          </h2>
+        </div>
+
+        <div class="team-grid">
+
+          <!-- Thanvi -->
+          <div class="team-card reveal">
+            <div class="team-avatar avatar-thanvi" aria-hidden="true">T</div>
+            <div>
+              <p class="team-role">CEO &amp; Coordination</p>
+              <h3 class="team-name">Thanvi</h3>
+            </div>
+            <p class="team-desc">
+              Keeps the team aligned and projects moving. Thanvi connects ideas to execution — making sure the right conversations happen at the right time and that nothing falls through the gaps.
+            </p>
+            <div style="display:flex; gap: 8px; flex-wrap:wrap; margin-top: auto;">
+              <span class="tag">Strategy</span>
+              <span class="tag">Coordination</span>
+              <span class="tag">Art Direction</span>
+            </div>
+          </div>
+
+          <!-- Azan -->
+          <div class="team-card reveal reveal-delay-1">
+            <div class="team-avatar avatar-azan" aria-hidden="true">A</div>
+            <div>
+              <p class="team-role">Technology &amp; COO</p>
+              <h3 class="team-name">Azan</h3>
+            </div>
+            <p class="team-desc">
+              Builds the technical foundation. Azan architects the systems — 60fps canvas engines, cryptography implementations, accessible interfaces, and the infrastructure that makes projects work reliably.
+            </p>
+            <div style="display:flex; gap: 8px; flex-wrap:wrap; margin-top: auto;">
+              <span class="tag">Engineering</span>
+              <span class="tag">Canvas 2D</span>
+              <span class="tag">Web Crypto</span>
+            </div>
+          </div>
+
+          <!-- Viren -->
+          <div class="team-card reveal reveal-delay-2">
+            <div class="team-avatar avatar-viren" aria-hidden="true">V</div>
+            <div>
+              <p class="team-role">Head of Marketing</p>
+              <h3 class="team-name">Viren</h3>
+            </div>
+            <p class="team-desc">
+              Shapes how Pickle Corp is seen and understood. Viren manages how the collective communicates — ensuring that good work finds the people it's most relevant to.
+            </p>
+            <div style="display:flex; gap: 8px; flex-wrap:wrap; margin-top: auto;">
+              <span class="tag">Marketing</span>
+              <span class="tag">Communications</span>
+              <span class="tag">Growth</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ 08: CTA ══ -->
+    <section id="contact" class="cta-section section-pad" aria-labelledby="cta-heading">
+
+      <!-- Ghost background text -->
+      <div class="cta-bg-text" aria-hidden="true">Go.</div>
+
+      <div class="container cta-inner">
+
+        <span class="cta-label reveal">Start a Project</span>
+
+        <h2 class="cta-headline reveal reveal-delay-1" id="cta-heading">
+          Got an idea?<br>
+          <em>Let's talk about it.</em>
+        </h2>
+
+        <p class="cta-sub reveal reveal-delay-2">
+          Reach out directly. Tell us what you're building, who it's for, and what kind of favour you'd have in mind. We'll take it from there.
+        </p>
+
+        <div class="cta-actions reveal reveal-delay-3">
+          <a
+            href="mailto:pickle.corp.studio@gmail.com"
+            class="btn btn-cream"
+          >
+            Email us
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a
+            href="#"
+            class="btn btn-outline-cream"
+            aria-label="Message Pickle Corp on WhatsApp (number coming soon)"
+          >
+            WhatsApp
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="cta-what-to-include reveal reveal-delay-4">
+          <p class="cta-include-title">What to include in your message</p>
+          <ul class="cta-include-list">
+            <li class="cta-include-item">
+              <span class="cta-include-mark" aria-hidden="true">01</span>
+              A short description of your idea and what you're trying to do
+            </li>
+            <li class="cta-include-item">
+              <span class="cta-include-mark" aria-hidden="true">02</span>
+              Who the project is for and roughly how complex you think it is
+            </li>
+            <li class="cta-include-item">
+              <span class="cta-include-mark" aria-hidden="true">03</span>
+              What kind of favour you'd have in mind — it doesn't need to be final
+            </li>
+            <li class="cta-include-item">
+              <span class="cta-include-mark" aria-hidden="true">04</span>
+              Any references, examples, or existing materials that are relevant
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div>
+          <div style="display:flex; align-items:center; gap: 10px; margin-bottom: 14px;">
+            <img src="logo-torch.png" alt="" width="24" height="24" />
+            <span class="footer-brand-name">Pickle Corp</span>
+          </div>
+          <p class="footer-brand-desc">
+            Creative technology collective. We build digital experiences for students, startups, and anyone with an idea worth making real.
+          </p>
+          <p style="margin-top: 16px; font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: rgba(252,251,250,0.3);">
+            Ideas deserve better than staying ideas.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#services" class="footer-link">What We Build</a>
+            <a href="#work" class="footer-link">Selected Work</a>
+            <a href="#approach" class="footer-link">Our Approach</a>
+            <a href="#favour" class="footer-link">The Favour System</a>
+            <a href="#team" class="footer-link">The Team</a>
+            <a href="#contact" class="footer-link">Start a Project</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Work</p>
+          <nav class="footer-links" aria-label="Project links">
+            <a href="https://azanabdullah2752012-ui.github.io/builder/" target="_blank" rel="noopener noreferrer" class="footer-link">Pickle Studio Canvas ↗</a>
+            <a href="https://azanabdullah2752012-ui.github.io/anti-bullying/" target="_blank" rel="noopener noreferrer" class="footer-link">SafeSpace Portal ↗</a>
+            <a href="https://azanabdullah2752012-ui.github.io/nuvio/" target="_blank" rel="noopener noreferrer" class="footer-link">Nuvio Journal &amp; OS ↗</a>
+            <a href="https://azanabdullah2752012-ui.github.io/FoundU/" target="_blank" rel="noopener noreferrer" class="footer-link">Foundu Math ↗</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 Pickle Corp. Creative Technology Collective.</span>
+        <span class="footer-philosophy">Ideas deserve better than staying ideas.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
