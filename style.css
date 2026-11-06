@@ -26,10 +26,11 @@
   --border-dark:    rgba(252, 251, 250, 0.12);
 
   /* Typography */
-  --font-display: 'Cabinet Grotesk', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-serif:   'Playfair Display', Georgia, serif;
-  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  --font-display: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:   'Instrument Serif', Georgia, serif;
+  --font-mono:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code:    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Spacing scale */
   --space-1: 4px;
@@ -151,11 +152,12 @@ ul, ol { list-style: none; }
 }
 
 .type-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
 }
 
 /* ── Layout Utilities ─────────────────────────────────────────────────────── */
@@ -245,10 +247,10 @@ ul, ol { list-style: none; }
 
 /* Number label */
 .num-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: clamp(4rem, 8vw, 7rem);
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   line-height: 1;
   color: var(--c5-tan);
   user-select: none;
@@ -257,12 +259,13 @@ ul, ol { list-style: none; }
 /* Eyebrow */
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: var(--space-4);
+  font-feature-settings: 'tnum' 1, 'zero' 1;
 }
 
 .eyebrow-cream { color: var(--c5-tan); }
