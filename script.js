@@ -2087,138 +2087,249 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TACTILE MAKER ATELIER: INTERACTIVE SANDBOXES, PROPS & HUD TELEMETRY
+  // MAKER WORKSHOP CONSOLE: GUMMY PLAYGROUND, LIVE TERMINAL & QUICK CANVAS
+  // Emil Kowalski Physics & Interactive Micro-Interactions
   // ═══════════════════════════════════════════════════════════════════════════
+  (function initMakerWorkshop() {
+    // 1. Tab Switching
+    const tabs = document.querySelectorAll('.workshop-tab');
+    const panes = document.querySelectorAll('.workshop-stage-pane');
+    if (!tabs.length || !panes.length) return;
 
-  // 1. Hero Laptop Live Terminal Simulation
-  (function initHeroLaptop() {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabKey = tab.getAttribute('data-tab');
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panes.forEach(p => {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        });
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const targetPane = document.getElementById(`pane-${tabKey}`);
+        if (targetPane) {
+          targetPane.classList.add('active');
+          targetPane.style.display = 'block';
+        }
+
+        if (window.acoustic) window.acoustic.play('switch');
+
+        if (tabKey === 'mascot' && window.heroGummy) {
+          window.heroGummy.hop(36, 500);
+        }
+        if (tabKey === 'doodle') {
+          setTimeout(initDoodleCanvas, 80);
+        }
+      });
+    });
+
+    // 2. Gummy Mascot Interactions & Emil Kowalski Spring Actions
+    const gummyEl = document.getElementById('gummy-hero');
+    const bubble = document.getElementById('gummy-bubble');
+    const btnHop = document.getElementById('btn-gummy-hop');
+    const btnBlush = document.getElementById('btn-gummy-blush');
+    const btnSquish = document.getElementById('btn-gummy-squish');
+
+    const funQuotes = [
+      '🍡 "Boing! Built after homework!"',
+      '✨ "100% vanilla code, zero bloat!"',
+      '🚀 "60 FPS native canvas calibrated!"',
+      '🤝 "We trade code for vintage gear & skills!"',
+      '🔥 "3 makers, zero corporate pitch decks!"'
+    ];
+    let quoteIdx = 0;
+
+    function nextBubble(text) {
+      if (!bubble) return;
+      bubble.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        const span = bubble.querySelector('span');
+        if (span) span.textContent = text || funQuotes[quoteIdx % funQuotes.length];
+        quoteIdx++;
+        bubble.style.transform = 'scale(1.05)';
+        setTimeout(() => bubble.style.transform = '', 200);
+      }, 120);
+    }
+
+    if (gummyEl) {
+      gummyEl.addEventListener('click', () => {
+        if (window.heroGummy) window.heroGummy.hop(44, 550);
+        nextBubble();
+        if (window.acoustic) window.acoustic.play('ping-high');
+      });
+    }
+
+    if (btnHop) {
+      btnHop.addEventListener('click', () => {
+        if (window.heroGummy) window.heroGummy.hop(52, 600);
+        nextBubble('✨ "Wheee! Spring physics in action!"');
+        if (window.acoustic) window.acoustic.play('ping-high');
+      });
+    }
+
+    if (btnBlush) {
+      btnBlush.addEventListener('click', () => {
+        if (gummyEl) {
+          gummyEl.classList.remove('is-squishing');
+          void gummyEl.offsetWidth;
+          gummyEl.classList.add('is-squishing');
+        }
+        nextBubble('😊 "Aww, thanks! We love writing code!"');
+        if (window.acoustic) window.acoustic.play('tea');
+      });
+    }
+
+    if (btnSquish) {
+      btnSquish.addEventListener('click', () => {
+        if (gummyEl) {
+          gummyEl.classList.remove('is-squishing');
+          void gummyEl.offsetWidth;
+          gummyEl.classList.add('is-squishing');
+        }
+        nextBubble('🍡 "Squiiish! Elastic spring recovery!"');
+        if (window.acoustic) window.acoustic.play('caliper');
+      });
+    }
+
+    // 3. Live Terminal Deploy Trace Advance
     const laptop = document.getElementById('hero-laptop');
-    if (!laptop) return;
-
     const logLine = document.getElementById('laptop-log-line');
     const subStatus = document.getElementById('laptop-sub-status');
+    const btnAdvance = document.getElementById('btn-term-advance');
 
     const traces = [
-      { log: '[ok] 60fps canvas engine ready', status: 'studio online' },
-      { log: '[ok] 4 bespoke apps (0kb bloat)', status: '100% vanilla TS' },
-      { log: '[ok] pure craft • barter mode on', status: 'favors over cash' },
-      { log: '[ok] Gummy physics: calibrated', status: 'after-school sprint' },
-      { log: '[ok] all systems green • released', status: 'ready to trade' }
+      { log: '[ok] 4 bespoke apps compiled (0kb bloat)', status: 'all systems green • 3 makers' },
+      { log: '[ok] 60fps native canvas engine calibrated', status: 'retina scaling ready' },
+      { log: '[ok] Web Audio sound bank active', status: 'acoustic synth online' },
+      { log: '[ok] barter protocol active: favors > cash', status: 'ready to trade' },
+      { log: '[ok] deployed to edge • zero dependencies', status: 'shipped after school' }
     ];
-
     let traceIdx = 0;
 
     function advanceTrace() {
       traceIdx = (traceIdx + 1) % traces.length;
       if (logLine) logLine.textContent = traces[traceIdx].log;
       if (subStatus) subStatus.textContent = traces[traceIdx].status;
-      laptop.classList.add('terminal-flash');
-      setTimeout(() => laptop.classList.remove('terminal-flash'), 350);
-    }
-
-    laptop.addEventListener('click', () => {
-      advanceTrace();
+      if (laptop) {
+        laptop.style.borderColor = 'rgba(74, 222, 128, 0.5)';
+        setTimeout(() => laptop.style.borderColor = '', 350);
+      }
       if (window.acoustic) window.acoustic.play('keystroke');
-    });
-
-    laptop.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        advanceTrace();
-        if (window.acoustic) window.acoustic.play('keystroke');
-      }
-    });
-
-    // Gentle auto-tick every 4.8 seconds
-    setInterval(advanceTrace, 4800);
-  })();
-
-  // 2. Interactive Chai Mug Clink & Steam
-  // 2. Interactive Chai Mug Clink & Steam
-  (function initChaiMug() {
-    const mug = document.getElementById('hero-chai-mug');
-    if (!mug) return;
-
-    let clinkTimeout = null;
-    let sipCount = 0;
-    const toast = document.getElementById('mug-toast');
-    const sipPhrases = [
-      '☕ Sip #1: Warm cardamom chai!',
-      '☕ Sip #2: Coding fuel replenished!',
-      '☕ Sip #3: 3 students, 0 caffeine crashes!',
-      '☕ Sip #4: Pure artisanal ginger brew!',
-      '☕ Sip #5: Ready to ship pure craft!'
-    ];
-
-    mug.addEventListener('click', () => {
-      if (window.acoustic) window.acoustic.play('tea');
-      mug.classList.add('mug-clinked');
-      clearTimeout(clinkTimeout);
-      sipCount++;
-      if (toast) {
-        toast.textContent = sipPhrases[(sipCount - 1) % sipPhrases.length];
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateX(-50%) translateY(0)';
-      }
-      clinkTimeout = setTimeout(() => {
-        mug.classList.remove('mug-clinked');
-        if (toast) {
-          toast.style.opacity = '0';
-          toast.style.transform = 'translateX(-50%) translateY(6px)';
-        }
-      }, 2200);
-    });
-
-    mug.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        mug.click();
-      }
-    });
-  })();
-
-  // 3. Vignette Props (subtle hover & click feedback)
-  (function initVignetteProps() {
-    const props = document.querySelectorAll('.vignette-prop[data-prop]');
-    props.forEach(prop => {
-      const type = prop.getAttribute('data-prop');
-      const soundType = prop.getAttribute('data-sound') || 'switch';
-
-      prop.addEventListener('click', () => {
-        if (window.acoustic) window.acoustic.play(soundType);
-
-        if (type === 'bell') {
-          prop.classList.remove('bell-ringing');
-          void prop.offsetWidth;
-          prop.classList.add('bell-ringing');
-        } else if (type === 'lamp') {
-          prop.classList.toggle('lamp-lit');
-        } else if (type === 'caliper') {
-          prop.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
-          prop.style.transform = 'scale(1.08) rotate(-6deg)';
-          setTimeout(() => prop.style.transform = '', 350);
-        } else if (type === 'pantone') {
-          prop.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
-          prop.style.transform = 'scale(1.08) rotate(6deg)';
-          setTimeout(() => prop.style.transform = '', 350);
-        } else if (type === 'pickle-jar') {
-          prop.style.transition = 'transform 0.25s ease';
-          prop.style.transform = 'scale(1.05)';
-          setTimeout(() => prop.style.transform = '', 250);
-        }
-      });
-    });
-
-    // Auto-sync flip clock to real hours and minutes
-    const flipClockHours = document.getElementById('flip-clock-hours');
-    const flipClockMinutes = document.getElementById('flip-clock-minutes');
-    function syncFlipClock() {
-      const now = new Date();
-      if (flipClockHours) flipClockHours.textContent = String(now.getHours()).padStart(2, '0');
-      if (flipClockMinutes) flipClockMinutes.textContent = String(now.getMinutes()).padStart(2, '0');
     }
-    syncFlipClock();
-    setInterval(syncFlipClock, 1000);
+
+    if (btnAdvance) {
+      btnAdvance.addEventListener('click', advanceTrace);
+    }
+    if (laptop) {
+      laptop.addEventListener('click', (e) => {
+        if (e.target !== btnAdvance) advanceTrace();
+      });
+    }
+
+    // 4. Quick Sketchpad Canvas
+    let doodleInitialized = false;
+    function initDoodleCanvas() {
+      if (doodleInitialized) return;
+      const canvas = document.getElementById('hero-doodle-canvas');
+      if (!canvas) return;
+      doodleInitialized = true;
+
+      const ctx = canvas.getContext('2d');
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+      let currentColor = '#2e1606';
+      let strokeWidth = 3;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        if (rect.width === 0) return;
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = 190 * dpr;
+        ctx.scale(dpr, dpr);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        // Welcoming initial curve
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(217, 78, 52, 0.35)';
+        ctx.lineWidth = 2.5;
+        const midY = 95;
+        for (let x = 20; x < rect.width - 20; x += 4) {
+          const y = midY + Math.sin(x * 0.05) * 22 * Math.sin(x * 0.015);
+          if (x === 20) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = strokeWidth;
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: clientX - rect.left, y: clientY - rect.top };
+      }
+
+      function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        lastX = pos.x;
+        lastY = pos.y;
+        if (window.acoustic) window.acoustic.play('pencil');
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        if (e.cancelable) e.preventDefault();
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = strokeWidth;
+        ctx.stroke();
+        lastX = pos.x;
+        lastY = pos.y;
+      }
+
+      function stopDraw() { isDrawing = false; }
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', draw);
+      window.addEventListener('mouseup', stopDraw);
+      canvas.addEventListener('touchstart', startDraw, { passive: false });
+      canvas.addEventListener('touchmove', draw, { passive: false });
+      window.addEventListener('touchend', stopDraw);
+
+      const swatches = document.querySelectorAll('.hero-swatch');
+      swatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+          swatches.forEach(s => s.classList.remove('active'));
+          swatch.classList.add('active');
+          currentColor = swatch.getAttribute('data-color') || '#2e1606';
+          if (window.acoustic) window.acoustic.play('ping-high');
+        });
+      });
+
+      const clearBtn = document.getElementById('btn-clear-doodle');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (window.acoustic) window.acoustic.play('caliper');
+        });
+      }
+    }
   })();
 
   // 4. Project Card 01: Pickle Studio Interactive Sandbox
@@ -2543,14 +2654,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const frameAzan = document.getElementById('film-frame-azan');
     const frameThanvi = document.getElementById('film-frame-thanvi');
     const frameViren = document.getElementById('film-frame-viren');
-    const memberCards = document.querySelectorAll('.tactile-team-grid .tactile-member-card');
+    const founderAzan = document.getElementById('founder-azan') || document.querySelector('.tactile-member-card:nth-of-type(1)');
+    const founderThanvi = document.getElementById('founder-thanvi') || document.querySelector('.tactile-member-card:nth-of-type(2)');
+    const founderViren = document.getElementById('founder-viren') || document.querySelector('.tactile-member-card:nth-of-type(3)');
 
-    if (!frameAzan || !frameThanvi || !frameViren || memberCards.length < 3) return;
+    if (!frameAzan || !frameThanvi || !frameViren) return;
 
     const frames = [
-      { el: frameAzan, target: memberCards[0] },
-      { el: frameThanvi, target: memberCards[1] },
-      { el: frameViren, target: memberCards[2] }
+      { el: frameAzan, target: founderAzan },
+      { el: frameThanvi, target: founderThanvi },
+      { el: frameViren, target: founderViren }
     ];
 
     frames.forEach(({ el, target }) => {
@@ -2559,20 +2672,24 @@ document.addEventListener('DOMContentLoaded', () => {
         frames.forEach(f => f.el.classList.remove('film-frame-selected'));
         el.classList.add('film-frame-selected');
 
-        // Smooth scroll to card
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (target) {
+          // Smooth scroll to card
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // Flash target card border
-        target.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
-        target.style.borderColor = '#d9381e';
-        target.style.boxShadow = '0 0 24px rgba(217, 56, 30, 0.35)';
-        setTimeout(() => {
-          target.style.borderColor = '';
-          target.style.boxShadow = '';
-        }, 1200);
+          // Flash target card border with terracotta glow
+          target.style.transition = 'box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease';
+          target.style.borderColor = '#d94e34';
+          target.style.boxShadow = '0 0 32px rgba(217, 78, 52, 0.35)';
+          setTimeout(() => {
+            target.style.borderColor = '';
+            target.style.boxShadow = '';
+          }, 1400);
+        }
 
         // Sound trigger
-        if (typeof playSound === 'function') {
+        if (window.acoustic) {
+          window.acoustic.play('shutter');
+        } else if (typeof playSound === 'function') {
           playSound('shutter');
         }
       });

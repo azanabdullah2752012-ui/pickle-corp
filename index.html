@@ -234,171 +234,120 @@
         </div>
       </div>
 
-      <!-- Right Column: Cozy Illustrated Desk Workspace with Laptop, Plant & Authentic Gummy -->
-      <div class="hero-desk-col">
-        <div class="desk-scene-card">
-          <!-- Warm Creative Desk Mat with Student Sketchbook & Doodles -->
-          <div class="desk-blueprint-board" aria-hidden="true">
-            <!-- Open Creative Sketchbook in Workspace Midground -->
-            <div class="desk-sketchbook-open">
-              <svg viewBox="0 0 260 140" width="100%" height="100%" fill="none">
-                <!-- Open Book Pages (Left & Right) -->
-                <rect x="8" y="10" width="118" height="118" rx="4" fill="#ffffff" stroke="#ab947e" stroke-width="1.2"/>
-                <rect x="134" y="10" width="118" height="118" rx="4" fill="#ffffff" stroke="#ab947e" stroke-width="1.2"/>
-                <!-- Center Spiral Wire Rings -->
-                <g stroke="#7f4f24" stroke-width="1.4" opacity="0.7">
-                  <path d="M120 18 Q130 16 138 20"/><path d="M120 32 Q130 30 138 34"/>
-                  <path d="M120 46 Q130 44 138 48"/><path d="M120 60 Q130 58 138 62"/>
-                  <path d="M120 74 Q130 72 138 76"/><path d="M120 88 Q130 86 138 90"/>
-                  <path d="M120 102 Q130 100 138 104"/><path d="M120 116 Q130 114 138 118"/>
-                </g>
-                <!-- Left Page: Wireframe Sketch -->
-                <rect x="20" y="24" width="94" height="52" rx="3" fill="#fcfaf6" stroke="#c2b4a1" stroke-width="1"/>
-                <line x1="20" y1="36" x2="114" y2="36" stroke="#c2b4a1" stroke-width="0.8"/>
-                <rect x="26" y="44" width="36" height="24" rx="2" fill="#eee6d8"/>
-                <line x1="70" y1="48" x2="106" y2="48" stroke="#582f0e" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="70" y1="56" x2="98" y2="56" stroke="#a4ac86" stroke-width="1.2" stroke-linecap="round"/>
-                <line x1="70" y1="64" x2="92" y2="64" stroke="#a4ac86" stroke-width="1.2" stroke-linecap="round"/>
-                <!-- Hand-drawn notes -->
-                <text x="22" y="92" font-family="'Caveat', cursive" font-size="12" fill="#582f0e" font-weight="700">~ 60fps canvas engine</text>
-                <text x="22" y="108" font-family="'Caveat', cursive" font-size="11" fill="#b83218">no frameworks needed!</text>
-                <!-- Right Page: Geometric Compass Doodle -->
-                <circle cx="193" cy="56" r="30" stroke="#bda793" stroke-width="1" stroke-dasharray="3 3"/>
-                <circle cx="193" cy="56" r="18" stroke="#582f0e" stroke-width="1.2"/>
-                <polygon points="193,34 212,68 174,68" fill="none" stroke="#b83218" stroke-width="1.2"/>
-                <text x="193" y="100" text-anchor="middle" font-family="'Caveat', cursive" font-size="13" fill="#444c2f" font-weight="700">pure web craft ✦</text>
-              </svg>
+      <!-- Right Column: Interactive Maker Studio Console & Gummy Playground -->
+      <div class="hero-workshop-col">
+        <div class="maker-workshop-card" id="hero-workshop-card">
+          
+          <!-- Workshop Top Bar -->
+          <div class="workshop-header-bar">
+            <div class="workshop-tabs" role="tablist" aria-label="Studio Workshop Demos">
+              <button class="workshop-tab active" role="tab" aria-selected="true" data-tab="mascot" id="tab-mascot">
+                <span class="tab-sparkle">✦</span> Gummy Mascot
+              </button>
+              <button class="workshop-tab" role="tab" aria-selected="false" data-tab="terminal" id="tab-terminal">
+                <span class="tab-sparkle">&gt;_</span> Live Terminal
+              </button>
+              <button class="workshop-tab" role="tab" aria-selected="false" data-tab="doodle" id="tab-doodle">
+                <span class="tab-sparkle">✎</span> 60fps Canvas
+              </button>
+            </div>
+            
+            <div class="workshop-status-pill">
+              <span class="status-pulse-dot"></span>
+              <span class="status-fps-text">60 FPS LIVE</span>
             </div>
           </div>
-          <!-- Yellow Sticky Note Resting on Desk -->
-          <div class="desk-sticky-note" aria-hidden="true">
-            <div class="sticky-tape-strip"></div>
-            <span class="sticky-text">✦ BUILT AFTER<br>HOMEWORK!</span>
-          </div>
-          <!-- Atmospheric Foliage Framing Right Edge -->
-          <div class="desk-plant-foliage" aria-hidden="true">
-            <svg viewBox="0 0 180 320" width="180" height="320" fill="none">
-              <!-- Leaf 1 Back -->
-              <path d="M120 320 C140 220 160 130 110 50 C140 70 175 120 175 210 C175 270 150 310 120 320Z" fill="#414833" opacity="0.65"/>
-              <!-- Leaf 2 Main -->
-              <path d="M100 320 C120 190 70 100 20 80 C60 70 125 95 140 165 C150 215 130 280 100 320Z" fill="#656d4a" opacity="0.85"/>
-              <!-- Leaf 3 Accent -->
-              <path d="M110 320 C90 230 40 170 5 150 C45 135 90 150 105 200 C112 230 112 285 110 320Z" fill="#a4ac86" opacity="0.45"/>
-            </svg>
-          </div>
 
-          <!-- Ambient Workspace Plate -->
-          <div class="desk-elements-cluster">
-            <!-- Laptop Open on Desk with Official Torch Logo & Live Code Console -->
-            <div class="desk-laptop-wrap">
-              <div class="laptop-screen-chassis" id="hero-laptop" role="button" tabindex="0" aria-label="Interactive studio code terminal (Click to run deploy trace)" title="Interactive Studio Terminal • Click to run next deploy trace!">
-                <div class="laptop-terminal-header">
-                  <div class="laptop-term-dots" aria-hidden="true">
-                    <span class="l-dot l-red"></span>
-                    <span class="l-dot l-yellow"></span>
-                    <span class="l-dot l-green"></span>
+          <!-- Workshop Interactive Display Stages -->
+          <div class="workshop-stage-body">
+            
+            <!-- STAGE 1: Gummy Mascot Interactive Playground -->
+            <div class="workshop-stage-pane active" id="pane-mascot" role="tabpanel" aria-labelledby="tab-mascot">
+              <div class="gummy-playground-box">
+                <!-- Speech bubble above Gummy -->
+                <div class="gummy-speech-wrap">
+                  <div class="gummy-speech-bubble" id="gummy-bubble">
+                    <span>"Poke me, watch my eyes follow you, or click below!"</span>
                   </div>
-                  <span class="laptop-term-file">deploy.ts</span>
-                  <span class="laptop-term-fps" id="laptop-fps-pill">60fps</span>
                 </div>
-                <div class="laptop-terminal-body">
-                  <div class="terminal-line term-prompt"><span class="term-usr">~/pickle</span> <span class="term-cmd">$ run build</span></div>
-                  <div class="terminal-line term-log" id="laptop-log-line">[ok] 60fps canvas ready</div>
-                  <div class="terminal-line term-status"><span class="term-bullet">&bull;</span> <span id="laptop-sub-status">studio online</span><span class="term-cursor">_</span></div>
-                </div>
-                <div class="laptop-torch-badge-corner" title="Official Studio Torch">
-                  <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="10" height="21" class="laptop-torch-img" fetchpriority="high" />
-                </div>
-              </div>
-              <div class="laptop-keyboard-chassis"></div>
-            </div>
 
-            <!-- Authentic Gummy Mascot Sitting Right at Desk -->
-            <div class="desk-mascot-spot">
-              <!-- Hand-drawn Sparks around Gummy -->
-              <div class="gummy-desk-doodles" aria-hidden="true">
-                <svg class="doodle-gummy-sparks" viewBox="0 0 32 24" width="32" height="24" fill="none">
-                  <path d="M6 18L10 12M16 6L16 2M22 12L26 6" stroke="#582f0e" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
+                <!-- Living Mascot Center Stage -->
+                <div class="gummy-hero-stage">
+                  <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Poke me or drag me!" tabindex="0" role="button" aria-label="Interactive Gummy Mascot">
+                    <!-- Gummy SVG is mounted here by script.js -->
+                  </div>
+                </div>
 
-              <div id="gummy-hero" class="gummy-wrap gummy-hero-mascot" title="Drag me, poke me, or watch me hop!">
-                <svg viewBox="0 0 110 90" width="100%" height="100%" aria-hidden="true" style="overflow: visible; display: block;">
-                  <defs>
-                    <radialGradient id="hero-gummy-shadow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#593d3b" stop-opacity="0.28" />
-                      <stop offset="65%" stop-color="#593d3b" stop-opacity="0.08" />
-                      <stop offset="100%" stop-color="#593d3b" stop-opacity="0" />
-                    </radialGradient>
-                    <linearGradient id="hero-gummy-fill" x1="15%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#cdb9a6" />
-                      <stop offset="45%" stop-color="#bda793" />
-                      <stop offset="100%" stop-color="#a8907b" />
-                    </linearGradient>
-                    <radialGradient id="hero-gummy-sheen" cx="36%" cy="22%" r="40%">
-                      <stop offset="0%" stop-color="#dac9b8" stop-opacity="0.5" />
-                      <stop offset="100%" stop-color="#dac9b8" stop-opacity="0" />
-                    </radialGradient>
-                  </defs>
-                  <!-- Ground shadow -->
-                  <ellipse cx="55" cy="84" rx="42" ry="4.5" fill="url(#hero-gummy-shadow)" />
-                  <g class="gummy-body-group" style="transform-origin: 55px 55px;">
-                    <!-- Full round gumdrop — wide tall blob body -->
-                    <ellipse class="gummy-body-shape" cx="55" cy="52" rx="50" ry="48"
-                             fill="url(#hero-gummy-fill)"
-                             stroke="#593d3b" stroke-width="3.4" />
-                    <!-- Sheen overlay -->
-                    <ellipse cx="55" cy="52" rx="50" ry="48" fill="url(#hero-gummy-sheen)" />
-                    <!-- Blush cheeks -->
-                    <ellipse cx="24" cy="60" rx="9.5" ry="5.5" fill="#c0a692" opacity="0.52" />
-                    <ellipse cx="86" cy="60" rx="9.5" ry="5.5" fill="#c0a692" opacity="0.52" />
-                    <!-- Eyes -->
-                    <g class="gummy-eyes-group">
-                      <g class="gummy-eye-left">
-                        <circle cx="39" cy="44" r="6.5" fill="#593d3b" />
-                        <circle cx="36.8" cy="41.8" r="2.3" fill="#ffffff" />
-                      </g>
-                      <g class="gummy-eye-right">
-                        <circle cx="71" cy="44" r="6.5" fill="#593d3b" />
-                        <circle cx="68.8" cy="41.8" r="2.3" fill="#ffffff" />
-                      </g>
-                    </g>
-                    <!-- Blink lines -->
-                    <g class="gummy-eyes-blink" display="none">
-                      <path d="M 32,45 Q 39,38 46,45" fill="none" stroke="#593d3b" stroke-width="3" stroke-linecap="round" />
-                      <path d="M 64,45 Q 71,38 78,45" fill="none" stroke="#593d3b" stroke-width="3" stroke-linecap="round" />
-                    </g>
-                    <!-- Happy smile -->
-                    <path class="gummy-mouth" d="M 43,58 Q 55,70 67,58" fill="none" stroke="#593d3b" stroke-width="3.4" stroke-linecap="round" />
-                    <!-- Little arm nubs -->
-                    <ellipse cx="8" cy="58" rx="8" ry="5.5" fill="#bda793" stroke="#593d3b" stroke-width="3" />
-                    <ellipse cx="102" cy="58" rx="8" ry="5.5" fill="#bda793" stroke="#593d3b" stroke-width="3" />
-                  </g>
-                </svg>
+                <!-- Mascot Physics Action Buttons (Emil Kowalski spring actions) -->
+                <div class="gummy-controls-row">
+                  <button class="gummy-act-btn" id="btn-gummy-hop" title="Make Gummy hop!">
+                    <span class="act-icon">✨</span>
+                    <span>Hop</span>
+                  </button>
+                  <button class="gummy-act-btn" id="btn-gummy-blush" title="Make Gummy blush!">
+                    <span class="act-icon">😊</span>
+                    <span>Blush</span>
+                  </button>
+                  <button class="gummy-act-btn" id="btn-gummy-squish" title="Squish Gummy with spring physics!">
+                    <span class="act-icon">🍡</span>
+                    <span>Squish</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-            <!-- Desk Accessories: Steaming Mug, Books & Ceramic Pencil Cup -->
-            <div class="desk-props-wrap">
-              <!-- Steaming Chai / Coffee Mug -->
-              <div class="desk-mug-wrap" id="hero-chai-mug" role="button" tabindex="0" data-sound="tea" data-prop="tea" aria-label="Fresh steaming chai mug (Click to clink & steam)" title="Fresh chai • Click to clink!">
-                <svg viewBox="0 0 44 48" width="34" height="38" fill="none">
-                  <path class="mug-steam steam-1" d="M16 12 C14 8, 18 6, 16 2" stroke="#ab947e" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-                  <path class="mug-steam steam-2" d="M22 14 C20 9, 24 7, 22 1" stroke="#ab947e" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-                  <path class="mug-steam steam-3" d="M19 10 C17 6, 21 4, 19 0" stroke="#ab947e" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0"/>
-                  <rect x="8" y="16" width="22" height="24" rx="4" fill="#fffefb" stroke="#582f0e" stroke-width="2"/>
-                  <ellipse cx="19" cy="16" rx="11" ry="3.5" fill="#e9d8a6" stroke="#582f0e" stroke-width="1.8"/>
-                  <ellipse cx="19" cy="16" rx="9" ry="2.2" fill="#582f0e"/>
-                  <path d="M30 20 C36 20, 36 32, 30 32" stroke="#582f0e" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-                  <rect x="12" y="24" width="14" height="8" rx="2" fill="#bda793" opacity="0.4"/>
-                </svg>
-                <span class="mug-steam-toast" id="mug-toast" aria-live="polite">☕ Fresh chai!</span>
+            <!-- STAGE 2: Interactive Live Code Terminal -->
+            <div class="workshop-stage-pane" id="pane-terminal" role="tabpanel" aria-labelledby="tab-terminal" style="display: none;">
+              <div class="workshop-terminal-box" id="hero-laptop">
+                <div class="terminal-top-strip">
+                  <div class="terminal-traffic-dots">
+                    <span class="t-dot t-red"></span>
+                    <span class="t-dot t-yellow"></span>
+                    <span class="t-dot t-green"></span>
+                  </div>
+                  <span class="terminal-filename">deploy.ts — 100% vanilla</span>
+                  <button class="btn-term-run" id="btn-term-advance" title="Click to advance build trace">Run ▶</button>
+                </div>
+                <div class="terminal-code-view">
+                  <div class="term-row prompt-row"><span class="usr">~/pickle-corp</span> <span class="cmd">$ run build</span></div>
+                  <div class="term-row log-row" id="laptop-log-line">[ok] 4 bespoke web apps compiled (0kb bloat)</div>
+                  <div class="term-row log-row">[ok] 60fps native canvas engine calibrated</div>
+                  <div class="term-row log-row">[ok] barter protocol active: favors &gt; cash</div>
+                  <div class="term-row status-row"><span class="term-blip">&bull;</span> <span id="laptop-sub-status">all systems green • 3 high school makers</span><span class="term-cursor">_</span></div>
+                </div>
               </div>
             </div>
+
+            <!-- STAGE 3: Quick Sketchpad Canvas -->
+            <div class="workshop-stage-pane" id="pane-doodle" role="tabpanel" aria-labelledby="tab-doodle" style="display: none;">
+              <div class="workshop-canvas-box">
+                <div class="canvas-bar">
+                  <span class="canvas-hint">Sketch freely:</span>
+                  <div class="canvas-swatches">
+                    <button class="hero-swatch active" data-color="#2e1606" style="background:#2e1606;" aria-label="Espresso brush"></button>
+                    <button class="hero-swatch" data-color="#d94e34" style="background:#d94e34;" aria-label="Terracotta brush"></button>
+                    <button class="hero-swatch" data-color="#414833" style="background:#414833;" aria-label="Olive brush"></button>
+                    <button class="hero-swatch" data-color="#bda793" style="background:#bda793;" aria-label="Caramel brush"></button>
+                  </div>
+                  <button class="btn-clear-hero-canvas" id="btn-clear-doodle">Clear</button>
+                </div>
+                <div class="canvas-holder">
+                  <canvas id="hero-doodle-canvas" width="480" height="190"></canvas>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Rich Wooden Desk Base -->
-          <div class="desk-table-wood"></div>
+          <!-- Workshop Bottom Badge -->
+          <div class="workshop-footer-strip">
+            <div class="workshop-foot-left">
+              <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="10" height="21" class="workshop-torch-icon" />
+              <span class="workshop-foot-label">Pickle Corp Studio &bull; Hand-built after school</span>
+            </div>
+            <span class="workshop-foot-badge">FAVORS &gt; INVOICES</span>
+          </div>
+
         </div>
       </div>
 
@@ -507,15 +456,7 @@
       <!-- 3-Pillar Editorial Architecture -->
       <div class="philosophy-pillars-grid">
         <!-- Pillar 01: Code From Scratch -->
-        <article class="philosophy-pillar-card reveal-on-scroll delay-1" style="position: relative;">
-          <!-- Kraft Washi Tape Strip on Corner -->
-          <div class="craft-washi-tape tape-terracotta" style="top: -10px; left: -12px; transform: rotate(-7deg);" aria-hidden="true"></div>
-
-          <div class="pcard-docket-bar">
-            <span class="pcard-docket-id">[ SPEC 01-A // ENGINE ]</span>
-            <span class="pcard-docket-stamp">60FPS CERTIFIED</span>
-          </div>
-
+        <article class="philosophy-pillar-card reveal-on-scroll delay-1">
           <div class="pillar-top-meta">
             <span class="pillar-num">01</span>
             <span class="pillar-telemetry">60FPS // ZERO BLOAT</span>
@@ -539,19 +480,7 @@
         </article>
 
         <!-- Pillar 02: Favors Over Cash -->
-        <article class="philosophy-pillar-card reveal-on-scroll delay-2" style="position: relative;">
-          <!-- Brass Wire Paperclip on Top Edge -->
-          <div class="craft-paperclip" style="top: -14px; right: 28px;" aria-hidden="true">
-            <svg viewBox="0 0 24 44" width="16" height="32" fill="none">
-              <path d="M7 14 L7 34 A5 5 0 0 0 17 34 L17 8 A7 7 0 0 0 3 8 L3 36 A9 9 0 0 0 21 36 L21 16" stroke="#c59b27" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-
-          <div class="pcard-docket-bar">
-            <span class="pcard-docket-id">[ SPEC 02-B // PROTOCOL ]</span>
-            <span class="pcard-docket-stamp">BARTER ONLY</span>
-          </div>
-
+        <article class="philosophy-pillar-card reveal-on-scroll delay-2">
           <div class="pillar-top-meta">
             <span class="pillar-num">02</span>
             <span class="pillar-telemetry">$0.00 // PURE BARTER</span>
@@ -576,11 +505,6 @@
 
         <!-- Pillar 03: Shipped in Days -->
         <article class="philosophy-pillar-card reveal-on-scroll delay-3">
-          <div class="pcard-docket-bar">
-            <span class="pcard-docket-id">[ SPEC 03-C // INTEGRITY ]</span>
-            <span class="pcard-docket-stamp">ZERO INVOICES</span>
-          </div>
-
           <div class="pillar-top-meta">
             <span class="pillar-num">03</span>
             <span class="pillar-telemetry">AFTER-SCHOOL SPRINT</span>
@@ -666,163 +590,12 @@
         </p>
       </div>
 
-      <!-- Illustrated Maker's Drafting Shelf Vignette -->
-      <div class="section-vignette-shelf maker-shelf" aria-hidden="true">
-        <div class="vignette-props-stage">
-
-          <!-- Left: Architectural Blueprint & Brass Drafting Caliper (Tactile Maker Gear) -->
-          <div class="vignette-prop vignette-blueprint-caliper" id="prop-caliper" role="button" tabindex="0" data-sound="caliper" data-prop="caliper" aria-label="Brass Drafting Caliper (Click to ratchet dial)" title="Drafting Caliper • Click to ratchet!">
-            <svg viewBox="0 0 85 105" width="76" height="94" fill="none">
-              <!-- Rolled Blueprint Scroll (angled cylinder) -->
-              <g transform="translate(6, 6) rotate(-10, 25, 50)">
-                <rect x="18" y="12" width="18" height="78" rx="3" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.6"/>
-                <ellipse cx="27" cy="12" rx="9" ry="3.5" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.4"/>
-                <circle cx="27" cy="12" r="2" fill="#1d4ed8"/>
-                <path d="M18 90 C18 94 36 94 36 90" stroke="#1d4ed8" stroke-width="1.4" fill="none"/>
-                <!-- Blueprint grid lines -->
-                <line x1="21" y1="26" x2="33" y2="26" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
-                <line x1="21" y1="38" x2="33" y2="38" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
-                <line x1="21" y1="50" x2="33" y2="50" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
-                <line x1="21" y1="62" x2="33" y2="62" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
-                <line x1="21" y1="74" x2="33" y2="74" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
-                <!-- Paper wrap band with washi label -->
-                <rect x="17" y="44" width="20" height="9" rx="1.5" fill="#f4ebd9" stroke="#bda793" stroke-width="1"/>
-                <text x="27" y="48.5" font-family="'JetBrains Mono', monospace" font-size="4" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">v5.2</text>
-              </g>
-              <!-- Brass Drafting Compass / Caliper -->
-              <g transform="translate(36, 16)">
-                <circle cx="20" cy="12" r="5" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
-                <circle cx="20" cy="12" r="2.2" fill="#fffefb"/>
-                <rect x="18.5" y="4" width="3" height="5" rx="1" fill="#b89728" stroke="#582f0e" stroke-width="1"/>
-                <line x1="18" y1="16" x2="7" y2="76" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-                <line x1="18" y1="16" x2="7" y2="76" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
-                <line x1="22" y1="16" x2="33" y2="76" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-                <line x1="22" y1="16" x2="33" y2="76" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
-                <polygon points="6,76 8,76 7,83" fill="#64748b"/>
-                <polygon points="32,76 34,76 33,83" fill="#1e251b"/>
-                <path d="M11 46 Q20 50 29 46" stroke="#b89728" stroke-width="2.2" fill="none"/>
-                <circle cx="20" cy="48" r="3.2" fill="#7f4f24" stroke="#582f0e" stroke-width="1"/>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Open Drafting Sketchbook with Grid -->
-          <div class="vignette-sketchbook">
-            <div class="sketchbook-grid">
-              <div class="sketchbook-ruler"></div>
-            </div>
-          </div>
-
-          <!-- Mini Gummy Mascot -->
-          <div class="vignette-gummy-mini" title="Gummy is drafting layouts!">
-            <svg viewBox="0 0 110 52" width="100%" height="100%">
-              <defs>
-                <linearGradient id="vg-gummy-body" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#bda793" />
-                  <stop offset="100%" stop-color="#ab947e" />
-                </linearGradient>
-              </defs>
-              <ellipse cx="55" cy="45" rx="42" ry="4" fill="rgba(89, 61, 59, 0.25)" />
-              <path d="M 15,44 C 9,44 6.5,39.5 9,34 C 13.5,23.5 26,12 44,8.5 C 50,7.2 60,7.2 66,8.5 C 84,12 96.5,23.5 101,34 C 103.5,39.5 101,44 95,44 Z"
-                    fill="url(#vg-gummy-body)" stroke="#593d3b" stroke-width="3" stroke-linecap="round" />
-              <ellipse cx="36" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
-              <ellipse cx="74" cy="30" rx="4.6" ry="2.3" fill="#c0a692" />
-              <circle cx="46" cy="26" r="3.3" fill="#593d3b" />
-              <circle cx="44.8" cy="24.8" r="1.1" fill="#ffffff" />
-              <circle cx="64" cy="26" r="3.3" fill="#593d3b" />
-              <circle cx="62.8" cy="24.8" r="1.1" fill="#ffffff" />
-              <path d="M 52.4,27.8 Q 55,30.2 57.6,27.8" fill="none" stroke="#593d3b" stroke-width="2.2" stroke-linecap="round" />
-            </svg>
-          </div>
-
-          <!-- Pencil Pot -->
-          <div class="desk-pencil-pot">
-            <span class="desk-pencil pen-1"></span>
-            <span class="desk-pencil pen-2"></span>
-            <span class="desk-pencil pen-3"></span>
-            <div class="pencil-cup-body"></div>
-          </div>
-
-          <!-- Right: Pantone Color Swatch Fan Deck & Precision Scalpel (Tactile Art Tool) -->
-          <div class="vignette-prop vignette-pantone-deck" id="prop-pantone" role="button" tabindex="0" data-sound="switch" data-prop="pantone" aria-label="Pantone Color Swatch Deck (Click to fan swatches)" title="Pantone Deck • Click to fan colors!">
-            <svg viewBox="0 0 95 95" width="80" height="80" fill="none">
-              <!-- Swatch fan pivot at bottom -->
-              <g transform="translate(28, 12)">
-                <!-- Swatch 1: Espresso (angled -32deg) -->
-                <g transform="rotate(-32, 20, 72)">
-                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#582f0e"/>
-                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#582f0e" font-weight="700">#582</text>
-                </g>
-                <!-- Swatch 2: Olive Green (angled -16deg) -->
-                <g transform="rotate(-16, 20, 72)">
-                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#656d4a"/>
-                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#656d4a" font-weight="700">#656</text>
-                </g>
-                <!-- Swatch 3: Warm Caramel (straight 0deg) -->
-                <g transform="rotate(0, 20, 72)">
-                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#bda793"/>
-                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#7f4f24" font-weight="700">#BDA</text>
-                </g>
-                <!-- Swatch 4: Terracotta Pop (angled 16deg) -->
-                <g transform="rotate(16, 20, 72)">
-                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#d94e34"/>
-                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#d94e34" font-weight="700">#D94</text>
-                </g>
-                <!-- Swatch 5: Cream Canvas (angled 32deg) -->
-                <g transform="rotate(32, 20, 72)">
-                  <rect x="13" y="10" width="14" height="62" rx="2.5" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                  <rect x="14" y="11" width="12" height="22" rx="1.5" fill="#e9d8a6"/>
-                  <text x="15" y="40" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#7f4f24" font-weight="700">#E9D</text>
-                </g>
-                <!-- Brass screw rivet -->
-                <circle cx="20" cy="72" r="4" fill="#d4af37" stroke="#582f0e" stroke-width="1.2"/>
-                <circle cx="20" cy="72" r="1.6" fill="#fffefb"/>
-              </g>
-              <!-- Precision Craft Scalpel resting angled -->
-              <g transform="translate(64, 26) rotate(18)">
-                <rect x="2" y="22" width="6" height="42" rx="2" fill="#333d29" stroke="#1e251b" stroke-width="1"/>
-                <rect x="3" y="13" width="4" height="10" fill="#94a3b8" stroke="#475569" stroke-width="0.8"/>
-                <polygon points="3,13 7,13 7,2 3,8" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-        <div class="vignette-shelf-wood"></div>
-      </div>
-
-      <!-- Vintage Brushed Brass Atelier Archival Plaque -->
-      <div class="atelier-brass-plaque-wrap reveal-on-scroll">
-        <div class="atelier-brass-plaque" aria-label="Atelier Project Registry">
-          <div class="plaque-screw plaque-screw-tl"></div>
-          <div class="plaque-screw plaque-screw-tr"></div>
-          <div class="plaque-screw plaque-screw-bl"></div>
-          <div class="plaque-screw plaque-screw-br"></div>
-          <div class="plaque-inner-frame">
-            <span class="plaque-num">PC-ARCHIVE ✦ 4 VERIFIED BUILDS</span>
-            <span class="plaque-title">HAND-BUILT PROJECTS ✦ 100% PURE CODE</span>
-            <span class="plaque-sub">INDEPENDENT STUDENT STUDIO • FAST 60FPS WEBSITES</span>
-          </div>
-        </div>
-      </div>
-
       <div class="tactile-projects-grid">
 
         <!-- Build 01: Pickle Studio (Full-Width Interactive Showcase) -->
-        <article class="tactile-project-card project-caramel project-card-hero-panoramic reveal-on-scroll" style="position: relative;">
+        <article class="tactile-project-card project-caramel project-card-hero-panoramic reveal-on-scroll">
           <!-- Left Column: Dossier Specs & Launch -->
           <div class="panoramic-left-content">
-            <!-- Handcrafted Brass Binder Clip on Card Edge -->
-            <div class="craft-binder-clip" style="top: -12px; left: 32px;" aria-hidden="true">
-              <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
-                <rect x="6" y="16" width="20" height="12" rx="2" fill="#2d3748" stroke="#1a202c" stroke-width="1.2"/>
-                <path d="M10 16 L10 6 A3 3 0 0 1 16 6 L16 16" stroke="#c59b27" stroke-width="1.8" fill="none"/>
-                <path d="M16 16 L16 6 A3 3 0 0 1 22 6 L22 16" stroke="#c59b27" stroke-width="1.8" fill="none"/>
-              </svg>
-            </div>
 
             <div class="pcard-docket-bar">
               <span class="pcard-docket-id">
@@ -1016,9 +789,7 @@
         </article>
 
         <!-- Build 03: Nuvio Journal -->
-        <article class="tactile-project-card project-forest reveal-on-scroll" style="position: relative;">
-          <!-- Sage-green Washi Tape Strip Pinning Top-Right Corner -->
-          <div class="craft-washi-tape tape-sage" style="top: -8px; right: -10px; transform: rotate(5deg);" aria-hidden="true"></div>
+        <article class="tactile-project-card project-forest reveal-on-scroll">
 
           <div class="pcard-docket-bar">
             <span class="pcard-docket-id">
@@ -1275,143 +1046,10 @@
         </p>
       </div>
 
-      <!-- Illustrated Barter Exchange Shelf Vignette -->
-      <div class="section-vignette-shelf barter-shelf" aria-hidden="true">
-        <div class="vignette-props-stage">
-
-          <!-- Left: Vintage Walkman Cassette Player & Retro Foam Headphones (Tactile Gear) -->
-          <div class="vignette-prop vignette-walkman-set" id="prop-walkman" role="button" tabindex="0" data-sound="tape" data-prop="walkman" aria-label="Vintage Walkman (Click to play/pause lo-fi cassette tape)" title="Vintage Walkman • Click to play cassette tape!">
-            <div class="walkman-speech-badge" id="walkman-now-playing" aria-live="polite"><span>♫ Tape A: Sprint Lo-Fi</span></div>
-            <svg viewBox="0 0 95 95" width="82" height="82" fill="none">
-              <!-- Walkman Main Body -->
-              <rect x="12" y="32" width="44" height="58" rx="4" fill="#334155" stroke="#1e293b" stroke-width="1.8"/>
-              <!-- Faceplate -->
-              <rect x="16" y="36" width="36" height="34" rx="3" fill="#475569" stroke="#1e293b" stroke-width="1"/>
-              <!-- Cassette clear window -->
-              <rect x="20" y="40" width="28" height="20" rx="2" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
-              <!-- Cassette spools & tape ribbon (animated on play) -->
-              <g class="walkman-spool-group walkman-spool-left" style="transform-origin: 28px 50px;">
-                <circle cx="28" cy="50" r="4.5" fill="#0f172a"/>
-                <circle cx="28" cy="50" r="2" fill="#cbd5e1"/>
-                <line x1="28" y1="46" x2="28" y2="54" stroke="#cbd5e1" stroke-width="0.8"/>
-                <line x1="24" y1="50" x2="32" y2="50" stroke="#cbd5e1" stroke-width="0.8"/>
-              </g>
-              <g class="walkman-spool-group walkman-spool-right" style="transform-origin: 40px 50px;">
-                <circle cx="40" cy="50" r="4.5" fill="#0f172a"/>
-                <circle cx="40" cy="50" r="2" fill="#cbd5e1"/>
-                <line x1="40" y1="46" x2="40" y2="54" stroke="#cbd5e1" stroke-width="0.8"/>
-                <line x1="36" y1="50" x2="44" y2="50" stroke="#cbd5e1" stroke-width="0.8"/>
-              </g>
-              <rect x="26" y="48" width="16" height="4" fill="#78350f" opacity="0.85"/>
-              <!-- Physical top control buttons (PLAY / STOP / FF) -->
-              <rect id="walkman-btn-play" x="16" y="27" width="8" height="5" rx="1.5" fill="#94a3b8" stroke="#1e293b" stroke-width="0.8"/>
-              <rect id="walkman-btn-stop" x="26" y="27" width="8" height="5" rx="1.5" fill="#94a3b8" stroke="#1e293b" stroke-width="0.8"/>
-              <rect id="walkman-btn-rec" x="36" y="27" width="8" height="5" rx="1.5" fill="#d94e34" stroke="#1e293b" stroke-width="0.8"/>
-              <!-- Volume dial on side -->
-              <rect x="8" y="48" width="4" height="12" rx="1.5" fill="#64748b" stroke="#1e293b" stroke-width="0.8"/>
-              <!-- 3.5mm headphone cord curling down -->
-              <circle cx="50" cy="36" r="2.2" fill="#0f172a"/>
-              <path d="M50 36 C56 30 62 45 68 52 C72 58 70 70 65 78" stroke="#0f172a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-              <!-- Retro Orange Foam Headphones leaning on side -->
-              <g transform="translate(48, 12)">
-                <path d="M12 42 C12 18 36 12 44 26" stroke="#94a3b8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-                <!-- Orange foam earpad -->
-                <ellipse cx="14" cy="46" rx="9" ry="12" fill="#ea580c" stroke="#c2410c" stroke-width="1.4"/>
-                <ellipse cx="14" cy="46" rx="4" ry="6" fill="#fb923c"/>
-                <rect x="12" y="38" width="4" height="6" fill="#334155" rx="1"/>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Steaming Coffee / Chai Mug -->
-          <div class="vignette-coffee-mug" title="Hot Chai & Coffee">
-            <svg viewBox="0 0 40 50" width="38" height="48" fill="none">
-              <path class="steam-path" d="M16 12 C14 8 18 6 16 2" stroke="#ab947e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-              <path class="steam-path" d="M22 14 C20 10 24 8 22 4" stroke="#ab947e" stroke-width="1.8" stroke-linecap="round" fill="none" style="animation-delay: 0.5s;"/>
-              <path d="M8 18 H30 V38 C30 43 26 46 20 46 C14 46 10 43 10 38 V18 Z" fill="#eee5d8" stroke="#9e7f62" stroke-width="1.6"/>
-              <path d="M30 22 C36 22 36 34 30 34" stroke="#9e7f62" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <ellipse cx="19" cy="18" rx="10" ry="2.5" fill="#7f4f24"/>
-            </svg>
-          </div>
-
-          <!-- Retro Game Cartridge -->
-          <div class="vignette-cartridge" title="Trade Cool Gear">
-            <div class="cartridge-label">PICKLE</div>
-          </div>
-
-          <!-- Postcard with Stamp -->
-          <div class="vignette-envelope" style="width: 64px; height: 42px; padding: 6px; transform: rotate(3deg);" title="Show Us Your City">
-            <div style="position: absolute; top: 4px; right: 5px; width: 14px; height: 16px; border: 1px dashed #7f4f24; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.45rem;">📮</div>
-            <div style="font-family: 'Caveat', cursive; font-size: 0.9rem; color: #582f0e; font-weight: 700;">Hello! ✦</div>
-          </div>
-
-          <!-- Right: The Authentic Artisanal Pickle Corp Mason Jar (Hand-Packed Reserve) -->
-          <div class="vignette-prop vignette-pickle-jar" id="prop-pickle-jar" role="button" tabindex="0" data-sound="clink" data-prop="pickle-jar" aria-label="Pickle Corp Artisan Jar (Click to tap glass)" title="Pickle Jar • Click to tap glass!">
-            <svg viewBox="0 0 85 105" width="74" height="92" fill="none">
-              <!-- Jar shadow -->
-              <ellipse cx="42" cy="98" rx="28" ry="4" fill="rgba(88, 47, 14, 0.18)"/>
-              <!-- Jar body (thick glass) -->
-              <path d="M20 32 L64 32 C68 32 72 36 72 42 L72 90 C72 96 68 98 64 98 L20 98 C16 98 12 96 12 90 L12 42 C12 36 16 32 20 32 Z"
-                    fill="rgba(244, 235, 217, 0.35)" stroke="#7f4f24" stroke-width="1.8"/>
-              <!-- Golden-Olive Dill Brine -->
-              <path d="M14 46 L70 46 C70 46 70 88 68 94 C66 96 62 96 42 96 C22 96 18 96 16 94 C14 88 14 46 14 46 Z"
-                    fill="#808c5c" opacity="0.65"/>
-              <!-- Pickled Cucumbers inside -->
-              <path d="M22 84 C20 74 22 62 26 54 C28 50 33 52 32 58 C30 68 28 78 28 84 C28 88 23 88 22 84 Z"
-                    fill="#414833" stroke="#283618" stroke-width="1.2"/>
-              <circle cx="25" cy="62" r="1" fill="#656d4a"/>
-              <circle cx="28" cy="72" r="1" fill="#656d4a"/>
-              <path d="M36 88 C34 76 35 60 42 50 C46 46 51 48 49 56 C46 66 45 78 44 88 C43 92 37 92 36 88 Z"
-                    fill="#4a5438" stroke="#283618" stroke-width="1.2"/>
-              <circle cx="41" cy="58" r="1.1" fill="#a4ac86"/>
-              <circle cx="44" cy="70" r="1.1" fill="#a4ac86"/>
-              <path d="M52 86 C52 76 56 66 62 58 C65 54 69 57 66 64 C62 72 59 80 58 86 C57 90 53 90 52 86 Z"
-                    fill="#333d29" stroke="#1e251b" stroke-width="1.2"/>
-              <!-- Spices: peppercorns & dill frond -->
-              <circle cx="34" cy="52" r="1.6" fill="#1b1c1e"/>
-              <circle cx="56" cy="54" r="1.4" fill="#1b1c1e"/>
-              <circle cx="24" cy="78" r="1.4" fill="#d4a373"/>
-              <!-- Kraft Paper Jar Label -->
-              <rect x="22" y="62" width="40" height="22" rx="2" fill="#fffefb" stroke="#7f4f24" stroke-width="1.2"/>
-              <rect x="24" y="64" width="36" height="18" fill="none" stroke="#bda793" stroke-width="0.8" stroke-dasharray="2,1"/>
-              <text x="42" y="70" font-family="'JetBrains Mono', monospace" font-size="5" fill="#582f0e" font-weight="800" text-anchor="middle" dominant-baseline="central">PICKLE CORP</text>
-              <text x="42" y="78" font-family="'Caveat', cursive" font-size="6.5" fill="#d94e34" font-weight="700" text-anchor="middle" dominant-baseline="central">Crunch Reserve</text>
-              <!-- Glass reflection highlight -->
-              <path d="M16 42 L16 88" stroke="#ffffff" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
-              <!-- Gingham Checkered Fabric Lid Cover -->
-              <path d="M14 32 C14 26 24 24 42 24 C60 24 70 26 70 32 L72 36 C72 38 68 39 42 39 C16 39 12 38 12 36 Z"
-                    fill="#d94e34" stroke="#582f0e" stroke-width="1.5"/>
-              <!-- Gingham grid lines -->
-              <g opacity="0.4" stroke="#ffffff" stroke-width="1.5">
-                <line x1="22" y1="26" x2="22" y2="38"/>
-                <line x1="32" y1="25" x2="32" y2="39"/>
-                <line x1="42" y1="24" x2="42" y2="39"/>
-                <line x1="52" y1="25" x2="52" y2="39"/>
-                <line x1="62" y1="26" x2="62" y2="38"/>
-                <line x1="16" y1="29" x2="68" y2="29"/>
-                <line x1="14" y1="34" x2="70" y2="34"/>
-              </g>
-              <!-- Twine String Tie around jar neck -->
-              <ellipse cx="42" cy="35" rx="27" ry="3" fill="none" stroke="#7f4f24" stroke-width="2"/>
-              <circle cx="24" cy="36" r="2.5" fill="#bda793" stroke="#582f0e" stroke-width="1"/>
-              <!-- Mini hang tag -->
-              <g transform="translate(14, 46) rotate(12)">
-                <polygon points="4,0 12,0 16,6 16,14 0,14 0,6" fill="#f4ebd9" stroke="#7f4f24" stroke-width="0.8"/>
-                <circle cx="8" cy="3" r="1" fill="#7f4f24"/>
-                <text x="8" y="9" font-family="'JetBrains Mono', monospace" font-size="3" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">★ 100%</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-        <div class="vignette-shelf-wood"></div>
-      </div>
-
       <!-- Real Favor Sticky Notes Board (Equal-Sized 4-Step Cards with Custom Illustrated Badges) -->
       <div class="favors-board reveal-on-scroll">
         
-        <div class="sticky-favor favor-skill" style="position: relative;">
-          <!-- Handcrafted Washi Tape Strip Pinning Favor Board -->
-          <div class="craft-washi-tape tape-kraft" style="top: -10px; left: 16px; transform: rotate(-3deg);" aria-hidden="true"></div>
+        <div class="sticky-favor favor-skill">
           <div class="favor-step-num">STEP 01</div>
           <div class="favor-badge-illu" aria-hidden="true">
             <svg viewBox="0 0 54 54" width="46" height="46" fill="none">
@@ -1755,108 +1393,7 @@
         </p>
       </div>
 
-      <!-- Illustrated Studio Atelier Shelf Vignette (3 Curated Objects, Serene & Balanced) -->
-      <div class="section-vignette-shelf team-shelf" aria-hidden="true">
-        <div class="vignette-props-stage">
 
-          <!-- Left: Vintage Instant Polaroid Camera & Ejected Photo -->
-          <div class="vignette-prop vignette-polaroid-camera" id="prop-polaroid" role="button" tabindex="0" data-sound="shutter" data-prop="polaroid" aria-label="Vintage Polaroid Camera (Click to snap photo)" title="Polaroid Camera • Click to snap photo!">
-            <div class="polaroid-flash-glow" id="polaroid-flash" aria-hidden="true"></div>
-            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
-              <!-- Camera Main Cream Body -->
-              <rect x="10" y="38" width="52" height="42" rx="5" fill="#f8fafc" stroke="#582f0e" stroke-width="1.8"/>
-              <!-- Viewfinder hump on top -->
-              <rect x="16" y="30" width="16" height="9" rx="2" fill="#334155" stroke="#582f0e" stroke-width="1.2"/>
-              <circle cx="24" cy="34" r="2.2" fill="#93c5fd"/>
-              <!-- Rainbow Stripe -->
-              <rect x="34" y="38" width="2.5" height="42" fill="#ef4444"/>
-              <rect x="36.5" y="38" width="2.5" height="42" fill="#f97316"/>
-              <rect x="39" y="38" width="2.5" height="42" fill="#eab308"/>
-              <rect x="41.5" y="38" width="2.5" height="42" fill="#22c55e"/>
-              <rect x="44" y="38" width="2.5" height="42" fill="#3b82f6"/>
-              <!-- Big Center Lens Optic -->
-              <circle cx="28" cy="58" r="14" fill="#1e293b" stroke="#582f0e" stroke-width="1.6"/>
-              <circle cx="28" cy="58" r="10" fill="#0f172a"/>
-              <circle cx="28" cy="58" r="6" fill="#1e3a8a"/>
-              <ellipse cx="25" cy="55" rx="3.5" ry="2" fill="#60a5fa" opacity="0.85" transform="rotate(-30, 25, 55)"/>
-              <!-- Red Shutter Button -->
-              <circle cx="54" cy="46" r="3.8" fill="#d94e34" stroke="#582f0e" stroke-width="1.2"/>
-              <!-- Flash Sensor Window -->
-              <rect x="48" y="56" width="10" height="8" rx="1.5" fill="#cbd5e1" stroke="#582f0e" stroke-width="1"/>
-              <!-- Ejected Square Polaroid Photo -->
-              <g id="polaroid-photo-ejected" class="polaroid-photo-slide" transform="translate(42, 22) rotate(14)">
-                <rect x="0" y="0" width="34" height="42" rx="2" fill="#fffefb" stroke="#ab947e" stroke-width="1.2"/>
-                <rect x="3" y="3" width="28" height="26" fill="#333d29" class="polaroid-film-surface"/>
-                <!-- Mini Gummy Mascot silhouette inside photo -->
-                <path d="M8 23 C6 21 10 14 17 14 C24 14 28 21 26 23 Z" fill="#bda793"/>
-                <circle cx="14" cy="18" r="1.2" fill="#582f0e"/>
-                <circle cx="20" cy="18" r="1.2" fill="#582f0e"/>
-                <text x="17" y="36" font-family="'JetBrains Mono', monospace" font-size="4" fill="#582f0e" font-weight="700" text-anchor="middle" dominant-baseline="central">STUDIO ✦ '26</text>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Center: Anglepoise Architect Drafting Desk Lamp -->
-          <div class="vignette-prop vignette-drafting-lamp" id="prop-lamp" role="button" tabindex="0" data-sound="switch" data-prop="lamp" aria-label="Studio Drafting Lamp (Click to toggle beam)" title="Drafting Lamp • Click to toggle light beam!">
-            <svg viewBox="0 0 95 105" width="82" height="92" fill="none">
-              <!-- Lamp Weighted Base Plinth on shelf -->
-              <ellipse cx="62" cy="88" rx="16" ry="5" fill="#333d29" stroke="#582f0e" stroke-width="1.5"/>
-              <ellipse cx="62" cy="87" rx="10" ry="2.5" fill="#414833"/>
-              <!-- Swivel joint pin -->
-              <circle cx="62" cy="84" r="3" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
-              <!-- Lower arm beam -->
-              <line x1="62" y1="84" x2="48" y2="46" stroke="#414833" stroke-width="3" stroke-linecap="round"/>
-              <line x1="62" y1="84" x2="48" y2="46" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
-              <!-- Tension spring lines -->
-              <line x1="59" y1="78" x2="49" y2="52" stroke="#d4af37" stroke-width="0.9" stroke-dasharray="2,1"/>
-              <!-- Mid pivot elbow joint -->
-              <circle cx="48" cy="46" r="4" fill="#d4af37" stroke="#582f0e" stroke-width="1.2"/>
-              <circle cx="48" cy="46" r="1.6" fill="#fffefb"/>
-              <!-- Upper arm beam leaning forward -->
-              <line x1="48" y1="46" x2="26" y2="28" stroke="#414833" stroke-width="3" stroke-linecap="round"/>
-              <line x1="48" y1="46" x2="26" y2="28" stroke="#582f0e" stroke-width="1" stroke-linecap="round"/>
-              <!-- Lamp Shade Bell / Cone angled down -->
-              <g transform="translate(14, 18) rotate(32, 12, 10)">
-                <path d="M4 14 L12 2 L20 14 Z" fill="#656d4a" stroke="#582f0e" stroke-width="1.4"/>
-                <ellipse cx="12" cy="14" rx="8" ry="3" fill="#fef08a" stroke="#582f0e" stroke-width="1"/>
-                <!-- Warm Glow Light Cone falling downward -->
-                <polygon id="lamp-light-cone" points="4,15 20,15 36,65 -12,65" fill="#fef08a" opacity="0.14" class="lamp-beam-cone"/>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Right: Retro Mechanical Flip Clock (Live Studio Time) -->
-          <div class="vignette-prop vignette-flip-clock" id="prop-clock" role="button" tabindex="0" data-sound="switch" data-prop="clock" aria-label="Retro Flip Clock (Click to flip time)" title="Flip Clock • Click to flip time!">
-            <svg viewBox="0 0 90 90" width="76" height="76" fill="none">
-              <!-- Wooden Housing -->
-              <rect x="8" y="32" width="68" height="46" rx="6" fill="#7f4f24" stroke="#582f0e" stroke-width="1.8"/>
-              <rect x="12" y="36" width="60" height="38" rx="4" fill="#2d3748" stroke="#1a202c" stroke-width="1.4"/>
-              <!-- Brass side tuning dial -->
-              <rect x="76" y="44" width="5" height="14" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
-              <!-- Hours Card (Dynamic Live Hour) -->
-              <g transform="translate(16, 40)">
-                <rect x="0" y="0" width="24" height="30" rx="3" fill="#1a202c" stroke="#4a5568" stroke-width="1"/>
-                <line x1="0" y1="15" x2="24" y2="15" stroke="#000000" stroke-width="1.5"/>
-                <text id="flip-clock-hours" x="12" y="15" font-family="'JetBrains Mono', monospace" font-size="14" fill="#f8fafc" font-weight="900" text-anchor="middle" dominant-baseline="central">15</text>
-              </g>
-              <!-- Center Colon separator -->
-              <circle cx="42" cy="51" r="1.8" fill="#f59e0b"/>
-              <circle cx="42" cy="59" r="1.8" fill="#f59e0b"/>
-              <!-- Minutes Card (Dynamic Live Minute) -->
-              <g transform="translate(44, 40)">
-                <rect x="0" y="0" width="24" height="30" rx="3" fill="#1a202c" stroke="#4a5568" stroke-width="1"/>
-                <line x1="0" y1="15" x2="24" y2="15" stroke="#000000" stroke-width="1.5"/>
-                <text id="flip-clock-minutes" x="12" y="15" font-family="'JetBrains Mono', monospace" font-size="14" fill="#f8fafc" font-weight="900" text-anchor="middle" dominant-baseline="central">42</text>
-              </g>
-              <!-- Tiny brass feet -->
-              <rect x="16" y="78" width="8" height="4" rx="1" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
-              <rect x="60" y="78" width="8" height="4" rx="1" fill="#d4af37" stroke="#582f0e" stroke-width="1"/>
-            </svg>
-          </div>
-
-        </div>
-        <div class="vignette-shelf-wood"></div>
-      </div>
 
       <!-- Kodak 400TX 35mm Studio Film Negative Strip (Founder Roles & Craft) -->
       <div class="team-film-strip-wrap reveal-on-scroll" aria-label="Kodak 400TX 35mm Studio Film Negative Strip">
@@ -2016,10 +1553,7 @@
       <!-- 3-Column Studio Maker Cards -->
       <div class="tactile-team-grid">
         <!-- Member 01: Azan -->
-        <article class="tactile-member-card member-forest reveal-on-scroll delay-1" style="position: relative;">
-          <!-- Handcrafted Kraft Washi Tape Strip -->
-          <div class="craft-washi-tape tape-kraft" style="top: -8px; left: -10px; transform: rotate(-6deg);" aria-hidden="true"></div>
-
+        <article class="tactile-member-card member-forest reveal-on-scroll delay-1" id="founder-azan">
           <div class="founder-dossier-tag">DOSSIER 01/03 // AZAN ABDULLAH // LEAD ARCHITECT</div>
 
           <div class="dossier-top-bar">
@@ -2104,14 +1638,7 @@
         </article>
 
         <!-- Member 02: Thanvi -->
-        <article class="tactile-member-card member-caramel reveal-on-scroll delay-2" style="position: relative;">
-          <!-- Handcrafted Brass Paperclip on Dossier Top Edge -->
-          <div class="craft-paperclip" style="top: -12px; right: 24px;" aria-hidden="true">
-            <svg viewBox="0 0 24 44" width="16" height="30" fill="none">
-              <path d="M7 14 L7 34 A5 5 0 0 0 17 34 L17 8 A7 7 0 0 0 3 8 L3 36 A9 9 0 0 0 21 36 L21 16" stroke="#c59b27" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-
+        <article class="tactile-member-card member-caramel reveal-on-scroll delay-2" id="founder-thanvi">
           <div class="founder-dossier-tag">DOSSIER 02/03 // THANVI // ART &amp; TYPOGRAPHY</div>
 
           <div class="dossier-top-bar">
@@ -2191,10 +1718,7 @@
         </article>
 
         <!-- Member 03: Viren -->
-        <article class="tactile-member-card member-sage reveal-on-scroll delay-3" style="position: relative;">
-          <!-- Handcrafted Terracotta Washi Tape Strip Pinning Corner -->
-          <div class="craft-washi-tape tape-terracotta" style="top: -8px; right: -10px; transform: rotate(4deg);" aria-hidden="true"></div>
-
+        <article class="tactile-member-card member-sage reveal-on-scroll delay-3" id="founder-viren">
           <div class="founder-dossier-tag">DOSSIER 03/03 // VIREN // SYSTEMS &amp; AUDIT</div>
 
           <div class="dossier-top-bar">
@@ -2545,87 +2069,7 @@
         </p>
       </div>
 
-      <!-- Illustrated Studio Dispatch Shelf Vignette (Tactile Postal & Studio Gear) -->
-      <div class="section-vignette-shelf contact-shelf" aria-hidden="true">
-        <div class="vignette-props-stage">
 
-          <!-- Left: Vintage Solid Brass Service Desk Bell (Ring for Inquiry!) -->
-          <div class="vignette-prop vignette-desk-bell" id="prop-bell" role="button" tabindex="0" data-sound="bell" data-prop="bell" aria-label="Solid Brass Service Desk Bell (Ring for inquiry!)" title="Solid Brass Bell • Click to ring chime!">
-            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
-              <!-- Wooden circular base plinth -->
-              <ellipse cx="42" cy="82" rx="30" ry="6" fill="#582f0e" stroke="#331800" stroke-width="1.5"/>
-              <ellipse cx="42" cy="80" rx="26" ry="4" fill="#7f4f24"/>
-              <!-- Polished Brass Dome Bell -->
-              <path d="M18 78 C18 52 28 40 42 40 C56 40 66 52 66 78 Z" fill="#eab308" stroke="#582f0e" stroke-width="1.8"/>
-              <!-- Metallic 3D sheen highlights -->
-              <path d="M22 76 C22 56 30 46 42 46 C44 46 44 43 42 43 C28 43 18 54 18 78 Z" fill="#fde047" opacity="0.6"/>
-              <path d="M54 52 C60 60 64 68 64 78" stroke="#ca8a04" stroke-width="3" fill="none" opacity="0.7"/>
-              <!-- Brass plunger stem & strike button on top -->
-              <rect x="40" y="32" width="4" height="9" fill="#ca8a04" stroke="#582f0e" stroke-width="1.2"/>
-              <ellipse cx="42" cy="32" rx="7" ry="3.5" fill="#eab308" stroke="#582f0e" stroke-width="1.4"/>
-              <circle cx="42" cy="30" r="2.2" fill="#fef08a"/>
-              <!-- Motion chime sparks "Ding!" -->
-              <g class="bell-spark">
-                <text x="42" y="18" font-family="'Caveat', cursive" font-size="12" fill="#d94e34" font-weight="700" text-anchor="middle" dominant-baseline="central">✦ Ding! ✦</text>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Center-Left: Sealed Studio Dispatch Envelopes Stack -->
-          <div class="vignette-envelope" title="Official Studio Dispatch">
-            <div class="envelope-torch-seal">
-              <img src="logo-torch.png" alt="Pickle Corp Torch Logo" width="9" height="18" class="envelope-torch-img" loading="lazy" decoding="async" />
-            </div>
-            <div class="vignette-pen"></div>
-          </div>
-
-          <!-- Center: Faceted Amber Glass Inkwell & Dipped Calligraphy Pen -->
-          <div class="vignette-prop vignette-inkwell-pen" id="prop-inkwell" role="button" tabindex="0" data-sound="pencil" data-prop="inkwell" aria-label="Amber Glass Inkwell & Brass Pen (Click to dip pen)" title="Amber Inkwell • Click to dip pen!">
-            <svg viewBox="0 0 75 90" width="62" height="74" fill="none">
-              <!-- Glass Ink Bottle Base -->
-              <path d="M20 54 L20 80 C20 83 23 85 27 85 L47 85 C51 85 54 83 54 80 L54 54 L48 46 L26 46 Z"
-                    fill="#b45309" stroke="#582f0e" stroke-width="1.6" opacity="0.9"/>
-              <!-- Sepia Ink inside -->
-              <path d="M22 62 L52 62 L52 82 C52 84 50 84 46 84 L28 84 C24 84 22 84 22 82 Z"
-                    fill="#3b1d06"/>
-              <!-- Neck and cork stopper -->
-              <rect x="30" y="38" width="14" height="9" rx="1.5" fill="#d97706" stroke="#582f0e" stroke-width="1.2"/>
-              <polygon points="31,38 43,38 41,32 33,32" fill="#d4a373" stroke="#582f0e" stroke-width="1"/>
-              <!-- Glass facet shine lines -->
-              <line x1="25" y1="56" x2="25" y2="78" stroke="#fef3c7" stroke-width="1.8" opacity="0.6"/>
-              <line x1="37" y1="54" x2="37" y2="82" stroke="#fef3c7" stroke-width="1" opacity="0.4"/>
-              <!-- Vintage Calligraphy Pen resting angled -->
-              <g transform="translate(38, 20) rotate(35)">
-                <rect x="1" y="16" width="4.5" height="48" rx="1.5" fill="#582f0e" stroke="#331800" stroke-width="0.8"/>
-                <rect x="1" y="10" width="4.5" height="7" fill="#d4af37" stroke="#582f0e" stroke-width="0.8"/>
-                <polygon points="1,10 5.5,10 3.25,0" fill="#fef08a" stroke="#582f0e" stroke-width="0.8"/>
-                <line x1="3.25" y1="2" x2="3.25" y2="6" stroke="#582f0e" stroke-width="0.6"/>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Right: Hand-Carved Wooden Rubber Stamp & Brass Ink Box -->
-          <div class="vignette-prop vignette-rubber-stamp" id="prop-stamp" role="button" tabindex="0" data-sound="switch" data-prop="stamp" aria-label="Hand-Carved Rubber Stamp (Click to stamp dispatch)" title="Rubber Stamp • Click to stamp dispatch!">
-            <svg viewBox="0 0 85 95" width="74" height="82" fill="none">
-              <!-- Brass Ink Pad Box -->
-              <rect x="12" y="68" width="38" height="16" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
-              <rect x="15" y="70" width="32" height="12" rx="1" fill="#414833" stroke="#582f0e" stroke-width="0.8"/>
-              <path d="M12 68 L8 50 L46 50 L50 68" fill="#b89728" stroke="#582f0e" stroke-width="1.2"/>
-              <!-- Turned Wooden Handle Rubber Stamp -->
-              <g transform="translate(44, 28)">
-                <rect x="6" y="44" width="28" height="8" rx="2" fill="#d4af37" stroke="#582f0e" stroke-width="1.4"/>
-                <rect x="8" y="52" width="24" height="4" rx="1" fill="#d94e34"/>
-                <path d="M16 44 C16 36 14 26 17 18 C17 10 23 10 23 18 C26 26 24 36 24 44 Z" fill="#7f4f24" stroke="#582f0e" stroke-width="1.4"/>
-                <circle cx="20" cy="10" r="7" fill="#9c6644" stroke="#582f0e" stroke-width="1.4"/>
-                <circle cx="18" cy="8" r="2" fill="#faedcd" opacity="0.6"/>
-                <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="3.2" fill="#582f0e" font-weight="800" text-anchor="middle" dominant-baseline="central">DISPATCH</text>
-              </g>
-            </svg>
-          </div>
-
-        </div>
-        <div class="vignette-shelf-wood"></div>
-      </div>
 
       <div class="contact-safe-wrapper reveal-on-scroll" style="position: relative; overflow: hidden; border-radius: 8px;">
         <!-- Airmail Postal Chevron Ribbon -->

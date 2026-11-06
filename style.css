@@ -10470,4 +10470,483 @@ nav#nav {
   border: 0;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAKER WORKSHOP CONSOLE: INTERACTIVE GUMMY PLAYGROUND, TERMINAL & CANVAS
+   Emil Kowalski Physics & Spring Micro-Interactions
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-swift: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.hero-workshop-col {
+  flex: 1 1 520px;
+  max-width: 580px;
+  width: 100%;
+}
+
+.maker-workshop-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(60, 32, 10, 0.22);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(46, 22, 6, 0.09), 0 2px 8px rgba(46, 22, 6, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-swift);
+}
+
+.maker-workshop-card:hover {
+  box-shadow: 0 26px 64px rgba(46, 22, 6, 0.12), 0 4px 12px rgba(46, 22, 6, 0.06);
+}
+
+.workshop-header-bar {
+  background: #fbf8f2;
+  border-bottom: 1.5px solid rgba(60, 32, 10, 0.16);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.workshop-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.workshop-tab {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #5a3e2a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.22s var(--ease-spring);
+}
+
+.workshop-tab:hover {
+  background: rgba(60, 32, 10, 0.06);
+  color: #1e130a;
+}
+
+.workshop-tab.active {
+  background: #ffffff;
+  border-color: rgba(60, 32, 10, 0.24);
+  color: #1e130a;
+  box-shadow: 0 2px 6px rgba(46, 22, 6, 0.06);
+  transform: translateY(-1px);
+}
+
+.tab-sparkle {
+  color: #d94e34;
+  font-weight: 900;
+}
+
+.workshop-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #2ea043;
+  background: rgba(46, 160, 67, 0.12);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 160, 67, 0.25);
+}
+
+.status-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ea043;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.workshop-stage-body {
+  padding: 22px 24px;
+  min-height: 290px;
+  background: #fffefc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.workshop-stage-pane {
+  width: 100%;
+}
+
+/* ── STAGE 1: Gummy Mascot Playground ─────────────────────────────────────── */
+.gummy-playground-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gummy-speech-wrap {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.gummy-speech-bubble {
+  background: #fbf6ee;
+  border: 1.5px solid rgba(60, 32, 10, 0.2);
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e130a;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(46, 22, 6, 0.05);
+  position: relative;
+  transition: transform 0.3s var(--ease-spring), border-color 0.3s;
+}
+
+.gummy-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #fbf6ee;
+  border-right: 1.5px solid rgba(60, 32, 10, 0.2);
+  border-bottom: 1.5px solid rgba(60, 32, 10, 0.2);
+}
+
+.gummy-hero-stage {
+  margin: 8px 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gummy-hero-mascot {
+  width: 140px;
+  height: 100px;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+
+.gummy-hero-mascot:focus-visible {
+  outline: 2px solid #d94e34;
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+.gummy-hero-mascot.is-squishing {
+  animation: gummy-squish 0.5s var(--ease-spring);
+}
+
+.gummy-hero-mascot.is-hopping {
+  animation: gummy-spring-hop 0.65s var(--ease-spring);
+}
+
+@keyframes gummy-squish {
+  0%   { transform: scale(1, 1); }
+  25%  { transform: scale(1.22, 0.78); }
+  50%  { transform: scale(0.9, 1.12); }
+  75%  { transform: scale(1.05, 0.95); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes gummy-spring-hop {
+  0%   { transform: translateY(0) scale(1, 1); }
+  20%  { transform: translateY(6px) scale(1.2, 0.8); }
+  50%  { transform: translateY(-40px) scale(0.92, 1.15); }
+  75%  { transform: translateY(4px) scale(1.1, 0.9); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+
+.gummy-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.gummy-act-btn {
+  background: #f4ede0;
+  border: 1.5px solid rgba(60, 32, 10, 0.2);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #1e130a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.25s var(--ease-spring), background 0.2s, box-shadow 0.25s, border-color 0.2s;
+}
+
+.gummy-act-btn:hover {
+  background: #ffffff;
+  border-color: #d94e34;
+  color: #d94e34;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(217, 78, 52, 0.16);
+}
+
+.gummy-act-btn:active {
+  transform: translateY(1px) scale(0.96);
+}
+
+/* ── STAGE 2: Studio Live Code Terminal ───────────────────────────────────── */
+.workshop-terminal-box {
+  background: #19100a;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #f4ede2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-top-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.terminal-traffic-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.t-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.t-red { background: #ff5f56; }
+.t-yellow { background: #ffbd2e; }
+.t-green { background: #27c93f; }
+
+.terminal-filename {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #a49182;
+}
+
+.btn-term-run {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #2ea043;
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-spring), background 0.2s;
+}
+
+.btn-term-run:hover {
+  background: #34b34b;
+  transform: scale(1.06);
+}
+
+.btn-term-run:active {
+  transform: scale(0.95);
+}
+
+.terminal-code-view {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.prompt-row .usr {
+  color: #d94e34;
+  font-weight: 700;
+}
+.prompt-row .cmd {
+  color: #f4ede2;
+}
+.log-row {
+  color: #4ade80;
+}
+.status-row {
+  color: #e5983b;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.term-cursor {
+  animation: blink-cursor 1s infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── STAGE 3: Quick Sketchpad Canvas ──────────────────────────────────────── */
+.workshop-canvas-box {
+  width: 100%;
+}
+
+.canvas-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: #5a3e2a;
+}
+
+.canvas-swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px rgba(60, 32, 10, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.hero-swatch:hover {
+  transform: scale(1.2);
+}
+
+.hero-swatch.active {
+  box-shadow: 0 0 0 2.5px #d94e34;
+  transform: scale(1.2);
+}
+
+.btn-clear-hero-canvas {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #f4ede0;
+  border: 1.5px solid rgba(60, 32, 10, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1e130a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-clear-hero-canvas:hover {
+  background: #ffffff;
+  border-color: #d94e34;
+  color: #d94e34;
+}
+
+.canvas-holder {
+  background: #fdfbf7;
+  border: 1.5px dashed rgba(60, 32, 10, 0.22);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#hero-doodle-canvas {
+  display: block;
+  width: 100%;
+  height: 190px;
+  cursor: crosshair;
+}
+
+/* ── Workshop Card Footer ─────────────────────────────────────────────────── */
+.workshop-footer-strip {
+  background: #fbf8f2;
+  border-top: 1.5px solid rgba(60, 32, 10, 0.16);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #5a3e2a;
+}
+
+.workshop-foot-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workshop-torch-icon {
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.workshop-foot-badge {
+  font-weight: 800;
+  color: #d94e34;
+  letter-spacing: 0.08em;
+}
+
+/* ── Mobile Responsive Workshop ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-workshop-col {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  .workshop-stage-body {
+    padding: 16px;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workshop-header-bar {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .workshop-tabs {
+    gap: 4px;
+  }
+  .workshop-tab {
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+  .workshop-status-pill {
+    font-size: 0.64rem;
+    padding: 3px 8px;
+  }
+  .workshop-footer-strip {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.66rem;
+  }
+}
+
+
+
 
