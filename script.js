@@ -528,16 +528,13 @@ if (prefersReducedMotion) {
   }, { passive: true });
 }());
 
-/* ── Top-Down Physical Studio Stamp Station (Remade Punchy Blue Edition) ──── */
+/* ── Official Studio Stamp (Integrated at Page End) ──────────────────────── */
 (function initStampStation() {
   var stage = document.getElementById('stamp-stage');
   var plunger = document.getElementById('stamp-plunger');
-  var shockwave1 = document.getElementById('stamp-shockwave');
-  var shockwave2 = document.getElementById('stamp-shockwave-2');
+  var shockwave = document.getElementById('stamp-shockwave');
   var imprint = document.getElementById('stamp-imprint');
-  var replayBtn = document.getElementById('stamp-replay-btn');
-  var statusText = document.getElementById('paper-status-text');
-  var deskWrap = document.getElementById('stamp-desk-wrap');
+  var footer = document.getElementById('footer');
 
   if (!stage || !plunger || !imprint) return;
 
@@ -602,17 +599,14 @@ if (prefersReducedMotion) {
 
     if (prefersReducedMotion) {
       imprint.classList.add('stamped');
-      if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
       isSlamming = false;
       return;
     }
 
     // Reset previous animation classes
     plunger.classList.remove('slamming');
-    stage.classList.remove('slammed');
     imprint.classList.remove('stamped');
-    if (shockwave1) shockwave1.classList.remove('active');
-    if (shockwave2) shockwave2.classList.remove('active');
+    if (shockwave) shockwave.classList.remove('active');
     void plunger.offsetWidth; // force DOM reflow
 
     // Start punchy plunger sequence
@@ -621,36 +615,50 @@ if (prefersReducedMotion) {
     // Impact slam moment calibrated with 28% keyframe (~320ms)
     setTimeout(function () {
       playPunchyStampThud();
-      stage.classList.add('slammed');
-      if (shockwave1) shockwave1.classList.add('active');
-      if (shockwave2) shockwave2.classList.add('active');
+      if (shockwave) shockwave.classList.add('active');
       imprint.classList.add('stamped');
-      if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
     }, 320);
 
     // Sequence completion (after plunger lifts out at ~1150ms)
     setTimeout(function () {
       plunger.classList.remove('slamming');
-      stage.classList.remove('slammed');
       isSlamming = false;
     }, 1180);
   }
 
-  // Auto-trigger when visitor scrolls down to the stamp station
-  if ('IntersectionObserver' in window && deskWrap) {
+  /* Trigger ONLY when the visitor reaches the absolute end of the page */
+  function checkEndReached() {
+    if (hasAutoStamped) return;
+
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    var windowHeight = window.innerHeight;
+    var docHeight = document.documentElement.scrollHeight;
+
+    // Check if user is within 70px of the absolute bottom of the entire page
+    if (scrollY + windowHeight >= docHeight - 70) {
+      hasAutoStamped = true;
+      window.removeEventListener('scroll', checkEndReached);
+      setTimeout(triggerStampSlam, 180);
+    }
+  }
+
+  window.addEventListener('scroll', checkEndReached, { passive: true });
+
+  // Backup: Observer on footer that only fires when footer is deeply visible (at the end)
+  if ('IntersectionObserver' in window && footer) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting && !hasAutoStamped) {
+        if (entry.isIntersecting && !hasAutoStamped && entry.intersectionRatio >= 0.5) {
           hasAutoStamped = true;
-          // Wait 250ms for scroll to settle, then slam!
-          setTimeout(triggerStampSlam, 250);
           observer.disconnect();
+          window.removeEventListener('scroll', checkEndReached);
+          setTimeout(triggerStampSlam, 180);
         }
       });
     }, {
-      threshold: 0.32
+      threshold: [0.5, 0.8, 1.0]
     });
-    observer.observe(deskWrap);
+    observer.observe(footer);
   }
 
   // Interactive re-stamp on click or keyboard
@@ -664,13 +672,6 @@ if (prefersReducedMotion) {
       triggerStampSlam();
     }
   });
-
-  if (replayBtn) {
-    replayBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      triggerStampSlam();
-    });
-  }
 }());
 
 /* ── Print: ensure clean output ─────────────────────────────────────────── */
