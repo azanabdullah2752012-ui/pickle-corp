@@ -312,11 +312,13 @@ if (prefersReducedMotion) {
     return;
   }
 
+  document.body.classList.add('intro-active');
   var dismissed = false;
 
   function dismissIntro() {
     if (dismissed) return;
     dismissed = true;
+    document.body.classList.remove('intro-active');
     curtain.classList.add('intro-hidden');
     setTimeout(function () {
       curtain.style.display = 'none';
@@ -337,6 +339,23 @@ if (prefersReducedMotion) {
       clearTimeout(timer);
       dismissIntro();
     }
+  });
+}());
+
+/* ── Interactive Rotating Stamp Delight ──────────────────────────────────── */
+(function initStampDelight() {
+  var stamp = document.querySelector('.stamp-rotate');
+  if (!stamp || prefersReducedMotion) return;
+
+  stamp.style.cursor = 'pointer';
+  stamp.setAttribute('title', 'Click to spin stamp');
+  stamp.addEventListener('click', function () {
+    stamp.classList.remove('burst');
+    void stamp.offsetWidth; // trigger reflow
+    stamp.classList.add('burst');
+    setTimeout(function () {
+      stamp.classList.remove('burst');
+    }, 750);
   });
 }());
 

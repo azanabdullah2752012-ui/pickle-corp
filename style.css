@@ -59,7 +59,13 @@
 
 /* ── Reset ────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--c3-wood) var(--bg-cream);
+  scrollbar-width: thin;
+}
 body {
   background-color: var(--bg-cream);
   color: var(--bg-dark);
@@ -68,10 +74,51 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+body.intro-active {
+  overflow: hidden;
+}
 img, svg, video { display: block; max-width: 100%; }
-a { color: inherit; }
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
 button { font-family: inherit; cursor: pointer; }
 ul, ol { list-style: none; }
+
+/* ── Themed Browser Surfaces (Selection, Caret, Scrollbars) ─────────────── */
+::selection {
+  background: var(--c1-espresso);
+  color: var(--bg-cream);
+}
+.section-dark ::selection,
+.favour ::selection,
+.work ::selection,
+.cta-section ::selection,
+.footer ::selection {
+  background: var(--c6-sage);
+  color: var(--bg-dark);
+}
+
+:root {
+  caret-color: var(--c1-espresso);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c5-tan);
+  border-radius: 4px;
+  border: 2px solid var(--bg-cream);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c3-wood);
+}
 
 /* Skip link */
 .skip-link {
@@ -208,6 +255,22 @@ ul, ol { list-style: none; }
   border: 1.5px solid var(--c1-espresso);
   position: relative;
   animation: stamp-spin 18s linear infinite;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.stamp-rotate:hover {
+  transform: scale(1.04);
+}
+
+.stamp-rotate.burst {
+  animation: stamp-burst 0.75s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes stamp-burst {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 .stamp-rotate-inner {
@@ -467,8 +530,12 @@ ul, ol { list-style: none; }
 .burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
-  padding: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
   background: none;
   border: none;
   cursor: pointer;
@@ -1249,7 +1316,11 @@ ul, ol { list-style: none; }
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 12px 18px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
   white-space: nowrap;
   cursor: pointer;
   transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
@@ -1258,6 +1329,11 @@ ul, ol { list-style: none; }
 .favour-tab-btn:hover {
   color: var(--bg-cream);
   background: rgba(252, 251, 250, 0.04);
+}
+
+.favour-tab-btn:focus-visible {
+  outline: 2px solid var(--bg-cream);
+  outline-offset: -2px;
 }
 
 .favour-tab-btn.active {
