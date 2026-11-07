@@ -405,6 +405,134 @@ if (prefersReducedMotion) {
   });
 }());
 
+/* ── Top-Down Physical Studio Stamp Station ─────────────────────────────── */
+(function initStampStation() {
+  var stage = document.getElementById('stamp-stage');
+  var plunger = document.getElementById('stamp-plunger');
+  var shockwave = document.getElementById('stamp-shockwave');
+  var imprint = document.getElementById('stamp-imprint');
+  var paper = document.getElementById('stamp-paper');
+  var replayBtn = document.getElementById('stamp-replay-btn');
+  var statusText = document.getElementById('paper-status-text');
+  var deskWrap = document.getElementById('stamp-desk-wrap');
+
+  if (!stage || !plunger || !imprint || !paper) return;
+
+  var isSlamming = false;
+  var hasAutoStamped = false;
+
+  /* Synthesized tactile wooden stamp thud (Web Audio API) */
+  function playStampThud() {
+    try {
+      var AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      var ctx = new AudioContext();
+
+      // Master low pass & gain
+      var masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(0.3, ctx.currentTime);
+      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+      masterGain.connect(ctx.destination);
+
+      // Low frequency body thump
+      var osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(140, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(32, ctx.currentTime + 0.16);
+      osc.connect(masterGain);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.18);
+
+      // Wood tap transient snap
+      var tapOsc = ctx.createOscillator();
+      var tapGain = ctx.createGain();
+      tapOsc.type = 'triangle';
+      tapOsc.frequency.setValueAtTime(380, ctx.currentTime);
+      tapOsc.frequency.exponentialRampToValueAtTime(90, ctx.currentTime + 0.05);
+      tapGain.gain.setValueAtTime(0.14, ctx.currentTime);
+      tapGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+      tapOsc.connect(tapGain);
+      tapGain.connect(ctx.destination);
+      tapOsc.start(ctx.currentTime);
+      tapOsc.stop(ctx.currentTime + 0.06);
+    } catch (e) {
+      // Graceful silent fallback if Web Audio is restricted
+    }
+  }
+
+  function triggerStampSlam() {
+    if (isSlamming) return;
+    isSlamming = true;
+
+    if (prefersReducedMotion) {
+      imprint.classList.add('stamped');
+      if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
+      isSlamming = false;
+      return;
+    }
+
+    // Reset previous animation classes
+    plunger.classList.remove('slamming');
+    paper.classList.remove('slammed');
+    if (shockwave) shockwave.classList.remove('active');
+    void plunger.offsetWidth; // force DOM reflow
+
+    // Start plunger drop from above
+    plunger.classList.add('slamming');
+
+    // Impact timing calibrated with the 34% keyframe (~315ms)
+    setTimeout(function () {
+      playStampThud();
+      paper.classList.add('slammed');
+      if (shockwave) shockwave.classList.add('active');
+      imprint.classList.add('stamped');
+      if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
+    }, 315);
+
+    // Sequence completion (after plunger lifts out)
+    setTimeout(function () {
+      plunger.classList.remove('slamming');
+      isSlamming = false;
+    }, 950);
+  }
+
+  // Auto-trigger when visitor scrolls down to the stamp station
+  if ('IntersectionObserver' in window && deskWrap) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !hasAutoStamped) {
+          hasAutoStamped = true;
+          // Wait 250ms for scroll to settle, then slam!
+          setTimeout(triggerStampSlam, 250);
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.35
+    });
+    observer.observe(deskWrap);
+  }
+
+  // Interactive re-stamp on click or keyboard
+  stage.addEventListener('click', function () {
+    triggerStampSlam();
+  });
+
+  stage.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      triggerStampSlam();
+    }
+  });
+
+  if (replayBtn) {
+    replayBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      triggerStampSlam();
+    });
+  }
+}());
+
 /* ── Print: ensure clean output ─────────────────────────────────────────── */
 window.addEventListener('beforeprint', function () {
   document.querySelectorAll('.reveal').forEach(function (el) {

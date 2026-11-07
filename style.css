@@ -1196,6 +1196,13 @@ ul, ol { list-style: none; }
   grid-template-columns: 1fr 1fr;
   gap: clamp(40px, 7vw, 96px);
   align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.favour-layout > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .favour-left {
@@ -1273,6 +1280,8 @@ ul, ol { list-style: none; }
   border-radius: 4px;
   background: rgba(252, 251, 250, 0.03);
   overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .favour-tabs-header {
@@ -1497,6 +1506,22 @@ ul, ol { list-style: none; }
 .cta-inner {
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+
+@media (max-width: 990px) {
+  .cta-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.cta-left {
+  position: relative;
+  z-index: 2;
 }
 
 .cta-label {
@@ -1581,6 +1606,486 @@ ul, ol { list-style: none; }
   align-items: center;
   gap: var(--space-4);
   flex-wrap: wrap;
+}
+
+/* ── 08B: TOP-DOWN STUDIO STAMP STATION ─────────────────────────────────── */
+.stamp-desk-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+  perspective: 1200px;
+}
+
+.stamp-paper {
+  position: relative;
+  background: #f6f3eb;
+  color: #1f2421;
+  padding: clamp(24px, 4vw, 32px) clamp(20px, 3.5vw, 28px) clamp(20px, 3.5vw, 24px);
+  border-radius: 4px;
+  border: 1px solid rgba(88, 47, 14, 0.22);
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.55),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7),
+    inset 0 1px 30px rgba(88, 47, 14, 0.04);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Archival corner registration brackets */
+.paper-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(88, 47, 14, 0.35);
+  border-style: solid;
+  pointer-events: none;
+}
+.paper-corner-tl { top: 8px; left: 8px; border-width: 1.5px 0 0 1.5px; }
+.paper-corner-tr { top: 8px; right: 8px; border-width: 1.5px 1.5px 0 0; }
+.paper-corner-bl { bottom: 8px; left: 8px; border-width: 0 0 1.5px 1.5px; }
+.paper-corner-br { bottom: 8px; right: 8px; border-width: 0 1.5px 1.5px 0; }
+
+.paper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(88, 47, 14, 0.2);
+}
+
+.paper-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #582f0e;
+}
+
+.paper-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a63429;
+  box-shadow: 0 0 0 0 rgba(166, 52, 41, 0.5);
+  animation: pulse-badge 2s infinite ease-out;
+}
+
+@keyframes pulse-badge {
+  0% { box-shadow: 0 0 0 0 rgba(166, 52, 41, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(166, 52, 41, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(166, 52, 41, 0); }
+}
+
+.paper-serial {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: rgba(88, 47, 14, 0.65);
+}
+
+.paper-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.paper-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.paper-meta-label {
+  color: rgba(88, 47, 14, 0.55);
+}
+
+.paper-meta-value {
+  color: #333d29;
+  font-weight: 700;
+}
+
+/* ── The Stamping Desk Stage ──────────────────────────────────────────────── */
+.stamp-stage {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 18px auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: radial-gradient(circle, rgba(166, 52, 41, 0.05) 0%, transparent 72%);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.stamp-stage:focus-visible {
+  outline: 2px solid #582f0e;
+  outline-offset: 6px;
+}
+
+.stamp-stage:hover .stamp-imprint.stamped {
+  filter: drop-shadow(0 2px 8px rgba(166, 52, 41, 0.35));
+}
+
+/* ── Top-Down Birds-Eye Plunger ───────────────────────────────────────────── */
+.stamp-plunger {
+  position: absolute;
+  inset: 0;
+  width: 176px;
+  height: 176px;
+  margin: auto;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+
+/* Plunger Cast Shadow seen from directly above */
+.plunger-shadow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.25) 55%, transparent 75%);
+  filter: blur(8px);
+  z-index: 1;
+  transform-origin: center center;
+}
+
+/* Outer Brass Bevel Die Rim */
+.plunger-die-rim {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 35deg,
+    #cf9f4d 0deg,
+    #8b5e28 60deg,
+    #f2d08a 120deg,
+    #693e11 180deg,
+    #e8c177 240deg,
+    #8b5e28 300deg,
+    #cf9f4d 360deg
+  );
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.7),
+    0 10px 24px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* Brass Body & Knurled grip */
+.plunger-brass-body {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #e2be79 0%, #a47634 60%, #523410 100%);
+  box-shadow:
+    inset 0 2px 5px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plunger-knurl {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 2px dashed rgba(60, 35, 10, 0.45);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Turned Walnut Wood Cap */
+.plunger-wood-cap {
+  position: relative;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #7f4f24 0%, #582f0e 55%, #2a1506 100%);
+  box-shadow:
+    inset 0 3px 6px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.9),
+    0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plunger-wood-grain {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at 38% 38%,
+    transparent 0,
+    transparent 5px,
+    rgba(30, 12, 3, 0.12) 6px,
+    rgba(30, 12, 3, 0.12) 8px
+  );
+  opacity: 0.7;
+}
+
+/* Polished Brass Center Pin & Slotted Screw */
+.plunger-center-pin {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fef3c7 0%, #d97706 60%, #78350f 100%);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    0 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+.plunger-center-pin::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: rgba(60, 25, 5, 0.75);
+  transform: translateY(-50%) rotate(42deg);
+  border-radius: 1px;
+}
+
+/* ── Plunger Slam Animation (Top-Down Drop & Recoil) ──────────────────────── */
+.stamp-plunger.slamming {
+  animation: plunger-slam-lift 0.92s cubic-bezier(0.18, 0.9, 0.22, 1) forwards;
+}
+
+@keyframes plunger-slam-lift {
+  0% {
+    transform: scale(3.2) translateY(-40px) rotate(-12deg);
+    filter: blur(14px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    filter: blur(8px);
+  }
+  34% {
+    /* Hard impact slam into paper! */
+    transform: scale(0.96) translateY(0) rotate(0deg);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  44% {
+    /* Minor pressure bounce */
+    transform: scale(1.02) translateY(0) rotate(0deg);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  56% {
+    /* Lift begins */
+    transform: scale(1.35) translateY(-8px) rotate(2deg);
+    filter: blur(3px);
+    opacity: 0.95;
+  }
+  80% {
+    transform: scale(2.4) translateY(-30px) rotate(8deg);
+    filter: blur(10px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3.5) translateY(-60px) rotate(14deg);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+/* ── Paper Shake on Impact ────────────────────────────────────────────────── */
+.stamp-paper.slammed {
+  animation: paper-slam-shake 0.34s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes paper-slam-shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(0, 5px) rotate(-0.5deg); }
+  40% { transform: translate(-3px, -3px) rotate(0.4deg); }
+  60% { transform: translate(2px, 2px) rotate(-0.2deg); }
+  80% { transform: translate(-1px, 0) rotate(0.1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* ── Shockwave Ripple on Impact ───────────────────────────────────────────── */
+.stamp-shockwave {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 3px solid rgba(166, 52, 41, 0.5);
+  box-shadow: 0 0 16px rgba(166, 52, 41, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  transform: scale(0.85);
+}
+
+.stamp-shockwave.active {
+  animation: shockwave-expand 0.55s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes shockwave-expand {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.85);
+    border-width: 4px;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.65);
+    border-width: 1px;
+  }
+}
+
+/* ── Permanent Stamped Seal Imprint ───────────────────────────────────────── */
+.stamp-imprint {
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
+  color: #a63429;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(1.15) rotate(-6deg);
+  pointer-events: none;
+  z-index: 4;
+  transition: opacity 0.12s ease-out, transform 0.25s cubic-bezier(0.18, 0.9, 0.25, 1);
+}
+
+.stamp-imprint.stamped {
+  opacity: 0.94;
+  transform: scale(1) rotate(0deg);
+  filter: drop-shadow(0 1px 1px rgba(166, 52, 41, 0.3));
+}
+
+.seal-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.seal-text-arc {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  fill: #a63429;
+}
+
+.seal-torch-center {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-torch-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  /* Calibrated color-filter tint to map the white/bronze torch into authentic #a63429 stamp ink */
+  filter: invert(24%) sepia(85%) saturate(2200%) hue-rotate(344deg) brightness(88%) contrast(98%);
+}
+
+.paper-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(88, 47, 14, 0.2);
+}
+
+.paper-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.84rem;
+  color: rgba(31, 36, 33, 0.75);
+  margin: 0;
+}
+
+.stamp-replay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #582f0e;
+  background: rgba(88, 47, 14, 0.08);
+  border: 1px solid rgba(88, 47, 14, 0.22);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+  min-height: 32px;
+}
+
+.stamp-replay-btn:hover {
+  background: rgba(88, 47, 14, 0.16);
+  color: #2a1506;
+}
+
+.stamp-replay-btn:active {
+  transform: scale(0.96);
+}
+
+.stamp-replay-btn:focus-visible {
+  outline: 2px solid #582f0e;
+  outline-offset: 3px;
+}
+
+.replay-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .stamp-paper.slammed {
+    animation: none;
+  }
+  .stamp-plunger.slamming {
+    animation: none;
+    opacity: 0;
+  }
+  .stamp-shockwave.active {
+    animation: none;
+    opacity: 0;
+  }
+  .stamp-imprint {
+    transition: none;
+    transform: none;
+  }
 }
 
 /* ── 09: FOOTER ───────────────────────────────────────────────────────────── */
