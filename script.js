@@ -302,6 +302,90 @@ if (prefersReducedMotion) {
   }, 100);
 }());
 
+/* ── 2-Second Studio Intro Animation ─────────────────────────────────────── */
+(function initIntroCurtain() {
+  var curtain = document.getElementById('intro-curtain');
+  if (!curtain) return;
+
+  if (prefersReducedMotion) {
+    curtain.style.display = 'none';
+    return;
+  }
+
+  var dismissed = false;
+
+  function dismissIntro() {
+    if (dismissed) return;
+    dismissed = true;
+    curtain.classList.add('intro-hidden');
+    setTimeout(function () {
+      curtain.style.display = 'none';
+    }, 700);
+  }
+
+  // Auto-dismiss after 2 seconds
+  var timer = setTimeout(dismissIntro, 2000);
+
+  // Instant skip on click or Esc / Space / Enter
+  curtain.addEventListener('click', function () {
+    clearTimeout(timer);
+    dismissIntro();
+  });
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+      clearTimeout(timer);
+      dismissIntro();
+    }
+  });
+}());
+
+/* ── Interactive Favour Playground Tabs ──────────────────────────────────── */
+(function initFavourPlayground() {
+  var tabButtons = document.querySelectorAll('.favour-tab-btn');
+  var panels = document.querySelectorAll('.favour-tab-panel');
+  if (!tabButtons.length || !panels.length) return;
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = btn.getAttribute('data-tab');
+
+      tabButtons.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      var targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        targetPanel.hidden = false;
+      }
+    });
+
+    // Keyboard navigation (Left / Right arrows)
+    btn.addEventListener('keydown', function (e) {
+      var index = Array.from(tabButtons).indexOf(btn);
+      var nextBtn = null;
+      if (e.key === 'ArrowRight') {
+        nextBtn = tabButtons[(index + 1) % tabButtons.length];
+      } else if (e.key === 'ArrowLeft') {
+        nextBtn = tabButtons[(index - 1 + tabButtons.length) % tabButtons.length];
+      }
+      if (nextBtn) {
+        nextBtn.focus();
+        nextBtn.click();
+      }
+    });
+  });
+}());
+
 /* ── Print: ensure clean output ─────────────────────────────────────────── */
 window.addEventListener('beforeprint', function () {
   document.querySelectorAll('.reveal').forEach(function (el) {

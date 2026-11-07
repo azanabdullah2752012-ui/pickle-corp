@@ -44,6 +44,24 @@
 </head>
 <body>
 
+  <!-- ══════════════════════════════════════════ 00: 2-SEC INTRO CURTAIN ══ -->
+  <div id="intro-curtain" class="intro-curtain" role="status" aria-label="Pickle Corp intro animation">
+    <div class="intro-content">
+      <div class="intro-torch-wrap">
+        <img src="logo-torch.png" alt="" class="intro-torch" width="44" height="44" />
+      </div>
+      <div class="intro-brand">
+        <span class="intro-title">Pickle Corp</span>
+        <span class="intro-sub">Creative Technology Collective</span>
+      </div>
+      <p class="intro-philosophy">Ideas deserve better than staying ideas.</p>
+      <div class="intro-bar-track" aria-hidden="true">
+        <div class="intro-bar-fill"></div>
+      </div>
+    </div>
+    <span class="intro-skip-hint">Click anywhere or press Esc to skip</span>
+  </div>
+
   <!-- Skip link for keyboard users -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -611,30 +629,161 @@
               </div>
             </div>
 
-            <div class="favour-examples reveal reveal-delay-1">
-              <p class="favour-examples-title">What counts as a favour?</p>
-              <ul class="favour-examples-list">
-                <li class="favour-example-item">
-                  <span class="favour-example-bullet" aria-hidden="true">—</span>
-                  Helping Pickle Corp with something in your area of expertise
-                </li>
-                <li class="favour-example-item">
-                  <span class="favour-example-bullet" aria-hidden="true">—</span>
-                  Sharing the project — genuinely, with people who'd care about it
-                </li>
-                <li class="favour-example-item">
-                  <span class="favour-example-bullet" aria-hidden="true">—</span>
-                  A creative or technical collaboration on a future Pickle Corp project
-                </li>
-                <li class="favour-example-item">
-                  <span class="favour-example-bullet" aria-hidden="true">—</span>
-                  Connecting us with people building interesting things
-                </li>
-                <li class="favour-example-item">
-                  <span class="favour-example-bullet" aria-hidden="true">—</span>
-                  Any other exchange that both parties genuinely agree is fair
-                </li>
-              </ul>
+            <div class="favour-playground reveal reveal-delay-1" id="favour-playground">
+              <div class="favour-tabs-header">
+                <span class="favour-tabs-title">Interactive Favour Explorer</span>
+                <span class="favour-tabs-badge">Select a domain below</span>
+              </div>
+
+              <div class="favour-tabs-nav" role="tablist" aria-label="Project domains and favours">
+                <button
+                  class="favour-tab-btn active"
+                  role="tab"
+                  id="tab-btn-robotics"
+                  data-tab="tab-robotics"
+                  aria-selected="true"
+                  aria-controls="tab-robotics"
+                >
+                  Robotics &amp; STEM
+                </button>
+                <button
+                  class="favour-tab-btn"
+                  role="tab"
+                  id="tab-btn-startup"
+                  data-tab="tab-startup"
+                  aria-selected="false"
+                  aria-controls="tab-startup"
+                >
+                  Student Startups
+                </button>
+                <button
+                  class="favour-tab-btn"
+                  role="tab"
+                  id="tab-btn-portfolio"
+                  data-tab="tab-portfolio"
+                  aria-selected="false"
+                  aria-controls="tab-portfolio"
+                >
+                  Portfolios &amp; Tools
+                </button>
+                <button
+                  class="favour-tab-btn"
+                  role="tab"
+                  id="tab-btn-clubs"
+                  data-tab="tab-clubs"
+                  aria-selected="false"
+                  aria-controls="tab-clubs"
+                >
+                  Clubs &amp; Schools
+                </button>
+              </div>
+
+              <!-- Tab 1: Robotics & STEM -->
+              <div
+                class="favour-tab-panel active"
+                id="tab-robotics"
+                role="tabpanel"
+                aria-labelledby="tab-btn-robotics"
+              >
+                <div class="favour-panel-grid">
+                  <div>
+                    <h4 class="favour-panel-col-title">What Pickle Corp Builds</h4>
+                    <p class="favour-panel-col-body">
+                      High-impact competition landing pages, interactive robot telemetry visualizers, sponsor pitch showcases, and team media hubs engineered for engineering competitions.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="favour-panel-col-title">Typical Agreed Favour</h4>
+                    <p class="favour-panel-col-body">
+                      Pickle Corp sponsor mark placed on the robot chassis or team banner, a shoutout in tournament recap media, or 1-on-1 testing feedback on our canvas graphics engines.
+                    </p>
+                  </div>
+                </div>
+                <a href="#contact" class="favour-panel-cta">
+                  Start a robotics or STEM project <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Tab 2: Student Startups -->
+              <div
+                class="favour-tab-panel"
+                id="tab-startup"
+                role="tabpanel"
+                aria-labelledby="tab-btn-startup"
+                hidden
+              >
+                <div class="favour-panel-grid">
+                  <div>
+                    <h4 class="favour-panel-col-title">What Pickle Corp Builds</h4>
+                    <p class="favour-panel-col-body">
+                      Conversion-focused waitlist landing pages, interactive product simulators, and investor-ready prototype websites that look like a $50k venture studio made them.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="favour-panel-col-title">Typical Agreed Favour</h4>
+                    <p class="favour-panel-col-body">
+                      Structured beta testing session with your target audience, co-hosting a student build workshop, or collaborating on open-source libraries.
+                    </p>
+                  </div>
+                </div>
+                <a href="#contact" class="favour-panel-cta">
+                  Start a startup pitch project <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Tab 3: Creative Portfolios & Tools -->
+              <div
+                class="favour-tab-panel"
+                id="tab-portfolio"
+                role="tabpanel"
+                aria-labelledby="tab-btn-portfolio"
+                hidden
+              >
+                <div class="favour-panel-grid">
+                  <div>
+                    <h4 class="favour-panel-col-title">What Pickle Corp Builds</h4>
+                    <p class="favour-panel-col-body">
+                      Bespoke personal portfolio websites, generative audio/visual instruments, custom interactive essays, and creative tools with zero templates.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="favour-panel-col-title">Typical Agreed Favour</h4>
+                    <p class="favour-panel-col-body">
+                      Contributing a custom illustration, 3D asset, or sound design track to a future Pickle Corp collective piece, or introducing us to talented student makers.
+                    </p>
+                  </div>
+                </div>
+                <a href="#contact" class="favour-panel-cta">
+                  Start a portfolio or tool project <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Tab 4: Clubs & Schools -->
+              <div
+                class="favour-tab-panel"
+                id="tab-clubs"
+                role="tabpanel"
+                aria-labelledby="tab-btn-clubs"
+                hidden
+              >
+                <div class="favour-panel-grid">
+                  <div>
+                    <h4 class="favour-panel-col-title">What Pickle Corp Builds</h4>
+                    <p class="favour-panel-col-body">
+                      Client-side encrypted reporting platforms (like SafeSpace), club election voting portals, school event calendars, and community publication hubs.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="favour-panel-col-title">Typical Agreed Favour</h4>
+                    <p class="favour-panel-col-body">
+                      Campus showcase feature, student community awareness, or sharing our collective's work with school clubs and engineering societies.
+                    </p>
+                  </div>
+                </div>
+                <a href="#contact" class="favour-panel-cta">
+                  Start a community or club project <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -740,12 +889,12 @@
             <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
           <a
-            href="https://wa.me/?text=Hi%20Pickle%20Corp!%20I%20have%20an%20idea%20for%20a%20project%20and%20wanted%20to%20talk%20about%20working%20together."
+            href="https://wa.me/917010059290?text=Hi%20Pickle%20Corp!%20I%20have%20an%20idea%20for%20a%20project%20and%20wanted%20to%20talk%20about%20working%20together."
             class="btn btn-outline-cream"
             id="whatsapp-btn"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Message Pickle Corp on WhatsApp"
+            aria-label="Message Pickle Corp on WhatsApp (+91 70100 59290)"
           >
             WhatsApp
             <span class="btn-arrow" aria-hidden="true">↗</span>
