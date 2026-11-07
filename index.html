@@ -943,59 +943,64 @@
             id="stamp-stage"
             role="button"
             tabindex="0"
-            aria-label="Click or press Enter to stamp the Pickle Corp seal"
+            aria-label="Click or press Enter to stamp the Pickle Corp rectangular seal"
             title="Click to stamp again"
           >
-            <!-- Atmospheric drafting target rings directly on dark canvas -->
-            <div class="stamp-target-ring stamp-target-ring--outer" aria-hidden="true"></div>
-            <div class="stamp-target-ring stamp-target-ring--inner" aria-hidden="true"></div>
+            <!-- Atmospheric drafting target rectangle directly on dark canvas at an angle -->
+            <div class="stamp-target-rect stamp-target-rect--outer" aria-hidden="true"></div>
+            <div class="stamp-target-rect stamp-target-rect--inner" aria-hidden="true"></div>
 
-            <!-- Plunger (seen directly from above: outer brass rim, walnut cap, center pin) -->
+            <!-- Rectangular Rocker Plunger (seen directly from above: brass bevel rim, walnut body, turned handle) -->
             <div class="stamp-plunger" id="stamp-plunger" aria-hidden="true">
               <div class="plunger-shadow"></div>
               <div class="plunger-die-rim"></div>
               <div class="plunger-brass-body">
-                <div class="plunger-knurl"></div>
+                <div class="plunger-wood-grain"></div>
                 <div class="plunger-wood-cap">
-                  <div class="plunger-wood-grain"></div>
                   <div class="plunger-center-pin"></div>
                 </div>
               </div>
             </div>
 
-            <!-- Heavy dual shockwave ripples on impact -->
+            <!-- Heavy dual shockwave ripples on impact (rectangular, angled) -->
             <div class="stamp-shockwave stamp-shockwave--1" id="stamp-shockwave" aria-hidden="true"></div>
             <div class="stamp-shockwave stamp-shockwave--2" id="stamp-shockwave-2" aria-hidden="true"></div>
 
-            <!-- Permanent Blue Inked Studio Seal Imprint -->
+            <!-- Permanent Blue Inked Rectangular Studio Stamp Imprint (At an angle) -->
             <div class="stamp-imprint" id="stamp-imprint" aria-hidden="true">
-              <svg viewBox="0 0 200 200" class="seal-svg">
-                <!-- Outer serration ring -->
-                <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" fill="none" opacity="0.65" />
-                <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="2.2" fill="none" />
-                <circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 2.5" fill="none" opacity="0.75" />
-                <circle cx="100" cy="100" r="56" stroke="currentColor" stroke-width="1.5" fill="none" />
-                <circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2" fill="none" opacity="0.7" />
+              <svg viewBox="0 0 240 100" class="seal-svg" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer framing rectangle -->
+                <rect x="4" y="4" width="232" height="92" rx="4" stroke="currentColor" stroke-width="2.5" fill="none" />
+                <rect x="8" y="8" width="224" height="84" rx="2" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.8" fill="none" />
 
-                <!-- Text along arcs -->
-                <path id="seal-text-path-top" d="M 28 100 A 72 72 0 0 1 172 100" fill="none" />
-                <path id="seal-text-path-bottom" d="M 28 100 A 72 72 0 0 0 172 100" fill="none" />
+                <!-- Left Emblem Frame with Torch -->
+                <circle cx="44" cy="50" r="33" stroke="currentColor" stroke-width="1.3" fill="rgba(22, 121, 250, 0.08)" />
+                <circle cx="44" cy="50" r="29" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.65" fill="none" />
 
-                <text class="seal-text-arc">
-                  <textPath href="#seal-text-path-top" startOffset="50%" text-anchor="middle">
-                    PICKLE CORP • CREATIVE TECH
-                  </textPath>
+                <!-- Vertical divider line separating emblem from text -->
+                <line x1="82" y1="12" x2="82" y2="88" stroke="currentColor" stroke-width="1.2" opacity="0.5" stroke-dasharray="4 2" />
+
+                <!-- Top row: Company name -->
+                <text x="156" y="31" text-anchor="middle" class="seal-text-small">
+                  PICKLE CORP • CREATIVE TECH
                 </text>
-                <text class="seal-text-arc">
-                  <textPath href="#seal-text-path-bottom" startOffset="50%" text-anchor="middle">
-                    ★ STUDIO VERIFIED ★ 2024
-                  </textPath>
+                <line x1="90" y1="38" x2="222" y2="38" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+                <!-- Center row: Bold stamp certification header -->
+                <text x="156" y="58" text-anchor="middle" class="seal-text-bold">
+                  STUDIO VERIFIED
+                </text>
+                <line x1="90" y1="67" x2="222" y2="67" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+                <!-- Bottom row: Official studio reference code -->
+                <text x="156" y="80" text-anchor="middle" class="seal-text-meta">
+                  ★ NO. 024 / DELHI • ARCHIVE 2024 ★
                 </text>
               </svg>
 
               <!-- Slender, authentic Torch with natural blue flame -->
               <div class="seal-torch-center">
-                <img src="logo-torch.png" alt="" width="26" height="58" class="seal-torch-img" />
+                <img src="logo-torch.png" alt="" width="22" height="48" class="seal-torch-img" />
               </div>
             </div>
           </div>

@@ -1702,16 +1702,16 @@ ul, ol { list-style: none; }
 /* ── The Stamping Desk Stage ──────────────────────────────────────────────── */
 .stamp-stage {
   position: relative;
-  width: 250px;
-  height: 215px;
-  margin: 6px auto 14px;
+  width: 260px;
+  height: 140px;
+  margin: 10px auto 16px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  transform-origin: center 100px;
+  transform-origin: center center;
   will-change: transform;
 }
 
@@ -1720,48 +1720,43 @@ ul, ol { list-style: none; }
   outline-offset: 8px;
 }
 
-/* Subtle drafting target rings directly on dark canvas */
-.stamp-target-ring {
+/* Subtle drafting target rectangle directly on dark canvas at an angle */
+.stamp-target-rect {
   position: absolute;
-  top: 0;
-  left: 25px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  top: 20px;
+  left: 10px;
+  width: 240px;
+  height: 100px;
+  border-radius: 6px;
   pointer-events: none;
+  transform: rotate(-7deg);
   transform-origin: center center;
 }
 
-.stamp-target-ring--outer {
-  inset: -6px;
-  width: 212px;
-  height: 212px;
-  left: 19px;
-  top: -6px;
-  border: 1px dashed rgba(252, 251, 250, 0.1);
+.stamp-target-rect--outer {
+  border: 1px dashed rgba(252, 251, 250, 0.12);
 }
 
-.stamp-target-ring--inner {
-  inset: 10px;
-  width: 180px;
-  height: 180px;
-  left: 35px;
-  top: 10px;
-  border: 1px solid rgba(22, 121, 250, 0.18);
+.stamp-target-rect--inner {
+  top: 24px;
+  left: 14px;
+  width: 232px;
+  height: 92px;
+  border: 1px solid rgba(22, 121, 250, 0.15);
 }
 
 .stamp-stage:hover .stamp-imprint.stamped {
   filter: drop-shadow(0 0 24px rgba(22, 121, 250, 0.65)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
 }
 
-/* ── Top-Down Birds-Eye Plunger ───────────────────────────────────────────── */
+/* ── Top-Down Birds-Eye Rectangular Plunger ────────────────────────────────── */
 .stamp-plunger {
   position: absolute;
-  top: 10px;
-  left: 35px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  top: 20px;
+  left: 10px;
+  width: 240px;
+  height: 100px;
+  border-radius: 8px;
   pointer-events: none;
   opacity: 0;
   z-index: 10;
@@ -1772,28 +1767,25 @@ ul, ol { list-style: none; }
 /* Plunger Cast Shadow seen from directly above */
 .plunger-shadow {
   position: absolute;
-  inset: -14px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 75%);
+  inset: -12px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 80%);
   filter: blur(10px);
   z-index: 1;
-  transform-origin: center center;
 }
 
 /* Outer Brass Bevel Die Rim */
 .plunger-die-rim {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 35deg,
-    #d4a34b 0deg,
-    #8b5e28 60deg,
-    #f8d790 120deg,
-    #5c360c 180deg,
-    #eac478 240deg,
-    #8b5e28 300deg,
-    #d4a34b 360deg
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    #d4a34b 0%,
+    #8b5e28 25%,
+    #f8d790 50%,
+    #5c360c 75%,
+    #d4a34b 100%
   );
   box-shadow:
     inset 0 2px 4px rgba(255, 255, 255, 0.6),
@@ -1802,41 +1794,16 @@ ul, ol { list-style: none; }
   z-index: 2;
 }
 
-/* Brass Body & Knurled grip */
+/* Rectangular Walnut Wood Block Body */
 .plunger-brass-body {
   position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, #e2be79 0%, #a47634 60%, #4a2d0b 100%);
+  inset: 7px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #6a3e1b 0%, #462208 55%, #241103 100%);
   box-shadow:
-    inset 0 2px 5px rgba(255, 255, 255, 0.5),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.8);
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.8);
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plunger-knurl {
-  position: absolute;
-  inset: 6px;
-  border-radius: 50%;
-  border: 2px dashed rgba(60, 35, 10, 0.5);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.45);
-}
-
-/* Dark Turned Walnut Wood Cap */
-.plunger-wood-cap {
-  position: relative;
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #7f4f24 0%, #582f0e 55%, #241103 100%);
-  box-shadow:
-    inset 0 3px 6px rgba(255, 255, 255, 0.35),
-    inset 0 -3px 8px rgba(0, 0, 0, 0.9),
-    0 5px 12px rgba(0, 0, 0, 0.65);
-  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1845,27 +1812,43 @@ ul, ol { list-style: none; }
 .plunger-wood-grain {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: repeating-radial-gradient(
-    circle at 38% 38%,
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    90deg,
     transparent 0,
-    transparent 5px,
-    rgba(30, 12, 3, 0.14) 6px,
-    rgba(30, 12, 3, 0.14) 8px
+    transparent 6px,
+    rgba(18, 7, 2, 0.16) 7px,
+    rgba(18, 7, 2, 0.16) 9px
   );
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
-/* Polished Brass Center Pin & Slotted Screw */
+/* Central Cylindrical Turned Walnut Handle Knob viewed from directly above */
+.plunger-wood-cap {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8f5b2c 0%, #582f0e 60%, #241103 100%);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.9),
+    0 4px 10px rgba(0, 0, 0, 0.65);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .plunger-center-pin {
   position: relative;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #fef3c7 0%, #d97706 60%, #78350f 100%);
   box-shadow:
     inset 0 1px 2px rgba(255, 255, 255, 0.8),
-    0 2px 5px rgba(0, 0, 0, 0.7);
+    0 2px 4px rgba(0, 0, 0, 0.7);
   z-index: 5;
 }
 
@@ -1876,58 +1859,58 @@ ul, ol { list-style: none; }
   left: 20%;
   right: 20%;
   height: 2px;
-  background: rgba(60, 25, 5, 0.8);
+  background: rgba(60, 25, 5, 0.85);
   transform: translateY(-50%) rotate(42deg);
   border-radius: 1px;
 }
 
-/* ── REMADE PUNCHY & DRAMATIC PLUNGER ANIMATION (1.15s) ──────────────────── */
+/* ── REMADE PUNCHY RECTANGULAR PLUNGER ANIMATION (1.15s) ─────────────────── */
 .stamp-plunger.slamming {
-  animation: punchy-plunger-slam 1.15s cubic-bezier(0.18, 0.9, 0.22, 1) forwards;
+  animation: punchy-rectangular-plunger-slam 1.15s cubic-bezier(0.18, 0.9, 0.22, 1) forwards;
 }
 
-@keyframes punchy-plunger-slam {
+@keyframes punchy-rectangular-plunger-slam {
   0% {
-    transform: scale(3.2) translateY(-70px) rotate(-14deg);
+    transform: scale(3.2) translateY(-70px) rotate(-22deg);
     filter: blur(20px);
     opacity: 0;
   }
   16% {
     opacity: 1;
     filter: blur(8px);
-    transform: scale(2.0) translateY(-30px) rotate(-6deg);
+    transform: scale(2.0) translateY(-30px) rotate(-13deg);
   }
   28% {
-    /* Hard impact slam into desk (~320ms) */
-    transform: scale(0.96) translateY(0) rotate(0deg);
+    /* Hard impact slam into desk (~320ms) aligned at -7deg */
+    transform: scale(0.96) translateY(0) rotate(-7deg);
     filter: blur(0px);
     opacity: 1;
   }
   32% {
     /* Recoil micro-bounce */
-    transform: scale(1.02) translateY(0) rotate(0deg);
+    transform: scale(1.02) translateY(0) rotate(-7deg);
     filter: blur(0px);
     opacity: 1;
   }
-  /* 32% - 54%: Firm ink squeeze into wood fibers */
+  /* 32% - 54%: Firm ink squeeze into fibers */
   54% {
-    transform: scale(0.98) translateY(0) rotate(0deg);
+    transform: scale(0.98) translateY(0) rotate(-7deg);
     filter: blur(0px);
     opacity: 1;
   }
   65% {
     /* Snappy lift begins */
-    transform: scale(1.25) translateY(-14px) rotate(2deg);
+    transform: scale(1.25) translateY(-14px) rotate(-5deg);
     filter: blur(3px);
     opacity: 0.95;
   }
   84% {
-    transform: scale(2.4) translateY(-45px) rotate(8deg);
+    transform: scale(2.4) translateY(-45px) rotate(2deg);
     filter: blur(12px);
     opacity: 0.45;
   }
   100% {
-    transform: scale(3.4) translateY(-80px) rotate(14deg);
+    transform: scale(3.4) translateY(-80px) rotate(10deg);
     filter: blur(22px);
     opacity: 0;
   }
@@ -1947,18 +1930,18 @@ ul, ol { list-style: none; }
   100% { transform: scale(1) translate(0, 0); }
 }
 
-/* ── Dual Expanding Blue Shockwave Ripples ────────────────────────────────── */
+/* ── Dual Expanding Blue Shockwave Ripples (Rectangular, -7deg) ──────────── */
 .stamp-shockwave {
   position: absolute;
-  top: 5px;
-  left: 30px;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
+  top: 17px;
+  left: 7px;
+  width: 246px;
+  height: 106px;
+  border-radius: 10px;
   pointer-events: none;
   opacity: 0;
   z-index: 5;
-  transform: scale(0.7);
+  transform: rotate(-7deg) scale(0.8);
 }
 
 .stamp-shockwave--1 {
@@ -1972,85 +1955,104 @@ ul, ol { list-style: none; }
 }
 
 .stamp-shockwave--1.active {
-  animation: shockwave-blue 0.65s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  animation: shockwave-rect-blue 0.65s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
 }
 
 .stamp-shockwave--2.active {
-  animation: shockwave-blue 0.75s cubic-bezier(0.2, 0.8, 0.25, 1) 0.06s forwards;
+  animation: shockwave-rect-blue 0.75s cubic-bezier(0.2, 0.8, 0.25, 1) 0.06s forwards;
 }
 
-@keyframes shockwave-blue {
+@keyframes shockwave-rect-blue {
   0% {
     opacity: 0.95;
-    transform: scale(0.7);
+    transform: rotate(-7deg) scale(0.8);
     border-width: 4px;
   }
   100% {
     opacity: 0;
-    transform: scale(2.4);
+    transform: rotate(-7deg) scale(1.9);
     border-width: 1px;
   }
 }
 
-/* ── Permanent Blue Seal Imprint ─────────────────────────────────────────── */
+/* ── Permanent Blue Rectangular Seal Imprint (At an angle) ───────────────── */
 .stamp-imprint {
   position: absolute;
-  top: 0;
-  left: 25px;
-  width: 200px;
-  height: 200px;
+  top: 20px;
+  left: 10px;
+  width: 240px;
+  height: 100px;
   color: #1679fa;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.12) rotate(-14deg);
   pointer-events: none;
   z-index: 4;
+  transform-origin: center center;
   transition: opacity 0.15s ease-out, transform 0.25s cubic-bezier(0.18, 0.9, 0.25, 1);
 }
 
 .stamp-imprint.stamped {
   opacity: 0.98;
-  transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(-7deg);
   filter:
-    drop-shadow(0 0 18px rgba(22, 121, 250, 0.5))
+    drop-shadow(0 0 18px rgba(22, 121, 250, 0.55))
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
 .seal-svg {
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 100px;
   overflow: visible;
   display: block;
 }
 
-.seal-text-arc {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 800;
+.seal-text-small {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
   letter-spacing: 0.16em;
   fill: #1679fa;
+  text-transform: uppercase;
 }
 
-/* Torch in the center of the seal: authentic slender proportions, natural blue flame */
+.seal-text-bold {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  fill: #1679fa;
+  text-transform: uppercase;
+}
+
+.seal-text-meta {
+  font-family: var(--font-mono);
+  font-size: 7.8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  fill: #1679fa;
+  opacity: 0.88;
+}
+
+/* Slender authentic Torch with natural blue flame inside rectangular seal */
 .seal-torch-center {
   position: absolute;
-  top: 71px;
-  left: 87px;
-  width: 26px;
-  height: 58px;
+  top: 26px;
+  left: 33px;
+  width: 22px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .seal-torch-img {
-  width: 26px;
-  height: 58px;
-  max-width: 26px;
-  max-height: 58px;
+  width: 22px;
+  height: 48px;
+  max-width: 22px;
+  max-height: 48px;
   object-fit: contain;
   aspect-ratio: 135 / 294;
   display: block;
@@ -2133,7 +2135,7 @@ ul, ol { list-style: none; }
   }
   .stamp-imprint {
     transition: none;
-    transform: none;
+    transform: rotate(-7deg);
   }
 }
 
