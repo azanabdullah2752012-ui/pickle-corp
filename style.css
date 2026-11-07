@@ -17,12 +17,12 @@
   --c9-deep-forest: #333d29;
 
   /* Semantic roles */
-  --text-on-cream:  var(--c1-espresso);
+  --text-on-cream:  var(--bg-dark);
   --text-on-dark:   var(--bg-cream);
   --text-muted:     var(--c3-wood);
   --accent:         var(--c6-sage);
   --accent-warm:    var(--c2-chestnut);
-  --border:         rgba(88, 47, 14, 0.14);
+  --border:         rgba(20, 18, 16, 0.12);
   --border-dark:    rgba(252, 251, 250, 0.12);
 
   /* Typography */
@@ -62,7 +62,7 @@
 html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   background-color: var(--bg-cream);
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
@@ -85,7 +85,7 @@ ul, ol { list-style: none; }
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-decoration: none;
   transition: top var(--dur-fast);
 }
@@ -106,7 +106,7 @@ ul, ol { list-style: none; }
   H2:      clamp(2rem, 4.5vw, 3.5rem) / 800 / -0.03em
   H3:      clamp(1.3rem, 2.5vw, 1.8rem) / 700
   Body:    1rem / 400 / 1.65
-  Mono:    0.75rem / 500 / uppercase / 0.1em
+  Mono:    0.75rem / 600 / natural tracking
 */
 
 .type-display {
@@ -153,10 +153,9 @@ ul, ol { list-style: none; }
 
 .type-mono {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   font-feature-settings: 'tnum' 1, 'zero' 1;
 }
 
@@ -188,13 +187,12 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0;
   border: 1.5px solid currentColor;
-  padding: 5px 11px;
+  padding: 4px 10px;
   border-radius: 2px;
   user-select: none;
 }
@@ -238,10 +236,10 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--c3-wood);
 }
 
@@ -260,10 +258,9 @@ ul, ol { list-style: none; }
 .eyebrow {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
   margin-bottom: var(--space-4);
   font-feature-settings: 'tnum' 1, 'zero' 1;
 }
@@ -282,11 +279,10 @@ ul, ol { list-style: none; }
 /* Tag chip */
 .tag {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--c3-wood);
   border: 1px solid var(--border);
   padding: 4px 10px;
@@ -402,7 +398,7 @@ ul, ol { list-style: none; }
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   flex-shrink: 0;
 }
 
@@ -417,18 +413,17 @@ ul, ol { list-style: none; }
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: -0.025em;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
 }
 
 .nav-logo-sub {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--c3-wood);
   display: block;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .nav-links {
@@ -530,7 +525,7 @@ ul, ol { list-style: none; }
   font-weight: 800;
   letter-spacing: -0.04em;
   text-decoration: none;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   line-height: 1;
   transition: color var(--dur-fast);
 }
@@ -623,7 +618,7 @@ ul, ol { list-style: none; }
   font-weight: 900;
   letter-spacing: -0.045em;
   line-height: 0.92;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   text-wrap: balance;
 }
 
@@ -669,11 +664,10 @@ ul, ol { list-style: none; }
 }
 
 .hero-meta-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--c3-wood);
   display: block;
   margin-bottom: var(--space-2);
@@ -684,7 +678,7 @@ ul, ol { list-style: none; }
   font-size: 2.4rem;
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   line-height: 1;
   display: block;
 }
@@ -714,11 +708,10 @@ ul, ol { list-style: none; }
 }
 
 .ticker-text {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--c5-tan);
 }
 
@@ -757,7 +750,7 @@ ul, ol { list-style: none; }
 }
 
 .services-left-title {
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   margin-bottom: var(--space-6);
 }
 
@@ -786,10 +779,10 @@ ul, ol { list-style: none; }
 .service-item:first-child { border-top: 1px solid var(--border); }
 
 .service-num {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--c5-tan);
   padding-top: 4px;
 }
@@ -799,7 +792,7 @@ ul, ol { list-style: none; }
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 800;
   letter-spacing: -0.025em;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   margin-bottom: var(--space-3);
   line-height: 1.1;
 }
@@ -865,10 +858,10 @@ ul, ol { list-style: none; }
 }
 
 .work-card-num {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   color: var(--c5-tan);
 }
 
@@ -876,10 +869,10 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--c6-sage);
 }
 
@@ -933,11 +926,10 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   text-decoration: none;
   color: var(--c5-tan);
   transition: color var(--dur-fast), gap var(--dur-fast);
@@ -990,7 +982,7 @@ ul, ol { list-style: none; }
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 800;
   letter-spacing: -0.025em;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   line-height: 1.15;
 }
 
@@ -1059,10 +1051,10 @@ ul, ol { list-style: none; }
 .favour-step:first-child { border-top: 1px solid rgba(252, 251, 250, 0.08); }
 
 .favour-step-num {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--c6-sage);
   padding-top: 4px;
 }
@@ -1090,11 +1082,10 @@ ul, ol { list-style: none; }
 }
 
 .favour-examples-title {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--c6-sage);
   margin-bottom: var(--space-4);
 }
@@ -1169,11 +1160,10 @@ ul, ol { list-style: none; }
 .avatar-viren  { background: var(--c2-chestnut); }
 
 .team-role {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--c3-wood);
   margin-bottom: var(--space-1);
 }
@@ -1183,7 +1173,7 @@ ul, ol { list-style: none; }
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--c1-espresso);
+  color: var(--bg-dark);
   line-height: 1.1;
   margin-bottom: var(--space-3);
 }
@@ -1224,11 +1214,10 @@ ul, ol { list-style: none; }
 }
 
 .cta-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--c5-tan);
   display: block;
   margin-bottom: var(--space-6);
@@ -1270,11 +1259,10 @@ ul, ol { list-style: none; }
 }
 
 .cta-include-title {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--c6-sage);
   margin-bottom: var(--space-4);
 }
@@ -1341,11 +1329,10 @@ ul, ol { list-style: none; }
 }
 
 .footer-col-title {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--c5-tan);
   margin-bottom: var(--space-4);
 }
@@ -1376,11 +1363,11 @@ ul, ol { list-style: none; }
 }
 
 .footer-copy {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  color: rgba(252, 251, 250, 0.3);
+  letter-spacing: 0;
+  color: rgba(252, 251, 250, 0.4);
 }
 
 .footer-philosophy {
