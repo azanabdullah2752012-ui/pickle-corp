@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background-color: #f7f4ee;
+      color: #141210;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Outer border frame */
+    .frame-border {
+      position: absolute;
+      inset: 24px;
+      border: 1.5px solid rgba(20, 18, 16, 0.14);
+      pointer-events: none;
+    }
+    .frame-border-inner {
+      position: absolute;
+      inset: 30px;
+      border: 1px solid rgba(182, 173, 144, 0.25);
+      pointer-events: none;
+    }
+
+    /* Background watermark number */
+    .bg-watermark {
+      position: absolute;
+      right: 32px;
+      bottom: -40px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 280px;
+      font-weight: 900;
+      color: rgba(88, 47, 14, 0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+    .brand-name {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #141210;
+      line-height: 1;
+    }
+    .brand-sub {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #936639;
+      margin-top: 3px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1.5px solid #141210;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #141210;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #656d4a;
+    }
+
+    /* Main Center */
+    .main {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+    .eyebrow {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #936639;
+      margin-bottom: 14px;
+    }
+    .headline {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 4.8rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+      color: #141210;
+      margin-bottom: 18px;
+    }
+    .headline .sage {
+      color: #656d4a;
+    }
+    .headline .serif {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .desc {
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: #7f4f24;
+      max-width: 680px;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid rgba(20, 18, 16, 0.12);
+      position: relative;
+      z-index: 2;
+    }
+    .tags {
+      display: flex;
+      gap: 10px;
+    }
+    .tag {
+      padding: 5px 12px;
+      border: 1px solid rgba(20, 18, 16, 0.15);
+      border-radius: 2px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #582f0e;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .url {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #141210;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-border"></div>
+  <div class="frame-border-inner"></div>
+  <div class="bg-watermark">01</div>
+
+  <header class="header">
+    <div class="brand">
+      <img src="logo-torch.png" alt="" class="brand-mark">
+      <div>
+        <div class="brand-name">Pickle Corp</div>
+        <div class="brand-sub">Creative Technology Collective</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Favour-Based Model
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="eyebrow">Websites · Landing Pages · Custom Experiences</div>
+    <h1 class="headline">
+      Ideas deserve <span class="sage">better</span> than<br>
+      <span class="serif">staying ideas.</span>
+    </h1>
+    <p class="desc">
+      An independent creative technology studio helping students, robotics teams, startups, and creators build thoughtful digital experiences.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="tags">
+      <span class="tag">No Invoices</span>
+      <span class="tag">Mutual Favours</span>
+      <span class="tag">Zero Slop</span>
+      <span class="tag">60fps Craft</span>
+    </div>
+    <div class="url">pickle-corp.github.io</div>
+  </footer>
+</body>
+</html>
