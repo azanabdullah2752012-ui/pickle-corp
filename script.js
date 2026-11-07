@@ -405,58 +405,194 @@ if (prefersReducedMotion) {
   });
 }());
 
-/* ── Top-Down Physical Studio Stamp Station ─────────────────────────────── */
+/* ── Slower, Luxurious Smooth Scroll Architecture ────────────────────────── */
+(function initSlowerScroll() {
+  if (prefersReducedMotion) return;
+
+  // 1. Deliberate, graceful smooth scrolling for all anchor links (1000ms duration)
+  function smoothScrollTo(targetY, duration) {
+    var startY = window.pageYOffset || document.documentElement.scrollTop;
+    var distance = targetY - startY;
+    var startTime = null;
+
+    function easeInOutCubic(t) {
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var ease = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY + distance * ease);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  // Intercept in-page anchor links for slower, elegant scroll pacing
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    var hash = link.getAttribute('href');
+    if (hash === '#' || hash === '') return;
+
+    var targetEl = document.querySelector(hash);
+    if (!targetEl) return;
+
+    e.preventDefault();
+    var navHeight = 72;
+    var targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    if (targetPosition < 0) targetPosition = 0;
+
+    // Slower, weighted duration (950ms - 1200ms based on distance)
+    var dist = Math.abs(targetPosition - (window.pageYOffset || 0));
+    var duration = Math.min(Math.max(dist * 0.45, 900), 1300);
+
+    smoothScrollTo(targetPosition, duration);
+
+    // Update history URL without jump
+    if (history.pushState) {
+      history.pushState(null, null, hash);
+    }
+  });
+
+  // 2. Silky, Weighted Desktop Wheel Dampener (Slower Page Scroll Velocity)
+  // Only applies on non-touch devices to ensure native touch feel on smartphones
+  var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isTouchDevice) return;
+
+  var currentY = window.pageYOffset || 0;
+  var targetY = currentY;
+  var isAnimating = false;
+  var maxScroll = 0;
+
+  function updateMaxScroll() {
+    maxScroll = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    ) - window.innerHeight;
+  }
+
+  updateMaxScroll();
+  window.addEventListener('resize', updateMaxScroll, { passive: true });
+
+  window.addEventListener('wheel', function (e) {
+    // If user is inside a scrollable child element, do not intercept
+    var scrollableChild = e.target.closest('.favour-tabs-nav, textarea, [data-scrollable]');
+    if (scrollableChild) return;
+
+    e.preventDefault();
+    updateMaxScroll();
+
+    // Scale delta down by 0.58 so scrolling feels weighted and deliberate, not rushed
+    var delta = e.deltaY * 0.58;
+    targetY = Math.max(0, Math.min(targetY + delta, maxScroll));
+
+    if (!isAnimating) {
+      isAnimating = true;
+      currentY = window.pageYOffset || 0;
+      window.requestAnimationFrame(lerpScroll);
+    }
+  }, { passive: false });
+
+  function lerpScroll() {
+    var diff = targetY - currentY;
+    // Silky smooth dampening factor
+    currentY += diff * 0.082;
+    window.scrollTo(0, Math.round(currentY));
+
+    if (Math.abs(diff) > 0.6) {
+      window.requestAnimationFrame(lerpScroll);
+    } else {
+      window.scrollTo(0, Math.round(targetY));
+      currentY = targetY;
+      isAnimating = false;
+    }
+  }
+
+  // Keep target in sync if user drags scrollbar directly
+  window.addEventListener('scroll', function () {
+    if (!isAnimating) {
+      currentY = window.pageYOffset || 0;
+      targetY = currentY;
+    }
+  }, { passive: true });
+}());
+
+/* ── Top-Down Physical Studio Stamp Station (Dramatic Unboxed Edition) ─────── */
 (function initStampStation() {
   var stage = document.getElementById('stamp-stage');
   var plunger = document.getElementById('stamp-plunger');
-  var shockwave = document.getElementById('stamp-shockwave');
+  var shockwave1 = document.getElementById('stamp-shockwave');
+  var shockwave2 = document.getElementById('stamp-shockwave-2');
   var imprint = document.getElementById('stamp-imprint');
-  var paper = document.getElementById('stamp-paper');
   var replayBtn = document.getElementById('stamp-replay-btn');
   var statusText = document.getElementById('paper-status-text');
   var deskWrap = document.getElementById('stamp-desk-wrap');
 
-  if (!stage || !plunger || !imprint || !paper) return;
+  if (!stage || !plunger || !imprint) return;
 
   var isSlamming = false;
   var hasAutoStamped = false;
 
-  /* Synthesized tactile wooden stamp thud (Web Audio API) */
-  function playStampThud() {
+  /* Resonant, heavy acoustic stamp thud (Web Audio API) */
+  function playDramaticStampThud() {
     try {
       var AudioContext = window.AudioContext || window.webkitAudioContext;
       if (!AudioContext) return;
       var ctx = new AudioContext();
 
-      // Master low pass & gain
+      // Master low-pass & volume gain
       var masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.3, ctx.currentTime);
-      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+      masterGain.gain.setValueAtTime(0.4, ctx.currentTime);
+      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.32);
       masterGain.connect(ctx.destination);
 
-      // Low frequency body thump
-      var osc = ctx.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(140, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(32, ctx.currentTime + 0.16);
-      osc.connect(masterGain);
-      osc.start(ctx.currentTime);
-      osc.stop(ctx.currentTime + 0.18);
+      // Deep resonant sub thump (90Hz down to 24Hz)
+      var subOsc = ctx.createOscillator();
+      subOsc.type = 'sine';
+      subOsc.frequency.setValueAtTime(95, ctx.currentTime);
+      subOsc.frequency.exponentialRampToValueAtTime(24, ctx.currentTime + 0.28);
+      subOsc.connect(masterGain);
+      subOsc.start(ctx.currentTime);
+      subOsc.stop(ctx.currentTime + 0.3);
 
-      // Wood tap transient snap
-      var tapOsc = ctx.createOscillator();
-      var tapGain = ctx.createGain();
-      tapOsc.type = 'triangle';
-      tapOsc.frequency.setValueAtTime(380, ctx.currentTime);
-      tapOsc.frequency.exponentialRampToValueAtTime(90, ctx.currentTime + 0.05);
-      tapGain.gain.setValueAtTime(0.14, ctx.currentTime);
-      tapGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
-      tapOsc.connect(tapGain);
-      tapGain.connect(ctx.destination);
-      tapOsc.start(ctx.currentTime);
-      tapOsc.stop(ctx.currentTime + 0.06);
+      // Solid hardwood table body knock (220Hz -> 48Hz)
+      var woodOsc = ctx.createOscillator();
+      var woodGain = ctx.createGain();
+      woodOsc.type = 'triangle';
+      woodOsc.frequency.setValueAtTime(220, ctx.currentTime);
+      woodOsc.frequency.exponentialRampToValueAtTime(48, ctx.currentTime + 0.18);
+      woodGain.gain.setValueAtTime(0.28, ctx.currentTime);
+      woodGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+      woodOsc.connect(woodGain);
+      woodGain.connect(ctx.destination);
+      woodOsc.start(ctx.currentTime);
+      woodOsc.stop(ctx.currentTime + 0.2);
+
+      // Sharp mechanical die contact snap
+      var snapOsc = ctx.createOscillator();
+      var snapGain = ctx.createGain();
+      snapOsc.type = 'sawtooth';
+      snapOsc.frequency.setValueAtTime(540, ctx.currentTime);
+      snapOsc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.04);
+      snapGain.gain.setValueAtTime(0.12, ctx.currentTime);
+      snapGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+      snapOsc.connect(snapGain);
+      snapGain.connect(ctx.destination);
+      snapOsc.start(ctx.currentTime);
+      snapOsc.stop(ctx.currentTime + 0.05);
     } catch (e) {
-      // Graceful silent fallback if Web Audio is restricted
+      // Graceful silent fallback if Web Audio is blocked
     }
   }
 
@@ -473,42 +609,45 @@ if (prefersReducedMotion) {
 
     // Reset previous animation classes
     plunger.classList.remove('slamming');
-    paper.classList.remove('slammed');
-    if (shockwave) shockwave.classList.remove('active');
+    stage.classList.remove('slammed');
+    if (shockwave1) shockwave1.classList.remove('active');
+    if (shockwave2) shockwave2.classList.remove('active');
     void plunger.offsetWidth; // force DOM reflow
 
-    // Start plunger drop from above
+    // Start dramatic 2.1s plunger sequence
     plunger.classList.add('slamming');
 
-    // Impact timing calibrated with the 34% keyframe (~315ms)
+    // Impact moment calibrated with the 38% keyframe (~800ms)
     setTimeout(function () {
-      playStampThud();
-      paper.classList.add('slammed');
-      if (shockwave) shockwave.classList.add('active');
+      playDramaticStampThud();
+      stage.classList.add('slammed');
+      if (shockwave1) shockwave1.classList.add('active');
+      if (shockwave2) shockwave2.classList.add('active');
       imprint.classList.add('stamped');
       if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
-    }, 315);
+    }, 800);
 
-    // Sequence completion (after plunger lifts out)
+    // Sequence completion (after plunger lifts high above at ~2100ms)
     setTimeout(function () {
       plunger.classList.remove('slamming');
+      stage.classList.remove('slammed');
       isSlamming = false;
-    }, 950);
+    }, 2150);
   }
 
-  // Auto-trigger when visitor scrolls down to the stamp station
+  // Auto-trigger dramatically when visitor scrolls down to the stamp station
   if ('IntersectionObserver' in window && deskWrap) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting && !hasAutoStamped) {
           hasAutoStamped = true;
-          // Wait 250ms for scroll to settle, then slam!
-          setTimeout(triggerStampSlam, 250);
+          // Wait 350ms for scroll to settle, then begin dramatic descent!
+          setTimeout(triggerStampSlam, 350);
           observer.disconnect();
         }
       });
     }, {
-      threshold: 0.35
+      threshold: 0.32
     });
     observer.observe(deskWrap);
   }

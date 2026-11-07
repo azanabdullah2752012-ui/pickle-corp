@@ -925,103 +925,91 @@
           </div>
         </div>
 
-        <!-- Right Column: Top-Down Studio Verification Stamp Desk -->
+        <!-- Right Column: Top-Down Studio Verification Seal (Unboxed, direct on dark studio canvas) -->
         <div class="stamp-desk-wrap reveal reveal-delay-2" id="stamp-desk-wrap">
-          <div class="stamp-paper" id="stamp-paper" role="region" aria-label="Official Pickle Corp Verification Certificate">
-            <!-- Archival corner notches -->
-            <div class="paper-corner paper-corner-tl" aria-hidden="true"></div>
-            <div class="paper-corner paper-corner-tr" aria-hidden="true"></div>
-            <div class="paper-corner paper-corner-bl" aria-hidden="true"></div>
-            <div class="paper-corner paper-corner-br" aria-hidden="true"></div>
+          <div class="stamp-ambient-glow" aria-hidden="true"></div>
 
-            <div class="paper-header">
-              <div class="paper-badge" id="paper-badge">
-                <span class="paper-pulse-dot" aria-hidden="true"></span>
-                <span id="paper-status-text">DESK STAMP STATION</span>
+          <div class="stamp-header">
+            <div class="stamp-badge" id="paper-badge">
+              <span class="paper-pulse-dot" aria-hidden="true"></span>
+              <span id="paper-status-text">OFFICIAL COLLECTIVE SEAL</span>
+            </div>
+            <span class="stamp-serial type-mono">№ 024 / PC-STUDIO</span>
+          </div>
+
+          <!-- The Stamping Stage (plunger drops from above the camera directly onto dark surface) -->
+          <div
+            class="stamp-stage"
+            id="stamp-stage"
+            role="button"
+            tabindex="0"
+            aria-label="Click or press Enter to stamp the Pickle Corp seal"
+            title="Click to stamp again"
+          >
+            <!-- Atmospheric drafting target rings directly on dark canvas -->
+            <div class="stamp-target-ring stamp-target-ring--outer" aria-hidden="true"></div>
+            <div class="stamp-target-ring stamp-target-ring--inner" aria-hidden="true"></div>
+
+            <!-- Plunger (seen directly from above: outer brass rim, walnut cap, center pin) -->
+            <div class="stamp-plunger" id="stamp-plunger" aria-hidden="true">
+              <div class="plunger-shadow"></div>
+              <div class="plunger-die-rim"></div>
+              <div class="plunger-brass-body">
+                <div class="plunger-knurl"></div>
+                <div class="plunger-wood-cap">
+                  <div class="plunger-wood-grain"></div>
+                  <div class="plunger-center-pin"></div>
+                </div>
               </div>
-              <span class="paper-serial type-mono">№ 024 / PC-DESK</span>
             </div>
 
-            <div class="paper-meta">
-              <div class="paper-meta-row">
-                <span class="paper-meta-label">COLLECTIVE</span>
-                <span class="paper-meta-value">Pickle Corp · Studio</span>
-              </div>
-              <div class="paper-meta-row">
-                <span class="paper-meta-label">PROTOCOL</span>
-                <span class="paper-meta-value">Favour Model · 2024</span>
+            <!-- Heavy dual shockwave ripples on impact -->
+            <div class="stamp-shockwave stamp-shockwave--1" id="stamp-shockwave" aria-hidden="true"></div>
+            <div class="stamp-shockwave stamp-shockwave--2" id="stamp-shockwave-2" aria-hidden="true"></div>
+
+            <!-- Permanent Inked Seal Imprint (Rich warm terracotta & amber-gold directly on dark surface) -->
+            <div class="stamp-imprint" id="stamp-imprint" aria-hidden="true">
+              <svg viewBox="0 0 200 200" class="seal-svg">
+                <!-- Outer serration ring -->
+                <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" fill="none" opacity="0.65" />
+                <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="2.2" fill="none" />
+                <circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 2.5" fill="none" opacity="0.75" />
+                <circle cx="100" cy="100" r="56" stroke="currentColor" stroke-width="1.5" fill="none" />
+                <circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2" fill="none" opacity="0.7" />
+
+                <!-- Text along arcs -->
+                <path id="seal-text-path-top" d="M 28 100 A 72 72 0 0 1 172 100" fill="none" />
+                <path id="seal-text-path-bottom" d="M 28 100 A 72 72 0 0 0 172 100" fill="none" />
+
+                <text class="seal-text-arc">
+                  <textPath href="#seal-text-path-top" startOffset="50%" text-anchor="middle">
+                    PICKLE CORP • CREATIVE TECH
+                  </textPath>
+                </text>
+                <text class="seal-text-arc">
+                  <textPath href="#seal-text-path-bottom" startOffset="50%" text-anchor="middle">
+                    ★ STUDIO VERIFIED ★ 2024
+                  </textPath>
+                </text>
+              </svg>
+
+              <div class="seal-torch-center">
+                <img src="logo-torch.png" alt="" width="48" height="48" class="seal-torch-img" />
               </div>
             </div>
+          </div>
 
-            <!-- The Stamping Stage (plunger drops from above the camera) -->
-            <div
-              class="stamp-stage"
-              id="stamp-stage"
-              role="button"
-              tabindex="0"
-              aria-label="Click or press Enter to slam the Pickle Corp seal"
-              title="Click to stamp again"
+          <div class="stamp-footer">
+            <p class="stamp-motto">Ideas deserve better than staying ideas.</p>
+            <button
+              type="button"
+              class="stamp-replay-btn"
+              id="stamp-replay-btn"
+              aria-label="Stamp seal again"
             >
-              <!-- Plunger (seen directly from above: outer brass rim, walnut cap, center pin) -->
-              <div class="stamp-plunger" id="stamp-plunger" aria-hidden="true">
-                <div class="plunger-shadow"></div>
-                <div class="plunger-die-rim"></div>
-                <div class="plunger-brass-body">
-                  <div class="plunger-knurl"></div>
-                  <div class="plunger-wood-cap">
-                    <div class="plunger-wood-grain"></div>
-                    <div class="plunger-center-pin"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Shockwave ripple on impact -->
-              <div class="stamp-shockwave" id="stamp-shockwave" aria-hidden="true"></div>
-
-              <!-- Permanent Inked Seal Imprint -->
-              <div class="stamp-imprint" id="stamp-imprint" aria-hidden="true">
-                <svg viewBox="0 0 200 200" class="seal-svg">
-                  <!-- Outer serration ring -->
-                  <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" fill="none" opacity="0.6" />
-                  <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="2.2" fill="none" />
-                  <circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 2.5" fill="none" opacity="0.75" />
-                  <circle cx="100" cy="100" r="56" stroke="currentColor" stroke-width="1.5" fill="none" />
-                  <circle cx="100" cy="100" r="52" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2" fill="none" opacity="0.7" />
-
-                  <!-- Text along arcs -->
-                  <path id="seal-text-path-top" d="M 28 100 A 72 72 0 0 1 172 100" fill="none" />
-                  <path id="seal-text-path-bottom" d="M 28 100 A 72 72 0 0 0 172 100" fill="none" />
-
-                  <text class="seal-text-arc">
-                    <textPath href="#seal-text-path-top" startOffset="50%" text-anchor="middle">
-                      PICKLE CORP • CREATIVE TECH
-                    </textPath>
-                  </text>
-                  <text class="seal-text-arc">
-                    <textPath href="#seal-text-path-bottom" startOffset="50%" text-anchor="middle">
-                      ★ STUDIO VERIFIED ★ 2024
-                    </textPath>
-                  </text>
-                </svg>
-
-                <div class="seal-torch-center">
-                  <img src="logo-torch.png" alt="" width="46" height="46" class="seal-torch-img" />
-                </div>
-              </div>
-            </div>
-
-            <div class="paper-footer">
-              <p class="paper-motto">Ideas deserve better than staying ideas.</p>
-              <button
-                type="button"
-                class="stamp-replay-btn"
-                id="stamp-replay-btn"
-                aria-label="Stamp certificate again"
-              >
-                <span>Stamp again</span>
-                <span class="replay-icon" aria-hidden="true">↺</span>
-              </button>
-            </div>
+              <span>Stamp again</span>
+              <span class="replay-icon" aria-hidden="true">↺</span>
+            </button>
           </div>
         </div>
 
