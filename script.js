@@ -626,39 +626,20 @@ if (prefersReducedMotion) {
     }, 1180);
   }
 
-  /* Trigger ONLY when the visitor reaches the absolute end of the page */
-  function checkEndReached() {
-    if (hasAutoStamped) return;
-
-    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    var windowHeight = window.innerHeight;
-    var docHeight = document.documentElement.scrollHeight;
-
-    // Check if user is within 70px of the absolute bottom of the entire page
-    if (scrollY + windowHeight >= docHeight - 70) {
-      hasAutoStamped = true;
-      window.removeEventListener('scroll', checkEndReached);
-      setTimeout(triggerStampSlam, 180);
-    }
-  }
-
-  window.addEventListener('scroll', checkEndReached, { passive: true });
-
-  // Backup: Observer on footer that only fires when footer is deeply visible (at the end)
-  if ('IntersectionObserver' in window && footer) {
+  /* Trigger when the visitor reaches the stamp stage near the contact section */
+  if ('IntersectionObserver' in window && stage) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting && !hasAutoStamped && entry.intersectionRatio >= 0.5) {
+        if (entry.isIntersecting && !hasAutoStamped) {
           hasAutoStamped = true;
           observer.disconnect();
-          window.removeEventListener('scroll', checkEndReached);
-          setTimeout(triggerStampSlam, 180);
+          setTimeout(triggerStampSlam, 240);
         }
       });
     }, {
-      threshold: [0.5, 0.8, 1.0]
+      threshold: 0.45
     });
-    observer.observe(footer);
+    observer.observe(stage);
   }
 
   // Interactive re-stamp on click or keyboard

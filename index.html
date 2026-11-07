@@ -923,6 +923,59 @@
           </ul>
         </div>
 
+        <!-- Official Studio Stamp — Positioned near contact, unboxed, tilted at an angle, zero location -->
+        <div
+          class="contact-stamp-stage reveal reveal-delay-4"
+          id="stamp-stage"
+          role="button"
+          tabindex="0"
+          title="Click to stamp again"
+          aria-label="Pickle Corp Studio Verified Stamp"
+        >
+          <!-- Top-down plunger (drops from overhead, visible only during slam) -->
+          <div class="stamp-plunger" id="stamp-plunger" aria-hidden="true">
+            <div class="plunger-shadow"></div>
+            <div class="plunger-die-rim"></div>
+            <div class="plunger-brass-body">
+              <div class="plunger-wood-grain"></div>
+              <div class="plunger-wood-cap">
+                <div class="plunger-center-pin"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shockwave pulse -->
+          <div class="stamp-shockwave" id="stamp-shockwave" aria-hidden="true"></div>
+
+          <!-- Inked Rectangular Studio Verification Stamp (At -6deg angle, NO location) -->
+          <div class="stamp-imprint" id="stamp-imprint" aria-hidden="true">
+            <svg viewBox="0 0 200 72" class="seal-svg" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer hairline border -->
+              <rect x="2" y="2" width="196" height="68" rx="3" stroke="currentColor" stroke-width="1.8" fill="none" />
+              <!-- Inner fine hairline border -->
+              <rect x="5.5" y="5.5" width="189" height="61" rx="1.5" stroke="currentColor" stroke-width="0.8" opacity="0.65" fill="none" />
+
+              <!-- Left emblem divider -->
+              <line x1="48" y1="6" x2="48" y2="66" stroke="currentColor" stroke-width="0.8" opacity="0.45" />
+
+              <!-- Text labels (NO location) -->
+              <text x="56" y="21" class="stamp-text-small">PICKLE CORP. STUDIO</text>
+              <line x1="56" y1="26" x2="188" y2="26" stroke="currentColor" stroke-width="0.6" opacity="0.35" />
+
+              <text x="56" y="44" class="stamp-text-bold">STUDIO VERIFIED</text>
+              <line x1="56" y1="50" x2="188" y2="50" stroke="currentColor" stroke-width="0.6" opacity="0.35" />
+
+              <text x="56" y="61" class="stamp-text-meta">CREATIVE TECH • EST. 2024</text>
+              <text x="188" y="61" text-anchor="end" class="stamp-text-meta">★ 024</text>
+            </svg>
+
+            <!-- Slender Torch logo inside the left compartment -->
+            <div class="seal-torch-center">
+              <img src="logo-torch.png" alt="" width="16" height="38" class="seal-torch-img" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -973,60 +1026,6 @@
 
       <div class="footer-bottom">
         <span class="footer-copy">© 2024 Pickle Corp. Creative Technology Collective.</span>
-
-        <!-- Official Studio Stamp — Stamped directly onto document footer, tilted at an angle -->
-        <div
-          class="footer-stamp-stage"
-          id="stamp-stage"
-          role="button"
-          tabindex="0"
-          title="Click to stamp again"
-          aria-label="Pickle Corp Studio Verified Stamp"
-        >
-          <!-- Top-down plunger (drops from overhead, visible only during slam) -->
-          <div class="stamp-plunger" id="stamp-plunger" aria-hidden="true">
-            <div class="plunger-shadow"></div>
-            <div class="plunger-die-rim"></div>
-            <div class="plunger-brass-body">
-              <div class="plunger-wood-grain"></div>
-              <div class="plunger-wood-cap">
-                <div class="plunger-center-pin"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Shockwave pulse -->
-          <div class="stamp-shockwave" id="stamp-shockwave" aria-hidden="true"></div>
-
-          <!-- Inked Rectangular Studio Verification Stamp (At an angle) -->
-          <div class="stamp-imprint" id="stamp-imprint" aria-hidden="true">
-            <svg viewBox="0 0 200 72" class="seal-svg" xmlns="http://www.w3.org/2000/svg">
-              <!-- Outer hairline border -->
-              <rect x="2" y="2" width="196" height="68" rx="3" stroke="currentColor" stroke-width="1.8" fill="none" />
-              <!-- Inner fine hairline border -->
-              <rect x="5.5" y="5.5" width="189" height="61" rx="1.5" stroke="currentColor" stroke-width="0.8" opacity="0.65" fill="none" />
-
-              <!-- Left emblem divider -->
-              <line x1="48" y1="6" x2="48" y2="66" stroke="currentColor" stroke-width="0.8" opacity="0.45" />
-
-              <!-- Text labels -->
-              <text x="56" y="21" class="stamp-text-small">PICKLE CORP. STUDIO</text>
-              <line x1="56" y1="26" x2="188" y2="26" stroke="currentColor" stroke-width="0.6" opacity="0.35" />
-
-              <text x="56" y="44" class="stamp-text-bold">STUDIO VERIFIED</text>
-              <line x1="56" y1="50" x2="188" y2="50" stroke="currentColor" stroke-width="0.6" opacity="0.35" />
-
-              <text x="56" y="61" class="stamp-text-meta">NEW DELHI • EST. 2024</text>
-              <text x="188" y="61" text-anchor="end" class="stamp-text-meta">★ 024</text>
-            </svg>
-
-            <!-- Slender Torch logo inside the left compartment -->
-            <div class="seal-torch-center">
-              <img src="logo-torch.png" alt="" width="16" height="38" class="seal-torch-img" />
-            </div>
-          </div>
-        </div>
-
         <span class="footer-philosophy">Ideas deserve better than staying ideas.</span>
       </div>
 

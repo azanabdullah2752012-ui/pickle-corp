@@ -1612,7 +1612,8 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
 }
 
-/* ── 08B: OFFICIAL STUDIO STAMP (INTEGRATED AT PAGE END) ───────────────────── */
+/* ── 08B: OFFICIAL STUDIO STAMP (NEAR CONTACT SECTION, UNBOXED) ────────────── */
+.contact-stamp-stage,
 .footer-stamp-stage {
   position: relative;
   width: 200px;
@@ -1624,9 +1625,10 @@ ul, ol { list-style: none; }
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transform-origin: center center;
-  margin: 4px 8px;
+  margin-top: clamp(24px, 4vw, 36px);
 }
 
+.contact-stamp-stage:focus-visible,
 .footer-stamp-stage:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 4px;
@@ -1856,6 +1858,7 @@ ul, ol { list-style: none; }
     drop-shadow(0 0 10px rgba(22, 121, 250, 0.4));
 }
 
+.contact-stamp-stage:hover .stamp-imprint.stamped,
 .footer-stamp-stage:hover .stamp-imprint.stamped {
   filter:
     drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6))
