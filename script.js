@@ -528,7 +528,7 @@ if (prefersReducedMotion) {
   }, { passive: true });
 }());
 
-/* ── Top-Down Physical Studio Stamp Station (Dramatic Unboxed Edition) ─────── */
+/* ── Top-Down Physical Studio Stamp Station (Remade Punchy Blue Edition) ──── */
 (function initStampStation() {
   var stage = document.getElementById('stamp-stage');
   var plunger = document.getElementById('stamp-plunger');
@@ -544,55 +544,55 @@ if (prefersReducedMotion) {
   var isSlamming = false;
   var hasAutoStamped = false;
 
-  /* Resonant, heavy acoustic stamp thud (Web Audio API) */
-  function playDramaticStampThud() {
+  /* Punchy, tactile acoustic stamp thud (Web Audio API) */
+  function playPunchyStampThud() {
     try {
       var AudioContext = window.AudioContext || window.webkitAudioContext;
       if (!AudioContext) return;
       var ctx = new AudioContext();
 
-      // Master low-pass & volume gain
+      // Master low-pass & gain
       var masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.4, ctx.currentTime);
-      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.32);
+      masterGain.gain.setValueAtTime(0.45, ctx.currentTime);
+      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.28);
       masterGain.connect(ctx.destination);
 
-      // Deep resonant sub thump (90Hz down to 24Hz)
+      // Deep punchy bass thump (130Hz -> 30Hz)
       var subOsc = ctx.createOscillator();
       subOsc.type = 'sine';
-      subOsc.frequency.setValueAtTime(95, ctx.currentTime);
-      subOsc.frequency.exponentialRampToValueAtTime(24, ctx.currentTime + 0.28);
+      subOsc.frequency.setValueAtTime(130, ctx.currentTime);
+      subOsc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.22);
       subOsc.connect(masterGain);
       subOsc.start(ctx.currentTime);
-      subOsc.stop(ctx.currentTime + 0.3);
+      subOsc.stop(ctx.currentTime + 0.25);
 
-      // Solid hardwood table body knock (220Hz -> 48Hz)
+      // Wood-block table impact body (260Hz -> 65Hz)
       var woodOsc = ctx.createOscillator();
       var woodGain = ctx.createGain();
       woodOsc.type = 'triangle';
-      woodOsc.frequency.setValueAtTime(220, ctx.currentTime);
-      woodOsc.frequency.exponentialRampToValueAtTime(48, ctx.currentTime + 0.18);
-      woodGain.gain.setValueAtTime(0.28, ctx.currentTime);
-      woodGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+      woodOsc.frequency.setValueAtTime(260, ctx.currentTime);
+      woodOsc.frequency.exponentialRampToValueAtTime(65, ctx.currentTime + 0.14);
+      woodGain.gain.setValueAtTime(0.3, ctx.currentTime);
+      woodGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
       woodOsc.connect(woodGain);
       woodGain.connect(ctx.destination);
       woodOsc.start(ctx.currentTime);
-      woodOsc.stop(ctx.currentTime + 0.2);
+      woodOsc.stop(ctx.currentTime + 0.15);
 
-      // Sharp mechanical die contact snap
+      // Crisp mechanical metal/rubber die contact snap
       var snapOsc = ctx.createOscillator();
       var snapGain = ctx.createGain();
       snapOsc.type = 'sawtooth';
-      snapOsc.frequency.setValueAtTime(540, ctx.currentTime);
-      snapOsc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.04);
-      snapGain.gain.setValueAtTime(0.12, ctx.currentTime);
+      snapOsc.frequency.setValueAtTime(620, ctx.currentTime);
+      snapOsc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.04);
+      snapGain.gain.setValueAtTime(0.16, ctx.currentTime);
       snapGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
       snapOsc.connect(snapGain);
       snapGain.connect(ctx.destination);
       snapOsc.start(ctx.currentTime);
       snapOsc.stop(ctx.currentTime + 0.05);
     } catch (e) {
-      // Graceful silent fallback if Web Audio is blocked
+      // Graceful silent fallback if Web Audio is restricted
     }
   }
 
@@ -610,39 +610,40 @@ if (prefersReducedMotion) {
     // Reset previous animation classes
     plunger.classList.remove('slamming');
     stage.classList.remove('slammed');
+    imprint.classList.remove('stamped');
     if (shockwave1) shockwave1.classList.remove('active');
     if (shockwave2) shockwave2.classList.remove('active');
     void plunger.offsetWidth; // force DOM reflow
 
-    // Start dramatic 2.1s plunger sequence
+    // Start punchy plunger sequence
     plunger.classList.add('slamming');
 
-    // Impact moment calibrated with the 38% keyframe (~800ms)
+    // Impact slam moment calibrated with 28% keyframe (~320ms)
     setTimeout(function () {
-      playDramaticStampThud();
+      playPunchyStampThud();
       stage.classList.add('slammed');
       if (shockwave1) shockwave1.classList.add('active');
       if (shockwave2) shockwave2.classList.add('active');
       imprint.classList.add('stamped');
       if (statusText) statusText.textContent = 'OFFICIAL SEAL STAMPED';
-    }, 800);
+    }, 320);
 
-    // Sequence completion (after plunger lifts high above at ~2100ms)
+    // Sequence completion (after plunger lifts out at ~1150ms)
     setTimeout(function () {
       plunger.classList.remove('slamming');
       stage.classList.remove('slammed');
       isSlamming = false;
-    }, 2150);
+    }, 1180);
   }
 
-  // Auto-trigger dramatically when visitor scrolls down to the stamp station
+  // Auto-trigger when visitor scrolls down to the stamp station
   if ('IntersectionObserver' in window && deskWrap) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting && !hasAutoStamped) {
           hasAutoStamped = true;
-          // Wait 350ms for scroll to settle, then begin dramatic descent!
-          setTimeout(triggerStampSlam, 350);
+          // Wait 250ms for scroll to settle, then slam!
+          setTimeout(triggerStampSlam, 250);
           observer.disconnect();
         }
       });

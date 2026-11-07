@@ -279,6 +279,24 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+  animation: stamp-counter-spin 18s linear infinite;
+}
+
+@keyframes stamp-counter-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.hero-stamp-torch,
+.stamp-rotate-inner img {
+  width: 18px;
+  height: 40px;
+  max-width: 18px;
+  max-height: 42px;
+  object-fit: contain;
+  aspect-ratio: 135 / 294;
+  display: block;
 }
 
 .stamp-rotate svg {
@@ -291,7 +309,8 @@ ul, ol { list-style: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stamp-rotate { animation: none; }
+  .stamp-rotate,
+  .stamp-rotate-inner { animation: none; }
 }
 
 /* Annotation arrow */
@@ -1608,7 +1627,7 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
 }
 
-/* ── 08B: TOP-DOWN STUDIO STAMP STATION (UNBOXED ATMOSPHERIC DESIGN) ────── */
+/* ── 08B: TOP-DOWN STUDIO STAMP STATION (SIGNATURE BLUE UNBOXED EDITION) ── */
 .stamp-desk-wrap {
   position: relative;
   z-index: 2;
@@ -1621,15 +1640,15 @@ ul, ol { list-style: none; }
   align-items: center;
 }
 
-/* Ambient warm studio light radiating from behind the seal */
+/* Ambient electric blue studio light radiating from behind the seal */
 .stamp-ambient-glow {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
-  width: 320px;
-  height: 320px;
+  width: 330px;
+  height: 330px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(226, 114, 91, 0.16) 0%, rgba(203, 109, 56, 0.05) 50%, transparent 72%);
+  background: radial-gradient(circle, rgba(22, 121, 250, 0.24) 0%, rgba(22, 121, 250, 0.06) 50%, transparent 72%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 1;
@@ -1644,7 +1663,7 @@ ul, ol { list-style: none; }
   gap: 12px;
   padding-bottom: 12px;
   border-bottom: 1px dashed rgba(252, 251, 250, 0.12);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .stamp-badge {
@@ -1656,22 +1675,22 @@ ul, ol { list-style: none; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c5-tan);
+  color: #60a5fa;
 }
 
 .paper-pulse-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #e2725b;
-  box-shadow: 0 0 0 0 rgba(226, 114, 91, 0.6);
-  animation: pulse-badge 2s infinite ease-out;
+  background: #1679fa;
+  box-shadow: 0 0 0 0 rgba(22, 121, 250, 0.7);
+  animation: pulse-badge-blue 2s infinite ease-out;
 }
 
-@keyframes pulse-badge {
-  0% { box-shadow: 0 0 0 0 rgba(226, 114, 91, 0.7); }
-  70% { box-shadow: 0 0 0 7px rgba(226, 114, 91, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(226, 114, 91, 0); }
+@keyframes pulse-badge-blue {
+  0% { box-shadow: 0 0 0 0 rgba(22, 121, 250, 0.8); }
+  70% { box-shadow: 0 0 0 8px rgba(22, 121, 250, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 121, 250, 0); }
 }
 
 .stamp-serial {
@@ -1684,27 +1703,30 @@ ul, ol { list-style: none; }
 .stamp-stage {
   position: relative;
   width: 250px;
-  height: 250px;
-  margin: 12px auto 18px;
-  border-radius: 50%;
+  height: 290px;
+  margin: 6px auto 14px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  transform-origin: center center;
+  transform-origin: center 100px;
   will-change: transform;
 }
 
 .stamp-stage:focus-visible {
-  outline: 2px solid var(--c5-tan);
+  outline: 2px solid #3b82f6;
   outline-offset: 8px;
 }
 
-/* Subtle drafting target rings directly on the dark canvas */
+/* Subtle drafting target rings directly on dark canvas */
 .stamp-target-ring {
   position: absolute;
+  top: 0;
+  left: 25px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   pointer-events: none;
   transform-origin: center center;
@@ -1712,25 +1734,33 @@ ul, ol { list-style: none; }
 
 .stamp-target-ring--outer {
   inset: -6px;
+  width: 212px;
+  height: 212px;
+  left: 19px;
+  top: -6px;
   border: 1px dashed rgba(252, 251, 250, 0.1);
 }
 
 .stamp-target-ring--inner {
-  inset: 12px;
-  border: 1px solid rgba(226, 114, 91, 0.12);
+  inset: 10px;
+  width: 180px;
+  height: 180px;
+  left: 35px;
+  top: 10px;
+  border: 1px solid rgba(22, 121, 250, 0.18);
 }
 
 .stamp-stage:hover .stamp-imprint.stamped {
-  filter: drop-shadow(0 0 20px rgba(226, 114, 91, 0.55)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 0 24px rgba(22, 121, 250, 0.65)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
 }
 
 /* ── Top-Down Birds-Eye Plunger ───────────────────────────────────────────── */
 .stamp-plunger {
   position: absolute;
-  inset: 0;
-  width: 190px;
-  height: 190px;
-  margin: auto;
+  top: 10px;
+  left: 35px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
@@ -1744,7 +1774,7 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: -14px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.35) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 75%);
   filter: blur(10px);
   z-index: 1;
   transform-origin: center center;
@@ -1798,8 +1828,8 @@ ul, ol { list-style: none; }
 /* Dark Turned Walnut Wood Cap */
 .plunger-wood-cap {
   position: relative;
-  width: 114px;
-  height: 114px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #7f4f24 0%, #582f0e 55%, #241103 100%);
   box-shadow:
@@ -1829,8 +1859,8 @@ ul, ol { list-style: none; }
 /* Polished Brass Center Pin & Slotted Screw */
 .plunger-center-pin {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #fef3c7 0%, #d97706 60%, #78350f 100%);
   box-shadow:
@@ -1851,93 +1881,77 @@ ul, ol { list-style: none; }
   border-radius: 1px;
 }
 
-/* ── DRAMATIC 2.1s PLUNGER SLAM & LIFT ANIMATION ──────────────────────────── */
+/* ── REMADE PUNCHY & DRAMATIC PLUNGER ANIMATION (1.15s) ──────────────────── */
 .stamp-plunger.slamming {
-  animation: dramatic-plunger-slam 2.1s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  animation: punchy-plunger-slam 1.15s cubic-bezier(0.18, 0.9, 0.22, 1) forwards;
 }
 
-@keyframes dramatic-plunger-slam {
+@keyframes punchy-plunger-slam {
   0% {
-    /* High above, blurry and suspenseful */
-    transform: scale(3.8) translateY(-70px) rotate(-16deg);
-    filter: blur(22px);
+    transform: scale(3.2) translateY(-70px) rotate(-14deg);
+    filter: blur(20px);
     opacity: 0;
   }
-  15% {
+  16% {
     opacity: 1;
-    filter: blur(14px);
-    transform: scale(3.0) translateY(-45px) rotate(-10deg);
+    filter: blur(8px);
+    transform: scale(2.0) translateY(-30px) rotate(-6deg);
+  }
+  28% {
+    /* Hard impact slam into desk (~320ms) */
+    transform: scale(0.96) translateY(0) rotate(0deg);
+    filter: blur(0px);
+    opacity: 1;
   }
   32% {
-    /* Accelerating rapidly towards the surface */
-    transform: scale(1.4) translateY(-12px) rotate(-3deg);
-    filter: blur(4px);
-    opacity: 1;
-  }
-  37% {
-    transform: scale(1.04) translateY(-2px) rotate(0deg);
+    /* Recoil micro-bounce */
+    transform: scale(1.02) translateY(0) rotate(0deg);
     filter: blur(0px);
     opacity: 1;
   }
-  38% {
-    /* CRUNCH! The heavy slam impact (~800ms) */
-    transform: scale(0.95) translateY(0) rotate(0deg);
-    filter: blur(0px);
-    opacity: 1;
-  }
-  42% {
-    /* Micro recoil rebound */
+  /* 32% - 54%: Firm ink squeeze into wood fibers */
+  54% {
     transform: scale(0.98) translateY(0) rotate(0deg);
     filter: blur(0px);
     opacity: 1;
   }
-  /* 42% - 60%: THE HEAVY HOLD (holding stamp firmly down for ink transfer) */
-  58% {
-    transform: scale(0.97) translateY(0) rotate(0deg);
-    filter: blur(0px);
-    opacity: 1;
+  65% {
+    /* Snappy lift begins */
+    transform: scale(1.25) translateY(-14px) rotate(2deg);
+    filter: blur(3px);
+    opacity: 0.95;
   }
-  62% {
-    /* Slow, majestic lift begins */
-    transform: scale(1.1) translateY(-5px) rotate(1deg);
-    filter: blur(1px);
-    opacity: 1;
-  }
-  75% {
-    transform: scale(1.7) translateY(-20px) rotate(4deg);
-    filter: blur(6px);
-    opacity: 0.9;
-  }
-  90% {
-    transform: scale(2.8) translateY(-45px) rotate(10deg);
-    filter: blur(14px);
-    opacity: 0.4;
+  84% {
+    transform: scale(2.4) translateY(-45px) rotate(8deg);
+    filter: blur(12px);
+    opacity: 0.45;
   }
   100% {
-    /* Leaves the frame high above */
-    transform: scale(3.8) translateY(-75px) rotate(16deg);
-    filter: blur(24px);
+    transform: scale(3.4) translateY(-80px) rotate(14deg);
+    filter: blur(22px);
     opacity: 0;
   }
 }
 
 /* ── Stage Heavy Mechanical Shudder on Impact ─────────────────────────────── */
 .stamp-stage.slammed {
-  animation: stage-dramatic-shudder 0.38s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: stage-slam-shock 0.32s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-@keyframes stage-dramatic-shudder {
+@keyframes stage-slam-shock {
   0% { transform: scale(1) translate(0, 0); }
-  20% { transform: scale(0.985) translate(0, 6px); }
-  40% { transform: scale(1.015) translate(-4px, -3px); }
-  60% { transform: scale(0.995) translate(3px, 2px); }
+  20% { transform: scale(0.98) translate(0, 7px); }
+  40% { transform: scale(1.02) translate(-4px, -3px); }
+  60% { transform: scale(0.99) translate(3px, 2px); }
   80% { transform: scale(1.005) translate(-1px, 0); }
   100% { transform: scale(1) translate(0, 0); }
 }
 
-/* ── Dual Expanding Shockwave Ripples ─────────────────────────────────────── */
+/* ── Dual Expanding Blue Shockwave Ripples ────────────────────────────────── */
 .stamp-shockwave {
   position: absolute;
+  top: 5px;
+  left: 30px;
   width: 190px;
   height: 190px;
   border-radius: 50%;
@@ -1948,26 +1962,26 @@ ul, ol { list-style: none; }
 }
 
 .stamp-shockwave--1 {
-  border: 3px solid rgba(226, 114, 91, 0.65);
-  box-shadow: 0 0 20px rgba(226, 114, 91, 0.5);
+  border: 3px solid rgba(22, 121, 250, 0.8);
+  box-shadow: 0 0 22px rgba(22, 121, 250, 0.7);
 }
 
 .stamp-shockwave--2 {
-  border: 2px solid rgba(212, 163, 115, 0.45);
-  box-shadow: 0 0 16px rgba(212, 163, 115, 0.35);
+  border: 2px solid rgba(96, 165, 250, 0.55);
+  box-shadow: 0 0 16px rgba(96, 165, 250, 0.45);
 }
 
 .stamp-shockwave--1.active {
-  animation: shockwave-dramatic 0.75s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  animation: shockwave-blue 0.65s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
 }
 
 .stamp-shockwave--2.active {
-  animation: shockwave-dramatic 0.85s cubic-bezier(0.2, 0.8, 0.25, 1) 0.08s forwards;
+  animation: shockwave-blue 0.75s cubic-bezier(0.2, 0.8, 0.25, 1) 0.06s forwards;
 }
 
-@keyframes shockwave-dramatic {
+@keyframes shockwave-blue {
   0% {
-    opacity: 0.9;
+    opacity: 0.95;
     transform: scale(0.7);
     border-width: 4px;
   }
@@ -1978,34 +1992,36 @@ ul, ol { list-style: none; }
   }
 }
 
-/* ── Permanent Stamped Seal Imprint (Direct on Dark Studio Canvas) ───────── */
+/* ── Permanent Blue Seal Imprint with Wet Dripping Ink ───────────────────── */
 .stamp-imprint {
   position: absolute;
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  color: #e2725b;
+  top: 0;
+  left: 25px;
+  width: 200px;
+  height: 270px;
+  color: #1679fa;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
-  transform: scale(1.15) rotate(-6deg);
+  transform: scale(1.1) rotate(-5deg);
   pointer-events: none;
   z-index: 4;
-  transition: opacity 0.2s ease-out, transform 0.35s cubic-bezier(0.18, 0.9, 0.25, 1);
+  transition: opacity 0.15s ease-out, transform 0.25s cubic-bezier(0.18, 0.9, 0.25, 1);
 }
 
 .stamp-imprint.stamped {
-  opacity: 0.96;
+  opacity: 0.98;
   transform: scale(1) rotate(0deg);
   filter:
-    drop-shadow(0 0 16px rgba(226, 114, 91, 0.45))
+    drop-shadow(0 0 18px rgba(22, 121, 250, 0.5))
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
 .seal-svg {
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 270px;
   overflow: visible;
 }
 
@@ -2014,24 +2030,159 @@ ul, ol { list-style: none; }
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.16em;
-  fill: #e2725b;
+  fill: #1679fa;
 }
 
+/* ── Wet Ink Drip Flows ──────────────────────────────────────────────────── */
+.seal-ink-drips {
+  transform-origin: 100px 185px;
+}
+
+.drip-stream {
+  transform-origin: 100px 185px;
+  transform: scaleY(0);
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stamp-imprint.stamped .drip-stream {
+  transform: scaleY(1);
+}
+
+.stamp-imprint.stamped .drip-1 { transition-delay: 0.14s; }
+.stamp-imprint.stamped .drip-2 { transition-delay: 0.08s; }
+.stamp-imprint.stamped .drip-3 { transition-delay: 0.02s; }
+.stamp-imprint.stamped .drip-4 { transition-delay: 0.1s; }
+.stamp-imprint.stamped .drip-5 { transition-delay: 0.18s; }
+
+.drip-drop,
+.drip-bead {
+  opacity: 0;
+  transform: translateY(-8px) scale(0);
+  transform-origin: center center;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stamp-imprint.stamped .drip-drop,
+.stamp-imprint.stamped .drip-bead {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.stamp-imprint.stamped .drip-drop-1 { transition-delay: 0.35s; }
+.stamp-imprint.stamped .drip-drop-2 { transition-delay: 0.28s; }
+.stamp-imprint.stamped .drip-drop-3 { transition-delay: 0.22s; }
+.stamp-imprint.stamped .drip-drop-4 { transition-delay: 0.3s; }
+.stamp-imprint.stamped .drip-drop-5 { transition-delay: 0.4s; }
+.stamp-imprint.stamped .drip-bead-3 { transition-delay: 0.48s; }
+
+/* Torch in the center of the seal: authentic slender proportions, natural blue flame */
 .seal-torch-center {
   position: absolute;
-  width: 54px;
-  height: 54px;
+  top: 71px;
+  left: 87px;
+  width: 26px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .seal-torch-img {
-  width: 48px;
-  height: 48px;
+  width: 26px;
+  height: 58px;
+  max-width: 26px;
+  max-height: 58px;
   object-fit: contain;
-  /* Color-filter tint to map torch into warm luminous amber-terracotta (#e2725b) */
-  filter: invert(58%) sepia(55%) saturate(1400%) hue-rotate(334deg) brightness(98%) contrast(94%);
+  aspect-ratio: 135 / 294;
+  display: block;
+}
+
+.stamp-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(252, 251, 250, 0.12);
+}
+
+.stamp-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--c5-tan);
+  opacity: 0.85;
+  margin: 0;
+}
+
+.stamp-replay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bg-cream);
+  background: rgba(252, 251, 250, 0.08);
+  border: 1px solid rgba(252, 251, 250, 0.18);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 36px;
+}
+
+.stamp-replay-btn:hover {
+  background: rgba(22, 121, 250, 0.25);
+  border-color: rgba(22, 121, 250, 0.6);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(22, 121, 250, 0.4);
+}
+
+.stamp-replay-btn:active {
+  transform: scale(0.96);
+}
+
+.stamp-replay-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+.replay-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .stamp-stage.slammed {
+    animation: none;
+  }
+  .stamp-plunger.slamming {
+    animation: none;
+    opacity: 0;
+  }
+  .stamp-shockwave--1.active,
+  .stamp-shockwave--2.active {
+    animation: none;
+    opacity: 0;
+  }
+  .stamp-imprint {
+    transition: none;
+    transform: none;
+  }
+  .drip-stream,
+  .drip-drop,
+  .drip-bead {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }
 
 .stamp-footer {
