@@ -2314,30 +2314,47 @@ html[data-theme="dark"] .hero {
 }
 
 html[data-theme="dark"] .hero-bg-num {
-  color: rgba(252, 251, 250, 0.035);
+  color: rgba(252, 251, 250, 0.04);
 }
 
-html[data-theme="dark"] .hero-h1 {
+html[data-theme="dark"] .eyebrow-espresso {
+  color: #dcd6cc;
+}
+
+html[data-theme="dark"] .hero-headline {
   color: #fcfbfa;
 }
 
+html[data-theme="dark"] .hero-headline .word-alt {
+  color: #a8be84;
+}
+
+html[data-theme="dark"] .hero-headline .word-serif {
+  color: #ede8e1;
+}
+
 html[data-theme="dark"] .hero-desc {
-  color: var(--text-muted-dark);
+  color: #dcd6cc;
+}
+
+html[data-theme="dark"] .stamp-rotate {
+  border-color: rgba(252, 251, 250, 0.45);
+  color: #fcfbfa;
 }
 
 html[data-theme="dark"] .stamp-rotate text {
-  fill: var(--text-sub);
+  fill: #fcfbfa;
 }
 
 html[data-theme="dark"] .stamp-rotate circle {
-  stroke: rgba(252, 251, 250, 0.22);
+  stroke: rgba(252, 251, 250, 0.35);
 }
 
 html[data-theme="dark"] .hero-meta-label {
-  color: #8c8273;
+  color: #b8af9f;
 }
 
-html[data-theme="dark"] .hero-meta-val {
+html[data-theme="dark"] .hero-meta-stat {
   color: #fcfbfa;
 }
 
@@ -2346,19 +2363,18 @@ html[data-theme="dark"] .hero-rule {
 }
 
 /* Ticker */
-html[data-theme="dark"] .ticker-wrap {
+html[data-theme="dark"] .ticker {
   background: #171513;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
-  color: var(--text-sub);
 }
 
-html[data-theme="dark"] .ticker-item {
-  color: var(--text-sub);
+html[data-theme="dark"] .ticker-text {
+  color: #ede8e1;
 }
 
 html[data-theme="dark"] .ticker-sep {
-  color: #8c8273;
+  background: #a8be84;
 }
 
 /* Services (What We Build) */
@@ -2535,47 +2551,45 @@ html[data-theme="dark"] .team-desc {
 
 /* Final CTA & Signature Stamp Section */
 html[data-theme="dark"] .cta-section {
-  background: #190e05;
+  background: #1c1006;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 html[data-theme="dark"] .cta-bg-text {
-  color: rgba(252, 251, 250, 0.025);
+  color: rgba(252, 251, 250, 0.03);
 }
 
-html[data-theme="dark"] .cta-title {
+html[data-theme="dark"] .cta-label {
+  color: #a8be84;
+}
+
+html[data-theme="dark"] .cta-headline {
   color: #fcfbfa;
 }
 
-html[data-theme="dark"] .cta-desc {
-  color: var(--text-sub);
+html[data-theme="dark"] .cta-headline em {
+  color: #ede8e1;
+}
+
+html[data-theme="dark"] .cta-sub {
+  color: #ede8e1;
+}
+
+html[data-theme="dark"] .cta-include-title {
+  color: #a8be84;
+}
+
+html[data-theme="dark"] .cta-include-item {
+  color: #ede8e1;
+}
+
+html[data-theme="dark"] .cta-include-mark {
+  color: #a8be84;
 }
 
 html[data-theme="dark"] .cta-stamp-desk {
-  background: rgba(10, 6, 2, 0.55);
-  border-color: rgba(252, 251, 250, 0.08);
-}
-
-html[data-theme="dark"] .contact-card {
-  background: rgba(252, 251, 250, 0.04);
-  border-color: var(--border-subtle);
-}
-
-html[data-theme="dark"] .contact-card:hover {
-  background: rgba(252, 251, 250, 0.08);
-  border-color: var(--border-hover);
-}
-
-html[data-theme="dark"] .contact-card-label {
-  color: #8c8273;
-}
-
-html[data-theme="dark"] .contact-card-val {
-  color: #fcfbfa;
-}
-
-html[data-theme="dark"] .contact-card-hint {
-  color: var(--text-muted-dark);
+  background: rgba(10, 6, 2, 0.65);
+  border-color: rgba(252, 251, 250, 0.12);
 }
 
 /* Footer */
@@ -2589,19 +2603,19 @@ html[data-theme="dark"] .footer-brand-name {
 }
 
 html[data-theme="dark"] .footer-brand-desc {
-  color: var(--text-muted-dark);
+  color: #dcd6cc;
 }
 
 html[data-theme="dark"] .footer-col-title {
-  color: #8c8273;
+  color: #a8be84;
 }
 
 html[data-theme="dark"] .footer-link {
-  color: var(--text-muted-dark);
+  color: #dcd6cc;
 }
 
 html[data-theme="dark"] .footer-link:hover {
-  color: #fcfbfa;
+  color: #ffffff;
 }
 
 html[data-theme="dark"] .footer-bottom {
@@ -2609,10 +2623,10 @@ html[data-theme="dark"] .footer-bottom {
 }
 
 html[data-theme="dark"] .footer-copy {
-  color: #8c8273;
+  color: #b8af9f;
 }
 
 html[data-theme="dark"] .footer-philosophy {
-  color: var(--text-muted-dark);
+  color: #dcd6cc;
 }
 
