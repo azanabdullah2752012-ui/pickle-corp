@@ -661,3 +661,80 @@ window.addEventListener('beforeprint', function () {
     el.classList.add('visible');
   });
 });
+
+/* ── Color Theme Toggle (Dark & Light Mode Engine) ───────────────────────── */
+(function initThemeToggle() {
+  var themeToggle = document.getElementById('theme-toggle');
+  var mobileToggle = document.getElementById('theme-toggle-mobile');
+  var mobilePill = document.getElementById('theme-mobile-pill');
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
+  var transitionTimer = null;
+
+  function getActiveTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+  }
+
+  function applyTheme(theme, persist) {
+    if (persist) {
+      // Add smooth transition class temporarily
+      document.documentElement.classList.add('theme-transitioning');
+      clearTimeout(transitionTimer);
+      transitionTimer = setTimeout(function () {
+        document.documentElement.classList.remove('theme-transitioning');
+      }, 260);
+
+      try {
+        localStorage.setItem('pickle-theme', theme);
+      } catch (e) {}
+    }
+
+    document.documentElement.setAttribute('data-theme', theme);
+
+    var nextTheme = theme === 'dark' ? 'light' : 'dark';
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
+      themeToggle.setAttribute('title', 'Switch to ' + nextTheme + ' mode');
+    }
+
+    if (mobilePill) {
+      mobilePill.textContent = theme === 'dark' ? 'Dark' : 'Light';
+    }
+
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? '#0e0d0b' : '#141210');
+    }
+  }
+
+  // Ensure labels and pills match the currently active theme on load
+  applyTheme(getActiveTheme(), false);
+
+  function toggle() {
+    var current = getActiveTheme();
+    var next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next, true);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggle);
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', toggle);
+  }
+
+  // Respond to OS-level dark/light preference changes if user hasn't explicitly set preference
+  try {
+    var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    var onSystemThemeChange = function (e) {
+      if (!localStorage.getItem('pickle-theme')) {
+        applyTheme(e.matches ? 'dark' : 'light', false);
+      }
+    };
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', onSystemThemeChange);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(onSystemThemeChange);
+    }
+  } catch (e) {}
+})();
+
